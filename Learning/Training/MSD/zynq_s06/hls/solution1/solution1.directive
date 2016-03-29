@@ -1,0 +1,17 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="axi_stream_gpio" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="axis" value="" positionalBoolean="mode"/>
+                <option name="port" value="outputData" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="axi_stream_gpio" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="ap_vld" value="" positionalBoolean="mode"/>
+                <option name="port" value="inputData" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

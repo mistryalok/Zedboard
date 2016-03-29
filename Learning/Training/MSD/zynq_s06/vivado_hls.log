@@ -1,0 +1,22 @@
+@I [LIC-101] Checked out feature [HLS]
+@I [HLS-10] Running '/opt/Xilinx/Vivado_HLS/2014.4/bin/unwrapped/lnx64.o/vivado_hls'
+            for user 'alok' on host 'alok-laptop' (Linux_x86_64 version 3.19.0-56-generic) on Tue Mar 29 11:36:32 IST 2016
+            in directory '/home/alok/Work/Zedboard/temp'
+@I [HLS-10] Opening project '/home/alok/Work/Zedboard/temp/hls'.
+@I [HLS-10] Opening solution '/home/alok/Work/Zedboard/temp/hls/solution1'.
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [IMPL-8] Exporting RTL as an IP in IP-XACT.
+
+****** Vivado v2014.4 (64-bit)
+  **** SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+  **** IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2014.4/data/ip'.
+ipx::add_bus_interface: Time (s): cpu = 00:00:00.57 ; elapsed = 00:00:06 . Memory (MB): peak = 885.156 ; gain = 10.996 ; free physical = 138 ; free virtual = 3060
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 29 11:37:20 2016...
+@I [LIC-101] Checked in feature [HLS]

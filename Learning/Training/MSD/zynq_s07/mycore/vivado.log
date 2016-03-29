@@ -1,0 +1,62 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Tue Mar 29 13:22:38 2016
+# Process ID: 3095
+# Log file: /home/alok/Work/Zedboard/zynq_s07/mycore/vivado.log
+# Journal file: /home/alok/Work/Zedboard/zynq_s07/mycore/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/alok/Work/Zedboard/zynq_s07/mycore/managed_ip_project/managed_ip_project.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2014.4/data/ip'.
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:05 . Memory (MB): peak = 5711.312 ; gain = 57.613 ; free physical = 891 ; free virtual = 4281
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+ERROR: [Ptgen 51-54] - The vendor "(none)" is not a valid domain name. It should be the domain name of your site.  Example, xilinx.com.
+ERROR: [Ptgen 51-55] create_peripheral: integrity check failed !
+ERROR: [Vivado 12-106] *** Exception: java.lang.NullPointerException (See /home/alok/Work/Zedboard/zynq_s07/mycore/vivado_pid3095.debug)
+ERROR: [Ptgen 51-54] - The vendor "(none)" is not a valid domain name. It should be the domain name of your site.  Example, xilinx.com.
+ERROR: [Ptgen 51-55] create_peripheral: integrity check failed !
+ERROR: [Vivado 12-106] *** Exception: java.lang.NullPointerException (See /home/alok/Work/Zedboard/zynq_s07/mycore/vivado_pid3095.debug)
+create_peripheral xilinx user sample_generator 1.0 -dir /home/alok/Work/Zedboard/zynq_s07/mycore/ip_repo
+add_peripheral_interface S_AXIS -interface_mode slave -axi_type stream [ipx::find_open_core xilinx:user:sample_generator:1.0]
+add_peripheral_interface M_AXIS -interface_mode master -axi_type stream [ipx::find_open_core xilinx:user:sample_generator:1.0]
+generate_peripheral [ipx::find_open_core xilinx:user:sample_generator:1.0]
+write_peripheral [ipx::find_open_core xilinx:user:sample_generator:1.0]
+set_property ip_repo_paths  /home/alok/Work/Zedboard/zynq_s07/mycore/ip_repo/sample_generator_1.0 [current_project]
+update_ip_catalog -rebuild
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/alok/Work/Zedboard/zynq_s07/mycore/ip_repo/sample_generator_1.0'.
+ipx::edit_ip_in_project -upgrade true -name sample_generator_v1_0_v1_0_project -directory /home/alok/Work/Zedboard/zynq_s07/mycore/ip_repo/sample_generator_1.0/sample_generator_v1_0_v1_0_project /home/alok/Work/Zedboard/zynq_s07/mycore/ip_repo/sample_generator_1.0/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2014.4/data/ip'.
+create_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:06 . Memory (MB): peak = 5765.246 ; gain = 29.957 ; free physical = 703 ; free virtual = 4113
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/alok/Work/Zedboard/zynq_s07/mycore/ip_repo/sample_generator_1.0'.
+WARNING: [IP_Flow 19-3656] If you move the project, the path for repository '/home/alok/Work/Zedboard/zynq_s07/mycore/ip_repo/sample_generator_1.0' may become invalid. A better location for the repostory would be in a path adjacent to the project. (Current project location is '/home/alok/Work/Zedboard/zynq_s07/mycore/ip_repo/sample_generator_1.0/sample_generator_v1_0_v1_0_project'.)
+ipx::edit_ip_in_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:07 . Memory (MB): peak = 5768.246 ; gain = 32.957 ; free physical = 710 ; free virtual = 4109
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+set_property vendor Alok [ipx::current_core]
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+INFO: [IP_Flow 19-2418] Expression "((C_S_AXIS_TDATA_WIDTH / 8) - 1)": Will not convert operator '/' to XPATH 'div' to allow integer division if applicable.
+INFO: [IP_Flow 19-2418] Expression "((C_M_AXIS_TDATA_WIDTH / 8) - 1)": Will not convert operator '/' to XPATH 'div' to allow integer division if applicable.
+ipx::merge_project_changes files [ipx::current_core]
+set_property enablement_value true [ipx::get_user_parameters C_M_AXIS_TDATA_WIDTH -of_objects [ipx::current_core]]
+set_property enablement_value true [ipx::get_user_parameters C_S_AXIS_TDATA_WIDTH -of_objects [ipx::current_core]]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_ip_instances -delete_project true
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/alok/Work/Zedboard/zynq_s07/mycore/ip_repo/sample_generator_1.0'.
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 29 13:44:14 2016...

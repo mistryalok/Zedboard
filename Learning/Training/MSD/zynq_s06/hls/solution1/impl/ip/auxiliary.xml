@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="axi_stream_gpio" xd:componentRef="axi_stream_gpio" xd:initiationInterval="1" xd:clockPeriod="10.000000" xd:sequential="true" xd:hostMachine="64">
+  <xd:returnValue xd:interfaceRef="ap_return" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:controlReg xd:name="control" xd:interfaceRef="ap_ctrl" xd:busTypeRef="acc_handshake" xd:type="acc_handshake"/>
+  <xd:arg xd:name="inputData" xd:originalName="inputData" xd:direction="in" xd:interfaceRef="inputData_V" xd:busTypeRef="register" xd:dataWidth="1" xd:handshakeRef="ap_vld"/>
+  <xd:arg xd:name="*(outputData)" xd:originalName="outputData" xd:direction="in" xd:interfaceRef="outputData" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:latencyEstimates xd:best-case="0" xd:worst-case="0" xd:average-case="0"/>
+  <xd:resourceEstimates xd:LUT="0" xd:FF="1" xd:BRAM="0" xd:DSP="0"/>
+</xd:acceleratorMap>

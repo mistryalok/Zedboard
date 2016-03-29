@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="@W [RTGEN-101] Setting dangling out port 'axi_stream_gpio/outputData_TREADY' to 0." projectName="hls" solutionName="solution1" date="2016-03-29T11:34:15.076+0530" type="Warning"/>
+        <logs message="@W [RTGEN-101] Port 'axi_stream_gpio/outputData_TREADY' has no fanin or fanout and is left dangling.&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="hls" solutionName="solution1" date="2016-03-29T11:34:15.047+0530" type="Warning"/>
+        <logs message="@W [RTGEN-101] Port 'axi_stream_gpio/outputData_TVALID' has no fanin or fanout and is left dangling.&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="hls" solutionName="solution1" date="2016-03-29T11:34:15.028+0530" type="Warning"/>
+        <logs message="@W [RTGEN-101] Port 'axi_stream_gpio/outputData_TDATA' has no fanin or fanout and is left dangling.&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="hls" solutionName="solution1" date="2016-03-29T11:34:15.016+0530" type="Warning"/>
+        <logs message="@W [RTGEN-101] Port 'axi_stream_gpio/inputData_V_ap_vld' has no fanin or fanout and is left dangling.&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="hls" solutionName="solution1" date="2016-03-29T11:34:14.957+0530" type="Warning"/>
+        <logs message="@W [RTGEN-101] Port 'axi_stream_gpio/inputData_V' has no fanin or fanout and is left dangling.&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="hls" solutionName="solution1" date="2016-03-29T11:34:14.923+0530" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

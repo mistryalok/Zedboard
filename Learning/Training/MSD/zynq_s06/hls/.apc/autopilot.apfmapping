@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="gpio.cpp" path="/home/alok/Work/Zedboard/temp/hls/solution1/.tcls/gpio.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="top.cpp" path="/home/alok/Work/Zedboard/temp/hls/solution1/.tcls/top.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
