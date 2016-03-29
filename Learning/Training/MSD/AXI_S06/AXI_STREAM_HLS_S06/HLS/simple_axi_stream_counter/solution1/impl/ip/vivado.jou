@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Mon Mar 28 23:57:25 2016
+# Process ID: 13590
+# Log file: /home/alok/Vivado_Projects/MSadri/AXI_STREAM_HLS_S06/HLS/simple_axi_stream_counter/solution1/impl/ip/vivado.log
+# Journal file: /home/alok/Vivado_Projects/MSadri/AXI_STREAM_HLS_S06/HLS/simple_axi_stream_counter/solution1/impl/ip/vivado.jou
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace

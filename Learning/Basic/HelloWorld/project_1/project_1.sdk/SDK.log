@@ -1,0 +1,2 @@
+20:38:32 INFO  : Processing command line option -hwspec /media/alok/87609ecb-a5b9-4e2b-87d8-5026e00f0506/home/alok/Vivado_Projects/HelloWorld/project_1/project_1.sdk/design_1_wrapper.hdf.
+20:38:46 INFO  : Launching XSDB server: xsdb -s /opt/Xilinx/SDK/2014.4/scripts/xsdb/xsdb/xsdb-server.tcl 2450

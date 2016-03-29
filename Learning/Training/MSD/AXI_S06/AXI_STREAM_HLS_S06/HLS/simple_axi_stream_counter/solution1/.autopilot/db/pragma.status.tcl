@@ -1,0 +1,1 @@
+lappend pragmaStatus0 {pragma "INTERFACE" source "/home/alok/Vivado_Projects/MSadri/AXI_STREAM_HLS_S06/HLS/simple_axi_stream_counter/.settings/axi_stream.cpp" location "axi_stream_counter" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}

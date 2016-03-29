@@ -1,0 +1,4 @@
+   Build using "/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/gcc/bin/g++"
+   Compiling axi_stream_counter.autotb.cpp
+   Compiling axi_stream_counter.cpp
+   Generating cosim.sc.exe

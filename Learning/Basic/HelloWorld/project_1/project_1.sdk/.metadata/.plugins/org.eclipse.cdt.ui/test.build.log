@@ -1,0 +1,26 @@
+20:39:58 **** Build of configuration Debug for project test ****
+make all 
+Building file: ../src/helloworld.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+Finished building: ../src/helloworld.c
+ 
+Building file: ../src/platform.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+ 
+Building target: test.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../test_bsp/ps7_cortexa9_0/lib -o "test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: test.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size test.elf  |tee "test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  22920	   1152	  22564	  46636	   b62c	test.elf
+Finished building: test.elf.size
+ 
+
+20:39:59 Build Finished (took 590ms)
+

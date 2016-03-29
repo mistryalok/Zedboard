@@ -1,0 +1,5 @@
+   Build using "/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/gcc/bin/g++"
+   Compiling apatb_axi_stream_counter.cpp
+   Compiling axi_stream.cpp_pre.cpp.tb.cpp
+   Compiling test.cpp_pre.cpp.tb.cpp
+   Generating cosim.tv.exe

@@ -1,0 +1,21 @@
+#pragma line 1 "/home/alok/Vivado_Projects/MSadri/AXI_STREAM_HLS_S06/HLS/simple_axi_stream_counter/test.cpp"
+#pragma line 1 "<built-in>"
+#pragma line 1 "<command-line>"
+#pragma line 1 "/home/alok/Vivado_Projects/MSadri/AXI_STREAM_HLS_S06/HLS/simple_axi_stream_counter/test.cpp"
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+#pragma empty_line
+int axi_stream_counter(int *);
+#pragma empty_line
+int main()
+{
+  int i;
+  int y;
+  for(i=0;i<100;i++)
+  {
+   axi_stream_counter(&y);
+  }
+  return 0;
+#pragma empty_line
+}

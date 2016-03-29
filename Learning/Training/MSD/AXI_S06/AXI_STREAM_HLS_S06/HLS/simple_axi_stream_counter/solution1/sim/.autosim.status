@@ -1,0 +1,10 @@
+set status(tv_done) 0
+set status(tvin) "axi_stream_counter.autotvin.dat"
+set status(wrapc_done) 1
+set status(bc_done) 0
+set status(bc_tb_done) 0
+set status(tvout) "axi_stream_counter.autotvout.dat"
+set status(sc_done) 1
+set status(cas_done) 0
+set status(hdl_tvin) "axi_stream_counter.hdltvin.dat"
+set status(hdl_tvout) "axi_stream_counter.hdltvout.dat"

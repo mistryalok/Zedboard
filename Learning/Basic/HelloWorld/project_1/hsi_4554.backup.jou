@@ -1,0 +1,18 @@
+#-----------------------------------------------------------
+# hsi v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:48:31 MST 2014
+# 
+# Start of session at: Sun Mar 13 11:40:15 2016
+# Process ID: 4429
+# Log file: /media/alok/Extra/work/Github/FPGA/Xilinx/Vivado/ZedBoard/Basic/HelloWorld/project_1/hsi.log
+# Journal file: /media/alok/Extra/work/Github/FPGA/Xilinx/Vivado/ZedBoard/Basic/HelloWorld/project_1/hsi.jou
+#-----------------------------------------------------------
+cd project_1.sdk/
+;s
+ls
+open_hw_design design_1_wrapper.hdf 
+generate_app -hw design_1_wrapper.hdf -os standalone -proc ps7_cortexa9_0 -app zynq_fsbl -compile -sw fsbl -dir /newapp
+generate_app -hw design_1_imp -os standalone -proc ps7_cortexa9_0 -app zynq_fsbl -compile -sw fsbl -dir /newapp
+sudo generate_app -hw design_1_imp -os standalone -proc ps7_cortexa9_0 -app zynq_fsbl -compile -sw fsbl -dir /newapp
+sudo generate_app -hw design_1_imp -os standalone -proc ps7_cortexa9_0 -app zynq_fsbl -compile -sw fsbl -dir /newapp
+generate_app -hw design_1_imp -os standalone -proc ps7_cortexa9_0 -app zynq_fsbl -compile -sw fsbl -dir /newapp

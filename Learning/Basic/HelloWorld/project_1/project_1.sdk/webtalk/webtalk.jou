@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Webtalk v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:48:31 MST 2014
+# 
+# Start of session at: Sat Mar 12 20:41:07 2016
+# Process ID: 12304
+# Log file: /media/alok/87609ecb-a5b9-4e2b-87d8-5026e00f0506/home/alok/Vivado_Projects/HelloWorld/project_1/project_1.sdk/webtalk/webtalk.log
+# Journal file: /media/alok/87609ecb-a5b9-4e2b-87d8-5026e00f0506/home/alok/Vivado_Projects/HelloWorld/project_1/project_1.sdk/webtalk/webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

@@ -1,0 +1,40 @@
+#-----------------------------------------------------------
+# hsi v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:48:31 MST 2014
+# 
+# Start of session at: Sun Mar 13 11:40:15 2016
+# Process ID: 4429
+# Log file: /media/alok/Extra/work/Github/FPGA/Xilinx/Vivado/ZedBoard/Basic/HelloWorld/project_1/hsi.log
+# Journal file: /media/alok/Extra/work/Github/FPGA/Xilinx/Vivado/ZedBoard/Basic/HelloWorld/project_1/hsi.jou
+#-----------------------------------------------------------
+INFO: [Hsi 55-1698] elapsed time for repository loading 1 seconds
+cd project_1.sdk/
+;s
+ambiguous command name "s": scan seek send_msg_id set set_msg_config set_param set_property set_repo_path setup_hsm_environment socket source split string subst switch
+ls
+WARNING: [Common 17-259] Unknown Tcl command 'ls' sending command to the OS shell for execution.
+open_hw_design design_1_wrapper.hdf 
+design_1_imp
+generate_app -hw design_1_wrapper.hdf -os standalone -proc ps7_cortexa9_0 -app zynq_fsbl -compile -sw fsbl -dir /newapp
+ERROR: [Hsi 55-1460] Hardware Design design_1_wrapper.hdf is not found
+ERROR: [Hsi 55-1463] Hardware design design_1_wrapper.hdf is not available
+ERROR: [Common 17-39] 'hsi::generate_app' failed due to earlier errors.
+generate_app -hw design_1_imp -os standalone -proc ps7_cortexa9_0 -app zynq_fsbl -compile -sw fsbl -dir /newapp
+ERROR: [Hsi 55-1433] Error boost::filesystem::create_directories: Permission denied: "/newapp"
+ERROR: [Hsi 55-1450] Error: running generate_bsp.
+ERROR: [Common 17-39] 'hsi::generate_app' failed due to earlier errors.
+sudo generate_app -hw design_1_imp -os standalone -proc ps7_cortexa9_0 -app zynq_fsbl -compile -sw fsbl -dir /newapp
+WARNING: [Common 17-259] Unknown Tcl command 'sudo generate_app -hw design_1_imp -os standalone -proc ps7_cortexa9_0 -app zynq_fsbl -compile -sw fsbl -dir /newapp' sending command to the OS shell for execution.
+child process exited abnormally
+sudo generate_app -hw design_1_imp -os standalone -proc ps7_cortexa9_0 -app zynq_fsbl -compile -sw fsbl -dir /newapp
+WARNING: [Common 17-259] Unknown Tcl command 'sudo generate_app -hw design_1_imp -os standalone -proc ps7_cortexa9_0 -app zynq_fsbl -compile -sw fsbl -dir /newapp' sending command to the OS shell for execution.
+child process exited abnormally
+generate_app -hw design_1_imp -os standalone -proc ps7_cortexa9_0 -app zynq_fsbl -compile -sw fsbl -dir /newapp
+ERROR: [Hsi 55-1433] Error boost::filesystem::create_directories: Permission denied: "/newapp"
+ERROR: [Hsi 55-1450] Error: running generate_bsp.
+ERROR: [Common 17-39] 'hsi::generate_app' failed due to earlier errors.
+ERROR: [Hsi 55-1433] Error boost::filesystem::create_directories: Permission denied: "/newappe"
+ERROR: [Hsi 55-1450] Error: running generate_bsp.
+ERROR: [Common 17-39] 'hsi::generate_app' failed due to earlier errors.
+exit
+INFO: [Common 17-206] Exiting hsi at Sun Mar 13 11:43:16 2016...

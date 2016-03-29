@@ -1,0 +1,12 @@
+16:38:04 INFO  : Processing command line option -hwspec /home/alok/Vivado_Projects/Extra/SDCARD/project_1/project_1.sdk/design_1_wrapper.hdf.
+16:38:16 INFO  : Launching XSDB server: xsdb -s /opt/Xilinx/SDK/2014.4/scripts/xsdb/xsdb/xsdb-server.tcl 2450
+16:39:47 INFO  : Example project test_bsp_xusbps_intr_example_1 has been created successfully.
+16:41:57 INFO  : Example project test_bsp_xusbps_intr_example_2 has been created successfully.
+16:55:15 INFO  : Project test_bsp was a BSP project. Please update references.
+16:55:15 ERROR : SDK has detected that project test_bsp has been deleted (or renamed).
+If this project was a BSP referenced by other C/C++ applications, then those applications will fail to build now. Please right click on those applications and click 'Change Referenced BSP' to update those projects' BSP references.
+16:55:31 INFO  : BSP Project P/standalone_bsp_0 has been successfully migrated.
+16:57:40 INFO  : Project test_bsp was a BSP project. Please update references.
+16:57:40 ERROR : SDK has detected that project test_bsp has been deleted (or renamed).
+If this project was a BSP referenced by other C/C++ applications, then those applications will fail to build now. Please right click on those applications and click 'Change Referenced BSP' to update those projects' BSP references.
+07:48:28 INFO  : Launching XSDB server: xsdb -s /opt/Xilinx/SDK/2014.4/scripts/xsdb/xsdb/xsdb-server.tcl 2450

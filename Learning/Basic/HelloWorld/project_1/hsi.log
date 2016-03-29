@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# hsi v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:48:31 MST 2014
+# 
+# Start of session at: Sun Mar 13 11:43:51 2016
+# Process ID: 4554
+# Log file: /media/alok/Extra/work/Github/FPGA/Xilinx/Vivado/ZedBoard/Basic/HelloWorld/project_1/hsi.log
+# Journal file: /media/alok/Extra/work/Github/FPGA/Xilinx/Vivado/ZedBoard/Basic/HelloWorld/project_1/hsi.jou
+#-----------------------------------------------------------
+INFO: [Hsi 55-1698] elapsed time for repository loading 0 seconds
+ls
+WARNING: [Common 17-259] Unknown Tcl command 'ls' sending command to the OS shell for execution.
+ls
+WARNING: [Common 17-259] Unknown Tcl command 'ls' sending command to the OS shell for execution.
+cd project_1.sdk/
+ls
+WARNING: [Common 17-259] Unknown Tcl command 'ls' sending command to the OS shell for execution.
+open_hw_design design_1_wrapper.hdf 
+design_1_imp
+generate_app -hw design_1_imp -os standalone -proc ps7_cortexa9_0 -app zynq_fsbl -compile -sw fsbl -dir /newapp
+ERROR: [Common 17-70] Application Exception: Not found in path: gmake
+generate_app -hw design_1_imp -os standalone -proc ps7_cortexa9_0 -app zynq_fsbl -compile -sw fsbl -dir 
+ERROR: [Common 17-157] Error parsing command line options, please type 'generate_app -help' for usage info.
+generate_app -hw design_1_imp -os standalone -proc ps7_cortexa9_0 -app zynq_fsbl -compile -sw fsbl -dir .
+WARNING: [Hsi 55-1557] Software Design /system already exist
+ERROR: [Common 17-70] Application Exception: Not found in path: gmake
+exit
+INFO: [Common 17-206] Exiting hsi at Sun Mar 13 11:45:01 2016...

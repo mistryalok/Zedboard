@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Tue Mar 29 00:12:37 2016
+# Process ID: 15104
+# Log file: /home/alok/Vivado_Projects/MSadri/AXI_STREAM_HLS_S06/vivado/vivado.log
+# Journal file: /home/alok/Vivado_Projects/MSadri/AXI_STREAM_HLS_S06/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project project_1 /home/alok/Vivado_Projects/MSadri/AXI_STREAM_HLS_S06/vivado/project_1 -part xc7z020clg484-1
+set_property board_part em.avnet.com:zed:part0:1.2 [current_project]
+set_property ip_repo_paths  /home/alok/Vivado_Projects/MSadri/AXI_STREAM_HLS_S06/HLS [current_project]
+update_ip_catalog
+create_bd_design "design_1"
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:hls:axi_stream_counter:1.0 axi_stream_counter_0
+endgroup
+regenerate_bd_layout
+regenerate_bd_layout
+save_bd_design

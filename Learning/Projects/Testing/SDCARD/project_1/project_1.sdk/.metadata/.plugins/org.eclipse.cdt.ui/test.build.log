@@ -1,0 +1,21 @@
+16:58:02 **** Auto Build of configuration Debug for project test ****
+make all 
+Building file: ../src/helloworld.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+Finished building: ../src/helloworld.c
+ 
+Building target: test.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group
+Finished building target: test.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size test.elf  |tee "test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  40012	   1200	20995696	21036908	140ff6c	test.elf
+Finished building: test.elf.size
+ 
+
+16:58:02 Build Finished (took 147ms)
+

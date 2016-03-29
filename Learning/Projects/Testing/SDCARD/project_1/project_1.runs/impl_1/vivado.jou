@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Tue Mar  8 16:35:39 2016
+# Process ID: 2828
+# Log file: /home/alok/Vivado_Projects/Extra/SDCARD/project_1/project_1.runs/impl_1/design_1_wrapper.vdi
+# Journal file: /home/alok/Vivado_Projects/Extra/SDCARD/project_1/project_1.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_wrapper.tcl -notrace

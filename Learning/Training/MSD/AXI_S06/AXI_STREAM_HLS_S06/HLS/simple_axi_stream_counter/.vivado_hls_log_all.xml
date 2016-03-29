@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog>
+        <logs message="@E [SIM-4] *** C/RTL co-simulation finished: FAIL ***&#xA;&#xA;&#xA;    while executing&#xA;&quot;cosim_design -trace_level all -rtl systemc&quot;&#xA;    (file &quot;/home/alok/Vivado_Projects/MSadri/AXI_STREAM_HLS_S06/HLS/simple_axi_stream_counter/solution1/cosim.tcl&quot; line 8)" projectName="simple_axi_stream_counter" solutionName="solution1" date="2016-03-29T00:18:47.722+0530"/>
+        <logs message="@E [SIM-331] Aborting co-simulation: C simulation failed, compilation errors." projectName="simple_axi_stream_counter" solutionName="solution1" date="2016-03-29T00:18:47.713+0530"/>
+        <logs message="@E [SIM-321] EXE file generate failed." projectName="simple_axi_stream_counter" solutionName="solution1" date="2016-03-29T00:18:47.708+0530"/>
+        <logs message="@E [SIM-321] EXE file generate failed." projectName="simple_axi_stream_counter" solutionName="solution1" date="2016-03-29T00:18:47.696+0530"/>
+        <logs message="@E [SIM-317] C++ compile error." projectName="simple_axi_stream_counter" solutionName="solution1" date="2016-03-29T00:18:47.685+0530"/>
+        <logs message="@E [SIM-4] *** C/RTL co-simulation finished: FAIL ***&#xA;&#xA;&#xA;    while executing&#xA;&quot;cosim_design -trace_level all -rtl systemc&quot;&#xA;    (file &quot;/home/alok/Vivado_Projects/MSadri/AXI_STREAM_HLS_S06/HLS/simple_axi_stream_counter/solution1/cosim.tcl&quot; line 8)" projectName="simple_axi_stream_counter" solutionName="solution1" date="2016-03-29T00:17:46.164+0530"/>
+        <logs message="@E [SIM-331] Aborting co-simulation: C simulation failed, compilation errors." projectName="simple_axi_stream_counter" solutionName="solution1" date="2016-03-29T00:17:46.159+0530"/>
+        <logs message="@E [SIM-321] EXE file generate failed." projectName="simple_axi_stream_counter" solutionName="solution1" date="2016-03-29T00:17:46.155+0530"/>
+        <logs message="@E [SIM-321] EXE file generate failed." projectName="simple_axi_stream_counter" solutionName="solution1" date="2016-03-29T00:17:46.149+0530"/>
+        <logs message="@E [SIM-317] C++ compile error." projectName="simple_axi_stream_counter" solutionName="solution1" date="2016-03-29T00:17:46.143+0530"/>
+      </simLog>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog/>
+      <simLog>
+        <logs message="@W [SIM-75] Fifo port 'counter' has a default depth of 1. Insufficient depth may cause simulation mismatch or freeze. Please specify the depth in 'set_directive_interface' using the option '-depth'.&#xA;   Build using &quot;/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/gcc/bin/g++&quot;&#xA;   Compiling apatb_axi_stream_counter.cpp&#xA;   Compiling axi_stream.cpp_pre.cpp.tb.cpp&#xA;   Compiling test.cpp_pre.cpp.tb.cpp&#xA;   Generating cosim.tv.exe" projectName="simple_axi_stream_counter" solutionName="solution1" date="2016-03-29T00:19:10.053+0530" type="Warning"/>
+        <logs message="@W [SIM-75] Fifo port 'counter' has a default depth of 1. Insufficient depth may cause simulation mismatch or freeze. Please specify the depth in 'set_directive_interface' using the option '-depth'.&#xA;   Build using &quot;/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/gcc/bin/g++&quot;&#xA;   Compiling apatb_axi_stream_counter.cpp&#xA;   Compiling axi_stream.cpp_pre.cpp.tb.cpp&#xA;   Compiling test.cpp_pre.cpp.tb.cpp&#xA;/home/alok/Vivado_Projects/MSadri/AXI_STREAM_HLS_S06/HLS/simple_axi_stream_counter/test.cpp: In function ‘int main()’:&#xA;/home/alok/Vivado_Projects/MSadri/AXI_STREAM_HLS_S06/HLS/simple_axi_stream_counter/test.cpp:13:25: error: ‘axi_steram_couter’ was not declared in this scope&#xA;make: *** [obj/test.cpp_pre.cpp.tb.o] Error 1" projectName="simple_axi_stream_counter" solutionName="solution1" date="2016-03-29T00:18:47.673+0530" type="Warning"/>
+        <logs message="@W [SIM-75] Fifo port 'counter' has a default depth of 1. Insufficient depth may cause simulation mismatch or freeze. Please specify the depth in 'set_directive_interface' using the option '-depth'.&#xA;   Build using &quot;/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/gcc/bin/g++&quot;&#xA;   Compiling apatb_axi_stream_counter.cpp&#xA;   Compiling axi_stream.cpp_pre.cpp.tb.cpp&#xA;   Compiling test.cpp_pre.cpp.tb.cpp&#xA;   Generating cosim.tv.exe&#xA;obj/test.cpp_pre.cpp.tb.o: In function `main':&#xA;test.cpp_pre.cpp.tb.cpp:(.text+0x19): undefined reference to `axi_steram_couter(int*)'&#xA;collect2: ld returned 1 exit status&#xA;make: *** [cosim.tv.exe] Error 1" projectName="simple_axi_stream_counter" solutionName="solution1" date="2016-03-29T00:17:46.108+0530" type="Warning"/>
+      </simLog>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

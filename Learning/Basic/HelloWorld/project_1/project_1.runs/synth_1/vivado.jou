@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Sat Mar 12 20:35:17 2016
+# Process ID: 11472
+# Log file: /media/alok/87609ecb-a5b9-4e2b-87d8-5026e00f0506/home/alok/Vivado_Projects/HelloWorld/project_1/project_1.runs/synth_1/design_1_wrapper.vds
+# Journal file: /media/alok/87609ecb-a5b9-4e2b-87d8-5026e00f0506/home/alok/Vivado_Projects/HelloWorld/project_1/project_1.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_wrapper.tcl
