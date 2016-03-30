@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Wed Mar 30 12:47:01 2016
+# Process ID: 8691
+# Log file: /home/alok/githum/Zedboard/Learning/Training/MSD/zynq_s07_v1.2/vivado/vivado.log
+# Journal file: /home/alok/githum/Zedboard/Learning/Training/MSD/zynq_s07_v1.2/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project managed_ip_project /home/alok/githum/Zedboard/Learning/Training/MSD/zynq_s07_v1.2/mycores/managed_ip_project -part xc7z020clg484-1 -ip
+set_property board_part em.avnet.com:zed:part0:1.2 [current_project]
+set_property target_simulator XSim [current_project]
+create_peripheral xilinx user sample_generator 1.0 -dir /home/alok/githum/Zedboard/Learning/Training/MSD/zynq_s07_v1.2/mycores/ip_repo
+add_peripheral_interface S_AXIS -interface_mode slave -axi_type stream [ipx::find_open_core xilinx:user:sample_generator:1.0]
+add_peripheral_interface M_AXIS -interface_mode master -axi_type stream [ipx::find_open_core xilinx:user:sample_generator:1.0]
+generate_peripheral [ipx::find_open_core xilinx:user:sample_generator:1.0]
+write_peripheral [ipx::find_open_core xilinx:user:sample_generator:1.0]
+set_property ip_repo_paths  /home/alok/githum/Zedboard/Learning/Training/MSD/zynq_s07_v1.2/mycores/ip_repo/sample_generator_1.0 [current_project]
+update_ip_catalog -rebuild

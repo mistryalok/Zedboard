@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Wed Mar 30 13:33:33 2016
+# Process ID: 3118
+# Log file: /home/alok/githum/Zedboard/Learning/Training/MSD/zynq_s07_v1.2/mycores/vivado.log
+# Journal file: /home/alok/githum/Zedboard/Learning/Training/MSD/zynq_s07_v1.2/mycores/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/alok/githum/Zedboard/Learning/Training/MSD/zynq_s07_v1.2/mycores/managed_ip_project/managed_ip_project.xpr
+ipx::edit_ip_in_project -upgrade true -name sample_generator_v1_0_v1_0_project -directory /home/alok/githum/Zedboard/Learning/Training/MSD/zynq_s07_v1.2/mycores/ip_repo/sample_generator_1.0/sample_generator_v1_0_v1_0_project /home/alok/githum/Zedboard/Learning/Training/MSD/zynq_s07_v1.2/mycores/ip_repo/sample_generator_1.0/component.xml
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property vendor Alok [ipx::current_core]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+ipx::merge_project_changes files [ipx::current_core]
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+set_property enablement_value true [ipx::get_user_parameters C_M_AXIS_TDATA_WIDTH -of_objects [ipx::current_core]]
+set_property enablement_value true [ipx::get_user_parameters C_S_AXIS_TDATA_WIDTH -of_objects [ipx::current_core]]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_ip_instances -delete_project true
+create_ip -name sample_generator -vendor Alok -library user -version 1.0 -module_name sample_generator_0 -dir /home/alok/githum/Zedboard/Learning/Training/MSD/zynq_s07_v1.2/mycores
+generate_target {instantiation_template} [get_files /home/alok/githum/Zedboard/Learning/Training/MSD/zynq_s07_v1.2/mycores/sample_generator_0/sample_generator_0.xci]
