@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+###############################################################################
+## This confidential and proprietary code may be used only as authorized
+## by licensing agreement from Xylon d.o.o.
+## In the event of publication, the following notice is applicable:
+##
+## Copyright 2011 - Xylon d.o.o.
+## All rights reserved.
+##
+## The entire notice above must be reproduced on all authorized copies.
+###############################################################################
+-->
+
+<!DOCTYPE doc SYSTEM "../../ipdialog.dtd" [
+<!-- #### Video Memory START #### -->
+        <!ENTITY C_VMEM_INTERFACE '
+        <widget id="C_VMEM_INTERFACE">
+                <key>C_VMEM_INTERFACE</key>
+                <label>Use XMB, MPLB or AXI to access memory</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_VMEM_BASEADDR '
+        <widget id="C_VMEM_BASEADDR">
+                <key>C_VMEM_BASEADDR</key>
+                <label>Video memory base address</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_VMEM_HIGHADDR '
+        <widget id="C_VMEM_HIGHADDR">
+                <key>C_VMEM_HIGHADDR</key>
+                <label>Video memory high address</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_MEM_BURST '
+        <widget id="C_MEM_BURST">
+                <key>C_MEM_BURST</key>
+                <label>Number of transfers per burst</label>
+                <tip>For XMB and AXI bus available values are 16, 32 and 64. For 32 bit PLB bus only burst of 16 is possible and for 64 bit and 128 bit PLB any value can be selected.</tip>
+        </widget>
+        '>
+        <!ENTITY C_MEM_BYTE_SWAP '
+        <widget id="C_MEM_BYTE_SWAP">
+                <key>C_MEM_BYTE_SWAP</key>
+                <label>Swap bytes for logiCVC memory access</label>
+                <tip>If set this will change byte ordering on bus (B0B1B2B3 => B3B2B1B0 for 32-bit memory bus, B0B1B2B3B4B5B6B7 => B7B6B5B4B3B2B1B0 for 64-bit memory bus).</tip>
+        </widget>
+        '>
+        <!ENTITY C_MEM_LITTLE_ENDIAN '
+        <widget id="C_MEM_LITTLE_ENDIAN">
+                <key>C_MEM_LITTLE_ENDIAN</key>
+                <label>Endianes for logiCVC memory access</label>
+                <tip>Default endian for logiCVC memory access is Little endian for AXI and XMB and Big endian for PLB bus. User can override this setting.</tip>
+        </widget>
+        '>
+        <!ENTITY C_INCREASE_FIFO '
+        <widget id="C_INCREASE_FIFO">
+                <key>C_INCREASE_FIFO</key>
+                <label>FIFO size multiplication factor</label>
+                <tip>User can choose to increase the size of each layer FIFO at the expense of bigger BRAM utilization.</tip>
+        </widget>
+        '>
+<!-- PLB Master generics -->
+        <!ENTITY C_MPLB_AWIDTH '
+        <widget id="C_MPLB_AWIDTH">
+                <key>C_MPLB_AWIDTH</key>
+                <label>C_MPLB_AWIDTH</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_MPLB_DWIDTH '
+        <widget id="C_MPLB_DWIDTH">
+                <key>C_MPLB_DWIDTH</key>
+                <label>C_MPLB_DWIDTH</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_MPLB_NUM_MASTERS '
+        <widget id="C_MPLB_NUM_MASTERS">
+                <key>C_MPLB_NUM_MASTERS</key>
+                <label>C_MPLB_NUM_MASTERS</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_MPLB_SMALLEST_SLAVE '
+        <widget id="C_MPLB_SMALLEST_SLAVE">
+                <key>C_MPLB_SMALLEST_SLAVE</key>
+                <label>C_MPLB_SMALLEST_SLAVE</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_MPLB_NATIVE_DWIDTH '
+        <widget id="C_MPLB_NATIVE_DWIDTH">
+                <key>C_MPLB_NATIVE_DWIDTH</key>
+                <label>C_MPLB_NATIVE_DWIDTH</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_MPLB_PRIORITY '
+        <widget id="C_MPLB_PRIORITY">
+                <key>C_MPLB_PRIORITY</key>
+                <label>C_MPLB_PRIORITY</label>
+                <tip>0-lowest, 3-highest</tip>
+        </widget>
+        '>
+        <!ENTITY C_MPLB_P2P '
+        <widget id="C_MPLB_P2P">
+                <key>C_MPLB_P2P</key>
+                <label>C_MPLB_P2P</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_MPLB_SUPPORT_BURSTS '
+        <widget id="C_MPLB_SUPPORT_BURSTS">
+                <key>C_MPLB_SUPPORT_BURSTS</key>
+                <label>C_MPLB_SUPPORT_BURSTS</label>
+                <tip></tip>
+        </widget>
+        '>
+<!-- AXI Master generics -->
+        <!ENTITY C_M_AXI_SUPPORTS_THREADS '
+        <widget id="C_M_AXI_SUPPORTS_THREADS">
+                <key>C_M_AXI_SUPPORTS_THREADS</key>
+                <label>C_M_AXI_SUPPORTS_THREADS</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_M_AXI_THREAD_ID_WIDTH '
+        <widget id="C_M_AXI_THREAD_ID_WIDTH">
+                <key>C_M_AXI_THREAD_ID_WIDTH</key>
+                <label>C_M_AXI_THREAD_ID_WIDTH</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_M_AXI_SUPPORTS_READ '
+        <widget id="C_M_AXI_SUPPORTS_READ">
+                <key>C_M_AXI_SUPPORTS_READ</key>
+                <label>C_M_AXI_SUPPORTS_READ</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_M_AXI_SUPPORTS_WRITE '
+        <widget id="C_M_AXI_SUPPORTS_WRITE">
+                <key>C_M_AXI_SUPPORTS_WRITE</key>
+                <label>C_M_AXI_SUPPORTS_WRITE</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_M_AXI_SUPPORTS_NARROW_BURST '
+        <widget id="C_M_AXI_SUPPORTS_NARROW_BURST">
+                <key>C_M_AXI_SUPPORTS_NARROW_BURST</key>
+                <label>C_M_AXI_SUPPORTS_NARROW_BURST</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_M_AXI_DATA_WIDTH '
+        <widget id="C_M_AXI_DATA_WIDTH">
+                <key>C_M_AXI_DATA_WIDTH</key>
+                <label>C_M_AXI_DATA_WIDTH</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_M_AXI_ADDR_WIDTH '
+        <widget id="C_M_AXI_ADDR_WIDTH">
+                <key>C_M_AXI_ADDR_WIDTH</key>
+                <label>C_M_AXI_ADDR_WIDTH</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_M_AXI_PROTOCOL '
+        <widget id="C_M_AXI_PROTOCOL">
+                <key>C_M_AXI_PROTOCOL</key>
+                <label>C_M_AXI_PROTOCOL</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_INTERCONNECT_M_AXI_ARB_PRIORITY '
+        <widget id="C_INTERCONNECT_M_AXI_ARB_PRIORITY">
+                <key>C_INTERCONNECT_M_AXI_ARB_PRIORITY</key>
+                <label>C_INTERCONNECT_M_AXI_ARB_PRIORITY</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_INTERCONNECT_M_AXI_READ_ISSUING '
+        <widget id="C_INTERCONNECT_M_AXI_READ_ISSUING">
+                <key>C_INTERCONNECT_M_AXI_READ_ISSUING</key>
+                <label>C_INTERCONNECT_M_AXI_READ_ISSUING</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_INTERCONNECT_M_AXI_READ_FIFO_DEPTH '
+        <widget id="C_INTERCONNECT_M_AXI_READ_FIFO_DEPTH">
+                <key>C_INTERCONNECT_M_AXI_READ_FIFO_DEPTH</key>
+                <label>C_INTERCONNECT_M_AXI_READ_FIFO_DEPTH</label>
+                <tip></tip>
+        </widget>
+        '>
+<!-- XMB generics -->
+        <!ENTITY C_XMB_DATA_BUS_WIDTH '
+        <widget id="C_XMB_DATA_BUS_WIDTH">
+                <key>C_XMB_DATA_BUS_WIDTH</key>
+                <label>XMB master data size</label>
+                <tip></tip>
+        </widget>
+        '>
+<!-- #### Video Memory END #### -->
+
+<!-- #### Registers START #### -->
+        <!ENTITY C_REGS_INTERFACE '
+        <widget id="C_REGS_INTERFACE">
+                <key>C_REGS_INTERFACE</key>
+                <label>Use OPB, SPLB or AXI4-Lite to access logiCVC registers</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_READABLE_REGS '
+        <widget id="C_READABLE_REGS">
+                <key>C_READABLE_REGS</key>
+                <label>Readable logiCVC registers</label>
+                <tip>To save some resources user can disable the read register interface. In this mode only interrupt status register and double/triple video/CLUT buffer registers are readable.</tip>
+        </widget>
+        '>
+        <!ENTITY C_REG_BYTE_SWAP '
+        <widget id="C_REG_BYTE_SWAP">
+                <key>C_REG_BYTE_SWAP</key>
+                <label>Swap bytes for logiCVC register access</label>
+                <tip>If set this will change byte ordering on bus (B0B1B2B3 => B3B2B1B0).</tip>
+        </widget>
+        '>
+        <!ENTITY C_REGS_BASEADDR '
+        <widget id="C_REGS_BASEADDR">
+                <key>C_REGS_BASEADDR</key>
+                <label>Registers base address</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_REGS_HIGHADDR '
+        <widget id="C_REGS_HIGHADDR">
+                <key>C_REGS_HIGHADDR</key>
+                <label>Registers high address</label>
+                <tip></tip>
+        </widget>
+        '>
+<!-- OPB generics -->
+        <!ENTITY C_OPB_AWIDTH '
+        <widget id="C_OPB_AWIDTH">
+                <key>C_OPB_AWIDTH</key>
+                <label>C_OPB_AWIDTH</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_OPB_DWIDTH '
+        <widget id="C_OPB_DWIDTH">
+                <key>C_OPB_DWIDTH</key>
+                <label>C_OPB_DWIDTH</label>
+                <tip></tip>
+        </widget>
+        '>
+<!-- PLB Slave generics -->
+        <!ENTITY C_SPLB_AWIDTH '
+        <widget id="C_SPLB_AWIDTH">
+                <key>C_SPLB_AWIDTH</key>
+                <label>C_SPLB_AWIDTH</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_SPLB_DWIDTH '
+        <widget id="C_SPLB_DWIDTH">
+                <key>C_SPLB_DWIDTH</key>
+                <label>C_SPLB_DWIDTH</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_SPLB_MID_WIDTH '
+        <widget id="C_SPLB_MID_WIDTH">
+                <key>C_SPLB_MID_WIDTH</key>
+                <label>C_SPLB_MID_WIDTH</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_SPLB_NUM_MASTERS '
+        <widget id="C_SPLB_NUM_MASTERS">
+                <key>C_SPLB_NUM_MASTERS</key>
+                <label>C_SPLB_NUM_MASTERS</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_SPLB_NATIVE_DWIDTH '
+        <widget id="C_SPLB_NATIVE_DWIDTH">
+                <key>C_SPLB_NATIVE_DWIDTH</key>
+                <label>C_SPLB_NATIVE_DWIDTH</label>
+                <tip></tip>
+        </widget>
+        '>
+<!-- AXI4-Lite Slave generics -->
+        <!ENTITY C_S_AXI_ADDR_WIDTH '
+        <widget id="C_S_AXI_ADDR_WIDTH">
+                <key>C_S_AXI_ADDR_WIDTH</key>
+                <label>C_S_AXI_ADDR_WIDTH</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_S_AXI_DATA_WIDTH '
+        <widget id="C_S_AXI_DATA_WIDTH">
+                <key>C_S_AXI_DATA_WIDTH</key>
+                <label>C_S_AXI_DATA_WIDTH</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_S_AXI_PROTOCOL '
+        <widget id="C_S_AXI_PROTOCOL">
+                <key>C_S_AXI_PROTOCOL</key>
+                <label>C_S_AXI_PROTOCOL</label>
+                <tip></tip>
+        </widget>
+        '>
+
+<!-- #### Registers END #### -->
+
+<!-- #### CVC generics START #### -->
+        <!ENTITY C_PIXEL_DATA_WIDTH '
+        <widget id="C_PIXEL_DATA_WIDTH">
+                <key>C_PIXEL_DATA_WIDTH</key>
+                <label>Pixel data width</label>
+                <tip>Parallel pixel data width towards the display.</tip>
+        </widget>
+        '>
+        <!ENTITY C_USE_VCLK2 '
+        <widget id="C_USE_VCLK2">
+                <key>C_USE_VCLK2</key>
+                <label>Use vclk2 for DDR pixel data output</label>
+                <tip>Pix_clk rising edge will be in the middle of the DDR RGB data eye or, if not used, synchronous.</tip>
+        </widget>
+        '>
+        <!ENTITY C_XCOLOR '
+        <widget id="C_XCOLOR">
+                <key>C_XCOLOR</key>
+                <label>XCOLOR function</label>
+                <tip>Select display rotation.</tip>
+        </widget>
+        '>
+        <!ENTITY C_ROW_STRIDE '
+        <widget id="C_ROW_STRIDE">
+                <key>C_ROW_STRIDE</key>
+                <label>Row stride</label>
+                <tip>Distance between same colon pixels for adjacent rows in pixels.</tip>
+        </widget>
+        '>
+        <!ENTITY C_USE_SIZE_POSITION '
+        <widget id="C_USE_SIZE_POSITION">
+                <key>C_USE_SIZE_POSITION</key>
+                <label>Use layer size, position and offset</label>
+                <tip>Enable functionality of configurable layer size, postition and offset.</tip>
+        </widget>
+        '>
+        <!ENTITY C_DISPLAY_INTERFACE '
+        <widget id="C_DISPLAY_INTERFACE">
+                <key>C_DISPLAY_INTERFACE</key>
+                <label>Display interface type</label>
+                <tip>Enable different output types. Parallel output is always active.</tip>
+        </widget>
+        '>
+        <!ENTITY C_DISPLAY_COLOR_SPACE '
+        <widget id="C_DISPLAY_COLOR_SPACE">
+                <key>C_DISPLAY_COLOR_SPACE</key>
+                <label>Display interface color format</label>
+                <tip>Choose output color space and format.</tip>
+        </widget>
+        '>
+        <!ENTITY C_VCLK_PERIOD '
+        <widget id="C_VCLK_PERIOD">
+                <key>C_VCLK_PERIOD</key>
+                <label>VCLK clock period defined in pico seconds</label>
+                <tip>XPS assigned but can be manualy set in mhs. Allowed values: 1000 to 52630.</tip>
+        </widget>
+        '>
+<!-- Multilayer generics -->
+        <!ENTITY C_NUM_OF_LAYERS '
+        <widget id="C_NUM_OF_LAYERS">
+                <key>C_NUM_OF_LAYERS</key>
+                <label>Number of logiCVC layers</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_LAYER_0_TYPE '
+        <widget id="C_LAYER_0_TYPE">
+                <key>C_LAYER_0_TYPE</key>
+                <label>Layer type</label>
+                <tip>Choose between RGB or YCbCr layer.</tip>
+        </widget>
+        '>
+        <!ENTITY C_LAYER_1_TYPE '
+        <widget id="C_LAYER_1_TYPE">
+                <key>C_LAYER_1_TYPE</key>
+                <label>Layer type</label>
+                <tip>Choose between RGB, YCbCr or alpha layer.</tip>
+        </widget>
+        '>
+        <!ENTITY C_LAYER_2_TYPE '
+        <widget id="C_LAYER_2_TYPE">
+                <key>C_LAYER_2_TYPE</key>
+                <label>Layer type</label>
+                <tip>Choose between RGB or YCbCr layer.</tip>
+        </widget>
+        '>
+        <!ENTITY C_LAYER_3_TYPE '
+        <widget id="C_LAYER_3_TYPE">
+                <key>C_LAYER_3_TYPE</key>
+                <label>Layer type</label>
+                <tip>Choose between RGB, YCbCr or alpha layer.</tip>
+        </widget>
+        '>
+        <!ENTITY C_LAYER_4_TYPE '
+        <widget id="C_LAYER_4_TYPE">
+                <key>C_LAYER_4_TYPE</key>
+                <label>Layer type</label>
+                <tip>Choose between RGB or YCbCr layer.</tip>
+        </widget>
+        '>
+        <!ENTITY C_LAYER_0_DATA_WIDTH '
+        <widget id="C_LAYER_0_DATA_WIDTH">
+                <key>C_LAYER_0_DATA_WIDTH</key>
+                <label>Layer data width</label>
+                <tip>Chose between 8, 16 or 24 data bits per pixel.
+                     For RGB layer, 24 represents an RGB 888 format, 16 represents an RGB 565 format while 8 can represent RGB 332 or CLUT format depending on layer alpha mode selection.
+                     For YCbCr layer, 24 represents an YCbCr 888 (4:4:4) format and 16 represents an YCb YCr 88 88 (4:2:2) format.</tip>
+        </widget>
+        '>
+        <!ENTITY C_LAYER_1_DATA_WIDTH '
+        <widget id="C_LAYER_1_DATA_WIDTH">
+                <key>C_LAYER_1_DATA_WIDTH</key>
+                <label>Layer data width</label>
+                <tip>Chose between 8, 16 or 24 data bits per pixel.
+                     For RGB layer, 24 represents an RGB 888 format, 16 represents an RGB 565 format while 8 can represent RGB 332 or CLUT format depending on layer alpha mode selection.
+                     For YCbCr layer, 24 represents an YCbCr 888 (4:4:4) format and 16 represents an YCb YCr 88 88 (4:2:2) format.</tip>
+        </widget>
+        '>
+        <!ENTITY C_LAYER_2_DATA_WIDTH '
+        <widget id="C_LAYER_2_DATA_WIDTH">
+                <key>C_LAYER_2_DATA_WIDTH</key>
+                <label>Layer data width</label>
+                <tip>Chose between 8, 16 or 24 data bits per pixel.
+                     For RGB layer, 24 represents an RGB 888 format, 16 represents an RGB 565 format while 8 can represent RGB 332 or CLUT format depending on layer alpha mode selection.
+                     For YCbCr layer, 24 represents an YCbCr 888 (4:4:4) format and 16 represents an YCb YCr 88 88 (4:2:2) format.</tip>
+        </widget>
+        '>
+        <!ENTITY C_LAYER_3_DATA_WIDTH '
+        <widget id="C_LAYER_3_DATA_WIDTH">
+                <key>C_LAYER_3_DATA_WIDTH</key>
+                <label>Layer data width</label>
+                <tip>Chose between 8, 16 or 24 data bits per pixel.
+                     For RGB layer, 24 represents an RGB 888 format, 16 represents an RGB 565 format while 8 can represent RGB 332 or CLUT format depending on layer alpha mode selection.
+                     For YCbCr layer, 24 represents an YCbCr 888 (4:4:4) format and 16 represents an YCb YCr 88 88 (4:2:2) format.</tip>
+        </widget>
+        '>
+        <!ENTITY C_LAYER_4_DATA_WIDTH '
+        <widget id="C_LAYER_4_DATA_WIDTH">
+                <key>C_LAYER_4_DATA_WIDTH</key>
+                <label>Layer data width</label>
+                <tip>Chose between 8, 16 or 24 data bits per pixel.
+                     For RGB layer, 24 represents an RGB 888 format, 16 represents an RGB 565 format while 8 can represent RGB 332 or CLUT format depending on layer alpha mode selection.
+                     For YCbCr layer, 24 represents an YCbCr 888 (4:4:4) format and 16 represents an YCb YCr 88 88 (4:2:2) format.</tip>
+        </widget>
+        '>
+        <!ENTITY C_LAYER_0_ALPHA_MODE '
+        <widget id="C_LAYER_0_ALPHA_MODE">
+                <key>C_LAYER_0_ALPHA_MODE</key>
+                <label>Alpha blending mode</label>
+                <tip>Chose between layer, pixel or CLUT alpha blending.</tip>
+        </widget>
+        '>
+        <!ENTITY C_LAYER_1_ALPHA_MODE '
+        <widget id="C_LAYER_1_ALPHA_MODE">
+                <key>C_LAYER_1_ALPHA_MODE</key>
+                <label>Alpha blending mode</label>
+                <tip>Chose between layer, pixel or CLUT alpha blending.</tip>
+        </widget>
+        '>
+        <!ENTITY C_LAYER_2_ALPHA_MODE '
+        <widget id="C_LAYER_2_ALPHA_MODE">
+                <key>C_LAYER_2_ALPHA_MODE</key>
+                <label>Alpha blending mode</label>
+                <tip>Chose between layer, pixel or CLUT alpha blending.</tip>
+        </widget>
+        '>
+        <!ENTITY C_LAYER_3_ALPHA_MODE '
+        <widget id="C_LAYER_3_ALPHA_MODE">
+                <key>C_LAYER_3_ALPHA_MODE</key>
+                <label>Alpha blending mode</label>
+                <tip>Chose between layer, pixel or CLUT alpha blending.</tip>
+        </widget>
+        '>
+        <!ENTITY C_LAYER_4_ALPHA_MODE '
+        <widget id="C_LAYER_4_ALPHA_MODE">
+                <key>C_LAYER_4_ALPHA_MODE</key>
+                <label>Alpha blending mode</label>
+                <tip>Chose between layer, pixel or CLUT alpha blending.</tip>
+        </widget>
+        '>
+        <!ENTITY C_LAYER_0_OFFSET '
+        <widget id="C_LAYER_0_OFFSET">
+                <key>C_LAYER_0_OFFSET</key>
+                <label>Layer address offset</label>
+                <tip>Layer address offset from video memory base address represented in number of lines where each line can have different size. For example, 1KB for 8bpp and C_ROW_STRIDE=1024, 2KB for 16bpp and C_ROW_STRIDE=1024, 4KB for 24bpp layer and C_ROW_STRIDE=1024 and 8KB for 24bpp layer and C_ROW_STRIDE=2048.</tip>
+        </widget>
+        '>
+        <!ENTITY C_LAYER_1_OFFSET '
+        <widget id="C_LAYER_1_OFFSET">
+                <key>C_LAYER_1_OFFSET</key>
+                <label>Layer address offset</label>
+                <tip>Layer address offset from video memory base address represented in number of lines where each line can have different size. For example, 1KB for 8bpp and C_ROW_STRIDE=1024, 2KB for 16bpp and C_ROW_STRIDE=1024, 4KB for 24bpp layer and C_ROW_STRIDE=1024 and 8KB for 24bpp layer and C_ROW_STRIDE=2048.</tip>
+        </widget>
+        '>
+        <!ENTITY C_LAYER_2_OFFSET '
+        <widget id="C_LAYER_2_OFFSET">
+                <key>C_LAYER_2_OFFSET</key>
+                <label>Layer address offset</label>
+                <tip>Layer address offset from video memory base address represented in number of lines where each line can have different size. For example, 1KB for 8bpp and C_ROW_STRIDE=1024, 2KB for 16bpp and C_ROW_STRIDE=1024, 4KB for 24bpp layer and C_ROW_STRIDE=1024 and 8KB for 24bpp layer and C_ROW_STRIDE=2048.</tip>
+        </widget>
+        '>
+        <!ENTITY C_LAYER_3_OFFSET '
+        <widget id="C_LAYER_3_OFFSET">
+                <key>C_LAYER_3_OFFSET</key>
+                <label>Layer address offset</label>
+                <tip>Layer address offset from video memory base address represented in number of lines where each line can have different size. For example, 1KB for 8bpp and C_ROW_STRIDE=1024, 2KB for 16bpp and C_ROW_STRIDE=1024, 4KB for 24bpp layer and C_ROW_STRIDE=1024 and 8KB for 24bpp layer and C_ROW_STRIDE=2048.</tip>
+        </widget>
+        '>
+        <!ENTITY C_LAYER_4_OFFSET '
+        <widget id="C_LAYER_4_OFFSET">
+                <key>C_LAYER_4_OFFSET</key>
+                <label>Layer address offset</label>
+                <tip>Layer address offset from video memory base address represented in number of lines where each line can have different size. For example, 1KB for 8bpp and C_ROW_STRIDE=1024, 2KB for 16bpp and C_ROW_STRIDE=1024, 4KB for 24bpp layer and C_ROW_STRIDE=1024 and 8KB for 24bpp layer and C_ROW_STRIDE=2048.</tip>
+        </widget>
+        '>
+        <!ENTITY C_BUFFER_0_OFFSET '
+        <widget id="C_BUFFER_0_OFFSET">
+                <key>C_BUFFER_0_OFFSET</key>
+                <label>Double buffer address offset</label>
+                <tip>Double buffer address offset relative to layer address offset represented in number of lines where each line can have different size. For example 1KB for 8bpp and C_ROW_STRIDE=1024, 2KB for 16bpp and C_ROW_STRIDE=1024 and 4KB for 24bpp layer and C_ROW_STRIDE=1024 and 8KB for 24bpp layer and C_ROW_STRIDE=2048. Triple buffer address offset is defined as double the double buffer offset.</tip>
+        </widget>
+        '>
+        <!ENTITY C_BUFFER_1_OFFSET '
+        <widget id="C_BUFFER_1_OFFSET">
+                <key>C_BUFFER_1_OFFSET</key>
+                <label>Double buffer address offset</label>
+                <tip>Double buffer address offset relative to layer address offset represented in number of lines where each line can have different size. For example 1KB for 8bpp and C_ROW_STRIDE=1024, 2KB for 16bpp and C_ROW_STRIDE=1024 and 4KB for 24bpp layer and C_ROW_STRIDE=1024 and 8KB for 24bpp layer and C_ROW_STRIDE=2048. Triple buffer address offset is defined as double the double buffer offset.</tip>
+        </widget>
+        '>
+        <!ENTITY C_BUFFER_2_OFFSET '
+        <widget id="C_BUFFER_2_OFFSET">
+                <key>C_BUFFER_2_OFFSET</key>
+                <label>Double buffer address offset</label>
+                <tip>Double buffer address offset relative to layer address offset represented in number of lines where each line can have different size. For example 1KB for 8bpp and C_ROW_STRIDE=1024, 2KB for 16bpp and C_ROW_STRIDE=1024 and 4KB for 24bpp layer and C_ROW_STRIDE=1024 and 8KB for 24bpp layer and C_ROW_STRIDE=2048. Triple buffer address offset is defined as double the double buffer offset.</tip>
+        </widget>
+        '>
+        <!ENTITY C_BUFFER_3_OFFSET '
+        <widget id="C_BUFFER_3_OFFSET">
+                <key>C_BUFFER_3_OFFSET</key>
+                <label>Double buffer address offset</label>
+                <tip>Double buffer address offset relative to layer address offset represented in number of lines where each line can have different size. For example 1KB for 8bpp and C_ROW_STRIDE=1024, 2KB for 16bpp and C_ROW_STRIDE=1024 and 4KB for 24bpp layer and C_ROW_STRIDE=1024 and 8KB for 24bpp layer and C_ROW_STRIDE=2048. Triple buffer address offset is defined as double the double buffer offset.</tip>
+        </widget>
+        '>
+        <!ENTITY C_BUFFER_4_OFFSET '
+        <widget id="C_BUFFER_4_OFFSET">
+                <key>C_BUFFER_4_OFFSET</key>
+                <label>Double buffer address offset</label>
+                <tip>Double buffer address offset relative to layer address offset represented in number of lines where each line can have different size. For example 1KB for 8bpp and C_ROW_STRIDE=1024, 2KB for 16bpp and C_ROW_STRIDE=1024 and 4KB for 24bpp layer and C_ROW_STRIDE=1024 and 8KB for 24bpp layer and C_ROW_STRIDE=2048. Triple buffer address offset is defined as double the double buffer offset.</tip>
+        </widget>
+        '>
+        <!ENTITY C_USE_BACKGROUND '
+        <widget id="C_USE_BACKGROUND">
+                <key>C_USE_BACKGROUND</key>
+                <label>Configure last layer as background</label>
+                <tip>In case last layer is configured as background, pixel value is read from logiCVC background colour register and not from video memory buffer.</tip>
+        </widget>
+        '>
+        <!ENTITY C_USE_XTREME_DSP '
+        <widget id="C_USE_XTREME_DSP">
+                <key>C_USE_XTREME_DSP</key>
+                <label>Use DSP resources for blender</label>
+                <tip>Enable or disable use of DSP resources for blender.</tip>
+        </widget>
+        '>
+        <!ENTITY C_USE_MULTIPLIER '
+        <widget id="C_USE_MULTIPLIER">
+                <key>C_USE_MULTIPLIER</key>
+                <label>Type of multiplier used in blender</label>
+                <tip>Control way in which multipliers in blender are implemented; 0 - lut, 1 - block, 2 - auto.</tip>
+        </widget>
+        '>
+<!-- Extern parallel input generics -->
+        <!ENTITY C_USE_E_PARALLEL_INPUT '
+        <widget id="C_USE_E_PARALLEL_INPUT">
+                <key>C_USE_E_PARALLEL_INPUT</key>
+                <label>Use external parallel input</label>
+                <tip>Syncronize logiCVC to external parallel input and use data as one layer.</tip>
+        </widget>
+        '>
+        <!ENTITY C_USE_E_VCLK_BUFGMUX '
+        <widget id="C_USE_E_VCLK_BUFGMUX">
+                <key>C_USE_E_VCLK_BUFGMUX</key>
+                <label>Use BUFGMUX for external parallel input</label>
+                <tip>Use BUFGMUX for switching clock for external parallel input synchronization.</tip>
+        </widget>
+        '>
+        <!ENTITY C_E_LAYER '
+        <widget id="C_E_LAYER">
+                <key>C_E_LAYER</key>
+                <label>Route extern parallel input to layer</label>
+                <tip>Which layer should be used as extern parallel stream.</tip>
+        </widget>
+        '>
+        <!ENTITY C_E_DATA_WIDTH '
+        <widget id="C_E_DATA_WIDTH">
+                <key>C_E_DATA_WIDTH</key>
+                <label>Extern parallel input data width</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_IP_LICENSE_TYPE '
+        <widget id="C_IP_LICENSE_TYPE">
+                <key>C_IP_LICENSE_TYPE</key>
+                <label>IP license type</label>
+                <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_IP_MAJOR_REVISION '
+        <widget id="C_IP_MAJOR_REVISION">
+                <key>C_IP_MAJOR_REVISION</key>
+                <label>IP major revision</label>
+        <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_IP_MINOR_REVISION '
+        <widget id="C_IP_MINOR_REVISION">
+                <key>C_IP_MINOR_REVISION</key>
+                <label>IP minor revision</label>
+        <tip></tip>
+        </widget>
+		'>
+        <!ENTITY C_IP_PATCH_LEVEL '
+        <widget id="C_IP_PATCH_LEVEL">
+                <key>C_IP_PATCH_LEVEL</key>
+                <label>IP patch level</label>
+        <tip></tip>
+        </widget>
+        '>
+        <!ENTITY C_IP_LICENSE_CHECK '
+        <widget id="C_IP_LICENSE_CHECK">
+                <key>C_IP_LICENSE_CHECK</key>
+                <label>IP FLEXLM license needed</label>
+        <tip>Please contact Xylon support at support@logicbricks.com for more information</tip>
+        </widget>
+        '>
+        <!ENTITY C_IP_TIME_BEFORE_BREAK '
+        <widget id="C_IP_TIME_BEFORE_BREAK">
+                <key>C_IP_TIME_BEFORE_BREAK</key>
+                <label>IP time before break</label>
+        <tip>Valid for 100MHz memory interface clock (mclk)</tip>
+        </widget>
+        '>
+
+<!-- #### CVC generics END #### -->
+]>
+
+
+<!--
+-->
+<doc>
+	<view id="Version">
+		<display>Version</display>
+		<group id="General">
+			<display>General</display>
+			<item>&C_IP_LICENSE_TYPE;</item>
+			<item>&C_IP_MAJOR_REVISION;</item>
+			<item>&C_IP_MINOR_REVISION;</item>
+			<item>&C_IP_PATCH_LEVEL;</item>
+            <item>&C_IP_LICENSE_CHECK;</item>
+            <item>&C_IP_TIME_BEFORE_BREAK;</item>
+		</group>
+	</view>
+        <view id="Video Memory">
+                <display>Video Memory</display>
+                <group id="General">
+                        <display>General</display>
+                        <item>&C_VMEM_INTERFACE;</item>
+                        <item>&C_MEM_BURST;</item>
+                        <item>&C_MEM_BYTE_SWAP;</item>
+                        <item>&C_MEM_LITTLE_ENDIAN;</item>
+                        <item>&C_INCREASE_FIFO;</item>
+                </group>
+                <group id="Addresses">
+                        <display>Addresses</display>
+                        <item>&C_VMEM_BASEADDR;</item>
+                        <item>&C_VMEM_HIGHADDR;</item>
+                </group>
+                <group id="PLB">
+                        <display>PLB</display>
+                        <item>&C_MPLB_AWIDTH;</item>
+                        <item>&C_MPLB_DWIDTH;</item>
+                        <item>&C_MPLB_NUM_MASTERS;</item>
+                        <item>&C_MPLB_SMALLEST_SLAVE;</item>
+                        <item>&C_MPLB_NATIVE_DWIDTH;</item>
+                        <item>&C_MPLB_PRIORITY;</item>
+                        <item>&C_MPLB_P2P;</item>
+                        <item>&C_MPLB_SUPPORT_BURSTS;</item>
+                </group>
+                <group id="AXI4">
+                        <display>AXI4</display>
+                        <item>&C_M_AXI_ADDR_WIDTH;</item>
+                        <item>&C_M_AXI_DATA_WIDTH;</item>
+                        <item>&C_INTERCONNECT_M_AXI_ARB_PRIORITY;</item>
+                        <item>&C_INTERCONNECT_M_AXI_READ_ISSUING;</item>
+                        <item>&C_INTERCONNECT_M_AXI_READ_FIFO_DEPTH;</item>
+                        <item>&C_M_AXI_SUPPORTS_THREADS;</item>
+                        <item>&C_M_AXI_THREAD_ID_WIDTH;</item>
+                        <item>&C_M_AXI_SUPPORTS_READ;</item>
+                        <item>&C_M_AXI_SUPPORTS_WRITE;</item>
+                        <item>&C_M_AXI_SUPPORTS_NARROW_BURST;</item>
+                        <item>&C_M_AXI_PROTOCOL;</item>
+                </group>
+                <group id="XMB">
+                        <display>XMB</display>
+                        <item>&C_XMB_DATA_BUS_WIDTH;</item>
+                </group>
+        </view>
+        <view id="Registers">
+                <display>Registers</display>
+                <group id="General">
+                        <display>General</display>
+                        <item>&C_REGS_INTERFACE;</item>
+                        <item>&C_READABLE_REGS;</item>
+                        <item>&C_REG_BYTE_SWAP;</item>
+                </group>
+                <group id="Addresses">
+                        <display>Addresses</display>
+                        <item>&C_REGS_BASEADDR;</item>
+                        <item>&C_REGS_HIGHADDR;</item>
+                </group>
+                <group id="OPB">
+                        <display>OPB</display>
+                        <item>&C_OPB_AWIDTH;</item>
+                        <item>&C_OPB_DWIDTH;</item>
+                </group>
+                <group id="PLB">
+                        <display>PLB</display>
+                        <item>&C_SPLB_AWIDTH;</item>
+                        <item>&C_SPLB_DWIDTH;</item>
+                        <item>&C_SPLB_MID_WIDTH;</item>
+                        <item>&C_SPLB_NUM_MASTERS;</item>
+                        <item>&C_SPLB_NATIVE_DWIDTH;</item>
+                </group>
+                <group id="AXI4-Lite">
+                        <display>AXI4-Lite</display>
+                        <item>&C_S_AXI_ADDR_WIDTH;</item>
+                        <item>&C_S_AXI_DATA_WIDTH;</item>
+                        <item>&C_S_AXI_PROTOCOL;</item>
+                </group>
+        </view>
+        <view id="User">
+                <display>User</display>
+                <group id="General">
+                        <display>General</display>
+                        <item>&C_NUM_OF_LAYERS;</item>
+                        <item>&C_DISPLAY_INTERFACE;</item>
+                        <item>&C_DISPLAY_COLOR_SPACE;</item>
+                        <item>&C_PIXEL_DATA_WIDTH;</item>
+                        <item>&C_ROW_STRIDE;</item>
+                        <item>&C_USE_SIZE_POSITION;</item>
+                        <item>&C_USE_BACKGROUND;</item>
+                        <item>&C_XCOLOR;</item>
+                        <item>&C_USE_VCLK2;</item>
+                        <item>&C_VCLK_PERIOD;</item>
+                        <item>&C_USE_XTREME_DSP;</item>
+                        <item>&C_USE_MULTIPLIER;</item>
+                        <item>&C_USE_E_PARALLEL_INPUT;</item>
+                        <item>&C_USE_E_VCLK_BUFGMUX;</item>
+                        <item>&C_E_LAYER;</item>
+                        <item>&C_E_DATA_WIDTH;</item>
+                </group>
+                <group id="layer_0">
+                        <display>Layer 0</display>
+                        <item>&C_LAYER_0_DATA_WIDTH;</item>
+                        <item>&C_LAYER_0_TYPE;</item>
+                        <item>&C_LAYER_0_ALPHA_MODE;</item>
+                        <item>&C_LAYER_0_OFFSET;</item>
+                        <item>&C_BUFFER_0_OFFSET;</item>
+                </group>
+                <group id="layer_1">
+                        <display>Layer 1</display>
+                        <item>&C_LAYER_1_DATA_WIDTH;</item>
+                        <item>&C_LAYER_1_TYPE;</item>
+                        <item>&C_LAYER_1_ALPHA_MODE;</item>
+                        <item>&C_LAYER_1_OFFSET;</item>
+                        <item>&C_BUFFER_1_OFFSET;</item>
+                </group>
+                <group id="layer_2">
+                        <display>Layer 2</display>
+                        <item>&C_LAYER_2_DATA_WIDTH;</item>
+                        <item>&C_LAYER_2_TYPE;</item>
+                        <item>&C_LAYER_2_ALPHA_MODE;</item>
+                        <item>&C_LAYER_2_OFFSET;</item>
+                        <item>&C_BUFFER_2_OFFSET;</item>
+                </group>
+                <group id="layer_3">
+                        <display>Layer 3</display>
+                        <item>&C_LAYER_3_DATA_WIDTH;</item>
+                        <item>&C_LAYER_3_TYPE;</item>
+                        <item>&C_LAYER_3_ALPHA_MODE;</item>
+                        <item>&C_LAYER_3_OFFSET;</item>
+                        <item>&C_BUFFER_3_OFFSET;</item>
+                </group>
+                <group id="layer_4">
+                        <display>Layer 4</display>
+                        <item>&C_LAYER_4_DATA_WIDTH;</item>
+                        <item>&C_LAYER_4_TYPE;</item>
+                        <item>&C_LAYER_4_ALPHA_MODE;</item>
+                        <item>&C_LAYER_4_OFFSET;</item>
+                        <item>&C_BUFFER_4_OFFSET;</item>
+                </group>
+                <group id="Hidden">
+                        <display>Hidden</display>
+                        <item>&C_FAMILY;</item>
+                </group>
+        </view>
+</doc>

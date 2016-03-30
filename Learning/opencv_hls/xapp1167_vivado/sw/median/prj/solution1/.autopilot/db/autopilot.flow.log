@@ -1,0 +1,1565 @@
+@I [HLS-0] Workspace /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1 opened at Wed Mar 30 11:13:59 IST 2016
+@I [HLS-100] Command 'open_solution' returned 0; elapsed 0.006832Total elapsed time: 0.944 sec.
+@I [HLS-100] Command "set_part xc7z020clg484-1 "
+@I [HLS-100] Command "add_library xilinx/zynq/zynq:xc7z020:clg484:-1 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 4.2e-05Total elapsed time: 0.948 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.00379Total elapsed time: 0.952 sec.
+@I [HLS-100] Command "license_exists ap_opencl "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.004156Total elapsed time: 0.956 sec.
+@I [HLS-100] Command "license_exists AUTOESL_NI "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.005105Total elapsed time: 0.962 sec.
+@I [HLS-100] Command "license_exists HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 1e-05Total elapsed time: 0.962 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0.000287Total elapsed time: 0.963 sec.
+@I [HLS-100] Command "import_lib /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.lib "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/xilinx_interface.lib "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000505Total elapsed time: 0.964 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000183Total elapsed time: 0.964 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000249Total elapsed time: 0.965 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000288Total elapsed time: 0.965 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000153Total elapsed time: 0.965 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001819Total elapsed time: 0.965 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000122Total elapsed time: 0.966 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000162Total elapsed time: 0.966 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 9.1e-05Total elapsed time: 0.966 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005011Total elapsed time: 0.968 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_old.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000813Total elapsed time: 0.971 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_vivado.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000561Total elapsed time: 0.972 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.hlp "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/target_info.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000137Total elapsed time: 0.974 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/xilinx_interface.hlp "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000102Total elapsed time: 0.974 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 9.7e-05Total elapsed time: 0.975 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000385Total elapsed time: 0.975 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000359Total elapsed time: 0.975 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001949Total elapsed time: 0.976 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/dsp48e1.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 9.3e-05Total elapsed time: 0.976 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 5e-06Total elapsed time: 0.976 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 2.4e-05Total elapsed time: 0.976 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed medium "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 5e-06Total elapsed time: 0.976 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.014892Total elapsed time: 0.978 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00133Total elapsed time: 0.980 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000485Total elapsed time: 0.980 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002473Total elapsed time: 0.983 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003576Total elapsed time: 0.987 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.007863Total elapsed time: 0.995 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.011651Total elapsed time: 0.995 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009424Total elapsed time: 1.4 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.010036Total elapsed time: 1.14 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/struct/list.tcl "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000838Total elapsed time: 1.34 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001929Total elapsed time: 1.34 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/math/bignum.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000685Total elapsed time: 1.42 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.035287Total elapsed time: 1.50 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.131888Total elapsed time: 1.182 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000179Total elapsed time: 1.182 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.203615Total elapsed time: 1.182 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000117Total elapsed time: 1.184 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.205749Total elapsed time: 1.184 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.205897Total elapsed time: 1.184 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 7e-06Total elapsed time: 1.184 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 1.7e-05Total elapsed time: 1.184 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 4e-06Total elapsed time: 1.184 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.237463Total elapsed time: 1.185 sec.
+@I [HLS-100] Command "add_library xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 5e-06Total elapsed time: 1.186 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.003724Total elapsed time: 1.189 sec.
+@I [HLS-100] Command "license_exists ap_opencl "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.003439Total elapsed time: 1.193 sec.
+@I [HLS-100] Command "license_exists AUTOESL_NI "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.003394Total elapsed time: 1.196 sec.
+@I [HLS-100] Command "license_exists HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 9e-06Total elapsed time: 1.197 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 3.5e-05Total elapsed time: 1.197 sec.
+@I [HLS-100] Command "import_lib /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv7.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003209Total elapsed time: 1.200 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv.hlp "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.hlp "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/target_info.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000177Total elapsed time: 1.207 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/xilinx_interface.hlp "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00011Total elapsed time: 1.207 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000101Total elapsed time: 1.208 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000373Total elapsed time: 1.208 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000377Total elapsed time: 1.208 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00206Total elapsed time: 1.209 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002793Total elapsed time: 1.209 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.018684Total elapsed time: 1.215 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001771Total elapsed time: 1.217 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001958Total elapsed time: 1.217 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.033079Total elapsed time: 1.218 sec.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0.274149Total elapsed time: 1.218 sec.
+@I [HLS-100] Command "create_clock -period 150MHz "
+@I [HLS-100] Command "config_clock -quiet -name default -period 6.66667 -unit ns -default=false "
+@I [SYN-201] Setting up clock 'default' with a period of 6.66667ns.
+@I [HLS-100] Command 'config_clock' returned 0; elapsed 0.00012Total elapsed time: 1.219 sec.
+@I [HLS-100] Command 'create_clock' returned 0; elapsed 0.001194Total elapsed time: 1.219 sec.
+@I [HLS-100] Command "csynth_design "
+@I [HLS-100] Command "elaborate -effort=medium -skip_syncheck=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 "
+@I [HLS-10] Analyzing design file 'top.cpp' ... 
+@0 [HLS-0] Analyzing design file 'top.cpp' ... 
+@I [HLS-0] Compiling one TU...
+@I [HLS-0] 
+Checking before pre-process: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/gcc" -hls    -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit   -I "/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/systemc/include" -I "/opt/Xilinx/Vivado_HLS/2014.4/include" -I "/opt/Xilinx/Vivado_HLS/2014.4/include/ap_sysc" -fexceptions "top.cpp"  -o "/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/top.pp.00.o"
+
+@I [HLS-0] Syntax Checker time: 15 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/gcc" -hls -fno-exceptions  -D__llvm__  -CC -E "top.cpp"     -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot" -I "/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D "__asm__(...)="  -o "/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/top.pp.0.cpp"
+
+@I [HLS-0] GCC PP time: 0 seconds per iteration
+@I [HLS-100] Command "list_core -type functional_unit "
+@I [HLS-100] Command 'list_core' returned 0; elapsed 0.000149Total elapsed time: 17.210 sec.
+@I [HLS-0] Marker-Pragma convertor: /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/top.pp.0.cpp /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/top.pp.0.cpp.ap-line.cpp /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/top.pp.0.cpp.ap-line.cpp.CXX 1
+@I [HLS-0] 
+Source processor: exec /opt/Xilinx/Vivado_HLS/2014.4/tps/lnx64/jre/bin/java -Xmx512m -classpath   "/opt/Xilinx/Vivado_HLS/2014.4/lib/classes/autopilot.sourceprocessor.jar:/opt/Xilinx/Vivado_HLS/2014.4/lib/classes/org.eclipse.cdt.core_5.3.0.xilinx_patch.jar:/opt/Xilinx/Vivado_HLS/2014.4/lib/classes/org.eclipse.core.runtime_3.7.0.v20110110.jar:/opt/Xilinx/Vivado_HLS/2014.4/lib/classes/org.eclipse.equinox.common_3.6.0.v20110523.jar:/opt/Xilinx/Vivado_HLS/2014.4/lib/classes/com.ibm.icu_4.4.2.v20110208.jar:/opt/Xilinx/Vivado_HLS/2014.4/lib/classes/jargs.jar:/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/eclipse/plugins/org.eclipse.emf.common_2.10.0.v20140514-1158.jar:/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/eclipse/plugins/org.eclipse.emf.ecore_2.10.0.v20140514-1158.jar:/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.10.0.v20140514-1158.jar:/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/eclipse/plugins/com.autoesl.autopilot.ui.directiveFileModel_1.0.0.jar:/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/eclipse/plugins/com.autoesl.autopilot.ui.common_1.0.0.jar"  autopilot.sourceprocessor.CParser  "/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/top.pp.0.cpp.ap-line.cpp"  -m "image_filter" -o "/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/top.pp.0.cpp.ap-cdt.cpp" --ad --pc --pp --directive /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/solution1.directive --source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/top.cpp --error /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db --funcunit "AddSub AddSub_DSP AddSubnS DAddSub_fulldsp DAddSub_nodsp DDiv DExp_fulldsp DExp_meddsp DExp_nodsp DLog_fulldsp DLog_meddsp DLog_nodsp DMul_fulldsp DMul_maxdsp DMul_meddsp DMul_nodsp DRSqrt DRecip DSqrt DivnS FAddSub_fulldsp FAddSub_nodsp FDiv FExp_fulldsp FExp_meddsp FExp_nodsp FLog_fulldsp FLog_meddsp FLog_nodsp FMul_fulldsp FMul_maxdsp FMul_meddsp FMul_nodsp FRSqrt_fulldsp FRSqrt_nodsp FRecip_fulldsp FRecip_nodsp FSqrt Mul Mul2S Mul3S Mul4S Mul5S Mul6S MulnS" --ve --vetcl /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db --lp --ca --es --gf --df --pd --p2d /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db --sd --scff /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/.systemc_flag
+
+@I [HLS-0] Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
+Error:Missing ; in source:t
+Error:Syntax error in source:)
+ *__first = __value;
+Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
+Error:Missing ; in source:t
+Error:Syntax error in source:)
+ *__first = __tmp;
+@I [HLS-0] Marker-Pragma convertor: /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/top.pp.0.cpp.ap-cdt.cpp /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/top.pragma.0.cpp /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/top.pragma.0.cpp.ap-line.CXX 0
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000106Total elapsed time: 193.593 sec.
+@I [HLS-0] CDT processor time: 176 seconds per iteration
+@I [HLS-0] Pragma handling time: 1 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/gcc" -hls -fno-exceptions  -D__llvm__  -CC -E "/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/top.pragma.1.cpp"     -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot" -I "/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D "__asm__(...)="  -o "/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/top.pragma.2.cpp"
+
+@I [HLS-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/gcc -hls -fno-exceptions  -D__llvm__  -w  "/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/top.pragma.2.cpp"    -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot" -I "/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -g -o "/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/top.g.bc"
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/ve_warning.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000119Total elapsed time: 202.486 sec.
+@I [HLS-10] Validating synthesis directives ...
+@0 [HLS-0] Validating synthesis directives ...
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 8.1e-05Total elapsed time: 202.486 sec.
+@I [HLS-0] Linking all ...
+@I [HLS-0] exec llvm-ld  "/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/top.bc"  -disable-opt  -L/opt/Xilinx/Vivado_HLS/2014.4/lnx64/lib -lm_basic -o "/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/a.o.pre"
+@I [HLS-0] Link time: 1 seconds per iteration
+@I [HLS-0] Linking all ...
+@I [HLS-0] exec llvm-ld  "/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/top.g.bc"  -disable-opt  -L/opt/Xilinx/Vivado_HLS/2014.4/lnx64/lib -lm_basic -o "/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/a.g.pre"
+@I [HLS-0] Link time: 0 seconds per iteration
+@I [HLS-100] Command "opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 "
+@I [HLS-100] Command "cleanup_all_models "
+@I [HLS-100] Command 'cleanup_all_models' returned 0; elapsed 4.6e-05Total elapsed time: 204.432 sec.
+@I [HLS-10] Starting code transformations ...
+@0 [HLS-0] Starting code transformations ...
+@I [HLS-0] std xform: transform -hls -share-std-xform -always-inline -promote-dbg-pointer  -interface-preproc  -scalarrepl -mem2reg -keep-read-access -instcombine -dce  -promote-dbg-pointer  -bitop-raise  -indvars -loop-simplify -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -basicaa  -simplifycfg -mem2reg -globalopt  -global-constprop -deadargelim -instcombine -simplifycfg  -prune-eh -simplifycfg  -scalarrepl -instcombine -reassociate -licm  -simplifycfg -loop-simplify -indvars -instcombine  -simplifycfg -mem2reg -loop-simplify -indvars -instcombine  -gvn -gvn -instcombine -adce  -break-crit-edges  -simplifycfg -loop-delete  -global-array-opt -dce -dse -adce  -find-syn-modules -top image_filter  -deadargelim  -mem2reg -instcombine -dce  -presyn-prepare -auto-rom-infer  -interface-preproc  -syn-check -check-rec-only  -find-region -simplifycfg -func-extr -function-inline  -mem2reg -instcombine -dce   -gvn -globaldce -adce -adse  -constprop -instcombine -bit-constprop  -instcombine -dce -simplifycfg -bitop-raise  -simplifycfg -dce -loop-delete -reassociate  -globalopt -global-privatize -mem2reg -dce  -global-constprop -pointer-simplify -constprop -dce  -func-inst -deadargelim  -promote-dbg-pointer  -norm-name   /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/a.g.0.bc -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/a.g.1.bc -f  -phase std-opt
+@I [XFORM-603] Inlining function 'hls::Mat<1080, 1920, 32>::init' into 'hls::Mat<1080, 1920, 32>::Mat.1' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_core.h:476).
+@I [XFORM-603] Inlining function 'hls::AXIGetBitFields<32, unsigned char>' into 'hls::AXIvideo2Mat<32, 1080, 1920, 32>' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_io.h:92).
+@I [XFORM-603] Inlining function 'hls::Mat<1080, 1920, 32>::write' into 'hls::Mat<1080, 1920, 32>::operator<<' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_core.h:551).
+@I [XFORM-603] Inlining function 'hls::Mat<1080, 1920, 32>::operator<<' into 'hls::AXIvideo2Mat<32, 1080, 1920, 32>' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_io.h:94).
+@I [XFORM-603] Inlining function 'hls::Mat<1080, 1920, 32>::operator<<' into 'image_filter' (top.cpp:98).
+@I [XFORM-603] Inlining function 'hls::Mat<1080, 1920, 32>::read' into 'hls::Mat<1080, 1920, 32>::operator>>' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_core.h:545).
+@I [XFORM-603] Inlining function 'hls::Mat<1080, 1920, 32>::operator>>' into 'hls::Mat2AXIvideo<32, 1080, 1920, 32>' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_io.h:140).
+@I [XFORM-603] Inlining function 'hls::Mat<1080, 1920, 32>::operator>>' into 'image_filter' (top.cpp:71).
+@I [XFORM-603] Inlining function 'hls::AXISetBitFields<32, unsigned char>' into 'hls::Mat2AXIvideo<32, 1080, 1920, 32>' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_io.h:143).
+@I [HLS-0] Std xform time: 1 seconds per iteration
+@I [HLS-10] Checking synthesizability ...
+@0 [HLS-0] Checking synthesizability ...
+@I [HLS-0] syn check 1/2: transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine -function-uniquify  -directive-preproc -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce  -array-normalize -instcombine -dce  -array-seg-normalize -instcombine -dce  -array-flatten -instcombine -dce  -array-burst -dce  -deadargelim -promote-global-argument  -function-inline -dce  -doublePtrSimplify -doublePtrElim -dce  -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -dse -adse -instcombine  -ptrLegalization  -simplifycfg -dce -instcombine  -pointer-simplify -ptrArgReplace -dce -instcombine   -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine -ptrLegalization   -simplifycfg -deadargelim  -instcombine -dce -inst-simplify -function-uniquify  -directive-preproc -function-uniquify -directive-preproc -mem2reg -dse -dce  -globaldce    /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/a.g.1.bc -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/a.g.2.prechk.bc -f
+@I [HLS-0] Syn check 1/2 time: 0 seconds per iteration
+@I [HLS-0] syn check 2/2: transform -syn-check   /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/a.g.2.bc -f  -phase syn-check
+@W [SYNCHK-23] /opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_axi_io.h:49: variable-indexed range selection may cause suboptimal QoR.
+@I [SYNCHK-10] 0 error(s), 1 warning(s).
+@I [HLS-0] Syn check 2/2 time: 0 seconds per iteration
+@I [HLS-0] Compiler optimizing ...
+@I [HLS-0] Share syncheck's 1.bc for syn flow: copy /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/a.g.1.bc to /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/a.o.1.bc
+@I [HLS-0] presyn 1: transform -hls -tmp /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db -type-info -function-uniquify  -directive-preproc -function-uniquify -directive-preproc -mem2reg -dse -dce  -disaggr -scalarrepl -norm-name -deadargelim  -mem2reg -instcombine -dce -auto-rom-infer -dce -function-uniquify  -directive-preproc -function-uniquify -directive-preproc -mem2reg -dse -dce  -func-buffer -dce -array-normalize  -func-legal -instcombine -gvn -constprop -dce   -ptrArgReplace -mem2reg -instcombine -dce  -array-seg-normalize -deadargelim  -instcombine -dce  -pointer-simplify -dce  -port-alignment -dce  -interface-preproc  -data-pack -instcombine -dce   -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -loop-simplify -indvars -instcombine  -gvn -loop-simplify -mem2reg -dce -simplifycfg  -find-region -instcombine  -auto-loop-pipeline  -inst-simplify  -interface-preproc  -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -gvn -disable-agg-range -inst-simplify  -constprop -simplifycfg -dce  -pointer-simplify -dce  -globalopt -constprop -dce  -array-promote -constprop -instcombine -dce -auto-par -instcombine -dce  -array-transform-check  -array-partition -instcombine -simplifycfg -dce  -ptrArgReplace -global-constprop -deadargelim -mem2reg  -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg  -instcombine -simplifycfg -dce  -array-reshape -instcombine -simplifycfg -dce   -mem-intrinsic-preproc -dce  -global-privatize  -mem2reg -globaldce  -promote-global-argument  -ptrArgReplace -mem2reg -instcombine -dce  -globalopt -mergereturn -simplify-global-access -mem2reg -dce  -pointer-simplify -dce  -functionattrs  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -inst-simplify -dce -norm-name  -function-inline  -func-inst -constprop -instcombine -simplifycfg -dce  -func-legal -dce   -directive-preproc -function-uniquify -directive-preproc -mem2reg -dse -dce  -loop-bound  -arraycheck -bitwidthmin -on-by-dataflow  -loop-delete -instcombine -simplifycfg -dce -loop-simplify -simplifycfg -loop-stream -instcombine -simplifycfg -dce -globaldce  -funstream-prep -function-stream -dce -globaldce  -array-streaming -instcombine -simplifycfg -dce    -group-axi-access    -simplifycfg -dce -loop-delete  -norm-name  /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/a.o.1.bc -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/a.o.1.tmp.bc -f
+@W [XFORM-1103] Ignored data pack directive on non-struct variable 'img_1.data_stream.V' (top.cpp:58).
+@W [XFORM-1103] Ignored data pack directive on non-struct variable 'img_0.data_stream.V' (top.cpp:57).
+@I [XFORM-502] Unrolling all sub-loops inside loop 'Loop-2.1' (top.cpp:68) in function 'image_filter' for pipelining.
+@I [XFORM-502] Unrolling all sub-loops inside loop 'loop_width' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_io.h:70) in function 'hls::AXIvideo2Mat<32, 1080, 1920, 32>' for pipelining.
+@I [XFORM-502] Unrolling all sub-loops inside loop 'loop_width' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_io.h:125) in function 'hls::Mat2AXIvideo<32, 1080, 1920, 32>' for pipelining.
+@I [XFORM-501] Unrolling loop 'Loop-2.1.1' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_core.h:511) in function 'image_filter' completely.
+@I [XFORM-501] Unrolling loop 'Loop-2.1.2' (top.cpp:83) in function 'image_filter' completely.
+@I [XFORM-501] Unrolling loop 'Loop-2.1.3' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_core.h:535) in function 'image_filter' completely.
+@I [XFORM-501] Unrolling loop 'loop_channels' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_io.h:91) in function 'hls::AXIvideo2Mat<32, 1080, 1920, 32>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-2.1.2' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_core.h:535) in function 'hls::AXIvideo2Mat<32, 1080, 1920, 32>' completely.
+@I [XFORM-501] Unrolling loop 'Loop-1.1.1' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_core.h:511) in function 'hls::Mat2AXIvideo<32, 1080, 1920, 32>' completely.
+@I [XFORM-501] Unrolling loop 'loop_channels' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_io.h:142) in function 'hls::Mat2AXIvideo<32, 1080, 1920, 32>' completely.
+@I [XFORM-102] Partitioning array 's.val.assign' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_core.h:452) automatically.
+@I [XFORM-102] Partitioning array 's.val.assign.1' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_core.h:452) automatically.
+@I [XFORM-102] Automatically partitioning streamed array 'img_1.data_stream.V' (top.cpp:58) .
+@I [XFORM-102] Automatically partitioning streamed array 'img_0.data_stream.V' (top.cpp:57) .
+@I [XFORM-101] Partitioning array 'buffer.val' (top.cpp:62) in dimension 2 completely.
+@I [XFORM-101] Partitioning array 'p.val' (top.cpp:70) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'scl.val' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_core.h:504) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'pix.val' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_io.h:54) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'pix.val' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_io.h:115) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'scl.val' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_core.h:504) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'img_1.data_stream.V' (top.cpp:58) in dimension 1 completely.
+@I [XFORM-101] Partitioning array 'img_0.data_stream.V' (top.cpp:57) in dimension 1 completely.
+@I [XFORM-721] Changing loop 'Loop_1_proc' (top.cpp:66) to a process function for dataflow in function 'image_filter'.
+@I [XFORM-712] Applying dataflow to function 'image_filter' (top.cpp:45), detected/extracted 4 process function(s):
+	 'Block__proc'
+	 'hls::AXIvideo2Mat<32, 1080, 1920, 32>'
+	 'Loop_1_proc'
+	 'hls::Mat2AXIvideo<32, 1080, 1920, 32>'.
+@I [HLS-0] Presyn 1 time: 2 seconds per iteration
+@I [HLS-0] presyn 2: transform -hls -keep-callgraph -scalarrepl -mem2reg  -port-alignment -dce  -indvars -loop-bound  -inst-simplify -instcombine -dce  -merge-array-access -mem2reg -dce  -clean-region -mergereturn -if-conv  -instcombine -dce -constprop  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -scalarrepl -mem2reg  -global-constprop -deadargelim -deadargelim  -instcombine -dce -simplifycfg    -ptrArgReplace -mem2reg -function-inline  -mem2reg -instcombine -dce -expr-balance  -instcombine -dce  -bitwidthmin  -directive-preproc  -inst-rectify -instcombine -dce  -functionattrs  -constprop -instcombine -bit-constprop  -simplify-global-access  -globalopt -globaldce  -inst-simplify -instcombine -elimdeaddata -dce  -loop-delete -simplifycfg   -norm-name /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/a.o.2.bc -f  -phase presyn
+@I [XFORM-401] Performing if-conversion on hyperblock from (top.cpp:68:39) to (top.cpp:68:31) in function 'Loop_1_proc'... converting 8 basic blocks.
+@I [XFORM-11] Balancing expressions in function 'Block__proc' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_core.h:488:2)...3 expression(s) balanced.
+@I [HLS-0] Presyn 2 time: 1 seconds per iteration
+@I [HLS-0] build ssdm: transform -hls -function-uniquify -auto-function-inline  -loop-simplify -indvars -licm -loop-dep  -loop-bound -licm -loop-simplify -flattenloopnest  -array-flatten -gvn -instcombine -dce  -array-map -dce -func-legal  -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify   -array-burst -promote-global-argument -dce  -axi4-lower -array-seg-normalize  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm  -inst-simplify -dce  -globaldce -array-streaming -instcombine  -dce   -deadargelim -doublePtrSimplify  -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg  -instcombine  -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine  -loop-rot -constprop -cfgopt -simplifycfg -indvars -pointer-simplify -dce -loop-bound  -loop-simplify -loop-preproc  -constprop -gvn -mem2reg -instcombine -dce  -loop-merge -dce  -bitwidthmin  -interface-preproc -interface-gen  -directive-preproc -inst-simplify -dce  -gvn -mem2reg -instcombine -dce -adse  -loop-bound  -instcombine -cfgopt -simplifycfg -loop-simplify  -clean-region -io-protocol  -find-region -mem2reg  -loop-simplify -phi-opt -bitop-raise  -inst-simplify -inst-rectify -instcombine -adce -deadargelim  -cfgopt -simplifycfg -strip-dead-prototypes  -interface-lower -bitop-lower -intrinsic-lower  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa  -inst-simplify -simplifycfg   -mergereturn -inst-simplify -inst-rectify  -dce -bitop-lower  -loop-rewind -pointer-simplify -dce -cfgopt  -norm-name -legalize -read-loop-dep -dce -bitwidth   -cdfg-build  /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/a.o.2.bc -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/a.o.3.bc -f  -phase build-ssdm
+@W [XFORM-631] Renaming function 'hls::AXIvideo2Mat<32, 1080, 1920, 32>' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_io.h:49:46) into AXIvideo2Mat.
+@W [XFORM-631] Renaming function 'hls::Mat2AXIvideo<32, 1080, 1920, 32>' (/opt/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/hls/hls_video_io.h:72:47) into Mat2AXIvideo.
+@I [HLS-0] Build ssdm time: 1 seconds per iteration
+@I [HLS-0] Finish building internal data model.
+@I [HLS-100] Command 'opt_and_import_c' returned 0; elapsed 8.34287Total elapsed time: 213.612 sec.
+@I [HLS-111] Elapsed time: 11.6345 seconds; current memory usage: 154 MB.
+@I [HLS-100] Command 'elaborate' returned 0; elapsed 11.0719Total elapsed time: 213.613 sec.
+@I [HLS-100] Command "autosyn "
+@I [HLS-10] Starting hardware synthesis ...
+@0 [HLS-0] Starting hardware synthesis ...
+@I [HLS-0] Synthesizing C/C++ design ...
+@I [HLS-10] Synthesizing 'image_filter' ...
+@0 [HLS-0] Synthesizing 'image_filter' ...
+@I [HLS-100] Command "ap_set_top_model image_filter "
+@W [SYN-103] Legalizing function name 'image_filter_Block__proc' to 'image_filter_Block_proc'.
+@I [HLS-100] Command 'ap_set_top_model' returned 0; elapsed 0.00051Total elapsed time: 213.614 sec.
+@I [HLS-100] Command "get_model_list image_filter -filter all-wo-channel -topdown "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0.000128Total elapsed time: 213.615 sec.
+@I [HLS-100] Command "preproc_iomode -model image_filter "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0.000974Total elapsed time: 213.616 sec.
+@I [HLS-100] Command "preproc_iomode -model image_filter_Mat2AXIvideo "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0.000136Total elapsed time: 213.616 sec.
+@I [HLS-100] Command "preproc_iomode -model image_filter_Loop_1_proc "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 9.5e-05Total elapsed time: 213.616 sec.
+@I [HLS-100] Command "preproc_iomode -model image_filter_AXIvideo2Mat "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 8.7e-05Total elapsed time: 213.616 sec.
+@I [HLS-100] Command "preproc_iomode -model image_filter_Block__proc "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 1.2e-05Total elapsed time: 213.616 sec.
+@I [HLS-100] Command "get_model_list image_filter -filter all-wo-channel "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 3.2e-05Total elapsed time: 213.617 sec.
+@I [HLS-0] Model list for configure: image_filter_Block__proc image_filter_AXIvideo2Mat image_filter_Loop_1_proc image_filter_Mat2AXIvideo image_filter
+@I [HLS-0] Configuring Module : image_filter_Block__proc ...
+@I [HLS-100] Command "set_default_model image_filter_Block__proc "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 2.6e-05Total elapsed time: 213.617 sec.
+@I [HLS-100] Command "apply_spec_resource_limit image_filter_Block__proc "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 3.1e-05Total elapsed time: 213.617 sec.
+@I [HLS-0] Configuring Module : image_filter_AXIvideo2Mat ...
+@I [HLS-100] Command "set_default_model image_filter_AXIvideo2Mat "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0.000213Total elapsed time: 213.617 sec.
+@I [HLS-100] Command "apply_spec_resource_limit image_filter_AXIvideo2Mat "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 2.3e-05Total elapsed time: 213.617 sec.
+@I [HLS-0] Configuring Module : image_filter_Loop_1_proc ...
+@I [HLS-100] Command "set_default_model image_filter_Loop_1_proc "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 4.6e-05Total elapsed time: 213.617 sec.
+@I [HLS-100] Command "apply_spec_resource_limit image_filter_Loop_1_proc "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 2.4e-05Total elapsed time: 213.617 sec.
+@I [HLS-0] Configuring Module : image_filter_Mat2AXIvideo ...
+@I [HLS-100] Command "set_default_model image_filter_Mat2AXIvideo "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0.000178Total elapsed time: 213.618 sec.
+@I [HLS-100] Command "apply_spec_resource_limit image_filter_Mat2AXIvideo "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 1.3e-05Total elapsed time: 213.618 sec.
+@I [HLS-0] Configuring Module : image_filter ...
+@I [HLS-100] Command "set_default_model image_filter "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0.000414Total elapsed time: 213.618 sec.
+@I [HLS-100] Command "apply_spec_resource_limit image_filter "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 1.3e-05Total elapsed time: 213.618 sec.
+@I [HLS-0] Model list for preprocess: image_filter_Block__proc image_filter_AXIvideo2Mat image_filter_Loop_1_proc image_filter_Mat2AXIvideo image_filter
+@I [HLS-0] Preprocessing Module: image_filter_Block__proc ...
+@I [HLS-100] Command "set_default_model image_filter_Block__proc "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 8e-06Total elapsed time: 213.618 sec.
+@I [HLS-100] Command "cdfg_preprocess -model image_filter_Block__proc "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.000697Total elapsed time: 213.619 sec.
+@I [HLS-100] Command "rtl_gen_preprocess image_filter_Block__proc "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.000955Total elapsed time: 213.620 sec.
+@I [HLS-0] Preprocessing Module: image_filter_AXIvideo2Mat ...
+@I [HLS-100] Command "set_default_model image_filter_AXIvideo2Mat "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0.000211Total elapsed time: 213.620 sec.
+@I [HLS-100] Command "cdfg_preprocess -model image_filter_AXIvideo2Mat "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.001549Total elapsed time: 213.622 sec.
+@I [HLS-100] Command "rtl_gen_preprocess image_filter_AXIvideo2Mat "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.000921Total elapsed time: 213.623 sec.
+@I [HLS-0] Preprocessing Module: image_filter_Loop_1_proc ...
+@I [HLS-100] Command "set_default_model image_filter_Loop_1_proc "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 4.4e-05Total elapsed time: 213.623 sec.
+@I [HLS-100] Command "cdfg_preprocess -model image_filter_Loop_1_proc "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.00124Total elapsed time: 213.624 sec.
+@I [HLS-100] Command "rtl_gen_preprocess image_filter_Loop_1_proc "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.00096Total elapsed time: 213.625 sec.
+@I [HLS-0] Preprocessing Module: image_filter_Mat2AXIvideo ...
+@I [HLS-100] Command "set_default_model image_filter_Mat2AXIvideo "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0.000185Total elapsed time: 213.626 sec.
+@I [HLS-100] Command "cdfg_preprocess -model image_filter_Mat2AXIvideo "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.000642Total elapsed time: 213.626 sec.
+@I [HLS-100] Command "rtl_gen_preprocess image_filter_Mat2AXIvideo "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.000932Total elapsed time: 213.627 sec.
+@I [HLS-0] Preprocessing Module: image_filter ...
+@I [HLS-100] Command "set_default_model image_filter "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0.000416Total elapsed time: 213.628 sec.
+@I [HLS-100] Command "cdfg_preprocess -model image_filter "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.000695Total elapsed time: 213.628 sec.
+@I [HLS-100] Command "rtl_gen_preprocess image_filter "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.000969Total elapsed time: 213.629 sec.
+@I [HLS-0] Model list for synthesis: image_filter_Block__proc image_filter_AXIvideo2Mat image_filter_Loop_1_proc image_filter_Mat2AXIvideo image_filter
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'image_filter_Block_proc' 
+@0 [HLS-0] -- Scheduling module 'image_filter_Block_proc' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model image_filter_Block__proc "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 1e-05Total elapsed time: 213.630 sec.
+@I [HLS-100] Command "schedule -model image_filter_Block__proc "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.026995Total elapsed time: 213.657 sec.
+@I [HLS-111] Elapsed time: 0.044619 seconds; current memory usage: 154 MB.
+@I [HLS-100] Command "report -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Block_proc.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.00285Total elapsed time: 213.661 sec.
+@I [HLS-100] Command "db_write -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Block_proc.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.002529Total elapsed time: 213.663 sec.
+@I [HLS-0] Finish scheduling image_filter_Block__proc.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'image_filter_Block_proc' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'image_filter_Block_proc' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model image_filter_Block__proc "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 1.5e-05Total elapsed time: 213.664 sec.
+@I [HLS-100] Command "bind -model image_filter_Block__proc "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=image_filter_Block__proc
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.002337Total elapsed time: 213.666 sec.
+@I [HLS-111] Elapsed time: 0.009332 seconds; current memory usage: 154 MB.
+@I [HLS-100] Command "report -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Block_proc.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.002496Total elapsed time: 213.670 sec.
+@I [HLS-100] Command "db_write -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Block_proc.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.001842Total elapsed time: 213.671 sec.
+@I [HLS-0] Finish binding image_filter_Block__proc.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'image_filter_AXIvideo2Mat' 
+@0 [HLS-0] -- Scheduling module 'image_filter_AXIvideo2Mat' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model image_filter_AXIvideo2Mat "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0.000213Total elapsed time: 213.672 sec.
+@I [HLS-100] Command "schedule -model image_filter_AXIvideo2Mat "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'loop_wait_for_start'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 1.
+@I [SCHED-61] Pipelining loop 'loop_width'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 2.
+@I [SCHED-61] Pipelining loop 'loop_wait_for_eol'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 1.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.134281Total elapsed time: 213.806 sec.
+@I [HLS-111] Elapsed time: 0.139811 seconds; current memory usage: 155 MB.
+@I [HLS-100] Command "report -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_AXIvideo2Mat.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.005247Total elapsed time: 213.812 sec.
+@I [HLS-100] Command "db_write -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_AXIvideo2Mat.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.008111Total elapsed time: 213.820 sec.
+@I [HLS-0] Finish scheduling image_filter_AXIvideo2Mat.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'image_filter_AXIvideo2Mat' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'image_filter_AXIvideo2Mat' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model image_filter_AXIvideo2Mat "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0.000212Total elapsed time: 213.821 sec.
+@I [HLS-100] Command "bind -model image_filter_AXIvideo2Mat "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=image_filter_AXIvideo2Mat
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.006536Total elapsed time: 213.828 sec.
+@I [HLS-111] Elapsed time: 0.021185 seconds; current memory usage: 155 MB.
+@I [HLS-100] Command "report -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_AXIvideo2Mat.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.012538Total elapsed time: 213.841 sec.
+@I [HLS-100] Command "db_write -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_AXIvideo2Mat.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.009966Total elapsed time: 213.851 sec.
+@I [HLS-0] Finish binding image_filter_AXIvideo2Mat.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'image_filter_Loop_1_proc' 
+@0 [HLS-0] -- Scheduling module 'image_filter_Loop_1_proc' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model image_filter_Loop_1_proc "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 5.9e-05Total elapsed time: 213.851 sec.
+@I [HLS-100] Command "schedule -model image_filter_Loop_1_proc "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'Loop 1.1'.
+@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 1, distance = 1)
+   between 'store' operation (top.cpp:73) of variable 'buffer_val_0_load_1' on array 'buffer_val_0' and 'load' operation ('buffer_val_0_load', top.cpp:72) on array 'buffer_val_0'.
+@W [SCHED-69] Unable to schedule 'store' operation (top.cpp:72) of variable 'buffer_val_0_load' on array 'buffer_val_0' due to limited memory ports.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 3, Depth: 4.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.197253Total elapsed time: 214.48 sec.
+@I [HLS-111] Elapsed time: 0.220693 seconds; current memory usage: 155 MB.
+@I [HLS-100] Command "report -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Loop_1_proc.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.006083Total elapsed time: 214.55 sec.
+@I [HLS-100] Command "db_write -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Loop_1_proc.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.010111Total elapsed time: 214.65 sec.
+@I [HLS-0] Finish scheduling image_filter_Loop_1_proc.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'image_filter_Loop_1_proc' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'image_filter_Loop_1_proc' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model image_filter_Loop_1_proc "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 5.8e-05Total elapsed time: 214.66 sec.
+@I [HLS-100] Command "bind -model image_filter_Loop_1_proc "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=image_filter_Loop_1_proc
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.014687Total elapsed time: 214.80 sec.
+@I [HLS-111] Elapsed time: 0.031726 seconds; current memory usage: 156 MB.
+@I [HLS-100] Command "report -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Loop_1_proc.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.035409Total elapsed time: 214.116 sec.
+@I [HLS-100] Command "db_write -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Loop_1_proc.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.013122Total elapsed time: 214.129 sec.
+@I [HLS-0] Finish binding image_filter_Loop_1_proc.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'image_filter_Mat2AXIvideo' 
+@0 [HLS-0] -- Scheduling module 'image_filter_Mat2AXIvideo' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model image_filter_Mat2AXIvideo "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0.000197Total elapsed time: 214.130 sec.
+@I [HLS-100] Command "schedule -model image_filter_Mat2AXIvideo "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-61] Pipelining loop 'loop_width'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 2.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.090712Total elapsed time: 214.220 sec.
+@I [HLS-111] Elapsed time: 0.140203 seconds; current memory usage: 156 MB.
+@I [HLS-100] Command "report -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Mat2AXIvideo.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.003239Total elapsed time: 214.224 sec.
+@I [HLS-100] Command "db_write -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Mat2AXIvideo.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.004752Total elapsed time: 214.229 sec.
+@I [HLS-0] Finish scheduling image_filter_Mat2AXIvideo.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'image_filter_Mat2AXIvideo' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'image_filter_Mat2AXIvideo' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model image_filter_Mat2AXIvideo "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0.000197Total elapsed time: 214.229 sec.
+@I [HLS-100] Command "bind -model image_filter_Mat2AXIvideo "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=image_filter_Mat2AXIvideo
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.002979Total elapsed time: 214.232 sec.
+@I [HLS-111] Elapsed time: 0.011964 seconds; current memory usage: 156 MB.
+@I [HLS-100] Command "report -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Mat2AXIvideo.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.00816Total elapsed time: 214.241 sec.
+@I [HLS-100] Command "db_write -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Mat2AXIvideo.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.005877Total elapsed time: 214.247 sec.
+@I [HLS-0] Finish binding image_filter_Mat2AXIvideo.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'image_filter' 
+@0 [HLS-0] -- Scheduling module 'image_filter' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model image_filter "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0.000435Total elapsed time: 214.248 sec.
+@I [HLS-100] Command "schedule -model image_filter "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.05187Total elapsed time: 214.299 sec.
+@I [HLS-111] Elapsed time: 0.067019 seconds; current memory usage: 156 MB.
+@I [HLS-100] Command "report -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.003435Total elapsed time: 214.303 sec.
+@I [HLS-100] Command "db_write -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.005222Total elapsed time: 214.309 sec.
+@I [HLS-0] Finish scheduling image_filter.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'image_filter' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'image_filter' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model image_filter "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0.000414Total elapsed time: 214.309 sec.
+@I [HLS-100] Command "bind -model image_filter "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=image_filter
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.056397Total elapsed time: 214.366 sec.
+@I [HLS-111] Elapsed time: 0.066218 seconds; current memory usage: 157 MB.
+@I [HLS-100] Command "report -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.045089Total elapsed time: 214.411 sec.
+@I [HLS-100] Command "db_write -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.006814Total elapsed time: 214.418 sec.
+@I [HLS-0] Finish binding image_filter.
+@I [HLS-100] Command "get_model_list image_filter -filter all-wo-channel "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 6.5e-05Total elapsed time: 214.418 sec.
+@I [HLS-0] Preprocessing for RTLGen ...
+@I [HLS-100] Command "rtl_gen_preprocess image_filter_Block__proc "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.000644Total elapsed time: 214.419 sec.
+@I [HLS-100] Command "rtl_gen_preprocess image_filter_AXIvideo2Mat "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.000659Total elapsed time: 214.420 sec.
+@I [HLS-100] Command "rtl_gen_preprocess image_filter_Loop_1_proc "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.000668Total elapsed time: 214.420 sec.
+@I [HLS-100] Command "rtl_gen_preprocess image_filter_Mat2AXIvideo "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.000691Total elapsed time: 214.421 sec.
+@I [HLS-100] Command "rtl_gen_preprocess image_filter "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.000723Total elapsed time: 214.422 sec.
+@I [HLS-0] Model list for RTL generation: image_filter_Block__proc image_filter_AXIvideo2Mat image_filter_Loop_1_proc image_filter_Mat2AXIvideo image_filter
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'image_filter_Block_proc' 
+@0 [HLS-0] -- Generating RTL for module 'image_filter_Block_proc' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model image_filter_Block__proc -vendor xilinx -mg_file /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Block_proc.compgen.tcl "
+@I [RTGEN-100] Finished creating RTL model for 'image_filter_Block_proc'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.00843Total elapsed time: 214.431 sec.
+@I [HLS-111] Elapsed time: 0.065522 seconds; current memory usage: 157 MB.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000833Total elapsed time: 214.433 sec.
+@I [HLS-100] Command "gen_rtl image_filter_Block__proc -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/systemc/image_filter_Block_proc -synmodules image_filter_Block__proc image_filter_AXIvideo2Mat image_filter_Loop_1_proc image_filter_Mat2AXIvideo image_filter "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.00105Total elapsed time: 214.434 sec.
+@I [HLS-100] Command "gen_rtl image_filter_Block__proc -style xilinx -f -lang vhdl -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/vhdl/image_filter_Block_proc "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.000751Total elapsed time: 214.435 sec.
+@I [HLS-100] Command "gen_rtl image_filter_Block__proc -style xilinx -f -lang vlog -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/verilog/image_filter_Block_proc "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.000782Total elapsed time: 214.436 sec.
+@I [HLS-100] Command "gen_tb_info image_filter_Block__proc -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Block_proc -p /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.000339Total elapsed time: 214.437 sec.
+@I [HLS-100] Command "report -model image_filter_Block__proc -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/report/image_filter_Block_proc_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.002933Total elapsed time: 214.440 sec.
+@I [HLS-100] Command "report -model image_filter_Block__proc -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/report/image_filter_Block_proc_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.001485Total elapsed time: 214.441 sec.
+@I [HLS-100] Command "report -model image_filter_Block__proc -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Block_proc.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.003884Total elapsed time: 214.445 sec.
+@I [HLS-100] Command "db_write -model image_filter_Block__proc -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Block_proc.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.002918Total elapsed time: 214.448 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'image_filter_AXIvideo2Mat' 
+@0 [HLS-0] -- Generating RTL for module 'image_filter_AXIvideo2Mat' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model image_filter_AXIvideo2Mat -vendor xilinx -mg_file /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_AXIvideo2Mat.compgen.tcl "
+@I [RTGEN-100] Finished creating RTL model for 'image_filter_AXIvideo2Mat'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.02991Total elapsed time: 214.482 sec.
+@I [HLS-111] Elapsed time: 0.050953 seconds; current memory usage: 158 MB.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000835Total elapsed time: 214.483 sec.
+@I [HLS-100] Command "gen_rtl image_filter_AXIvideo2Mat -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/systemc/image_filter_AXIvideo2Mat -synmodules image_filter_Block__proc image_filter_AXIvideo2Mat image_filter_Loop_1_proc image_filter_Mat2AXIvideo image_filter "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.002282Total elapsed time: 214.486 sec.
+@I [HLS-100] Command "gen_rtl image_filter_AXIvideo2Mat -style xilinx -f -lang vhdl -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/vhdl/image_filter_AXIvideo2Mat "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.001695Total elapsed time: 214.488 sec.
+@I [HLS-100] Command "gen_rtl image_filter_AXIvideo2Mat -style xilinx -f -lang vlog -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/verilog/image_filter_AXIvideo2Mat "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.002104Total elapsed time: 214.490 sec.
+@I [HLS-100] Command "gen_tb_info image_filter_AXIvideo2Mat -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_AXIvideo2Mat -p /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.000432Total elapsed time: 214.491 sec.
+@I [HLS-100] Command "report -model image_filter_AXIvideo2Mat -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/report/image_filter_AXIvideo2Mat_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.009102Total elapsed time: 214.500 sec.
+@I [HLS-100] Command "report -model image_filter_AXIvideo2Mat -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/report/image_filter_AXIvideo2Mat_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.006523Total elapsed time: 214.506 sec.
+@I [HLS-100] Command "report -model image_filter_AXIvideo2Mat -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_AXIvideo2Mat.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.021093Total elapsed time: 214.527 sec.
+@I [HLS-100] Command "db_write -model image_filter_AXIvideo2Mat -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_AXIvideo2Mat.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.016937Total elapsed time: 214.544 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'image_filter_Loop_1_proc' 
+@0 [HLS-0] -- Generating RTL for module 'image_filter_Loop_1_proc' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model image_filter_Loop_1_proc -vendor xilinx -mg_file /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Loop_1_proc.compgen.tcl "
+@I [RTGEN-100] Finished creating RTL model for 'image_filter_Loop_1_proc'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.036904Total elapsed time: 214.600 sec.
+@I [HLS-111] Elapsed time: 0.118223 seconds; current memory usage: 159 MB.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000807Total elapsed time: 214.602 sec.
+@I [HLS-100] Command "gen_rtl image_filter_Loop_1_proc -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/systemc/image_filter_Loop_1_proc -synmodules image_filter_Block__proc image_filter_AXIvideo2Mat image_filter_Loop_1_proc image_filter_Mat2AXIvideo image_filter "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.003455Total elapsed time: 214.605 sec.
+@I [HLS-100] Command "gen_rtl image_filter_Loop_1_proc -style xilinx -f -lang vhdl -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/vhdl/image_filter_Loop_1_proc "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.00235Total elapsed time: 214.608 sec.
+@I [HLS-100] Command "gen_rtl image_filter_Loop_1_proc -style xilinx -f -lang vlog -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/verilog/image_filter_Loop_1_proc "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.002945Total elapsed time: 214.611 sec.
+@I [HLS-100] Command "gen_tb_info image_filter_Loop_1_proc -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Loop_1_proc -p /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.000572Total elapsed time: 214.611 sec.
+@I [HLS-100] Command "report -model image_filter_Loop_1_proc -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/report/image_filter_Loop_1_proc_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.017775Total elapsed time: 214.629 sec.
+@I [HLS-100] Command "report -model image_filter_Loop_1_proc -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/report/image_filter_Loop_1_proc_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.013831Total elapsed time: 214.643 sec.
+@I [HLS-100] Command "report -model image_filter_Loop_1_proc -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Loop_1_proc.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.052173Total elapsed time: 214.695 sec.
+@I [HLS-100] Command "db_write -model image_filter_Loop_1_proc -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Loop_1_proc.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.027613Total elapsed time: 214.723 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'image_filter_Mat2AXIvideo' 
+@0 [HLS-0] -- Generating RTL for module 'image_filter_Mat2AXIvideo' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model image_filter_Mat2AXIvideo -vendor xilinx -mg_file /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Mat2AXIvideo.compgen.tcl "
+@I [RTGEN-100] Finished creating RTL model for 'image_filter_Mat2AXIvideo'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.016067Total elapsed time: 214.767 sec.
+@I [HLS-111] Elapsed time: 0.166875 seconds; current memory usage: 161 MB.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000794Total elapsed time: 214.768 sec.
+@I [HLS-100] Command "gen_rtl image_filter_Mat2AXIvideo -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/systemc/image_filter_Mat2AXIvideo -synmodules image_filter_Block__proc image_filter_AXIvideo2Mat image_filter_Loop_1_proc image_filter_Mat2AXIvideo image_filter "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.001491Total elapsed time: 214.770 sec.
+@I [HLS-100] Command "gen_rtl image_filter_Mat2AXIvideo -style xilinx -f -lang vhdl -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/vhdl/image_filter_Mat2AXIvideo "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.001116Total elapsed time: 214.771 sec.
+@I [HLS-100] Command "gen_rtl image_filter_Mat2AXIvideo -style xilinx -f -lang vlog -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/verilog/image_filter_Mat2AXIvideo "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.001293Total elapsed time: 214.773 sec.
+@I [HLS-100] Command "gen_tb_info image_filter_Mat2AXIvideo -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Mat2AXIvideo -p /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.000414Total elapsed time: 214.773 sec.
+@I [HLS-100] Command "report -model image_filter_Mat2AXIvideo -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/report/image_filter_Mat2AXIvideo_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.005378Total elapsed time: 214.779 sec.
+@I [HLS-100] Command "report -model image_filter_Mat2AXIvideo -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/report/image_filter_Mat2AXIvideo_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.003528Total elapsed time: 214.782 sec.
+@I [HLS-100] Command "report -model image_filter_Mat2AXIvideo -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Mat2AXIvideo.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.012581Total elapsed time: 214.795 sec.
+@I [HLS-100] Command "db_write -model image_filter_Mat2AXIvideo -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Mat2AXIvideo.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.00886Total elapsed time: 214.804 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'image_filter' 
+@0 [HLS-0] -- Generating RTL for module 'image_filter' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model image_filter -vendor xilinx -mg_file /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.compgen.tcl "
+@I [RTGEN-500] Setting interface mode on port 'image_filter/INPUT_STREAM_V_data_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/INPUT_STREAM_V_keep_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/INPUT_STREAM_V_strb_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/INPUT_STREAM_V_user_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/INPUT_STREAM_V_last_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/INPUT_STREAM_V_id_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/INPUT_STREAM_V_dest_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/OUTPUT_STREAM_V_data_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/OUTPUT_STREAM_V_keep_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/OUTPUT_STREAM_V_strb_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/OUTPUT_STREAM_V_user_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/OUTPUT_STREAM_V_last_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/OUTPUT_STREAM_V_id_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/OUTPUT_STREAM_V_dest_V' to 'axis'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/rows' to 'ap_stable'.
+@I [RTGEN-500] Setting interface mode on port 'image_filter/cols' to 'ap_stable'.
+@I [RTGEN-500] Setting interface mode on function 'image_filter' to 'ap_ctrl_hs'.
+@I [RTGEN-100] Finished creating RTL model for 'image_filter'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.007927Total elapsed time: 214.823 sec.
+@I [HLS-111] Elapsed time: 0.055564 seconds; current memory usage: 162 MB.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000836Total elapsed time: 214.824 sec.
+@I [HLS-100] Command "gen_rtl image_filter -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/systemc/image_filter -synmodules image_filter_Block__proc image_filter_AXIvideo2Mat image_filter_Loop_1_proc image_filter_Mat2AXIvideo image_filter "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.002153Total elapsed time: 214.827 sec.
+@I [HLS-100] Command "gen_rtl image_filter -istop -style xilinx -f -lang vhdl -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/vhdl/image_filter "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.013862Total elapsed time: 214.840 sec.
+@I [HLS-100] Command "gen_rtl image_filter -istop -style xilinx -f -lang vlog -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/verilog/image_filter "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01289Total elapsed time: 214.853 sec.
+@I [HLS-100] Command "export_constraint_db -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.constraint.tcl -f -tool general "
+@I [HLS-100] Command 'export_constraint_db' returned 0; elapsed 0.000205Total elapsed time: 214.854 sec.
+@I [HLS-100] Command "report -model image_filter -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.design.xml -verbose -f -dv "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.068221Total elapsed time: 214.922 sec.
+@I [HLS-100] Command "gen_tb_info image_filter -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter -p /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.000915Total elapsed time: 214.923 sec.
+@I [HLS-100] Command "report -model image_filter -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/report/image_filter_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.014418Total elapsed time: 214.938 sec.
+@I [HLS-100] Command "report -model image_filter -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/syn/report/image_filter_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.012026Total elapsed time: 214.950 sec.
+@I [HLS-100] Command "report -model image_filter -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.058343Total elapsed time: 215.8 sec.
+@I [HLS-100] Command "db_write -model image_filter -o /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.018677Total elapsed time: 215.27 sec.
+@I [HLS-100] Command "sc_get_clocks image_filter "
+@I [HLS-100] Command 'sc_get_clocks' returned 0; elapsed 6e-06Total elapsed time: 215.39 sec.
+@I [HLS-100] Command "sc_get_portdomain image_filter "
+@I [HLS-100] Command 'sc_get_portdomain' returned 0; elapsed 3e-06Total elapsed time: 215.39 sec.
+@I [HLS-0] Model list for RTL component generation: image_filter_Block__proc image_filter_AXIvideo2Mat image_filter_Loop_1_proc image_filter_Mat2AXIvideo image_filter
+@I [HLS-0] Handling components in module [image_filter_Block_proc] ... 
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Block_proc.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000191Total elapsed time: 215.40 sec.
+@I [HLS-0] Handling components in module [image_filter_AXIvideo2Mat] ... 
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_AXIvideo2Mat.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000248Total elapsed time: 215.41 sec.
+@I [HLS-0] Handling components in module [image_filter_Loop_1_proc] ... 
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Loop_1_proc.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000263Total elapsed time: 215.41 sec.
+@I [HLS-0] Handling components in module [image_filter_Mat2AXIvideo] ... 
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Mat2AXIvideo.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000238Total elapsed time: 215.41 sec.
+@I [HLS-0] Handling components in module [image_filter] ... 
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.compgen.tcl "
+@I [HLS-0] Found component FIFO_image_filter_img_0_rows_V_channel.
+@I [HLS-0] Append model FIFO_image_filter_img_0_rows_V_channel
+@I [HLS-0] Found component FIFO_image_filter_img_0_cols_V_channel.
+@I [HLS-0] Append model FIFO_image_filter_img_0_cols_V_channel
+@I [HLS-0] Found component FIFO_image_filter_img_1_rows_V.
+@I [HLS-0] Append model FIFO_image_filter_img_1_rows_V
+@I [HLS-0] Found component FIFO_image_filter_img_1_cols_V.
+@I [HLS-0] Append model FIFO_image_filter_img_1_cols_V
+@I [HLS-0] Found component FIFO_image_filter_img_0_data_stream_0_V.
+@I [HLS-0] Append model FIFO_image_filter_img_0_data_stream_0_V
+@I [HLS-0] Found component FIFO_image_filter_img_0_data_stream_1_V.
+@I [HLS-0] Append model FIFO_image_filter_img_0_data_stream_1_V
+@I [HLS-0] Found component FIFO_image_filter_img_0_data_stream_2_V.
+@I [HLS-0] Append model FIFO_image_filter_img_0_data_stream_2_V
+@I [HLS-0] Found component FIFO_image_filter_img_1_data_stream_0_V.
+@I [HLS-0] Append model FIFO_image_filter_img_1_data_stream_0_V
+@I [HLS-0] Found component FIFO_image_filter_img_1_data_stream_1_V.
+@I [HLS-0] Append model FIFO_image_filter_img_1_data_stream_1_V
+@I [HLS-0] Found component FIFO_image_filter_img_1_data_stream_2_V.
+@I [HLS-0] Append model FIFO_image_filter_img_1_data_stream_2_V
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001187Total elapsed time: 215.43 sec.
+@I [HLS-0] Append model image_filter_Block_proc
+@I [HLS-0] Append model image_filter_AXIvideo2Mat
+@I [HLS-0] Append model image_filter_Loop_1_proc
+@I [HLS-0] Append model image_filter_Mat2AXIvideo
+@I [HLS-0] Append model image_filter
+@I [HLS-0] Generating RTL model list ...
+@I [HLS-0] All models in this session: FIFO_image_filter_img_0_rows_V_channel FIFO_image_filter_img_0_cols_V_channel FIFO_image_filter_img_1_rows_V FIFO_image_filter_img_1_cols_V FIFO_image_filter_img_0_data_stream_0_V FIFO_image_filter_img_0_data_stream_1_V FIFO_image_filter_img_0_data_stream_2_V FIFO_image_filter_img_1_data_stream_0_V FIFO_image_filter_img_1_data_stream_1_V FIFO_image_filter_img_1_data_stream_2_V image_filter_Block_proc image_filter_AXIvideo2Mat image_filter_Loop_1_proc image_filter_Mat2AXIvideo image_filter
+@I [HLS-0] To file: write model FIFO_image_filter_img_0_rows_V_channel
+@I [HLS-0] To file: write model FIFO_image_filter_img_0_cols_V_channel
+@I [HLS-0] To file: write model FIFO_image_filter_img_1_rows_V
+@I [HLS-0] To file: write model FIFO_image_filter_img_1_cols_V
+@I [HLS-0] To file: write model FIFO_image_filter_img_0_data_stream_0_V
+@I [HLS-0] To file: write model FIFO_image_filter_img_0_data_stream_1_V
+@I [HLS-0] To file: write model FIFO_image_filter_img_0_data_stream_2_V
+@I [HLS-0] To file: write model FIFO_image_filter_img_1_data_stream_0_V
+@I [HLS-0] To file: write model FIFO_image_filter_img_1_data_stream_1_V
+@I [HLS-0] To file: write model FIFO_image_filter_img_1_data_stream_2_V
+@I [HLS-0] To file: write model image_filter_Block_proc
+@I [HLS-0] To file: write model image_filter_AXIvideo2Mat
+@I [HLS-0] To file: write model image_filter_Loop_1_proc
+@I [HLS-0] To file: write model image_filter_Mat2AXIvideo
+@I [HLS-0] To file: write model image_filter
+@I [HLS-0] Finished generating RTL model list.
+
+
+@I [HLS-0] RTL Generation done.
+@I [HLS-0] CAS Generation done.
+@I [HLS-0] CBC Generation done.
+@I [HLS-100] Command "export_ssdm /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/a.export.ll "
+@I [HLS-100] Command 'export_ssdm' returned 0; elapsed 0.000814Total elapsed time: 215.44 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000216Total elapsed time: 215.48 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000923Total elapsed time: 215.62 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001619Total elapsed time: 215.62 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000364Total elapsed time: 215.63 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000997Total elapsed time: 215.64 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 9.5e-05Total elapsed time: 215.64 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000192Total elapsed time: 215.64 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00138Total elapsed time: 215.66 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000565Total elapsed time: 215.67 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002628Total elapsed time: 215.70 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003701Total elapsed time: 215.73 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.007802Total elapsed time: 215.81 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.011726Total elapsed time: 215.81 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009661Total elapsed time: 215.91 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.010109Total elapsed time: 215.101 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.032089Total elapsed time: 215.134 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.126469Total elapsed time: 215.260 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000172Total elapsed time: 215.260 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.195666Total elapsed time: 215.260 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000119Total elapsed time: 215.262 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.197834Total elapsed time: 215.262 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.197972Total elapsed time: 215.262 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001813Total elapsed time: 215.264 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00195Total elapsed time: 215.264 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000197Total elapsed time: 215.265 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000176Total elapsed time: 215.266 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000178Total elapsed time: 215.266 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Block_proc.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000163Total elapsed time: 215.267 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_AXIvideo2Mat.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000233Total elapsed time: 215.267 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Loop_1_proc.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000226Total elapsed time: 215.267 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Mat2AXIvideo.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000235Total elapsed time: 215.267 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.compgen.tcl "
+@I [RTMG-285] Implementing FIFO 'FIFO_image_filter_img_0_rows_V_channel' using Shift Registers.
+@I [RTMG-285] Implementing FIFO 'FIFO_image_filter_img_0_cols_V_channel' using Shift Registers.
+@I [RTMG-285] Implementing FIFO 'FIFO_image_filter_img_1_rows_V' using Shift Registers.
+@I [RTMG-285] Implementing FIFO 'FIFO_image_filter_img_1_cols_V' using Shift Registers.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.042024Total elapsed time: 215.310 sec.
+@I [HLS-10] Finished generating all RTL models.
+@0 [HLS-0] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'image_filter'.
+@I [WVHDL-304] Generating RTL VHDL for 'image_filter'.
+@I [WVLOG-307] Generating RTL Verilog for 'image_filter'.
+@I [HLS-100] Command 'autosyn' returned 0; elapsed 1.69155Total elapsed time: 215.316 sec.
+@I [HLS-100] Command 'csynth_design' returned 0; elapsed 12.7636Total elapsed time: 215.316 sec.
+@I [HLS-100] Command "export_design "
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00022Total elapsed time: 215.323 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000614Total elapsed time: 215.325 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001285Total elapsed time: 215.325 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000352Total elapsed time: 215.326 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000961Total elapsed time: 215.327 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 9.9e-05Total elapsed time: 215.327 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00018Total elapsed time: 215.327 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001151Total elapsed time: 215.329 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000551Total elapsed time: 215.329 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002514Total elapsed time: 215.332 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00353Total elapsed time: 215.336 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.007429Total elapsed time: 215.343 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.011172Total elapsed time: 215.343 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.0097Total elapsed time: 215.353 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.010401Total elapsed time: 215.363 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.032591Total elapsed time: 215.396 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.127956Total elapsed time: 215.524 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000187Total elapsed time: 215.524 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.197078Total elapsed time: 215.524 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000102Total elapsed time: 215.526 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.199038Total elapsed time: 215.526 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.199162Total elapsed time: 215.526 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001671Total elapsed time: 215.528 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001804Total elapsed time: 215.528 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000227Total elapsed time: 215.528 sec.
+@I [IMPL-8] Exporting RTL as an IP in IP-XACT.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000199Total elapsed time: 215.531 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000208Total elapsed time: 215.533 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000609Total elapsed time: 215.534 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001263Total elapsed time: 215.535 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000353Total elapsed time: 215.535 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000972Total elapsed time: 215.536 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000101Total elapsed time: 215.536 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000184Total elapsed time: 215.537 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001115Total elapsed time: 215.538 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000538Total elapsed time: 215.539 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002506Total elapsed time: 215.541 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003575Total elapsed time: 215.545 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00744Total elapsed time: 215.553 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01124Total elapsed time: 215.553 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00949Total elapsed time: 215.562 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.010002Total elapsed time: 215.572 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.032017Total elapsed time: 215.605 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.126996Total elapsed time: 215.732 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000189Total elapsed time: 215.732 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.19496Total elapsed time: 215.732 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000101Total elapsed time: 215.733 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.196888Total elapsed time: 215.734 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.197014Total elapsed time: 215.734 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001641Total elapsed time: 215.735 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001773Total elapsed time: 215.735 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000193Total elapsed time: 215.736 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Block_proc.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000161Total elapsed time: 215.736 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_AXIvideo2Mat.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00023Total elapsed time: 215.736 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Loop_1_proc.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000227Total elapsed time: 215.737 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Mat2AXIvideo.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000235Total elapsed time: 215.737 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000748Total elapsed time: 215.738 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000196Total elapsed time: 215.746 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Block_proc.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000162Total elapsed time: 215.746 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_AXIvideo2Mat.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00023Total elapsed time: 215.746 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Loop_1_proc.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000226Total elapsed time: 215.747 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Mat2AXIvideo.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000224Total elapsed time: 215.747 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.compgen.tcl "
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000837Total elapsed time: 215.749 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.0008Total elapsed time: 215.750 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000261Total elapsed time: 215.751 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000221Total elapsed time: 215.751 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.062874Total elapsed time: 215.810 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000198Total elapsed time: 215.822 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Block_proc.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000162Total elapsed time: 215.822 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_AXIvideo2Mat.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000239Total elapsed time: 215.823 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Loop_1_proc.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000229Total elapsed time: 215.823 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Mat2AXIvideo.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000224Total elapsed time: 215.823 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00074Total elapsed time: 215.824 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/impl/.pcores/verilog/CONTROL_BUS.slave.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00012Total elapsed time: 215.843 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000213Total elapsed time: 215.889 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.constraint.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000133Total elapsed time: 215.890 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000825Total elapsed time: 215.903 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000766Total elapsed time: 215.904 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000224Total elapsed time: 215.905 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000227Total elapsed time: 215.905 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000197Total elapsed time: 215.968 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000179Total elapsed time: 215.978 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.constraint.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000112Total elapsed time: 215.979 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.constraint.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000105Total elapsed time: 215.979 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00066Total elapsed time: 215.983 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001363Total elapsed time: 215.983 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000361Total elapsed time: 215.984 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001022Total elapsed time: 215.985 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000126Total elapsed time: 215.985 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000195Total elapsed time: 215.985 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001158Total elapsed time: 215.987 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000546Total elapsed time: 215.988 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003034Total elapsed time: 215.991 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003637Total elapsed time: 215.995 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00783Total elapsed time: 216.3 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.011683Total elapsed time: 216.3 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009395Total elapsed time: 216.12 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.011075Total elapsed time: 216.23 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.032313Total elapsed time: 216.56 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.130477Total elapsed time: 216.186 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000189Total elapsed time: 216.187 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.200712Total elapsed time: 216.187 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000128Total elapsed time: 216.188 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.202756Total elapsed time: 216.188 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.202911Total elapsed time: 216.188 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001731Total elapsed time: 216.190 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001875Total elapsed time: 216.190 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000256Total elapsed time: 228.502 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000713Total elapsed time: 228.505 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001506Total elapsed time: 228.505 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000398Total elapsed time: 228.506 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001052Total elapsed time: 228.507 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000102Total elapsed time: 228.507 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000185Total elapsed time: 228.507 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001296Total elapsed time: 228.509 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000588Total elapsed time: 228.510 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002776Total elapsed time: 228.513 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003675Total elapsed time: 228.516 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.007839Total elapsed time: 228.524 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.011736Total elapsed time: 228.524 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.010027Total elapsed time: 228.535 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.010259Total elapsed time: 228.545 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.033247Total elapsed time: 228.578 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.127319Total elapsed time: 228.706 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000197Total elapsed time: 228.706 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.198291Total elapsed time: 228.706 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000106Total elapsed time: 228.707 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.200265Total elapsed time: 228.708 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.200393Total elapsed time: 228.708 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001712Total elapsed time: 228.710 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001846Total elapsed time: 228.710 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000224Total elapsed time: 228.710 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00019Total elapsed time: 228.713 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000203Total elapsed time: 228.714 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000613Total elapsed time: 228.715 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001267Total elapsed time: 228.716 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000351Total elapsed time: 228.716 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000982Total elapsed time: 228.717 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 9.9e-05Total elapsed time: 228.718 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000188Total elapsed time: 228.718 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001119Total elapsed time: 228.719 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000549Total elapsed time: 228.720 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002565Total elapsed time: 228.723 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003507Total elapsed time: 228.726 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.007455Total elapsed time: 228.734 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.011184Total elapsed time: 228.734 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009433Total elapsed time: 228.743 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.010283Total elapsed time: 228.754 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.032662Total elapsed time: 228.787 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.127914Total elapsed time: 228.915 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000192Total elapsed time: 228.915 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.196773Total elapsed time: 228.915 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000105Total elapsed time: 228.916 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.198715Total elapsed time: 228.917 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.198842Total elapsed time: 228.917 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001672Total elapsed time: 228.919 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001821Total elapsed time: 228.919 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000189Total elapsed time: 228.919 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Block_proc.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000162Total elapsed time: 228.919 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_AXIvideo2Mat.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000232Total elapsed time: 228.920 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Loop_1_proc.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000225Total elapsed time: 228.920 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Mat2AXIvideo.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000225Total elapsed time: 228.920 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000775Total elapsed time: 228.921 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000211Total elapsed time: 228.945 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.constraint.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000116Total elapsed time: 228.945 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000616Total elapsed time: 228.947 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001317Total elapsed time: 228.948 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000396Total elapsed time: 228.948 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00103Total elapsed time: 228.949 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000108Total elapsed time: 228.950 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000197Total elapsed time: 228.950 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001157Total elapsed time: 228.952 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000549Total elapsed time: 228.952 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002689Total elapsed time: 228.955 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003691Total elapsed time: 228.959 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.007457Total elapsed time: 228.967 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.011425Total elapsed time: 228.967 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009469Total elapsed time: 228.976 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.010111Total elapsed time: 228.986 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.032607Total elapsed time: 229.19 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.128338Total elapsed time: 229.147 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000189Total elapsed time: 229.148 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.197402Total elapsed time: 229.148 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000109Total elapsed time: 229.149 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.199433Total elapsed time: 229.149 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.199566Total elapsed time: 229.150 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001675Total elapsed time: 229.151 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00181Total elapsed time: 229.151 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000307Total elapsed time: 229.163 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000248Total elapsed time: 238.616 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000734Total elapsed time: 238.619 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001522Total elapsed time: 238.619 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000393Total elapsed time: 238.620 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001039Total elapsed time: 238.621 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000107Total elapsed time: 238.621 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000181Total elapsed time: 238.621 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001281Total elapsed time: 238.623 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000588Total elapsed time: 238.624 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002771Total elapsed time: 238.626 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003659Total elapsed time: 238.630 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00783Total elapsed time: 238.638 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.011705Total elapsed time: 238.638 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009939Total elapsed time: 238.648 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.010425Total elapsed time: 238.659 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.033904Total elapsed time: 238.693 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.132982Total elapsed time: 238.826 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000201Total elapsed time: 238.826 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.204642Total elapsed time: 238.826 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000116Total elapsed time: 238.828 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.206721Total elapsed time: 238.828 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.206854Total elapsed time: 238.828 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001808Total elapsed time: 238.830 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00195Total elapsed time: 238.830 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000234Total elapsed time: 238.830 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000219Total elapsed time: 238.833 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000205Total elapsed time: 238.834 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000614Total elapsed time: 238.836 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.0013Total elapsed time: 238.836 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000377Total elapsed time: 238.837 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000962Total elapsed time: 238.838 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000101Total elapsed time: 238.838 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000192Total elapsed time: 238.838 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001138Total elapsed time: 238.840 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000549Total elapsed time: 238.841 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002575Total elapsed time: 238.843 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003536Total elapsed time: 238.847 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.007537Total elapsed time: 238.855 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.011323Total elapsed time: 238.855 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009701Total elapsed time: 238.864 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.010234Total elapsed time: 238.875 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.033533Total elapsed time: 238.908 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.132292Total elapsed time: 239.41 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000201Total elapsed time: 239.41 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.202374Total elapsed time: 239.41 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000111Total elapsed time: 239.43 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.204401Total elapsed time: 239.43 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.204531Total elapsed time: 239.43 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001744Total elapsed time: 239.45 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001895Total elapsed time: 239.45 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000198Total elapsed time: 239.45 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Block_proc.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000164Total elapsed time: 239.46 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_AXIvideo2Mat.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000235Total elapsed time: 239.46 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Loop_1_proc.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000227Total elapsed time: 239.46 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter_Mat2AXIvideo.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000228Total elapsed time: 239.47 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000749Total elapsed time: 239.47 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00031Total elapsed time: 239.71 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/image_filter.constraint.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000116Total elapsed time: 239.72 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000614Total elapsed time: 239.74 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001302Total elapsed time: 239.75 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000355Total elapsed time: 239.75 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000959Total elapsed time: 239.76 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 9.9e-05Total elapsed time: 239.76 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000188Total elapsed time: 239.76 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001137Total elapsed time: 239.78 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000552Total elapsed time: 239.79 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002577Total elapsed time: 239.81 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003587Total elapsed time: 239.85 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.007412Total elapsed time: 239.93 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.011214Total elapsed time: 239.93 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009872Total elapsed time: 239.103 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.010068Total elapsed time: 239.113 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.032989Total elapsed time: 239.146 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.144293Total elapsed time: 239.290 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000184Total elapsed time: 239.291 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.213798Total elapsed time: 239.291 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000105Total elapsed time: 239.292 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.215761Total elapsed time: 239.292 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.215913Total elapsed time: 239.292 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001686Total elapsed time: 239.294 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001825Total elapsed time: 239.294 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/median/prj/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000309Total elapsed time: 239.305 sec.
+@I [HLS-100] Command 'export_design' returned 0; elapsed 2.24518Total elapsed time: 248.827 sec.
+@I [HLS-100] Command "cleanup_all "
+@I [HLS-100] Command 'cleanup_all' returned 0; elapsed 0.022096Total elapsed time: 248.849 sec.

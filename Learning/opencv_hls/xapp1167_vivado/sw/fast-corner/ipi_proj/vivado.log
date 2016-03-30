@@ -1,0 +1,219 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Wed Mar 30 11:13:28 2016
+# Process ID: 6256
+# Log file: /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/vivado.log
+# Journal file: /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/vivado.jou
+#-----------------------------------------------------------
+source scripts/impl_batch.tcl
+# source scripts/project.tcl
+## set project_name "zc702"
+## set project_dir "project"
+## set ip_dir "srcs/ip"
+## set hdl_dir "srcs/hdl"
+## set constrs_dir "constrs"
+## set scripts_dir "scripts"
+## set bd_name "system_top"
+## set part "xc7z020clg484-1"
+## set board "xilinx.com:zynq:zc702:1.0"
+## set ip_zip "srcs/ip/xilinx_com_hls_image_filter_1_0.zip"
+## create_project $project_name $project_dir -part $part -force
+## set_property board $board [current_project]
+INFO: [Board 49-50] Migrating old board value xilinx.com:zynq:zc702:1.0 to new board_part xilinx.com:zc702:1.0
+## set_property ip_repo_paths $ip_dir [current_fileset]
+## update_ip_catalog -rebuild
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2014.4/data/ip'.
+## update_ip_catalog -add_ip $ip_zip -repo_path $ip_dir
+INFO: [IP_Flow 19-949] Unzipped 'srcs/ip/xilinx_com_hls_image_filter_1_0.zip' into repository '/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/ip'.
+INFO: [IP_Flow 19-725] Reloaded user IP repository '/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/ip'
+## create_bd_design $bd_name
+Wrote  : </home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/project/zc702.srcs/sources_1/bd/system_top/system_top.bd> 
+## source $scripts_dir/build_bd_design.tcl
+### set scripts_vivado_version 2013.3
+### set current_vivado_version [version -short]
+### if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
+###    puts ""
+###    puts "ERROR: This script was generated using Vivado <$scripts_vivado_version> and is being run in <$current_vivado_version> of Vivado. Please run the script in Vivado <$scripts_vivado_version> then open the design in Vivado <$current_vivado_version>. Upgrade the design by running \"Tools => Report => Report IP Status...\", then run write_bd_tcl to create an updated script."
+### 
+###    return 1
+### }
+
+ERROR: This script was generated using Vivado <2013.3> and is being run in <2014.4> of Vivado. Please run the script in Vivado <2013.3> then open the design in Vivado <2014.4>. Upgrade the design by running "Tools => Report => Report IP Status...", then run write_bd_tcl to create an updated script.
+## regenerate_bd_layout
+## save_bd_design
+Wrote  : </home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/project/zc702.srcs/sources_1/bd/system_top/system_top.bd> 
+## validate_bd_design
+## add_files -fileset sources_1 -norecurse $hdl_dir/${bd_name}_wrapper.v
+## add_files -fileset constrs_1 -norecurse $constrs_dir/$bd_name.xdc
+## update_compile_order -fileset sources_1
+## update_compile_order -fileset sim_1
+## save_bd_design
+Wrote  : </home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/project/zc702.srcs/sources_1/bd/system_top/system_top.bd> 
+# reset_run impl_1
+# reset_run synth_1
+# set_param synth.elaboration.rodinMoreOptions "rt::set_parameter inferDynamicSrl false"
+# set_property STEPS.SYNTH_DESIGN.ARGS.NO_LC true [get_runs synth_1]
+# set_property STEPS.SYNTH_DESIGN.ARGS.FSM_EXTRACTION sequential [get_runs synth_1]
+# set_property STEPS.SYNTH_DESIGN.ARGS.RESOURCE_SHARING off [get_runs synth_1]
+# set_property STEPS.PHYS_OPT_DESIGN.IS_ENABLED true [get_runs impl_1]
+# set_property strategy Performance_Explore [get_runs impl_1]
+# launch_runs synth_1
+INFO: [BD 41-1379] This design does not contain any processor.
+Generated Block Design Tcl file /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/project/zc702.srcs/sources_1/bd/system_top/hw_handoff/system_top_bd.tcl
+Exporting to file /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/project/zc702.srcs/sources_1/bd/system_top/hw_handoff/system_top.hwh
+Verilog Output written to : system_top.v
+Verilog Output written to : system_top_wrapper.v
+Wrote  : </home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/project/zc702.srcs/sources_1/bd/system_top/system_top.bd> 
+INFO: [BD 41-1379] This design does not contain any processor.
+Generated Block Design Tcl file /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/project/zc702.srcs/sources_1/bd/system_top/hw_handoff/system_top_bd.tcl
+Exporting to file /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/project/zc702.srcs/sources_1/bd/system_top/hw_handoff/system_top.hwh
+Verilog Output written to : system_top.v
+Verilog Output written to : system_top_wrapper.v
+Wrote  : </home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/project/zc702.srcs/sources_1/bd/system_top/system_top.bd> 
+[Wed Mar 30 11:13:39 2016] Launched synth_1...
+Run output will be captured here: /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/project/zc702.runs/synth_1/runme.log
+# wait_on_run synth_1
+[Wed Mar 30 11:13:39 2016] Waiting for synth_1 to finish...
+
+*** Running vivado
+    with args -log system_top_wrapper.vds -m64 -mode batch -messageDb vivado.pb -source system_top_wrapper.tcl
+
+
+****** Vivado v2014.4 (64-bit)
+  **** SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+  **** IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source system_top_wrapper.tcl
+# set_param synth.elaboration.rodinMoreOptions {rt::set_parameter inferDynamicSrl false}
+# set_msg_config -id {HDL 9-1061} -limit 100000
+# set_msg_config -id {HDL 9-1654} -limit 100000
+# create_project -in_memory -part xc7z020clg484-1
+# set_param project.compositeFile.enableAutoGeneration 0
+# set_param synth.vivado.isSynthRun true
+# set_msg_config -id {IP_Flow 19-2162} -severity warning -new_severity info
+# set_property webtalk.parent_dir /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/project/zc702.cache/wt [current_project]
+# set_property parent.project_path /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/project/zc702.xpr [current_project]
+# set_property default_lib xil_defaultlib [current_project]
+# set_property target_language Verilog [current_project]
+# set_property board_part xilinx.com:zc702:part0:1.0 [current_project]
+# set_property ip_repo_paths /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/ip [current_project]
+# add_files /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/project/zc702.srcs/sources_1/bd/system_top/system_top.bd
+# set_property used_in_implementation false [get_files -all /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/project/zc702.srcs/sources_1/bd/system_top/system_top_ooc.xdc]
+# set_property is_locked true [get_files /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/project/zc702.srcs/sources_1/bd/system_top/system_top.bd]
+# read_verilog -library xil_defaultlib /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v
+# read_xdc /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/constrs/system_top.xdc
+# set_property used_in_implementation false [get_files /home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/constrs/system_top.xdc]
+# read_xdc dont_touch.xdc
+# set_property used_in_implementation false [get_files dont_touch.xdc]
+# catch { write_hwdef -file system_top_wrapper.hwdef }
+# synth_design -top system_top_wrapper -part xc7z020clg484-1 -fsm_extraction sequential -resource_sharing off -no_lc
+Command: synth_design -top system_top_wrapper -part xc7z020clg484-1 -fsm_extraction sequential -resource_sharing off -no_lc
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 894.168 ; gain = 145.746 ; free physical = 409 ; free virtual = 3667
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'system_top_wrapper' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:3]
+INFO: [Synth 8-638] synthesizing module 'IBUFDS' [/opt/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:10265]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter DIFF_TERM bound to: FALSE - type: string 
+	Parameter DQS_BIAS bound to: FALSE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
+	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+INFO: [Synth 8-256] done synthesizing module 'IBUFDS' (1#1) [/opt/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:10265]
+INFO: [Synth 8-638] synthesizing module 'BUFG' [/opt/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:606]
+INFO: [Synth 8-256] done synthesizing module 'BUFG' (2#1) [/opt/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:606]
+INFO: [Synth 8-638] synthesizing module 'IOBUF' [/opt/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:12928]
+	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+	Parameter DRIVE bound to: 12 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'IOBUF' (3#1) [/opt/Xilinx/Vivado/2014.4/scripts/rt/data/unisim_comp.v:12928]
+INFO: [Synth 8-638] synthesizing module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/project/zc702.srcs/sources_1/bd/system_top/hdl/system_top.v:12]
+INFO: [Synth 8-256] done synthesizing module 'system_top' (4#1) [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/project/zc702.srcs/sources_1/bd/system_top/hdl/system_top.v:12]
+ERROR: [Synth 8-448] named port connection 'DDR_addr' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:134]
+ERROR: [Synth 8-448] named port connection 'DDR_ba' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:135]
+ERROR: [Synth 8-448] named port connection 'DDR_cas_n' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:136]
+ERROR: [Synth 8-448] named port connection 'DDR_ck_n' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:137]
+ERROR: [Synth 8-448] named port connection 'DDR_ck_p' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:138]
+ERROR: [Synth 8-448] named port connection 'DDR_cke' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:139]
+ERROR: [Synth 8-448] named port connection 'DDR_cs_n' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:140]
+ERROR: [Synth 8-448] named port connection 'DDR_dm' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:141]
+ERROR: [Synth 8-448] named port connection 'DDR_dq' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:142]
+ERROR: [Synth 8-448] named port connection 'DDR_dqs_n' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:143]
+ERROR: [Synth 8-448] named port connection 'DDR_dqs_p' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:144]
+ERROR: [Synth 8-448] named port connection 'DDR_odt' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:145]
+ERROR: [Synth 8-448] named port connection 'DDR_ras_n' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:146]
+ERROR: [Synth 8-448] named port connection 'DDR_reset_n' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:147]
+ERROR: [Synth 8-448] named port connection 'DDR_we_n' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:148]
+ERROR: [Synth 8-448] named port connection 'FIXED_IO_ddr_vrn' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:149]
+ERROR: [Synth 8-448] named port connection 'FIXED_IO_ddr_vrp' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:150]
+ERROR: [Synth 8-448] named port connection 'FIXED_IO_mio' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:151]
+ERROR: [Synth 8-448] named port connection 'FIXED_IO_ps_clk' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:152]
+ERROR: [Synth 8-448] named port connection 'FIXED_IO_ps_porb' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:153]
+ERROR: [Synth 8-448] named port connection 'FIXED_IO_ps_srstb' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:154]
+ERROR: [Synth 8-448] named port connection 'fmc_imageon_hdmii_clk' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:155]
+ERROR: [Synth 8-448] named port connection 'fmc_imageon_hdmii_data' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:156]
+ERROR: [Synth 8-448] named port connection 'fmc_imageon_iic_rst_b' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:157]
+ERROR: [Synth 8-448] named port connection 'fmc_imageon_iic_scl_i' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:158]
+ERROR: [Synth 8-448] named port connection 'fmc_imageon_iic_scl_o' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:159]
+ERROR: [Synth 8-448] named port connection 'fmc_imageon_iic_scl_t' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:160]
+ERROR: [Synth 8-448] named port connection 'fmc_imageon_iic_sda_i' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:161]
+ERROR: [Synth 8-448] named port connection 'fmc_imageon_iic_sda_o' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:162]
+ERROR: [Synth 8-448] named port connection 'fmc_imageon_iic_sda_t' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:163]
+ERROR: [Synth 8-448] named port connection 'hdmio_int_b' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:164]
+ERROR: [Synth 8-448] named port connection 'hdmio_clk' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:165]
+ERROR: [Synth 8-448] named port connection 'hdmio_data' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:166]
+ERROR: [Synth 8-448] named port connection 'hdmio_de' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:167]
+ERROR: [Synth 8-448] named port connection 'hdmio_hsync' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:168]
+ERROR: [Synth 8-448] named port connection 'hdmio_vsync' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:169]
+ERROR: [Synth 8-448] named port connection 'video_clk' does not exist for instance 'system_top_i' of module 'system_top' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:170]
+ERROR: [Synth 8-285] failed synthesizing module 'system_top_wrapper' [/home/alok/githum/Zedboard/Learning/opencv_hls/xapp1167_vivado/sw/fast-corner/ipi_proj/srcs/hdl/system_top_wrapper.v:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 930.402 ; gain = 181.980 ; free physical = 372 ; free virtual = 3629
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+    while executing
+"rt::run_rtlelab -module $rt::top"
+    invoked from within
+"if {$rt::useElabCache == false} {
+      rt::run_rtlelab -module $rt::top
+    }"
+    ("uplevel" body line 42)
+    invoked from within
+"uplevel #0 {
+    set ::env(BUILTIN_SYNTH) true
+    source $::env(HRT_TCL_PATH)/rtSynthPrep.tcl
+    rt::HARTNDb_resetJobStats
+    rt::HARTNDb_startJobS..."
+INFO: [Common 17-83] Releasing license: Synthesis
+11 Infos, 0 Warnings, 0 Critical Warnings and 39 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+
+    while executing
+"source -notrace ./.Xil/Vivado-6321-alok-laptop/realtime/system_top_wrapper.tcl"
+    invoked from within
+"synth_design -top system_top_wrapper -part xc7z020clg484-1 -fsm_extraction sequential -resource_sharing off -no_lc"
+    (file "system_top_wrapper.tcl" line 30)
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 30 11:13:54 2016...
+[Wed Mar 30 11:13:57 2016] synth_1 finished
+wait_on_run: Time (s): cpu = 00:00:00.59 ; elapsed = 00:00:18 . Memory (MB): peak = 930.965 ; gain = 8.000 ; free physical = 579 ; free virtual = 3836
+# launch_runs impl_1 -to_step write_bitstream
+ERROR: [Common 17-70] Application Exception: Failed to launch run 'impl_1' due to failures in the following run(s):
+synth_1
+These failed run(s) need to be reset prior to launching 'impl_1' again.
+
+
+    while executing
+"launch_runs impl_1 -to_step write_bitstream"
+    (file "scripts/impl_batch.tcl" line 17)
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 30 11:13:57 2016...

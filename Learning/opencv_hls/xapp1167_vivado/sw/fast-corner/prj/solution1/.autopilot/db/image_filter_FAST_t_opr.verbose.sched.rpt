@@ -1,0 +1,3299 @@
+
+
+================================================================
+== Vivado HLS Report for 'image_filter_FAST_t_opr'
+================================================================
+* Date:           Wed Mar 30 11:12:44 2016
+
+* Version:        2014.4 (Build 1071461 on Tue Nov 18 16:42:57 PM 2014)
+* Project:        prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |   6.67|      6.11|        0.83|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+---------+-----+---------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    | min |   max   | min |   max   |   Type  |
+    +-----+---------+-----+---------+---------+
+    |  165|  2125725|  165|  2125725|   none  |
+    +-----+---------+-----+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------+-----+---------+-----------+-----------+-----------+----------+----------+
+        |               |    Latency    | Iteration |  Initiation Interval  |   Trip   |          |
+        |   Loop Name   | min |   max   |  Latency  |  achieved |   target  |   Count  | Pipelined|
+        +---------------+-----+---------+-----------+-----------+-----------+----------+----------+
+        |- loop_height  |  164|  2125724| 41 ~ 1961 |          -|          -| 4 ~ 1084 |    no    |
+        | + loop_width  |   38|     1958|         36|          1|          1| 4 ~ 1924 |    yes   |
+        +---------------+-----+---------+-----------+-----------+-----------+----------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      -|
+|Register         |        -|      -|       -|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|       0|      0|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
+N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 36
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 39
+* Pipeline: 1
+  Pipeline-0: II = 1, D = 36, States = { 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond1)
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	39  / (exitcond)
+	38  / (!exitcond)
+38 --> 
+	3  / true
+39 --> 
+	2  / true
+* FSM state operations: 
+
+ <State 1>: 1.84ns
+ST_1: win_val_6_V_5 [1/1] 0.00ns
+arrayctor.loop.preheader:0  %win_val_6_V_5 = alloca i8, align 1
+
+ST_1: core_win_val_0_V_0 [1/1] 0.00ns
+arrayctor.loop.preheader:1  %core_win_val_0_V_0 = alloca i16, align 2
+
+ST_1: core_win_val_0_V_1 [1/1] 0.00ns
+arrayctor.loop.preheader:2  %core_win_val_0_V_1 = alloca i16, align 2
+
+ST_1: win_val_6_V_4 [1/1] 0.00ns
+arrayctor.loop.preheader:3  %win_val_6_V_4 = alloca i8, align 1
+
+ST_1: core_win_val_1_V_0 [1/1] 0.00ns
+arrayctor.loop.preheader:4  %core_win_val_1_V_0 = alloca i16, align 2
+
+ST_1: core_win_val_1_V_1 [1/1] 0.00ns
+arrayctor.loop.preheader:5  %core_win_val_1_V_1 = alloca i16, align 2
+
+ST_1: win_val_6_V_3 [1/1] 0.00ns
+arrayctor.loop.preheader:6  %win_val_6_V_3 = alloca i8, align 1
+
+ST_1: core_win_val_2_V_0 [1/1] 0.00ns
+arrayctor.loop.preheader:7  %core_win_val_2_V_0 = alloca i16, align 2
+
+ST_1: core_win_val_2_V_1 [1/1] 0.00ns
+arrayctor.loop.preheader:8  %core_win_val_2_V_1 = alloca i16, align 2
+
+ST_1: win_val_0_V_2_3 [1/1] 0.00ns
+arrayctor.loop.preheader:9  %win_val_0_V_2_3 = alloca i8, align 1
+
+ST_1: win_val_0_V_2 [1/1] 0.00ns
+arrayctor.loop.preheader:10  %win_val_0_V_2 = alloca i8, align 1
+
+ST_1: win_val_0_V_3 [1/1] 0.00ns
+arrayctor.loop.preheader:11  %win_val_0_V_3 = alloca i8, align 1
+
+ST_1: win_val_0_V_4 [1/1] 0.00ns
+arrayctor.loop.preheader:12  %win_val_0_V_4 = alloca i8, align 1
+
+ST_1: win_val_0_V_5 [1/1] 0.00ns
+arrayctor.loop.preheader:13  %win_val_0_V_5 = alloca i8, align 1
+
+ST_1: win_val_1_V_1_3 [1/1] 0.00ns
+arrayctor.loop.preheader:14  %win_val_1_V_1_3 = alloca i8, align 1
+
+ST_1: win_val_1_V_1 [1/1] 0.00ns
+arrayctor.loop.preheader:15  %win_val_1_V_1 = alloca i8, align 1
+
+ST_1: win_val_1_V_2 [1/1] 0.00ns
+arrayctor.loop.preheader:16  %win_val_1_V_2 = alloca i8, align 1
+
+ST_1: win_val_1_V_3 [1/1] 0.00ns
+arrayctor.loop.preheader:17  %win_val_1_V_3 = alloca i8, align 1
+
+ST_1: win_val_1_V_4 [1/1] 0.00ns
+arrayctor.loop.preheader:18  %win_val_1_V_4 = alloca i8, align 1
+
+ST_1: win_val_1_V_5 [1/1] 0.00ns
+arrayctor.loop.preheader:19  %win_val_1_V_5 = alloca i8, align 1
+
+ST_1: win_val_2_V_0_3 [1/1] 0.00ns
+arrayctor.loop.preheader:20  %win_val_2_V_0_3 = alloca i8, align 1
+
+ST_1: win_val_2_V_0 [1/1] 0.00ns
+arrayctor.loop.preheader:21  %win_val_2_V_0 = alloca i8, align 1
+
+ST_1: win_val_2_V_1 [1/1] 0.00ns
+arrayctor.loop.preheader:22  %win_val_2_V_1 = alloca i8, align 1
+
+ST_1: win_val_2_V_2 [1/1] 0.00ns
+arrayctor.loop.preheader:23  %win_val_2_V_2 = alloca i8, align 1
+
+ST_1: win_val_2_V_3 [1/1] 0.00ns
+arrayctor.loop.preheader:24  %win_val_2_V_3 = alloca i8, align 1
+
+ST_1: win_val_2_V_4 [1/1] 0.00ns
+arrayctor.loop.preheader:25  %win_val_2_V_4 = alloca i8, align 1
+
+ST_1: win_val_2_V_5 [1/1] 0.00ns
+arrayctor.loop.preheader:26  %win_val_2_V_5 = alloca i8, align 1
+
+ST_1: win_val_3_V_0_3 [1/1] 0.00ns
+arrayctor.loop.preheader:27  %win_val_3_V_0_3 = alloca i8, align 1
+
+ST_1: win_val_3_V_0 [1/1] 0.00ns
+arrayctor.loop.preheader:28  %win_val_3_V_0 = alloca i8, align 1
+
+ST_1: win_val_3_V_1 [1/1] 0.00ns
+arrayctor.loop.preheader:29  %win_val_3_V_1 = alloca i8, align 1
+
+ST_1: win_val_3_V_2 [1/1] 0.00ns
+arrayctor.loop.preheader:30  %win_val_3_V_2 = alloca i8, align 1
+
+ST_1: win_val_3_V_3 [1/1] 0.00ns
+arrayctor.loop.preheader:31  %win_val_3_V_3 = alloca i8, align 1
+
+ST_1: win_val_3_V_4 [1/1] 0.00ns
+arrayctor.loop.preheader:32  %win_val_3_V_4 = alloca i8, align 1
+
+ST_1: win_val_3_V_5 [1/1] 0.00ns
+arrayctor.loop.preheader:33  %win_val_3_V_5 = alloca i8, align 1
+
+ST_1: win_val_4_V_0_3 [1/1] 0.00ns
+arrayctor.loop.preheader:34  %win_val_4_V_0_3 = alloca i8, align 1
+
+ST_1: win_val_4_V_0 [1/1] 0.00ns
+arrayctor.loop.preheader:35  %win_val_4_V_0 = alloca i8, align 1
+
+ST_1: win_val_4_V_1 [1/1] 0.00ns
+arrayctor.loop.preheader:36  %win_val_4_V_1 = alloca i8, align 1
+
+ST_1: win_val_4_V_2 [1/1] 0.00ns
+arrayctor.loop.preheader:37  %win_val_4_V_2 = alloca i8, align 1
+
+ST_1: win_val_4_V_3 [1/1] 0.00ns
+arrayctor.loop.preheader:38  %win_val_4_V_3 = alloca i8, align 1
+
+ST_1: win_val_4_V_4 [1/1] 0.00ns
+arrayctor.loop.preheader:39  %win_val_4_V_4 = alloca i8, align 1
+
+ST_1: win_val_4_V_5 [1/1] 0.00ns
+arrayctor.loop.preheader:40  %win_val_4_V_5 = alloca i8, align 1
+
+ST_1: win_val_5_V_1_3 [1/1] 0.00ns
+arrayctor.loop.preheader:41  %win_val_5_V_1_3 = alloca i8, align 1
+
+ST_1: win_val_5_V_1 [1/1] 0.00ns
+arrayctor.loop.preheader:42  %win_val_5_V_1 = alloca i8, align 1
+
+ST_1: win_val_5_V_2 [1/1] 0.00ns
+arrayctor.loop.preheader:43  %win_val_5_V_2 = alloca i8, align 1
+
+ST_1: win_val_5_V_3 [1/1] 0.00ns
+arrayctor.loop.preheader:44  %win_val_5_V_3 = alloca i8, align 1
+
+ST_1: win_val_5_V_4 [1/1] 0.00ns
+arrayctor.loop.preheader:45  %win_val_5_V_4 = alloca i8, align 1
+
+ST_1: win_val_5_V_5 [1/1] 0.00ns
+arrayctor.loop.preheader:46  %win_val_5_V_5 = alloca i8, align 1
+
+ST_1: win_val_6_V_2_3 [1/1] 0.00ns
+arrayctor.loop.preheader:47  %win_val_6_V_2_3 = alloca i8, align 1
+
+ST_1: win_val_6_V_2 [1/1] 0.00ns
+arrayctor.loop.preheader:48  %win_val_6_V_2 = alloca i8, align 1
+
+ST_1: stg_89 [1/1] 0.00ns
+arrayctor.loop.preheader:49  call void (...)* @_ssdm_op_SpecInterface(i8* %p_src_data_stream_V, [8 x i8]* @str164, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @str165, [1 x i8]* @str165, [8 x i8]* @str164)
+
+ST_1: stg_90 [1/1] 0.00ns
+arrayctor.loop.preheader:50  call void (...)* @_ssdm_op_SpecInterface(i8* %p_mask_data_stream_V, [8 x i8]* @str156, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @str157, [1 x i8]* @str157, [8 x i8]* @str156)
+
+ST_1: p_src_cols_V_read_2 [1/1] 0.00ns
+arrayctor.loop.preheader:51  %p_src_cols_V_read_2 = call i12 @_ssdm_op_Read.ap_auto.i12(i12 %p_src_cols_V_read)
+
+ST_1: p_src_rows_V_read_2 [1/1] 0.00ns
+arrayctor.loop.preheader:52  %p_src_rows_V_read_2 = call i12 @_ssdm_op_Read.ap_auto.i12(i12 %p_src_rows_V_read)
+
+ST_1: k_buf_val_0_V [1/1] 0.00ns
+arrayctor.loop.preheader:53  %k_buf_val_0_V = alloca [1920 x i8], align 1
+
+ST_1: k_buf_val_1_V [1/1] 0.00ns
+arrayctor.loop.preheader:54  %k_buf_val_1_V = alloca [1920 x i8], align 1
+
+ST_1: k_buf_val_2_V [1/1] 0.00ns
+arrayctor.loop.preheader:55  %k_buf_val_2_V = alloca [1920 x i8], align 1
+
+ST_1: k_buf_val_3_V [1/1] 0.00ns
+arrayctor.loop.preheader:56  %k_buf_val_3_V = alloca [1920 x i8], align 1
+
+ST_1: k_buf_val_4_V [1/1] 0.00ns
+arrayctor.loop.preheader:57  %k_buf_val_4_V = alloca [1920 x i8], align 1
+
+ST_1: k_buf_val_5_V [1/1] 0.00ns
+arrayctor.loop.preheader:58  %k_buf_val_5_V = alloca [1920 x i8], align 1
+
+ST_1: core_buf_val_0_V [1/1] 0.00ns
+arrayctor.loop.preheader:59  %core_buf_val_0_V = alloca [1927 x i8], align 1
+
+ST_1: core_buf_val_1_V [1/1] 0.00ns
+arrayctor.loop.preheader:60  %core_buf_val_1_V = alloca [1927 x i8], align 1
+
+ST_1: rbegin_i [1/1] 0.00ns
+arrayctor.loop.preheader:61  %rbegin_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([59 x i8]* @p_str1) nounwind
+
+ST_1: rend_i [1/1] 0.00ns
+arrayctor.loop.preheader:62  %rend_i = call i32 (...)* @_ssdm_op_SpecRegionEnd([59 x i8]* @p_str1, i32 %rbegin_i) nounwind
+
+ST_1: rbegin_i1 [1/1] 0.00ns
+arrayctor.loop.preheader:63  %rbegin_i1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([59 x i8]* @p_str2) nounwind
+
+ST_1: rend_i333 [1/1] 0.00ns
+arrayctor.loop.preheader:64  %rend_i333 = call i32 (...)* @_ssdm_op_SpecRegionEnd([59 x i8]* @p_str2, i32 %rbegin_i1) nounwind
+
+ST_1: tmp [1/1] 0.00ns
+arrayctor.loop.preheader:65  %tmp = trunc i12 %p_src_rows_V_read_2 to i11
+
+ST_1: tmp_15 [1/1] 0.00ns
+arrayctor.loop.preheader:66  %tmp_15 = trunc i12 %p_src_cols_V_read_2 to i11
+
+ST_1: tmp_s [1/1] 1.84ns
+arrayctor.loop.preheader:67  %tmp_s = add i11 %tmp_15, 4
+
+ST_1: tmp_5 [1/1] 1.84ns
+arrayctor.loop.preheader:68  %tmp_5 = add i11 %tmp, 4
+
+ST_1: stg_109 [1/1] 1.57ns
+arrayctor.loop.preheader:69  br label %0
+
+
+ <State 2>: 2.11ns
+ST_2: p_s [1/1] 0.00ns
+:0  %p_s = phi i11 [ 0, %arrayctor.loop.preheader ], [ %i_V, %5 ]
+
+ST_2: stg_111 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 1084, i64 0)
+
+ST_2: exitcond1 [1/1] 2.11ns
+:2  %exitcond1 = icmp eq i11 %p_s, %tmp_5
+
+ST_2: i_V [1/1] 1.84ns
+:3  %i_V = add i11 %p_s, 1
+
+ST_2: stg_114 [1/1] 0.00ns
+:4  br i1 %exitcond1, label %6, label %1
+
+ST_2: stg_115 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecLoopName([12 x i8]* @p_str1813) nounwind
+
+ST_2: tmp_6 [1/1] 0.00ns
+:1  %tmp_6 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str1813)
+
+ST_2: tmp_7 [1/1] 2.11ns
+:2  %tmp_7 = icmp ult i11 %p_s, %tmp
+
+ST_2: tmp_8 [1/1] 2.11ns
+:3  %tmp_8 = icmp ugt i11 %p_s, 5
+
+ST_2: tmp_9 [1/1] 2.11ns
+:4  %tmp_9 = icmp ugt i11 %p_s, 6
+
+ST_2: tmp_16 [1/1] 0.00ns
+:5  %tmp_16 = call i9 @_ssdm_op_PartSelect.i9.i11.i32.i32(i11 %p_s, i32 2, i32 10)
+
+ST_2: icmp [1/1] 2.03ns
+:6  %icmp = icmp eq i9 %tmp_16, 0
+
+ST_2: stg_122 [1/1] 1.57ns
+:7  br label %2
+
+ST_2: stg_123 [1/1] 0.00ns
+:0  ret void
+
+
+ <State 3>: 5.05ns
+ST_3: p_2 [1/1] 0.00ns
+:0  %p_2 = phi i11 [ 0, %1 ], [ %j_V, %._crit_edge327 ]
+
+ST_3: exitcond [1/1] 2.11ns
+:38  %exitcond = icmp eq i11 %p_2, %tmp_s
+
+ST_3: j_V [1/1] 1.84ns
+:39  %j_V = add i11 %p_2, 1
+
+ST_3: stg_127 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str1814) nounwind
+
+ST_3: tmp_10 [1/1] 0.00ns
+:1  %tmp_10 = call i32 (...)* @_ssdm_op_SpecRegionBegin([11 x i8]* @p_str1814)
+
+ST_3: stg_129 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1806) nounwind
+
+ST_3: tmp_11 [1/1] 2.11ns
+:3  %tmp_11 = icmp ult i11 %p_2, %tmp_15
+
+ST_3: or_cond [1/1] 1.37ns
+:4  %or_cond = and i1 %tmp_7, %tmp_11
+
+ST_3: stg_132 [1/1] 0.00ns
+:5  br i1 %or_cond, label %.preheader319.preheader.0, label %.preheader.preheader.0
+
+ST_3: tmp_12 [1/1] 0.00ns
+.preheader319.preheader.0:3  %tmp_12 = zext i11 %p_2 to i64
+
+ST_3: k_buf_val_0_V_addr [1/1] 0.00ns
+.preheader319.preheader.0:4  %k_buf_val_0_V_addr = getelementptr [1920 x i8]* %k_buf_val_0_V, i64 0, i64 %tmp_12
+
+ST_3: win_val_0_V_6 [2/2] 2.39ns
+.preheader319.preheader.0:5  %win_val_0_V_6 = load i8* %k_buf_val_0_V_addr, align 1
+
+ST_3: k_buf_val_1_V_addr [1/1] 0.00ns
+.preheader319.preheader.0:6  %k_buf_val_1_V_addr = getelementptr [1920 x i8]* %k_buf_val_1_V, i64 0, i64 %tmp_12
+
+ST_3: win_val_1_V_6 [2/2] 2.39ns
+.preheader319.preheader.0:7  %win_val_1_V_6 = load i8* %k_buf_val_1_V_addr, align 1
+
+ST_3: k_buf_val_2_V_addr [1/1] 0.00ns
+.preheader319.preheader.0:9  %k_buf_val_2_V_addr = getelementptr [1920 x i8]* %k_buf_val_2_V, i64 0, i64 %tmp_12
+
+ST_3: win_val_2_V_6 [2/2] 2.39ns
+.preheader319.preheader.0:10  %win_val_2_V_6 = load i8* %k_buf_val_2_V_addr, align 1
+
+ST_3: k_buf_val_3_V_addr [1/1] 0.00ns
+.preheader319.preheader.0:12  %k_buf_val_3_V_addr = getelementptr [1920 x i8]* %k_buf_val_3_V, i64 0, i64 %tmp_12
+
+ST_3: win_val_3_V_6 [2/2] 2.39ns
+.preheader319.preheader.0:13  %win_val_3_V_6 = load i8* %k_buf_val_3_V_addr, align 1
+
+ST_3: k_buf_val_4_V_addr [1/1] 0.00ns
+.preheader319.preheader.0:15  %k_buf_val_4_V_addr = getelementptr [1920 x i8]* %k_buf_val_4_V, i64 0, i64 %tmp_12
+
+ST_3: win_val_4_V_6 [2/2] 2.39ns
+.preheader319.preheader.0:16  %win_val_4_V_6 = load i8* %k_buf_val_4_V_addr, align 1
+
+ST_3: k_buf_val_5_V_addr [1/1] 0.00ns
+.preheader319.preheader.0:18  %k_buf_val_5_V_addr = getelementptr [1920 x i8]* %k_buf_val_5_V, i64 0, i64 %tmp_12
+
+ST_3: win_val_5_V_6 [2/2] 2.39ns
+.preheader319.preheader.0:19  %win_val_5_V_6 = load i8* %k_buf_val_5_V_addr, align 1
+
+ST_3: tmp_17 [1/1] 2.11ns
+.preheader.preheader.0:8  %tmp_17 = icmp ugt i11 %p_2, 5
+
+ST_3: or_cond1 [1/1] 1.37ns
+.preheader.preheader.0:9  %or_cond1 = and i1 %tmp_8, %tmp_17
+
+ST_3: stg_148 [1/1] 1.57ns
+.preheader.preheader.0:10  br i1 %or_cond1, label %_ifconv, label %._crit_edge321_ifconv
+
+ST_3: tmp_97 [1/1] 0.00ns
+._crit_edge321_ifconv:28  %tmp_97 = call i9 @_ssdm_op_PartSelect.i9.i11.i32.i32(i11 %p_2, i32 2, i32 10)
+
+ST_3: icmp1 [1/1] 2.03ns
+._crit_edge321_ifconv:29  %icmp1 = icmp eq i9 %tmp_97, 0
+
+ST_3: or_cond4 [1/1] 1.37ns
+._crit_edge321_ifconv:30  %or_cond4 = or i1 %icmp, %icmp1
+
+ST_3: stg_152 [1/1] 0.00ns
+._crit_edge321_ifconv:31  br i1 %or_cond4, label %._crit_edge327, label %4
+
+
+ <State 4>: 4.78ns
+ST_4: win_val_0_V_2_1 [1/1] 0.00ns
+:4  %win_val_0_V_2_1 = load i8* %win_val_0_V_2, align 1
+
+ST_4: win_val_0_V_3_3 [1/1] 0.00ns
+:5  %win_val_0_V_3_3 = load i8* %win_val_0_V_3, align 1
+
+ST_4: win_val_0_V_4_3 [1/1] 0.00ns
+:6  %win_val_0_V_4_3 = load i8* %win_val_0_V_4, align 1
+
+ST_4: win_val_0_V_5_3 [1/1] 0.00ns
+:7  %win_val_0_V_5_3 = load i8* %win_val_0_V_5, align 1
+
+ST_4: win_val_1_V_4_3 [1/1] 0.00ns
+:11  %win_val_1_V_4_3 = load i8* %win_val_1_V_4, align 1
+
+ST_4: win_val_1_V_5_3 [1/1] 0.00ns
+:12  %win_val_1_V_5_3 = load i8* %win_val_1_V_5, align 1
+
+ST_4: win_val_2_V_5_3 [1/1] 0.00ns
+:18  %win_val_2_V_5_3 = load i8* %win_val_2_V_5, align 1
+
+ST_4: win_val_3_V_2_3 [1/1] 0.00ns
+:21  %win_val_3_V_2_3 = load i8* %win_val_3_V_2, align 1
+
+ST_4: win_val_3_V_3_3 [1/1] 0.00ns
+:22  %win_val_3_V_3_3 = load i8* %win_val_3_V_3, align 1
+
+ST_4: win_val_3_V_4_3 [1/1] 0.00ns
+:23  %win_val_3_V_4_3 = load i8* %win_val_3_V_4, align 1
+
+ST_4: win_val_3_V_5_3 [1/1] 0.00ns
+:24  %win_val_3_V_5_3 = load i8* %win_val_3_V_5, align 1
+
+ST_4: win_val_4_V_5_3 [1/1] 0.00ns
+:30  %win_val_4_V_5_3 = load i8* %win_val_4_V_5, align 1
+
+ST_4: win_val_5_V_4_3 [1/1] 0.00ns
+:34  %win_val_5_V_4_3 = load i8* %win_val_5_V_4, align 1
+
+ST_4: win_val_5_V_5_3 [1/1] 0.00ns
+:35  %win_val_5_V_5_3 = load i8* %win_val_5_V_5, align 1
+
+ST_4: win_val_6_V_4_1 [1/1] 0.00ns
+.preheader319.preheader.0:0  %win_val_6_V_4_1 = load i8* %win_val_6_V_5, align 1
+
+ST_4: win_val_6_V_3_1 [1/1] 0.00ns
+.preheader319.preheader.0:1  %win_val_6_V_3_1 = load i8* %win_val_6_V_4, align 1
+
+ST_4: win_val_6_V_2_2 [1/1] 0.00ns
+.preheader319.preheader.0:2  %win_val_6_V_2_2 = load i8* %win_val_6_V_3, align 1
+
+ST_4: win_val_0_V_6 [1/2] 2.39ns
+.preheader319.preheader.0:5  %win_val_0_V_6 = load i8* %k_buf_val_0_V_addr, align 1
+
+ST_4: win_val_1_V_6 [1/2] 2.39ns
+.preheader319.preheader.0:7  %win_val_1_V_6 = load i8* %k_buf_val_1_V_addr, align 1
+
+ST_4: stg_172 [1/1] 2.39ns
+.preheader319.preheader.0:8  store i8 %win_val_1_V_6, i8* %k_buf_val_0_V_addr, align 1
+
+ST_4: win_val_2_V_6 [1/2] 2.39ns
+.preheader319.preheader.0:10  %win_val_2_V_6 = load i8* %k_buf_val_2_V_addr, align 1
+
+ST_4: stg_174 [1/1] 2.39ns
+.preheader319.preheader.0:11  store i8 %win_val_2_V_6, i8* %k_buf_val_1_V_addr, align 1
+
+ST_4: win_val_3_V_6 [1/2] 2.39ns
+.preheader319.preheader.0:13  %win_val_3_V_6 = load i8* %k_buf_val_3_V_addr, align 1
+
+ST_4: stg_176 [1/1] 2.39ns
+.preheader319.preheader.0:14  store i8 %win_val_3_V_6, i8* %k_buf_val_2_V_addr, align 1
+
+ST_4: win_val_4_V_6 [1/2] 2.39ns
+.preheader319.preheader.0:16  %win_val_4_V_6 = load i8* %k_buf_val_4_V_addr, align 1
+
+ST_4: stg_178 [1/1] 2.39ns
+.preheader319.preheader.0:17  store i8 %win_val_4_V_6, i8* %k_buf_val_3_V_addr, align 1
+
+ST_4: win_val_5_V_6 [1/2] 2.39ns
+.preheader319.preheader.0:19  %win_val_5_V_6 = load i8* %k_buf_val_5_V_addr, align 1
+
+ST_4: stg_180 [1/1] 2.39ns
+.preheader319.preheader.0:20  store i8 %win_val_5_V_6, i8* %k_buf_val_4_V_addr, align 1
+
+ST_4: tmp_13 [1/1] 0.00ns
+.preheader319.preheader.0:21  %tmp_13 = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str1818)
+
+ST_4: stg_182 [1/1] 0.00ns
+.preheader319.preheader.0:22  call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1806) nounwind
+
+ST_4: tmp_99 [1/1] 1.70ns
+.preheader319.preheader.0:23  %tmp_99 = call i8 @_ssdm_op_Read.ap_fifo.volatile.i8P(i8* %p_src_data_stream_V)
+
+ST_4: empty [1/1] 0.00ns
+.preheader319.preheader.0:24  %empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str1818, i32 %tmp_13)
+
+ST_4: stg_185 [1/1] 2.39ns
+.preheader319.preheader.0:25  store i8 %tmp_99, i8* %k_buf_val_5_V_addr, align 1
+
+ST_4: stg_186 [1/1] 0.00ns
+.preheader319.preheader.0:28  store i8 %win_val_5_V_6, i8* %win_val_5_V_5, align 1
+
+ST_4: stg_187 [1/1] 0.00ns
+.preheader319.preheader.0:29  store i8 %win_val_5_V_5_3, i8* %win_val_5_V_4, align 1
+
+ST_4: stg_188 [1/1] 0.00ns
+.preheader319.preheader.0:34  store i8 %win_val_4_V_6, i8* %win_val_4_V_5, align 1
+
+ST_4: stg_189 [1/1] 0.00ns
+.preheader319.preheader.0:41  store i8 %win_val_3_V_6, i8* %win_val_3_V_5, align 1
+
+ST_4: stg_190 [1/1] 0.00ns
+.preheader319.preheader.0:42  store i8 %win_val_3_V_5_3, i8* %win_val_3_V_4, align 1
+
+ST_4: stg_191 [1/1] 0.00ns
+.preheader319.preheader.0:43  store i8 %win_val_3_V_4_3, i8* %win_val_3_V_3, align 1
+
+ST_4: stg_192 [1/1] 0.00ns
+.preheader319.preheader.0:44  store i8 %win_val_3_V_3_3, i8* %win_val_3_V_2, align 1
+
+ST_4: stg_193 [1/1] 0.00ns
+.preheader319.preheader.0:48  store i8 %win_val_2_V_6, i8* %win_val_2_V_5, align 1
+
+ST_4: stg_194 [1/1] 0.00ns
+.preheader319.preheader.0:55  store i8 %win_val_1_V_6, i8* %win_val_1_V_5, align 1
+
+ST_4: stg_195 [1/1] 0.00ns
+.preheader319.preheader.0:56  store i8 %win_val_1_V_5_3, i8* %win_val_1_V_4, align 1
+
+ST_4: stg_196 [1/1] 0.00ns
+.preheader319.preheader.0:61  store i8 %win_val_0_V_6, i8* %win_val_0_V_5, align 1
+
+ST_4: stg_197 [1/1] 0.00ns
+.preheader319.preheader.0:62  store i8 %win_val_0_V_5_3, i8* %win_val_0_V_4, align 1
+
+ST_4: stg_198 [1/1] 0.00ns
+.preheader319.preheader.0:63  store i8 %win_val_0_V_4_3, i8* %win_val_0_V_3, align 1
+
+ST_4: stg_199 [1/1] 0.00ns
+.preheader319.preheader.0:64  store i8 %win_val_0_V_3_3, i8* %win_val_0_V_2, align 1
+
+ST_4: stg_200 [1/1] 0.00ns
+.preheader319.preheader.0:66  store i8 %win_val_6_V_3_1, i8* %win_val_6_V_3, align 1
+
+ST_4: stg_201 [1/1] 0.00ns
+.preheader319.preheader.0:67  store i8 %win_val_6_V_4_1, i8* %win_val_6_V_4, align 1
+
+ST_4: stg_202 [1/1] 0.00ns
+.preheader319.preheader.0:68  store i8 %tmp_99, i8* %win_val_6_V_5, align 1
+
+
+ <State 5>: 5.12ns
+ST_5: win_val_1_V_1_1 [1/1] 0.00ns
+:8  %win_val_1_V_1_1 = load i8* %win_val_1_V_1, align 1
+
+ST_5: win_val_1_V_2_3 [1/1] 0.00ns
+:9  %win_val_1_V_2_3 = load i8* %win_val_1_V_2, align 1
+
+ST_5: win_val_1_V_3_3 [1/1] 0.00ns
+:10  %win_val_1_V_3_3 = load i8* %win_val_1_V_3, align 1
+
+ST_5: win_val_2_V_0_1 [1/1] 0.00ns
+:13  %win_val_2_V_0_1 = load i8* %win_val_2_V_0, align 1
+
+ST_5: win_val_2_V_1_3 [1/1] 0.00ns
+:14  %win_val_2_V_1_3 = load i8* %win_val_2_V_1, align 1
+
+ST_5: win_val_2_V_2_3 [1/1] 0.00ns
+:15  %win_val_2_V_2_3 = load i8* %win_val_2_V_2, align 1
+
+ST_5: win_val_2_V_3_3 [1/1] 0.00ns
+:16  %win_val_2_V_3_3 = load i8* %win_val_2_V_3, align 1
+
+ST_5: win_val_2_V_4_3 [1/1] 0.00ns
+:17  %win_val_2_V_4_3 = load i8* %win_val_2_V_4, align 1
+
+ST_5: win_val_3_V_0_1 [1/1] 0.00ns
+:19  %win_val_3_V_0_1 = load i8* %win_val_3_V_0, align 1
+
+ST_5: win_val_3_V_1_3 [1/1] 0.00ns
+:20  %win_val_3_V_1_3 = load i8* %win_val_3_V_1, align 1
+
+ST_5: win_val_4_V_0_1 [1/1] 0.00ns
+:25  %win_val_4_V_0_1 = load i8* %win_val_4_V_0, align 1
+
+ST_5: win_val_4_V_1_3 [1/1] 0.00ns
+:26  %win_val_4_V_1_3 = load i8* %win_val_4_V_1, align 1
+
+ST_5: win_val_4_V_2_3 [1/1] 0.00ns
+:27  %win_val_4_V_2_3 = load i8* %win_val_4_V_2, align 1
+
+ST_5: win_val_4_V_3_3 [1/1] 0.00ns
+:28  %win_val_4_V_3_3 = load i8* %win_val_4_V_3, align 1
+
+ST_5: win_val_4_V_4_3 [1/1] 0.00ns
+:29  %win_val_4_V_4_3 = load i8* %win_val_4_V_4, align 1
+
+ST_5: win_val_5_V_1_1 [1/1] 0.00ns
+:31  %win_val_5_V_1_1 = load i8* %win_val_5_V_1, align 1
+
+ST_5: win_val_5_V_2_3 [1/1] 0.00ns
+:32  %win_val_5_V_2_3 = load i8* %win_val_5_V_2, align 1
+
+ST_5: win_val_5_V_3_3 [1/1] 0.00ns
+:33  %win_val_5_V_3_3 = load i8* %win_val_5_V_3, align 1
+
+ST_5: win_val_6_V_2_1 [1/1] 0.00ns
+:36  %win_val_6_V_2_1 = load i8* %win_val_6_V_2, align 1
+
+ST_5: stg_222 [1/1] 0.00ns
+.preheader319.preheader.0:26  store i8 %win_val_6_V_2_2, i8* %win_val_6_V_2, align 1
+
+ST_5: stg_223 [1/1] 0.00ns
+.preheader319.preheader.0:27  store i8 %win_val_6_V_2_1, i8* %win_val_6_V_2_3, align 1
+
+ST_5: stg_224 [1/1] 0.00ns
+.preheader319.preheader.0:30  store i8 %win_val_5_V_4_3, i8* %win_val_5_V_3, align 1
+
+ST_5: stg_225 [1/1] 0.00ns
+.preheader319.preheader.0:31  store i8 %win_val_5_V_3_3, i8* %win_val_5_V_2, align 1
+
+ST_5: stg_226 [1/1] 0.00ns
+.preheader319.preheader.0:32  store i8 %win_val_5_V_2_3, i8* %win_val_5_V_1, align 1
+
+ST_5: stg_227 [1/1] 0.00ns
+.preheader319.preheader.0:33  store i8 %win_val_5_V_1_1, i8* %win_val_5_V_1_3, align 1
+
+ST_5: stg_228 [1/1] 0.00ns
+.preheader319.preheader.0:35  store i8 %win_val_4_V_5_3, i8* %win_val_4_V_4, align 1
+
+ST_5: stg_229 [1/1] 0.00ns
+.preheader319.preheader.0:36  store i8 %win_val_4_V_4_3, i8* %win_val_4_V_3, align 1
+
+ST_5: stg_230 [1/1] 0.00ns
+.preheader319.preheader.0:37  store i8 %win_val_4_V_3_3, i8* %win_val_4_V_2, align 1
+
+ST_5: stg_231 [1/1] 0.00ns
+.preheader319.preheader.0:38  store i8 %win_val_4_V_2_3, i8* %win_val_4_V_1, align 1
+
+ST_5: stg_232 [1/1] 0.00ns
+.preheader319.preheader.0:39  store i8 %win_val_4_V_1_3, i8* %win_val_4_V_0, align 1
+
+ST_5: stg_233 [1/1] 0.00ns
+.preheader319.preheader.0:40  store i8 %win_val_4_V_0_1, i8* %win_val_4_V_0_3, align 1
+
+ST_5: stg_234 [1/1] 0.00ns
+.preheader319.preheader.0:45  store i8 %win_val_3_V_2_3, i8* %win_val_3_V_1, align 1
+
+ST_5: stg_235 [1/1] 0.00ns
+.preheader319.preheader.0:46  store i8 %win_val_3_V_1_3, i8* %win_val_3_V_0, align 1
+
+ST_5: stg_236 [1/1] 0.00ns
+.preheader319.preheader.0:47  store i8 %win_val_3_V_0_1, i8* %win_val_3_V_0_3, align 1
+
+ST_5: stg_237 [1/1] 0.00ns
+.preheader319.preheader.0:49  store i8 %win_val_2_V_5_3, i8* %win_val_2_V_4, align 1
+
+ST_5: stg_238 [1/1] 0.00ns
+.preheader319.preheader.0:50  store i8 %win_val_2_V_4_3, i8* %win_val_2_V_3, align 1
+
+ST_5: stg_239 [1/1] 0.00ns
+.preheader319.preheader.0:51  store i8 %win_val_2_V_3_3, i8* %win_val_2_V_2, align 1
+
+ST_5: stg_240 [1/1] 0.00ns
+.preheader319.preheader.0:52  store i8 %win_val_2_V_2_3, i8* %win_val_2_V_1, align 1
+
+ST_5: stg_241 [1/1] 0.00ns
+.preheader319.preheader.0:53  store i8 %win_val_2_V_1_3, i8* %win_val_2_V_0, align 1
+
+ST_5: stg_242 [1/1] 0.00ns
+.preheader319.preheader.0:54  store i8 %win_val_2_V_0_1, i8* %win_val_2_V_0_3, align 1
+
+ST_5: stg_243 [1/1] 0.00ns
+.preheader319.preheader.0:57  store i8 %win_val_1_V_4_3, i8* %win_val_1_V_3, align 1
+
+ST_5: stg_244 [1/1] 0.00ns
+.preheader319.preheader.0:58  store i8 %win_val_1_V_3_3, i8* %win_val_1_V_2, align 1
+
+ST_5: stg_245 [1/1] 0.00ns
+.preheader319.preheader.0:59  store i8 %win_val_1_V_2_3, i8* %win_val_1_V_1, align 1
+
+ST_5: stg_246 [1/1] 0.00ns
+.preheader319.preheader.0:60  store i8 %win_val_1_V_1_1, i8* %win_val_1_V_1_3, align 1
+
+ST_5: stg_247 [1/1] 0.00ns
+.preheader319.preheader.0:65  store i8 %win_val_0_V_2_1, i8* %win_val_0_V_2_3, align 1
+
+ST_5: stg_248 [1/1] 0.00ns
+.preheader319.preheader.0:69  br label %.preheader.preheader.0
+
+ST_5: win_val_6_V_3_load [1/1] 0.00ns
+_ifconv:0  %win_val_6_V_3_load = load i8* %win_val_6_V_3, align 1
+
+ST_5: win_val_0_V_2_load [1/1] 0.00ns
+_ifconv:2  %win_val_0_V_2_load = load i8* %win_val_0_V_2, align 1
+
+ST_5: win_val_0_V_3_load [1/1] 0.00ns
+_ifconv:3  %win_val_0_V_3_load = load i8* %win_val_0_V_3, align 1
+
+ST_5: win_val_1_V_4_load [1/1] 0.00ns
+_ifconv:5  %win_val_1_V_4_load = load i8* %win_val_1_V_4, align 1
+
+ST_5: win_val_2_V_5_load [1/1] 0.00ns
+_ifconv:7  %win_val_2_V_5_load = load i8* %win_val_2_V_5, align 1
+
+ST_5: win_val_3_V_2_load [1/1] 0.00ns
+_ifconv:9  %win_val_3_V_2_load = load i8* %win_val_3_V_2, align 1
+
+ST_5: win_val_3_V_5_load [1/1] 0.00ns
+_ifconv:10  %win_val_3_V_5_load = load i8* %win_val_3_V_5, align 1
+
+ST_5: win_val_4_V_5_load [1/1] 0.00ns
+_ifconv:12  %win_val_4_V_5_load = load i8* %win_val_4_V_5, align 1
+
+ST_5: win_val_5_V_4_load [1/1] 0.00ns
+_ifconv:14  %win_val_5_V_4_load = load i8* %win_val_5_V_4, align 1
+
+ST_5: lhs_V [1/1] 0.00ns
+_ifconv:17  %lhs_V = zext i8 %win_val_3_V_2_load to i9
+
+ST_5: rhs_V [1/1] 0.00ns
+_ifconv:18  %rhs_V = zext i8 %win_val_0_V_2_load to i9
+
+ST_5: r_V [1/1] 1.72ns
+_ifconv:19  %r_V = sub i9 %lhs_V, %rhs_V
+
+ST_5: tmp_18 [1/1] 2.03ns
+_ifconv:24  %tmp_18 = icmp sgt i9 %r_V, 20
+
+ST_5: tmp_19 [1/1] 2.03ns
+_ifconv:25  %tmp_19 = icmp slt i9 %r_V, -20
+
+ST_5: phitmp1 [1/1] 1.37ns
+_ifconv:26  %phitmp1 = select i1 %tmp_18, i2 1, i2 -2
+
+ST_5: tmp_20 [1/1] 1.37ns
+_ifconv:27  %tmp_20 = or i1 %tmp_18, %tmp_19
+
+ST_5: rhs_V_s [1/1] 0.00ns
+_ifconv:34  %rhs_V_s = zext i8 %win_val_0_V_3_load to i9
+
+ST_5: r_V_s [1/1] 1.72ns
+_ifconv:35  %r_V_s = sub i9 %lhs_V, %rhs_V_s
+
+ST_5: tmp_176_1 [1/1] 2.03ns
+_ifconv:40  %tmp_176_1 = icmp sgt i9 %r_V_s, 20
+
+ST_5: tmp_177_1 [1/1] 2.03ns
+_ifconv:41  %tmp_177_1 = icmp slt i9 %r_V_s, -20
+
+ST_5: phitmp_1 [1/1] 1.37ns
+_ifconv:42  %phitmp_1 = select i1 %tmp_176_1, i2 1, i2 -2
+
+ST_5: tmp_24 [1/1] 1.37ns
+_ifconv:43  %tmp_24 = or i1 %tmp_176_1, %tmp_177_1
+
+ST_5: rhs_V_2 [1/1] 0.00ns
+_ifconv:50  %rhs_V_2 = zext i8 %win_val_1_V_4_load to i9
+
+ST_5: r_V_2 [1/1] 1.72ns
+_ifconv:51  %r_V_2 = sub i9 %lhs_V, %rhs_V_2
+
+ST_5: tmp_176_2 [1/1] 2.03ns
+_ifconv:56  %tmp_176_2 = icmp sgt i9 %r_V_2, 20
+
+ST_5: tmp_177_2 [1/1] 2.03ns
+_ifconv:57  %tmp_177_2 = icmp slt i9 %r_V_2, -20
+
+ST_5: phitmp_2 [1/1] 1.37ns
+_ifconv:58  %phitmp_2 = select i1 %tmp_176_2, i2 1, i2 -2
+
+ST_5: tmp_27 [1/1] 1.37ns
+_ifconv:59  %tmp_27 = or i1 %tmp_176_2, %tmp_177_2
+
+ST_5: rhs_V_3 [1/1] 0.00ns
+_ifconv:66  %rhs_V_3 = zext i8 %win_val_2_V_5_load to i9
+
+ST_5: r_V_3 [1/1] 1.72ns
+_ifconv:67  %r_V_3 = sub i9 %lhs_V, %rhs_V_3
+
+ST_5: tmp_176_3 [1/1] 2.03ns
+_ifconv:72  %tmp_176_3 = icmp sgt i9 %r_V_3, 20
+
+ST_5: tmp_177_3 [1/1] 2.03ns
+_ifconv:73  %tmp_177_3 = icmp slt i9 %r_V_3, -20
+
+ST_5: phitmp_3 [1/1] 1.37ns
+_ifconv:74  %phitmp_3 = select i1 %tmp_176_3, i2 1, i2 -2
+
+ST_5: tmp_29 [1/1] 1.37ns
+_ifconv:75  %tmp_29 = or i1 %tmp_176_3, %tmp_177_3
+
+ST_5: rhs_V_4 [1/1] 0.00ns
+_ifconv:82  %rhs_V_4 = zext i8 %win_val_3_V_5_load to i9
+
+ST_5: r_V_4 [1/1] 1.72ns
+_ifconv:83  %r_V_4 = sub i9 %lhs_V, %rhs_V_4
+
+ST_5: tmp_176_4 [1/1] 2.03ns
+_ifconv:88  %tmp_176_4 = icmp sgt i9 %r_V_4, 20
+
+ST_5: tmp_177_4 [1/1] 2.03ns
+_ifconv:89  %tmp_177_4 = icmp slt i9 %r_V_4, -20
+
+ST_5: rhs_V_5 [1/1] 0.00ns
+_ifconv:98  %rhs_V_5 = zext i8 %win_val_4_V_5_load to i9
+
+ST_5: r_V_5 [1/1] 1.72ns
+_ifconv:99  %r_V_5 = sub i9 %lhs_V, %rhs_V_5
+
+ST_5: tmp_176_5 [1/1] 2.03ns
+_ifconv:104  %tmp_176_5 = icmp sgt i9 %r_V_5, 20
+
+ST_5: tmp_177_5 [1/1] 2.03ns
+_ifconv:105  %tmp_177_5 = icmp slt i9 %r_V_5, -20
+
+ST_5: rhs_V_6 [1/1] 0.00ns
+_ifconv:114  %rhs_V_6 = zext i8 %win_val_5_V_4_load to i9
+
+ST_5: r_V_6 [1/1] 1.72ns
+_ifconv:115  %r_V_6 = sub i9 %lhs_V, %rhs_V_6
+
+ST_5: tmp_176_6 [1/1] 2.03ns
+_ifconv:120  %tmp_176_6 = icmp sgt i9 %r_V_6, 20
+
+ST_5: tmp_177_6 [1/1] 2.03ns
+_ifconv:121  %tmp_177_6 = icmp slt i9 %r_V_6, -20
+
+ST_5: rhs_V_7 [1/1] 0.00ns
+_ifconv:130  %rhs_V_7 = zext i8 %win_val_6_V_3_load to i9
+
+ST_5: r_V_7 [1/1] 1.72ns
+_ifconv:131  %r_V_7 = sub i9 %lhs_V, %rhs_V_7
+
+ST_5: tmp_176_7 [1/1] 2.03ns
+_ifconv:136  %tmp_176_7 = icmp sgt i9 %r_V_7, 20
+
+ST_5: tmp_177_7 [1/1] 2.03ns
+_ifconv:137  %tmp_177_7 = icmp slt i9 %r_V_7, -20
+
+
+ <State 6>: 5.47ns
+ST_6: win_val_0_V_2_3_load [1/1] 0.00ns
+_ifconv:1  %win_val_0_V_2_3_load = load i8* %win_val_0_V_2_3, align 1
+
+ST_6: win_val_1_V_1_3_load [1/1] 0.00ns
+_ifconv:4  %win_val_1_V_1_3_load = load i8* %win_val_1_V_1_3, align 1
+
+ST_6: win_val_2_V_0_3_load [1/1] 0.00ns
+_ifconv:6  %win_val_2_V_0_3_load = load i8* %win_val_2_V_0_3, align 1
+
+ST_6: win_val_3_V_0_3_load [1/1] 0.00ns
+_ifconv:8  %win_val_3_V_0_3_load = load i8* %win_val_3_V_0_3, align 1
+
+ST_6: win_val_4_V_0_3_load [1/1] 0.00ns
+_ifconv:11  %win_val_4_V_0_3_load = load i8* %win_val_4_V_0_3, align 1
+
+ST_6: win_val_5_V_1_3_load [1/1] 0.00ns
+_ifconv:13  %win_val_5_V_1_3_load = load i8* %win_val_5_V_1_3, align 1
+
+ST_6: win_val_6_V_2_3_load [1/1] 0.00ns
+_ifconv:15  %win_val_6_V_2_3_load = load i8* %win_val_6_V_2_3, align 1
+
+ST_6: win_val_6_V_2_load [1/1] 0.00ns
+_ifconv:16  %win_val_6_V_2_load = load i8* %win_val_6_V_2, align 1
+
+ST_6: rhs_V_1 [1/1] 0.00ns
+_ifconv:21  %rhs_V_1 = zext i8 %win_val_6_V_2_load to i9
+
+ST_6: r_V_1 [1/1] 1.72ns
+_ifconv:22  %r_V_1 = sub i9 %lhs_V, %rhs_V_1
+
+ST_6: flag_val_V_assign_load_1_s [1/1] 1.37ns
+_ifconv:28  %flag_val_V_assign_load_1_s = select i1 %tmp_20, i2 %phitmp1, i2 0
+
+ST_6: tmp_21 [1/1] 2.03ns
+_ifconv:29  %tmp_21 = icmp sgt i9 %r_V_1, 20
+
+ST_6: tmp_22 [1/1] 2.03ns
+_ifconv:30  %tmp_22 = icmp slt i9 %r_V_1, -20
+
+ST_6: phitmp3 [1/1] 1.37ns
+_ifconv:31  %phitmp3 = select i1 %tmp_21, i2 1, i2 -2
+
+ST_6: tmp_23 [1/1] 1.37ns
+_ifconv:32  %tmp_23 = or i1 %tmp_21, %tmp_22
+
+ST_6: rhs_V_1_1 [1/1] 0.00ns
+_ifconv:37  %rhs_V_1_1 = zext i8 %win_val_6_V_2_3_load to i9
+
+ST_6: r_V_1_1 [1/1] 1.72ns
+_ifconv:38  %r_V_1_1 = sub i9 %lhs_V, %rhs_V_1_1
+
+ST_6: flag_val_V_assign_load_1_1 [1/1] 1.37ns
+_ifconv:44  %flag_val_V_assign_load_1_1 = select i1 %tmp_24, i2 %phitmp_1, i2 0
+
+ST_6: tmp_182_1 [1/1] 2.03ns
+_ifconv:45  %tmp_182_1 = icmp sgt i9 %r_V_1_1, 20
+
+ST_6: tmp_184_1 [1/1] 2.03ns
+_ifconv:46  %tmp_184_1 = icmp slt i9 %r_V_1_1, -20
+
+ST_6: rhs_V_1_2 [1/1] 0.00ns
+_ifconv:53  %rhs_V_1_2 = zext i8 %win_val_5_V_1_3_load to i9
+
+ST_6: r_V_1_2 [1/1] 1.72ns
+_ifconv:54  %r_V_1_2 = sub i9 %lhs_V, %rhs_V_1_2
+
+ST_6: flag_val_V_assign_load_1_2 [1/1] 1.37ns
+_ifconv:60  %flag_val_V_assign_load_1_2 = select i1 %tmp_27, i2 %phitmp_2, i2 0
+
+ST_6: tmp_182_2 [1/1] 2.03ns
+_ifconv:61  %tmp_182_2 = icmp sgt i9 %r_V_1_2, 20
+
+ST_6: tmp_184_2 [1/1] 2.03ns
+_ifconv:62  %tmp_184_2 = icmp slt i9 %r_V_1_2, -20
+
+ST_6: rhs_V_1_3 [1/1] 0.00ns
+_ifconv:69  %rhs_V_1_3 = zext i8 %win_val_4_V_0_3_load to i9
+
+ST_6: r_V_1_3 [1/1] 1.72ns
+_ifconv:70  %r_V_1_3 = sub i9 %lhs_V, %rhs_V_1_3
+
+ST_6: flag_val_V_assign_load_1_4 [1/1] 1.37ns
+_ifconv:76  %flag_val_V_assign_load_1_4 = select i1 %tmp_29, i2 %phitmp_3, i2 0
+
+ST_6: rhs_V_1_4 [1/1] 0.00ns
+_ifconv:85  %rhs_V_1_4 = zext i8 %win_val_3_V_0_3_load to i9
+
+ST_6: r_V_1_4 [1/1] 1.72ns
+_ifconv:86  %r_V_1_4 = sub i9 %lhs_V, %rhs_V_1_4
+
+ST_6: phitmp_4 [1/1] 1.37ns
+_ifconv:90  %phitmp_4 = select i1 %tmp_176_4, i2 1, i2 -2
+
+ST_6: tmp_31 [1/1] 1.37ns
+_ifconv:91  %tmp_31 = or i1 %tmp_176_4, %tmp_177_4
+
+ST_6: flag_val_V_assign_load_1_6 [1/1] 1.37ns
+_ifconv:92  %flag_val_V_assign_load_1_6 = select i1 %tmp_31, i2 %phitmp_4, i2 0
+
+ST_6: rhs_V_1_5 [1/1] 0.00ns
+_ifconv:101  %rhs_V_1_5 = zext i8 %win_val_2_V_0_3_load to i9
+
+ST_6: r_V_1_5 [1/1] 1.72ns
+_ifconv:102  %r_V_1_5 = sub i9 %lhs_V, %rhs_V_1_5
+
+ST_6: phitmp_5 [1/1] 1.37ns
+_ifconv:106  %phitmp_5 = select i1 %tmp_176_5, i2 1, i2 -2
+
+ST_6: tmp_33 [1/1] 1.37ns
+_ifconv:107  %tmp_33 = or i1 %tmp_176_5, %tmp_177_5
+
+ST_6: flag_val_V_assign_load_1_8 [1/1] 1.37ns
+_ifconv:108  %flag_val_V_assign_load_1_8 = select i1 %tmp_33, i2 %phitmp_5, i2 0
+
+ST_6: rhs_V_1_6 [1/1] 0.00ns
+_ifconv:117  %rhs_V_1_6 = zext i8 %win_val_1_V_1_3_load to i9
+
+ST_6: r_V_1_6 [1/1] 1.72ns
+_ifconv:118  %r_V_1_6 = sub i9 %lhs_V, %rhs_V_1_6
+
+ST_6: phitmp_6 [1/1] 1.37ns
+_ifconv:122  %phitmp_6 = select i1 %tmp_176_6, i2 1, i2 -2
+
+ST_6: tmp_35 [1/1] 1.37ns
+_ifconv:123  %tmp_35 = or i1 %tmp_176_6, %tmp_177_6
+
+ST_6: flag_val_V_assign_load_1_11 [1/1] 1.37ns
+_ifconv:124  %flag_val_V_assign_load_1_11 = select i1 %tmp_35, i2 %phitmp_6, i2 0
+
+ST_6: rhs_V_1_7 [1/1] 0.00ns
+_ifconv:133  %rhs_V_1_7 = zext i8 %win_val_0_V_2_3_load to i9
+
+ST_6: r_V_1_7 [1/1] 1.72ns
+_ifconv:134  %r_V_1_7 = sub i9 %lhs_V, %rhs_V_1_7
+
+ST_6: phitmp_7 [1/1] 1.37ns
+_ifconv:138  %phitmp_7 = select i1 %tmp_176_7, i2 1, i2 -2
+
+ST_6: tmp_37 [1/1] 1.37ns
+_ifconv:139  %tmp_37 = or i1 %tmp_176_7, %tmp_177_7
+
+ST_6: flag_val_V_assign_load_1_13 [1/1] 1.37ns
+_ifconv:140  %flag_val_V_assign_load_1_13 = select i1 %tmp_37, i2 %phitmp_7, i2 0
+
+ST_6: tmp_181_0_not [1/1] 1.36ns
+_ifconv:146  %tmp_181_0_not = icmp ne i2 %flag_val_V_assign_load_1_s, %flag_val_V_assign_load_1_1
+
+ST_6: tmp_39 [1/1] 1.36ns
+_ifconv:147  %tmp_39 = icmp eq i2 %flag_val_V_assign_load_1_s, 0
+
+ST_6: or_cond5 [1/1] 1.37ns
+_ifconv:148  %or_cond5 = or i1 %tmp_39, %tmp_181_0_not
+
+ST_6: tmp_181_1_not [1/1] 1.36ns
+_ifconv:149  %tmp_181_1_not = icmp ne i2 %flag_val_V_assign_load_1_1, %flag_val_V_assign_load_1_2
+
+ST_6: tmp_183_1 [1/1] 1.36ns
+_ifconv:150  %tmp_183_1 = icmp eq i2 %flag_val_V_assign_load_1_1, 0
+
+ST_6: or_cond6 [1/1] 1.37ns
+_ifconv:151  %or_cond6 = or i1 %tmp_183_1, %tmp_181_1_not
+
+ST_6: tmp_181_2_not [1/1] 1.36ns
+_ifconv:152  %tmp_181_2_not = icmp ne i2 %flag_val_V_assign_load_1_2, %flag_val_V_assign_load_1_4
+
+ST_6: tmp_183_2 [1/1] 1.36ns
+_ifconv:153  %tmp_183_2 = icmp eq i2 %flag_val_V_assign_load_1_2, 0
+
+ST_6: or_cond7 [1/1] 1.37ns
+_ifconv:154  %or_cond7 = or i1 %tmp_183_2, %tmp_181_2_not
+
+ST_6: tmp_181_3_not [1/1] 1.36ns
+_ifconv:155  %tmp_181_3_not = icmp ne i2 %flag_val_V_assign_load_1_4, %flag_val_V_assign_load_1_6
+
+ST_6: tmp_183_3 [1/1] 1.36ns
+_ifconv:156  %tmp_183_3 = icmp eq i2 %flag_val_V_assign_load_1_4, 0
+
+ST_6: or_cond8 [1/1] 1.37ns
+_ifconv:157  %or_cond8 = or i1 %tmp_183_3, %tmp_181_3_not
+
+ST_6: tmp_181_4_not [1/1] 1.36ns
+_ifconv:158  %tmp_181_4_not = icmp ne i2 %flag_val_V_assign_load_1_6, %flag_val_V_assign_load_1_8
+
+ST_6: tmp_183_4 [1/1] 1.36ns
+_ifconv:159  %tmp_183_4 = icmp eq i2 %flag_val_V_assign_load_1_6, 0
+
+ST_6: or_cond9 [1/1] 1.37ns
+_ifconv:160  %or_cond9 = or i1 %tmp_183_4, %tmp_181_4_not
+
+ST_6: tmp_181_5_not [1/1] 1.36ns
+_ifconv:161  %tmp_181_5_not = icmp ne i2 %flag_val_V_assign_load_1_8, %flag_val_V_assign_load_1_11
+
+ST_6: tmp_183_5 [1/1] 1.36ns
+_ifconv:162  %tmp_183_5 = icmp eq i2 %flag_val_V_assign_load_1_8, 0
+
+ST_6: tmp_181_6_not [1/1] 1.36ns
+_ifconv:164  %tmp_181_6_not = icmp ne i2 %flag_val_V_assign_load_1_11, %flag_val_V_assign_load_1_13
+
+ST_6: tmp_183_6 [1/1] 1.36ns
+_ifconv:165  %tmp_183_6 = icmp eq i2 %flag_val_V_assign_load_1_11, 0
+
+ST_6: count_1_i_0_op_op87_op [1/1] 1.37ns
+_ifconv:167  %count_1_i_0_op_op87_op = select i1 %or_cond5, i4 -8, i4 -7
+
+ST_6: phitmp43_op_op_cast_cast_cast [1/1] 1.37ns
+_ifconv:168  %phitmp43_op_op_cast_cast_cast = select i1 %or_cond7, i4 6, i4 7
+
+ST_6: tmp_40 [1/1] 1.37ns
+_ifconv:169  %tmp_40 = or i1 %or_cond7, %or_cond6
+
+ST_6: not_or_cond6_demorgan [1/1] 1.37ns
+_ifconv:260  %not_or_cond6_demorgan = or i1 %tmp_183_1, %tmp_181_1_not
+
+ST_6: not_or_cond7_demorgan [1/1] 1.37ns
+_ifconv:267  %not_or_cond7_demorgan = or i1 %tmp_183_2, %tmp_181_2_not
+
+ST_6: not_or_cond8_demorgan [1/1] 1.37ns
+_ifconv:272  %not_or_cond8_demorgan = or i1 %tmp_183_3, %tmp_181_3_not
+
+ST_6: not_or_cond9_demorgan [1/1] 1.37ns
+_ifconv:279  %not_or_cond9_demorgan = or i1 %tmp_183_4, %tmp_181_4_not
+
+
+ <State 7>: 5.48ns
+ST_7: flag_val_V_assign_load_2_s [1/1] 1.37ns
+_ifconv:33  %flag_val_V_assign_load_2_s = select i1 %tmp_23, i2 %phitmp3, i2 0
+
+ST_7: phitmp1_1 [1/1] 1.37ns
+_ifconv:47  %phitmp1_1 = select i1 %tmp_182_1, i2 1, i2 -2
+
+ST_7: tmp_25 [1/1] 1.37ns
+_ifconv:48  %tmp_25 = or i1 %tmp_182_1, %tmp_184_1
+
+ST_7: flag_val_V_assign_load_1_9 [1/1] 1.37ns
+_ifconv:49  %flag_val_V_assign_load_1_9 = select i1 %tmp_25, i2 %phitmp1_1, i2 0
+
+ST_7: phitmp1_2 [1/1] 1.37ns
+_ifconv:63  %phitmp1_2 = select i1 %tmp_182_2, i2 1, i2 -2
+
+ST_7: tmp_28 [1/1] 1.37ns
+_ifconv:64  %tmp_28 = or i1 %tmp_182_2, %tmp_184_2
+
+ST_7: flag_val_V_assign_load_1_3 [1/1] 1.37ns
+_ifconv:65  %flag_val_V_assign_load_1_3 = select i1 %tmp_28, i2 %phitmp1_2, i2 0
+
+ST_7: tmp_182_3 [1/1] 2.03ns
+_ifconv:77  %tmp_182_3 = icmp sgt i9 %r_V_1_3, 20
+
+ST_7: tmp_184_3 [1/1] 2.03ns
+_ifconv:78  %tmp_184_3 = icmp slt i9 %r_V_1_3, -20
+
+ST_7: phitmp1_3 [1/1] 1.37ns
+_ifconv:79  %phitmp1_3 = select i1 %tmp_182_3, i2 1, i2 -2
+
+ST_7: tmp_30 [1/1] 1.37ns
+_ifconv:80  %tmp_30 = or i1 %tmp_182_3, %tmp_184_3
+
+ST_7: flag_val_V_assign_load_1_5 [1/1] 1.37ns
+_ifconv:81  %flag_val_V_assign_load_1_5 = select i1 %tmp_30, i2 %phitmp1_3, i2 0
+
+ST_7: tmp_182_4 [1/1] 2.03ns
+_ifconv:93  %tmp_182_4 = icmp sgt i9 %r_V_1_4, 20
+
+ST_7: tmp_184_4 [1/1] 2.03ns
+_ifconv:94  %tmp_184_4 = icmp slt i9 %r_V_1_4, -20
+
+ST_7: tmp_182_5 [1/1] 2.03ns
+_ifconv:109  %tmp_182_5 = icmp sgt i9 %r_V_1_5, 20
+
+ST_7: tmp_184_5 [1/1] 2.03ns
+_ifconv:110  %tmp_184_5 = icmp slt i9 %r_V_1_5, -20
+
+ST_7: or_cond2 [1/1] 1.37ns
+_ifconv:163  %or_cond2 = or i1 %tmp_183_5, %tmp_181_5_not
+
+ST_7: or_cond3 [1/1] 1.37ns
+_ifconv:166  %or_cond3 = or i1 %tmp_183_6, %tmp_181_6_not
+
+ST_7: count_1_i_2_op_op [1/1] 1.37ns
+_ifconv:170  %count_1_i_2_op_op = select i1 %tmp_40, i4 %phitmp43_op_op_cast_cast_cast, i4 %count_1_i_0_op_op87_op
+
+ST_7: phitmp42_op_cast_cast_cast [1/1] 1.37ns
+_ifconv:171  %phitmp42_op_cast_cast_cast = select i1 %or_cond9, i4 4, i4 5
+
+ST_7: tmp_41 [1/1] 1.37ns
+_ifconv:172  %tmp_41 = or i1 %or_cond9, %or_cond8
+
+ST_7: count_1_i_4_op [1/1] 1.37ns
+_ifconv:173  %count_1_i_4_op = select i1 %tmp_41, i4 %phitmp42_op_cast_cast_cast, i4 %count_1_i_2_op_op
+
+ST_7: phitmp3_cast_cast_cast [1/1] 1.37ns
+_ifconv:174  %phitmp3_cast_cast_cast = select i1 %or_cond3, i4 2, i4 3
+
+ST_7: tmp_42 [1/1] 1.37ns
+_ifconv:175  %tmp_42 = or i1 %or_cond3, %or_cond2
+
+ST_7: count_1_i_6 [1/1] 1.37ns
+_ifconv:176  %count_1_i_6 = select i1 %tmp_42, i4 %phitmp3_cast_cast_cast, i4 %count_1_i_4_op
+
+ST_7: tmp_181_7_not [1/1] 1.36ns
+_ifconv:177  %tmp_181_7_not = icmp ne i2 %flag_val_V_assign_load_1_13, %flag_val_V_assign_load_2_s
+
+ST_7: tmp_183_7 [1/1] 1.36ns
+_ifconv:178  %tmp_183_7 = icmp eq i2 %flag_val_V_assign_load_2_s, 0
+
+ST_7: or_cond10 [1/1] 1.37ns
+_ifconv:179  %or_cond10 = or i1 %tmp_183_7, %tmp_181_7_not
+
+ST_7: count_1_i_7 [1/1] 1.37ns
+_ifconv:183  %count_1_i_7 = select i1 %or_cond10, i4 1, i4 %count_1_i_6
+
+ST_7: tmp_181_8 [1/1] 1.36ns
+_ifconv:184  %tmp_181_8 = icmp ne i2 %flag_val_V_assign_load_2_s, %flag_val_V_assign_load_1_9
+
+ST_7: or_cond11 [1/1] 1.37ns
+_ifconv:185  %or_cond11 = or i1 %tmp_181_8, %tmp_183_7
+
+ST_7: tmp_181_9 [1/1] 1.36ns
+_ifconv:192  %tmp_181_9 = icmp ne i2 %flag_val_V_assign_load_1_9, %flag_val_V_assign_load_1_3
+
+ST_7: tmp_183_9 [1/1] 1.36ns
+_ifconv:193  %tmp_183_9 = icmp eq i2 %flag_val_V_assign_load_1_9, 0
+
+ST_7: not_or_cond10_demorgan [1/1] 1.37ns
+_ifconv:284  %not_or_cond10_demorgan = or i1 %tmp_183_5, %tmp_181_5_not
+
+ST_7: not_or_cond11_demorgan [1/1] 1.37ns
+_ifconv:291  %not_or_cond11_demorgan = or i1 %tmp_183_6, %tmp_181_6_not
+
+
+ <State 8>: 5.71ns
+ST_8: phitmp1_4 [1/1] 1.37ns
+_ifconv:95  %phitmp1_4 = select i1 %tmp_182_4, i2 1, i2 -2
+
+ST_8: tmp_32 [1/1] 1.37ns
+_ifconv:96  %tmp_32 = or i1 %tmp_182_4, %tmp_184_4
+
+ST_8: flag_val_V_assign_load_1_7 [1/1] 1.37ns
+_ifconv:97  %flag_val_V_assign_load_1_7 = select i1 %tmp_32, i2 %phitmp1_4, i2 0
+
+ST_8: phitmp1_5 [1/1] 1.37ns
+_ifconv:111  %phitmp1_5 = select i1 %tmp_182_5, i2 1, i2 -2
+
+ST_8: tmp_34 [1/1] 1.37ns
+_ifconv:112  %tmp_34 = or i1 %tmp_182_5, %tmp_184_5
+
+ST_8: flag_val_V_assign_load_1_10 [1/1] 1.37ns
+_ifconv:113  %flag_val_V_assign_load_1_10 = select i1 %tmp_34, i2 %phitmp1_5, i2 0
+
+ST_8: tmp_182_6 [1/1] 2.03ns
+_ifconv:125  %tmp_182_6 = icmp sgt i9 %r_V_1_6, 20
+
+ST_8: tmp_184_6 [1/1] 2.03ns
+_ifconv:126  %tmp_184_6 = icmp slt i9 %r_V_1_6, -20
+
+ST_8: phitmp1_6 [1/1] 1.37ns
+_ifconv:127  %phitmp1_6 = select i1 %tmp_182_6, i2 1, i2 -2
+
+ST_8: tmp_36 [1/1] 1.37ns
+_ifconv:128  %tmp_36 = or i1 %tmp_182_6, %tmp_184_6
+
+ST_8: flag_val_V_assign_load_1_12 [1/1] 1.37ns
+_ifconv:129  %flag_val_V_assign_load_1_12 = select i1 %tmp_36, i2 %phitmp1_6, i2 0
+
+ST_8: tmp_182_7 [1/1] 2.03ns
+_ifconv:141  %tmp_182_7 = icmp sgt i9 %r_V_1_7, 20
+
+ST_8: tmp_184_7 [1/1] 2.03ns
+_ifconv:142  %tmp_184_7 = icmp slt i9 %r_V_1_7, -20
+
+ST_8: tmp_185_7 [1/1] 1.88ns
+_ifconv:180  %tmp_185_7 = icmp ugt i4 %count_1_i_6, -8
+
+ST_8: not_or_cond [1/1] 1.37ns
+_ifconv:181  %not_or_cond = xor i1 %or_cond10, true
+
+ST_8: iscorner_2_i_7 [1/1] 1.37ns
+_ifconv:182  %iscorner_2_i_7 = and i1 %tmp_185_7, %not_or_cond
+
+ST_8: count_8 [1/1] 0.80ns
+_ifconv:186  %count_8 = add i4 %count_1_i_7, 1
+
+ST_8: tmp_185_8 [1/1] 1.88ns
+_ifconv:187  %tmp_185_8 = icmp ugt i4 %count_8, -8
+
+ST_8: phitmp4 [1/1] 0.80ns
+_ifconv:188  %phitmp4 = add i4 %count_1_i_7, 2
+
+ST_8: not_or_cond1 [1/1] 1.37ns
+_ifconv:189  %not_or_cond1 = xor i1 %or_cond11, true
+
+ST_8: p_iscorner_0_i_8 [1/1] 1.37ns
+_ifconv:190  %p_iscorner_0_i_8 = and i1 %tmp_185_8, %not_or_cond1
+
+ST_8: count_1_i_8 [1/1] 1.37ns
+_ifconv:191  %count_1_i_8 = select i1 %or_cond11, i4 2, i4 %phitmp4
+
+ST_8: or_cond12 [1/1] 1.37ns
+_ifconv:194  %or_cond12 = or i1 %tmp_181_9, %tmp_183_9
+
+ST_8: tmp_185_9 [1/1] 1.88ns
+_ifconv:195  %tmp_185_9 = icmp ugt i4 %count_1_i_8, -8
+
+ST_8: not_or_cond2_demorgan [1/1] 1.37ns
+_ifconv:196  %not_or_cond2_demorgan = or i1 %tmp_181_9, %tmp_183_9
+
+ST_8: not_or_cond2 [1/1] 1.37ns
+_ifconv:197  %not_or_cond2 = xor i1 %not_or_cond2_demorgan, true
+
+ST_8: p_iscorner_0_i_9 [1/1] 1.37ns
+_ifconv:198  %p_iscorner_0_i_9 = and i1 %tmp_185_9, %not_or_cond2
+
+ST_8: count_1_i_9 [1/1] 1.37ns
+_ifconv:199  %count_1_i_9 = select i1 %or_cond12, i4 1, i4 %count_1_i_8
+
+ST_8: tmp_181_s [1/1] 1.36ns
+_ifconv:200  %tmp_181_s = icmp ne i2 %flag_val_V_assign_load_1_3, %flag_val_V_assign_load_1_5
+
+ST_8: tmp_183_s [1/1] 1.36ns
+_ifconv:201  %tmp_183_s = icmp eq i2 %flag_val_V_assign_load_1_3, 0
+
+ST_8: or_cond13 [1/1] 1.37ns
+_ifconv:202  %or_cond13 = or i1 %tmp_181_s, %tmp_183_s
+
+ST_8: phitmp5 [1/1] 0.80ns
+_ifconv:205  %phitmp5 = add i4 %count_1_i_9, 2
+
+ST_8: not_or_cond3_demorgan [1/1] 1.37ns
+_ifconv:206  %not_or_cond3_demorgan = or i1 %tmp_181_s, %tmp_183_s
+
+ST_8: count_1_i_s [1/1] 1.37ns
+_ifconv:209  %count_1_i_s = select i1 %or_cond13, i4 2, i4 %phitmp5
+
+ST_8: tmp_181_1 [1/1] 1.36ns
+_ifconv:210  %tmp_181_1 = icmp ne i2 %flag_val_V_assign_load_1_5, %flag_val_V_assign_load_1_7
+
+ST_8: tmp_183_8 [1/1] 1.36ns
+_ifconv:211  %tmp_183_8 = icmp eq i2 %flag_val_V_assign_load_1_5, 0
+
+ST_8: or_cond14 [1/1] 1.37ns
+_ifconv:212  %or_cond14 = or i1 %tmp_181_1, %tmp_183_8
+
+ST_8: not_or_cond4_demorgan [1/1] 1.37ns
+_ifconv:214  %not_or_cond4_demorgan = or i1 %tmp_181_1, %tmp_183_8
+
+ST_8: tmp_181_2 [1/1] 1.36ns
+_ifconv:218  %tmp_181_2 = icmp ne i2 %flag_val_V_assign_load_1_7, %flag_val_V_assign_load_1_10
+
+ST_8: tmp_183_10 [1/1] 1.36ns
+_ifconv:219  %tmp_183_10 = icmp eq i2 %flag_val_V_assign_load_1_7, 0
+
+ST_8: tmp5 [1/1] 1.37ns
+_ifconv:297  %tmp5 = or i1 %iscorner_2_i_7, %p_iscorner_0_i_8
+
+
+ <State 9>: 5.47ns
+ST_9: phitmp1_7 [1/1] 1.37ns
+_ifconv:143  %phitmp1_7 = select i1 %tmp_182_7, i2 1, i2 -2
+
+ST_9: tmp_38 [1/1] 1.37ns
+_ifconv:144  %tmp_38 = or i1 %tmp_182_7, %tmp_184_7
+
+ST_9: flag_val_V_assign_load_1_14 [1/1] 1.37ns
+_ifconv:145  %flag_val_V_assign_load_1_14 = select i1 %tmp_38, i2 %phitmp1_7, i2 0
+
+ST_9: count_s [1/1] 0.80ns
+_ifconv:203  %count_s = add i4 %count_1_i_9, 1
+
+ST_9: tmp_185_s [1/1] 1.88ns
+_ifconv:204  %tmp_185_s = icmp ugt i4 %count_s, -8
+
+ST_9: not_or_cond3 [1/1] 1.37ns
+_ifconv:207  %not_or_cond3 = xor i1 %not_or_cond3_demorgan, true
+
+ST_9: p_iscorner_0_i_s [1/1] 1.37ns
+_ifconv:208  %p_iscorner_0_i_s = and i1 %tmp_185_s, %not_or_cond3
+
+ST_9: tmp_185_1 [1/1] 1.88ns
+_ifconv:213  %tmp_185_1 = icmp ugt i4 %count_1_i_s, -8
+
+ST_9: not_or_cond4 [1/1] 1.37ns
+_ifconv:215  %not_or_cond4 = xor i1 %not_or_cond4_demorgan, true
+
+ST_9: p_iscorner_0_i_1 [1/1] 1.37ns
+_ifconv:216  %p_iscorner_0_i_1 = and i1 %tmp_185_1, %not_or_cond4
+
+ST_9: count_1_i_1 [1/1] 1.37ns
+_ifconv:217  %count_1_i_1 = select i1 %or_cond14, i4 1, i4 %count_1_i_s
+
+ST_9: or_cond15 [1/1] 1.37ns
+_ifconv:220  %or_cond15 = or i1 %tmp_181_2, %tmp_183_10
+
+ST_9: count_1 [1/1] 0.80ns
+_ifconv:221  %count_1 = add i4 %count_1_i_1, 1
+
+ST_9: tmp_185_2 [1/1] 1.88ns
+_ifconv:222  %tmp_185_2 = icmp ugt i4 %count_1, -8
+
+ST_9: phitmp6 [1/1] 0.80ns
+_ifconv:223  %phitmp6 = add i4 %count_1_i_1, 2
+
+ST_9: not_or_cond12_demorgan [1/1] 1.37ns
+_ifconv:224  %not_or_cond12_demorgan = or i1 %tmp_181_2, %tmp_183_10
+
+ST_9: not_or_cond12 [1/1] 1.37ns
+_ifconv:225  %not_or_cond12 = xor i1 %not_or_cond12_demorgan, true
+
+ST_9: p_iscorner_0_i_2 [1/1] 1.37ns
+_ifconv:226  %p_iscorner_0_i_2 = and i1 %tmp_185_2, %not_or_cond12
+
+ST_9: count_1_i_2 [1/1] 1.37ns
+_ifconv:227  %count_1_i_2 = select i1 %or_cond15, i4 2, i4 %phitmp6
+
+ST_9: tmp_181_3 [1/1] 1.36ns
+_ifconv:228  %tmp_181_3 = icmp ne i2 %flag_val_V_assign_load_1_10, %flag_val_V_assign_load_1_12
+
+ST_9: tmp_183_11 [1/1] 1.36ns
+_ifconv:229  %tmp_183_11 = icmp eq i2 %flag_val_V_assign_load_1_10, 0
+
+ST_9: or_cond16 [1/1] 1.37ns
+_ifconv:230  %or_cond16 = or i1 %tmp_181_3, %tmp_183_11
+
+ST_9: tmp_185_3 [1/1] 1.88ns
+_ifconv:231  %tmp_185_3 = icmp ugt i4 %count_1_i_2, -8
+
+ST_9: not_or_cond13_demorgan [1/1] 1.37ns
+_ifconv:232  %not_or_cond13_demorgan = or i1 %tmp_181_3, %tmp_183_11
+
+ST_9: count_1_i_3 [1/1] 1.37ns
+_ifconv:235  %count_1_i_3 = select i1 %or_cond16, i4 1, i4 %count_1_i_2
+
+ST_9: tmp_181_4 [1/1] 1.36ns
+_ifconv:237  %tmp_181_4 = icmp ne i2 %flag_val_V_assign_load_1_12, %flag_val_V_assign_load_1_14
+
+ST_9: tmp_183_12 [1/1] 1.36ns
+_ifconv:238  %tmp_183_12 = icmp eq i2 %flag_val_V_assign_load_1_12, 0
+
+ST_9: or_cond17 [1/1] 1.37ns
+_ifconv:239  %or_cond17 = or i1 %tmp_181_4, %tmp_183_12
+
+ST_9: not_or_cond14_demorgan [1/1] 1.37ns
+_ifconv:243  %not_or_cond14_demorgan = or i1 %tmp_181_4, %tmp_183_12
+
+ST_9: tmp_181_5 [1/1] 1.36ns
+_ifconv:247  %tmp_181_5 = icmp ne i2 %flag_val_V_assign_load_1_14, %flag_val_V_assign_load_1_s
+
+ST_9: or_cond18 [1/1] 1.37ns
+_ifconv:248  %or_cond18 = or i1 %tmp_181_5, %tmp_39
+
+ST_9: tmp6 [1/1] 1.37ns
+_ifconv:298  %tmp6 = or i1 %p_iscorner_0_i_9, %p_iscorner_0_i_s
+
+
+ <State 10>: 5.45ns
+ST_10: not_or_cond13 [1/1] 1.37ns
+_ifconv:233  %not_or_cond13 = xor i1 %not_or_cond13_demorgan, true
+
+ST_10: p_iscorner_0_i_3 [1/1] 1.37ns
+_ifconv:234  %p_iscorner_0_i_3 = and i1 %tmp_185_3, %not_or_cond13
+
+ST_10: count_1_i_3_cast [1/1] 0.00ns
+_ifconv:236  %count_1_i_3_cast = zext i4 %count_1_i_3 to i5
+
+ST_10: count_2 [1/1] 0.80ns
+_ifconv:240  %count_2 = add i5 %count_1_i_3_cast, 1
+
+ST_10: tmp_185_4 [1/1] 1.91ns
+_ifconv:241  %tmp_185_4 = icmp ugt i5 %count_2, 8
+
+ST_10: phitmp7 [1/1] 0.80ns
+_ifconv:242  %phitmp7 = add i5 %count_1_i_3_cast, 2
+
+ST_10: not_or_cond14 [1/1] 1.37ns
+_ifconv:244  %not_or_cond14 = xor i1 %not_or_cond14_demorgan, true
+
+ST_10: p_iscorner_0_i_4 [1/1] 1.37ns
+_ifconv:245  %p_iscorner_0_i_4 = and i1 %tmp_185_4, %not_or_cond14
+
+ST_10: count_1_i_4 [1/1] 1.37ns
+_ifconv:246  %count_1_i_4 = select i1 %or_cond17, i5 2, i5 %phitmp7
+
+ST_10: tmp_185_5 [1/1] 1.91ns
+_ifconv:249  %tmp_185_5 = icmp ugt i5 %count_1_i_4, 8
+
+ST_10: not_or_cond15 [1/1] 1.37ns
+_ifconv:250  %not_or_cond15 = xor i1 %or_cond18, true
+
+ST_10: p_iscorner_0_i_5 [1/1] 1.37ns
+_ifconv:251  %p_iscorner_0_i_5 = and i1 %tmp_185_5, %not_or_cond15
+
+ST_10: count_1_i_5 [1/1] 1.37ns
+_ifconv:252  %count_1_i_5 = select i1 %or_cond18, i5 1, i5 %count_1_i_4
+
+ST_10: count_3 [1/1] 1.72ns
+_ifconv:253  %count_3 = add i5 %count_1_i_5, 1
+
+ST_10: phitmp8 [1/1] 1.72ns
+_ifconv:255  %phitmp8 = add i5 %count_1_i_5, 2
+
+ST_10: tmp4 [1/1] 1.37ns
+_ifconv:299  %tmp4 = or i1 %tmp6, %tmp5
+
+ST_10: tmp8 [1/1] 1.37ns
+_ifconv:300  %tmp8 = or i1 %p_iscorner_0_i_1, %p_iscorner_0_i_2
+
+ST_10: tmp9 [1/1] 1.37ns
+_ifconv:301  %tmp9 = or i1 %p_iscorner_0_i_3, %p_iscorner_0_i_4
+
+
+ <State 11>: 5.83ns
+ST_11: tmp_185_6 [1/1] 1.91ns
+_ifconv:254  %tmp_185_6 = icmp ugt i5 %count_3, 8
+
+ST_11: not_or_cond5 [1/1] 1.37ns
+_ifconv:256  %not_or_cond5 = xor i1 %or_cond5, true
+
+ST_11: p_iscorner_0_i_6 [1/1] 1.37ns
+_ifconv:257  %p_iscorner_0_i_6 = and i1 %tmp_185_6, %not_or_cond5
+
+ST_11: count_1_i_10 [1/1] 1.37ns
+_ifconv:258  %count_1_i_10 = select i1 %or_cond5, i5 2, i5 %phitmp8
+
+ST_11: tmp_185_10 [1/1] 1.91ns
+_ifconv:259  %tmp_185_10 = icmp ugt i5 %count_1_i_10, 8
+
+ST_11: not_or_cond6 [1/1] 1.37ns
+_ifconv:261  %not_or_cond6 = xor i1 %not_or_cond6_demorgan, true
+
+ST_11: p_iscorner_0_i_7 [1/1] 1.37ns
+_ifconv:262  %p_iscorner_0_i_7 = and i1 %tmp_185_10, %not_or_cond6
+
+ST_11: count_1_i_11 [1/1] 1.37ns
+_ifconv:263  %count_1_i_11 = select i1 %or_cond6, i5 1, i5 %count_1_i_10
+
+ST_11: count_4 [1/1] 1.72ns
+_ifconv:264  %count_4 = add i5 %count_1_i_11, 1
+
+ST_11: phitmp9 [1/1] 1.72ns
+_ifconv:266  %phitmp9 = add i5 %count_1_i_11, 2
+
+ST_11: count_1_i_12 [1/1] 1.37ns
+_ifconv:270  %count_1_i_12 = select i1 %or_cond7, i5 2, i5 %phitmp9
+
+ST_11: tmp7 [1/1] 1.37ns
+_ifconv:302  %tmp7 = or i1 %tmp9, %tmp8
+
+ST_11: tmp3 [1/1] 1.37ns
+_ifconv:303  %tmp3 = or i1 %tmp7, %tmp4
+
+ST_11: tmp12 [1/1] 1.37ns
+_ifconv:304  %tmp12 = or i1 %p_iscorner_0_i_5, %p_iscorner_0_i_6
+
+
+ <State 12>: 5.00ns
+ST_12: tmp_185_11 [1/1] 1.91ns
+_ifconv:265  %tmp_185_11 = icmp ugt i5 %count_4, 8
+
+ST_12: not_or_cond7 [1/1] 1.37ns
+_ifconv:268  %not_or_cond7 = xor i1 %not_or_cond7_demorgan, true
+
+ST_12: p_iscorner_0_i_10 [1/1] 1.37ns
+_ifconv:269  %p_iscorner_0_i_10 = and i1 %tmp_185_11, %not_or_cond7
+
+ST_12: tmp_185_12 [1/1] 1.91ns
+_ifconv:271  %tmp_185_12 = icmp ugt i5 %count_1_i_12, 8
+
+ST_12: not_or_cond8 [1/1] 1.37ns
+_ifconv:273  %not_or_cond8 = xor i1 %not_or_cond8_demorgan, true
+
+ST_12: p_iscorner_0_i_11 [1/1] 1.37ns
+_ifconv:274  %p_iscorner_0_i_11 = and i1 %tmp_185_12, %not_or_cond8
+
+ST_12: count_1_i_13 [1/1] 1.37ns
+_ifconv:275  %count_1_i_13 = select i1 %or_cond8, i5 1, i5 %count_1_i_12
+
+ST_12: count_5 [1/1] 1.72ns
+_ifconv:276  %count_5 = add i5 %count_1_i_13, 1
+
+ST_12: tmp_185_13 [1/1] 1.91ns
+_ifconv:277  %tmp_185_13 = icmp ugt i5 %count_5, 8
+
+ST_12: phitmp10 [1/1] 1.72ns
+_ifconv:278  %phitmp10 = add i5 %count_1_i_13, 2
+
+ST_12: count_1_i_14 [1/1] 1.37ns
+_ifconv:282  %count_1_i_14 = select i1 %or_cond9, i5 2, i5 %phitmp10
+
+ST_12: tmp13 [1/1] 1.37ns
+_ifconv:305  %tmp13 = or i1 %p_iscorner_0_i_7, %p_iscorner_0_i_10
+
+
+ <State 13>: 5.00ns
+ST_13: not_or_cond9 [1/1] 1.37ns
+_ifconv:280  %not_or_cond9 = xor i1 %not_or_cond9_demorgan, true
+
+ST_13: p_iscorner_0_i_12 [1/1] 1.37ns
+_ifconv:281  %p_iscorner_0_i_12 = and i1 %tmp_185_13, %not_or_cond9
+
+ST_13: tmp_185_14 [1/1] 1.91ns
+_ifconv:283  %tmp_185_14 = icmp ugt i5 %count_1_i_14, 8
+
+ST_13: not_or_cond10 [1/1] 1.37ns
+_ifconv:285  %not_or_cond10 = xor i1 %not_or_cond10_demorgan, true
+
+ST_13: p_iscorner_0_i_13 [1/1] 1.37ns
+_ifconv:286  %p_iscorner_0_i_13 = and i1 %tmp_185_14, %not_or_cond10
+
+ST_13: count_1_i_15 [1/1] 1.37ns
+_ifconv:287  %count_1_i_15 = select i1 %or_cond2, i5 1, i5 %count_1_i_14
+
+ST_13: count_6 [1/1] 1.72ns
+_ifconv:288  %count_6 = add i5 %count_1_i_15, 1
+
+ST_13: tmp_185_15 [1/1] 1.91ns
+_ifconv:289  %tmp_185_15 = icmp ugt i5 %count_6, 8
+
+ST_13: phitmp [1/1] 1.72ns
+_ifconv:290  %phitmp = add i5 %count_1_i_15, 2
+
+ST_13: not_or_cond11 [1/1] 1.37ns
+_ifconv:292  %not_or_cond11 = xor i1 %not_or_cond11_demorgan, true
+
+ST_13: tmp_185_16 [1/1] 1.91ns
+_ifconv:294  %tmp_185_16 = icmp ugt i5 %phitmp, 8
+
+ST_13: tmp2 [1/1] 1.37ns
+_ifconv:295  %tmp2 = and i1 %not_or_cond11, %not_or_cond
+
+ST_13: tmp11 [1/1] 1.37ns
+_ifconv:306  %tmp11 = or i1 %tmp13, %tmp12
+
+ST_13: tmp15 [1/1] 1.37ns
+_ifconv:307  %tmp15 = or i1 %p_iscorner_0_i_11, %p_iscorner_0_i_12
+
+
+ <State 14>: 5.48ns
+ST_14: p_iscorner_0_i_14 [1/1] 1.37ns
+_ifconv:293  %p_iscorner_0_i_14 = and i1 %tmp_185_15, %not_or_cond11
+
+ST_14: p_iscorner_0_i_15 [1/1] 1.37ns
+_ifconv:296  %p_iscorner_0_i_15 = and i1 %tmp2, %tmp_185_16
+
+ST_14: tmp17 [1/1] 1.37ns
+_ifconv:308  %tmp17 = or i1 %p_iscorner_0_i_14, %p_iscorner_0_i_15
+
+ST_14: tmp16 [1/1] 1.37ns
+_ifconv:309  %tmp16 = or i1 %tmp17, %p_iscorner_0_i_13
+
+ST_14: tmp14 [1/1] 1.37ns
+_ifconv:310  %tmp14 = or i1 %tmp16, %tmp15
+
+
+ <State 15>: 5.63ns
+ST_15: tmp10 [1/1] 1.37ns
+_ifconv:311  %tmp10 = or i1 %tmp14, %tmp11
+
+ST_15: iscorner_2_i_s [1/1] 1.37ns
+_ifconv:312  %iscorner_2_i_s = or i1 %tmp10, %tmp3
+
+ST_15: stg_546 [1/1] 1.57ns
+_ifconv:313  br i1 %iscorner_2_i_s, label %.preheader26.i.i.preheader, label %._crit_edge321_ifconv
+
+ST_15: tmp_188_1 [1/1] 2.03ns
+.preheader26.i.i.preheader:0  %tmp_188_1 = icmp slt i9 %r_V_s, %r_V_2
+
+ST_15: tmp_193_1 [1/1] 1.37ns
+.preheader26.i.i.preheader:1  %tmp_193_1 = select i1 %tmp_188_1, i9 %r_V_s, i9 %r_V_2
+
+ST_15: tmp_193_1_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:2  %tmp_193_1_cast = sext i9 %tmp_193_1 to i32
+
+ST_15: flag_d_min2_1 [2/2] 2.22ns
+.preheader26.i.i.preheader:3  %flag_d_min2_1 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_193_1_cast) nounwind
+
+ST_15: tmp_195_1 [1/1] 2.03ns
+.preheader26.i.i.preheader:4  %tmp_195_1 = icmp sgt i9 %r_V_s, %r_V_2
+
+ST_15: tmp_203_1 [1/1] 1.37ns
+.preheader26.i.i.preheader:5  %tmp_203_1 = select i1 %tmp_195_1, i9 %r_V_s, i9 %r_V_2
+
+ST_15: tmp_203_1_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:6  %tmp_203_1_cast = sext i9 %tmp_203_1 to i32
+
+ST_15: flag_d_max2_1 [2/2] 2.22ns
+.preheader26.i.i.preheader:7  %flag_d_max2_1 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_203_1_cast) nounwind
+
+ST_15: tmp_188_3 [1/1] 2.03ns
+.preheader26.i.i.preheader:8  %tmp_188_3 = icmp slt i9 %r_V_3, %r_V_4
+
+ST_15: tmp_193_3 [1/1] 1.37ns
+.preheader26.i.i.preheader:9  %tmp_193_3 = select i1 %tmp_188_3, i9 %r_V_3, i9 %r_V_4
+
+ST_15: tmp_193_3_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:10  %tmp_193_3_cast = sext i9 %tmp_193_3 to i32
+
+ST_15: flag_d_min2_3 [2/2] 2.22ns
+.preheader26.i.i.preheader:11  %flag_d_min2_3 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_193_3_cast) nounwind
+
+ST_15: tmp_195_3 [1/1] 2.03ns
+.preheader26.i.i.preheader:12  %tmp_195_3 = icmp sgt i9 %r_V_3, %r_V_4
+
+ST_15: tmp_203_3 [1/1] 1.37ns
+.preheader26.i.i.preheader:13  %tmp_203_3 = select i1 %tmp_195_3, i9 %r_V_3, i9 %r_V_4
+
+ST_15: tmp_203_3_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:14  %tmp_203_3_cast = sext i9 %tmp_203_3 to i32
+
+ST_15: flag_d_max2_3 [2/2] 2.22ns
+.preheader26.i.i.preheader:15  %flag_d_max2_3 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_203_3_cast) nounwind
+
+ST_15: tmp_188_5 [1/1] 2.03ns
+.preheader26.i.i.preheader:16  %tmp_188_5 = icmp slt i9 %r_V_5, %r_V_6
+
+ST_15: tmp_193_5 [1/1] 1.37ns
+.preheader26.i.i.preheader:17  %tmp_193_5 = select i1 %tmp_188_5, i9 %r_V_5, i9 %r_V_6
+
+ST_15: tmp_193_5_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:18  %tmp_193_5_cast = sext i9 %tmp_193_5 to i32
+
+ST_15: flag_d_min2_5 [2/2] 2.22ns
+.preheader26.i.i.preheader:19  %flag_d_min2_5 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_193_5_cast) nounwind
+
+ST_15: tmp_195_5 [1/1] 2.03ns
+.preheader26.i.i.preheader:20  %tmp_195_5 = icmp sgt i9 %r_V_5, %r_V_6
+
+ST_15: tmp_203_5 [1/1] 1.37ns
+.preheader26.i.i.preheader:21  %tmp_203_5 = select i1 %tmp_195_5, i9 %r_V_5, i9 %r_V_6
+
+ST_15: tmp_203_5_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:22  %tmp_203_5_cast = sext i9 %tmp_203_5 to i32
+
+ST_15: flag_d_max2_5 [2/2] 2.22ns
+.preheader26.i.i.preheader:23  %flag_d_max2_5 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_203_5_cast) nounwind
+
+ST_15: tmp_188_7 [1/1] 2.03ns
+.preheader26.i.i.preheader:24  %tmp_188_7 = icmp slt i9 %r_V_7, %r_V_1
+
+ST_15: tmp_193_7 [1/1] 1.37ns
+.preheader26.i.i.preheader:25  %tmp_193_7 = select i1 %tmp_188_7, i9 %r_V_7, i9 %r_V_1
+
+ST_15: tmp_193_7_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:26  %tmp_193_7_cast = sext i9 %tmp_193_7 to i32
+
+ST_15: flag_d_min2_7 [2/2] 2.22ns
+.preheader26.i.i.preheader:27  %flag_d_min2_7 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_193_7_cast) nounwind
+
+ST_15: tmp_195_7 [1/1] 2.03ns
+.preheader26.i.i.preheader:28  %tmp_195_7 = icmp sgt i9 %r_V_7, %r_V_1
+
+ST_15: tmp_203_7 [1/1] 1.37ns
+.preheader26.i.i.preheader:29  %tmp_203_7 = select i1 %tmp_195_7, i9 %r_V_7, i9 %r_V_1
+
+ST_15: tmp_203_7_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:30  %tmp_203_7_cast = sext i9 %tmp_203_7 to i32
+
+ST_15: flag_d_max2_7 [2/2] 2.22ns
+.preheader26.i.i.preheader:31  %flag_d_max2_7 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_203_7_cast) nounwind
+
+
+ <State 16>: 6.11ns
+ST_16: flag_d_min2_1 [1/2] 0.00ns
+.preheader26.i.i.preheader:3  %flag_d_min2_1 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_193_1_cast) nounwind
+
+ST_16: flag_d_max2_1 [1/2] 0.00ns
+.preheader26.i.i.preheader:7  %flag_d_max2_1 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_203_1_cast) nounwind
+
+ST_16: flag_d_min2_3 [1/2] 0.00ns
+.preheader26.i.i.preheader:11  %flag_d_min2_3 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_193_3_cast) nounwind
+
+ST_16: flag_d_max2_3 [1/2] 0.00ns
+.preheader26.i.i.preheader:15  %flag_d_max2_3 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_203_3_cast) nounwind
+
+ST_16: flag_d_min2_5 [1/2] 0.00ns
+.preheader26.i.i.preheader:19  %flag_d_min2_5 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_193_5_cast) nounwind
+
+ST_16: flag_d_max2_5 [1/2] 0.00ns
+.preheader26.i.i.preheader:23  %flag_d_max2_5 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_203_5_cast) nounwind
+
+ST_16: flag_d_min2_7 [1/2] 0.00ns
+.preheader26.i.i.preheader:27  %flag_d_min2_7 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_193_7_cast) nounwind
+
+ST_16: flag_d_max2_7 [1/2] 0.00ns
+.preheader26.i.i.preheader:31  %flag_d_max2_7 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_203_7_cast) nounwind
+
+ST_16: tmp_192_1 [1/1] 2.52ns
+.preheader26.i.i.preheader:64  %tmp_192_1 = icmp slt i32 %flag_d_min2_1, %flag_d_min2_3
+
+ST_16: tmp_200_1 [1/1] 1.37ns
+.preheader26.i.i.preheader:65  %tmp_200_1 = select i1 %tmp_192_1, i32 %flag_d_min2_1, i32 %flag_d_min2_3
+
+ST_16: flag_d_min4_1 [2/2] 2.22ns
+.preheader26.i.i.preheader:66  %flag_d_min4_1 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_200_1) nounwind
+
+ST_16: tmp_202_1 [1/1] 2.52ns
+.preheader26.i.i.preheader:67  %tmp_202_1 = icmp sgt i32 %flag_d_max2_1, %flag_d_max2_3
+
+ST_16: tmp_213_1 [1/1] 1.37ns
+.preheader26.i.i.preheader:68  %tmp_213_1 = select i1 %tmp_202_1, i32 %flag_d_max2_1, i32 %flag_d_max2_3
+
+ST_16: flag_d_max4_1 [2/2] 2.22ns
+.preheader26.i.i.preheader:69  %flag_d_max4_1 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_213_1) nounwind
+
+ST_16: tmp_192_3 [1/1] 2.52ns
+.preheader26.i.i.preheader:70  %tmp_192_3 = icmp slt i32 %flag_d_min2_3, %flag_d_min2_5
+
+ST_16: tmp_200_3 [1/1] 1.37ns
+.preheader26.i.i.preheader:71  %tmp_200_3 = select i1 %tmp_192_3, i32 %flag_d_min2_3, i32 %flag_d_min2_5
+
+ST_16: tmp_202_3 [1/1] 2.52ns
+.preheader26.i.i.preheader:73  %tmp_202_3 = icmp sgt i32 %flag_d_max2_3, %flag_d_max2_5
+
+ST_16: tmp_213_3 [1/1] 1.37ns
+.preheader26.i.i.preheader:74  %tmp_213_3 = select i1 %tmp_202_3, i32 %flag_d_max2_3, i32 %flag_d_max2_5
+
+ST_16: tmp_192_5 [1/1] 2.52ns
+.preheader26.i.i.preheader:76  %tmp_192_5 = icmp slt i32 %flag_d_min2_5, %flag_d_min2_7
+
+ST_16: tmp_200_5 [1/1] 1.37ns
+.preheader26.i.i.preheader:77  %tmp_200_5 = select i1 %tmp_192_5, i32 %flag_d_min2_5, i32 %flag_d_min2_7
+
+ST_16: flag_d_min4_5 [2/2] 2.22ns
+.preheader26.i.i.preheader:78  %flag_d_min4_5 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_200_5) nounwind
+
+ST_16: tmp_202_5 [1/1] 2.52ns
+.preheader26.i.i.preheader:79  %tmp_202_5 = icmp sgt i32 %flag_d_max2_5, %flag_d_max2_7
+
+ST_16: tmp_213_5 [1/1] 1.37ns
+.preheader26.i.i.preheader:80  %tmp_213_5 = select i1 %tmp_202_5, i32 %flag_d_max2_5, i32 %flag_d_max2_7
+
+ST_16: flag_d_max4_5 [2/2] 2.22ns
+.preheader26.i.i.preheader:81  %flag_d_max4_5 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_213_5) nounwind
+
+
+ <State 17>: 6.11ns
+ST_17: tmp_188_9 [1/1] 2.03ns
+.preheader26.i.i.preheader:32  %tmp_188_9 = icmp slt i9 %r_V_1_1, %r_V_1_2
+
+ST_17: tmp_193_9 [1/1] 1.37ns
+.preheader26.i.i.preheader:33  %tmp_193_9 = select i1 %tmp_188_9, i9 %r_V_1_1, i9 %r_V_1_2
+
+ST_17: tmp_193_9_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:34  %tmp_193_9_cast = sext i9 %tmp_193_9 to i32
+
+ST_17: flag_d_min2_9 [2/2] 2.22ns
+.preheader26.i.i.preheader:35  %flag_d_min2_9 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_193_9_cast) nounwind
+
+ST_17: tmp_195_9 [1/1] 2.03ns
+.preheader26.i.i.preheader:36  %tmp_195_9 = icmp sgt i9 %r_V_1_1, %r_V_1_2
+
+ST_17: tmp_203_9 [1/1] 1.37ns
+.preheader26.i.i.preheader:37  %tmp_203_9 = select i1 %tmp_195_9, i9 %r_V_1_1, i9 %r_V_1_2
+
+ST_17: tmp_203_9_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:38  %tmp_203_9_cast = sext i9 %tmp_203_9 to i32
+
+ST_17: flag_d_max2_9 [2/2] 2.22ns
+.preheader26.i.i.preheader:39  %flag_d_max2_9 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_203_9_cast) nounwind
+
+ST_17: flag_d_min4_1 [1/2] 0.00ns
+.preheader26.i.i.preheader:66  %flag_d_min4_1 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_200_1) nounwind
+
+ST_17: flag_d_max4_1 [1/2] 0.00ns
+.preheader26.i.i.preheader:69  %flag_d_max4_1 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_213_1) nounwind
+
+ST_17: flag_d_min4_5 [1/2] 0.00ns
+.preheader26.i.i.preheader:78  %flag_d_min4_5 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_200_5) nounwind
+
+ST_17: flag_d_max4_5 [1/2] 0.00ns
+.preheader26.i.i.preheader:81  %flag_d_max4_5 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_213_5) nounwind
+
+ST_17: tmp_199_1 [1/1] 2.52ns
+.preheader26.i.i.preheader:112  %tmp_199_1 = icmp slt i32 %flag_d_min4_1, %flag_d_min4_5
+
+ST_17: tmp_210_1 [1/1] 1.37ns
+.preheader26.i.i.preheader:113  %tmp_210_1 = select i1 %tmp_199_1, i32 %flag_d_min4_1, i32 %flag_d_min4_5
+
+ST_17: flag_d_min8_1 [2/2] 2.22ns
+.preheader26.i.i.preheader:114  %flag_d_min8_1 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_210_1) nounwind
+
+ST_17: tmp_212_1 [1/1] 2.52ns
+.preheader26.i.i.preheader:115  %tmp_212_1 = icmp sgt i32 %flag_d_max4_1, %flag_d_max4_5
+
+ST_17: tmp_225_1 [1/1] 1.37ns
+.preheader26.i.i.preheader:116  %tmp_225_1 = select i1 %tmp_212_1, i32 %flag_d_max4_1, i32 %flag_d_max4_5
+
+ST_17: flag_d_max8_1 [2/2] 2.22ns
+.preheader26.i.i.preheader:117  %flag_d_max8_1 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_225_1) nounwind
+
+
+ <State 18>: 6.11ns
+ST_18: flag_d_assign [1/1] 0.00ns
+_ifconv:20  %flag_d_assign = sext i9 %r_V to i32
+
+ST_18: flag_d_min2_9 [1/2] 0.00ns
+.preheader26.i.i.preheader:35  %flag_d_min2_9 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_193_9_cast) nounwind
+
+ST_18: flag_d_max2_9 [1/2] 0.00ns
+.preheader26.i.i.preheader:39  %flag_d_max2_9 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_203_9_cast) nounwind
+
+ST_18: tmp_188_s [1/1] 2.03ns
+.preheader26.i.i.preheader:40  %tmp_188_s = icmp slt i9 %r_V_1_3, %r_V_1_4
+
+ST_18: tmp_193_s [1/1] 1.37ns
+.preheader26.i.i.preheader:41  %tmp_193_s = select i1 %tmp_188_s, i9 %r_V_1_3, i9 %r_V_1_4
+
+ST_18: tmp_193_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:42  %tmp_193_cast = sext i9 %tmp_193_s to i32
+
+ST_18: flag_d_min2_11 [2/2] 2.22ns
+.preheader26.i.i.preheader:43  %flag_d_min2_11 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_193_cast) nounwind
+
+ST_18: tmp_195_s [1/1] 2.03ns
+.preheader26.i.i.preheader:44  %tmp_195_s = icmp sgt i9 %r_V_1_3, %r_V_1_4
+
+ST_18: tmp_203_s [1/1] 1.37ns
+.preheader26.i.i.preheader:45  %tmp_203_s = select i1 %tmp_195_s, i9 %r_V_1_3, i9 %r_V_1_4
+
+ST_18: tmp_203_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:46  %tmp_203_cast = sext i9 %tmp_203_s to i32
+
+ST_18: flag_d_max2_11 [2/2] 2.22ns
+.preheader26.i.i.preheader:47  %flag_d_max2_11 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_203_cast) nounwind
+
+ST_18: tmp_188_2 [1/1] 2.03ns
+.preheader26.i.i.preheader:48  %tmp_188_2 = icmp slt i9 %r_V_1_5, %r_V_1_6
+
+ST_18: tmp_193_2 [1/1] 1.37ns
+.preheader26.i.i.preheader:49  %tmp_193_2 = select i1 %tmp_188_2, i9 %r_V_1_5, i9 %r_V_1_6
+
+ST_18: tmp_193_2_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:50  %tmp_193_2_cast = sext i9 %tmp_193_2 to i32
+
+ST_18: flag_d_min2_13 [2/2] 2.22ns
+.preheader26.i.i.preheader:51  %flag_d_min2_13 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_193_2_cast) nounwind
+
+ST_18: tmp_195_2 [1/1] 2.03ns
+.preheader26.i.i.preheader:52  %tmp_195_2 = icmp sgt i9 %r_V_1_5, %r_V_1_6
+
+ST_18: tmp_203_2 [1/1] 1.37ns
+.preheader26.i.i.preheader:53  %tmp_203_2 = select i1 %tmp_195_2, i9 %r_V_1_5, i9 %r_V_1_6
+
+ST_18: tmp_203_2_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:54  %tmp_203_2_cast = sext i9 %tmp_203_2 to i32
+
+ST_18: flag_d_max2_13 [2/2] 2.22ns
+.preheader26.i.i.preheader:55  %flag_d_max2_13 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_203_2_cast) nounwind
+
+ST_18: tmp_188_4 [1/1] 2.03ns
+.preheader26.i.i.preheader:56  %tmp_188_4 = icmp slt i9 %r_V_1_7, %r_V
+
+ST_18: tmp_193_4 [1/1] 1.37ns
+.preheader26.i.i.preheader:57  %tmp_193_4 = select i1 %tmp_188_4, i9 %r_V_1_7, i9 %r_V
+
+ST_18: tmp_193_4_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:58  %tmp_193_4_cast = sext i9 %tmp_193_4 to i32
+
+ST_18: flag_d_min2_15 [2/2] 2.22ns
+.preheader26.i.i.preheader:59  %flag_d_min2_15 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_193_4_cast) nounwind
+
+ST_18: tmp_195_4 [1/1] 2.03ns
+.preheader26.i.i.preheader:60  %tmp_195_4 = icmp sgt i9 %r_V_1_7, %r_V
+
+ST_18: tmp_203_4 [1/1] 1.37ns
+.preheader26.i.i.preheader:61  %tmp_203_4 = select i1 %tmp_195_4, i9 %r_V_1_7, i9 %r_V
+
+ST_18: tmp_203_4_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:62  %tmp_203_4_cast = sext i9 %tmp_203_4 to i32
+
+ST_18: flag_d_max2_15 [2/2] 2.22ns
+.preheader26.i.i.preheader:63  %flag_d_max2_15 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_203_4_cast) nounwind
+
+ST_18: flag_d_min4_3 [2/2] 2.22ns
+.preheader26.i.i.preheader:72  %flag_d_min4_3 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_200_3) nounwind
+
+ST_18: flag_d_max4_3 [2/2] 2.22ns
+.preheader26.i.i.preheader:75  %flag_d_max4_3 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_213_3) nounwind
+
+ST_18: tmp_192_7 [1/1] 2.52ns
+.preheader26.i.i.preheader:82  %tmp_192_7 = icmp slt i32 %flag_d_min2_7, %flag_d_min2_9
+
+ST_18: tmp_200_7 [1/1] 1.37ns
+.preheader26.i.i.preheader:83  %tmp_200_7 = select i1 %tmp_192_7, i32 %flag_d_min2_7, i32 %flag_d_min2_9
+
+ST_18: flag_d_min4_7 [2/2] 2.22ns
+.preheader26.i.i.preheader:84  %flag_d_min4_7 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_200_7) nounwind
+
+ST_18: tmp_202_7 [1/1] 2.52ns
+.preheader26.i.i.preheader:85  %tmp_202_7 = icmp sgt i32 %flag_d_max2_7, %flag_d_max2_9
+
+ST_18: tmp_213_7 [1/1] 1.37ns
+.preheader26.i.i.preheader:86  %tmp_213_7 = select i1 %tmp_202_7, i32 %flag_d_max2_7, i32 %flag_d_max2_9
+
+ST_18: flag_d_max4_7 [2/2] 2.22ns
+.preheader26.i.i.preheader:87  %flag_d_max4_7 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_213_7) nounwind
+
+ST_18: flag_d_min8_1 [1/2] 0.00ns
+.preheader26.i.i.preheader:114  %flag_d_min8_1 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_210_1) nounwind
+
+ST_18: flag_d_max8_1 [1/2] 0.00ns
+.preheader26.i.i.preheader:117  %flag_d_max8_1 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_225_1) nounwind
+
+ST_18: tmp_43 [1/1] 2.52ns
+.preheader26.i.i.preheader:160  %tmp_43 = icmp slt i32 %flag_d_min8_1, %flag_d_assign
+
+ST_18: tmp_67 [1/1] 2.52ns
+.preheader26.i.i.preheader:255  %tmp_67 = icmp sgt i32 %flag_d_max8_1, %flag_d_assign
+
+
+ <State 19>: 6.11ns
+ST_19: flag_d_assign_9 [1/1] 0.00ns
+_ifconv:39  %flag_d_assign_9 = sext i9 %r_V_1_1 to i32
+
+ST_19: flag_d_min2_11 [1/2] 0.00ns
+.preheader26.i.i.preheader:43  %flag_d_min2_11 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_193_cast) nounwind
+
+ST_19: flag_d_max2_11 [1/2] 0.00ns
+.preheader26.i.i.preheader:47  %flag_d_max2_11 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_203_cast) nounwind
+
+ST_19: flag_d_min2_13 [1/2] 0.00ns
+.preheader26.i.i.preheader:51  %flag_d_min2_13 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_193_2_cast) nounwind
+
+ST_19: flag_d_max2_13 [1/2] 0.00ns
+.preheader26.i.i.preheader:55  %flag_d_max2_13 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_203_2_cast) nounwind
+
+ST_19: flag_d_min2_15 [1/2] 0.00ns
+.preheader26.i.i.preheader:59  %flag_d_min2_15 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_193_4_cast) nounwind
+
+ST_19: flag_d_max2_15 [1/2] 0.00ns
+.preheader26.i.i.preheader:63  %flag_d_max2_15 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_203_4_cast) nounwind
+
+ST_19: flag_d_min4_3 [1/2] 0.00ns
+.preheader26.i.i.preheader:72  %flag_d_min4_3 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_200_3) nounwind
+
+ST_19: flag_d_max4_3 [1/2] 0.00ns
+.preheader26.i.i.preheader:75  %flag_d_max4_3 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_213_3) nounwind
+
+ST_19: flag_d_min4_7 [1/2] 0.00ns
+.preheader26.i.i.preheader:84  %flag_d_min4_7 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_200_7) nounwind
+
+ST_19: flag_d_max4_7 [1/2] 0.00ns
+.preheader26.i.i.preheader:87  %flag_d_max4_7 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_213_7) nounwind
+
+ST_19: tmp_192_9 [1/1] 2.52ns
+.preheader26.i.i.preheader:88  %tmp_192_9 = icmp slt i32 %flag_d_min2_9, %flag_d_min2_11
+
+ST_19: tmp_200_9 [1/1] 1.37ns
+.preheader26.i.i.preheader:89  %tmp_200_9 = select i1 %tmp_192_9, i32 %flag_d_min2_9, i32 %flag_d_min2_11
+
+ST_19: flag_d_min4_9 [2/2] 2.22ns
+.preheader26.i.i.preheader:90  %flag_d_min4_9 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_200_9) nounwind
+
+ST_19: tmp_202_9 [1/1] 2.52ns
+.preheader26.i.i.preheader:91  %tmp_202_9 = icmp sgt i32 %flag_d_max2_9, %flag_d_max2_11
+
+ST_19: tmp_213_9 [1/1] 1.37ns
+.preheader26.i.i.preheader:92  %tmp_213_9 = select i1 %tmp_202_9, i32 %flag_d_max2_9, i32 %flag_d_max2_11
+
+ST_19: flag_d_max4_9 [2/2] 2.22ns
+.preheader26.i.i.preheader:93  %flag_d_max4_9 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_213_9) nounwind
+
+ST_19: tmp_192_s [1/1] 2.52ns
+.preheader26.i.i.preheader:94  %tmp_192_s = icmp slt i32 %flag_d_min2_11, %flag_d_min2_13
+
+ST_19: tmp_200_s [1/1] 1.37ns
+.preheader26.i.i.preheader:95  %tmp_200_s = select i1 %tmp_192_s, i32 %flag_d_min2_11, i32 %flag_d_min2_13
+
+ST_19: flag_d_min4_11 [2/2] 2.22ns
+.preheader26.i.i.preheader:96  %flag_d_min4_11 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_200_s) nounwind
+
+ST_19: tmp_202_s [1/1] 2.52ns
+.preheader26.i.i.preheader:97  %tmp_202_s = icmp sgt i32 %flag_d_max2_11, %flag_d_max2_13
+
+ST_19: tmp_213_s [1/1] 1.37ns
+.preheader26.i.i.preheader:98  %tmp_213_s = select i1 %tmp_202_s, i32 %flag_d_max2_11, i32 %flag_d_max2_13
+
+ST_19: flag_d_max4_11 [2/2] 2.22ns
+.preheader26.i.i.preheader:99  %flag_d_max4_11 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_213_s) nounwind
+
+ST_19: tmp_192_2 [1/1] 2.52ns
+.preheader26.i.i.preheader:100  %tmp_192_2 = icmp slt i32 %flag_d_min2_13, %flag_d_min2_15
+
+ST_19: tmp_200_2 [1/1] 1.37ns
+.preheader26.i.i.preheader:101  %tmp_200_2 = select i1 %tmp_192_2, i32 %flag_d_min2_13, i32 %flag_d_min2_15
+
+ST_19: flag_d_min4_13 [2/2] 2.22ns
+.preheader26.i.i.preheader:102  %flag_d_min4_13 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_200_2) nounwind
+
+ST_19: tmp_202_2 [1/1] 2.52ns
+.preheader26.i.i.preheader:103  %tmp_202_2 = icmp sgt i32 %flag_d_max2_13, %flag_d_max2_15
+
+ST_19: tmp_213_2 [1/1] 1.37ns
+.preheader26.i.i.preheader:104  %tmp_213_2 = select i1 %tmp_202_2, i32 %flag_d_max2_13, i32 %flag_d_max2_15
+
+ST_19: flag_d_max4_13 [2/2] 2.22ns
+.preheader26.i.i.preheader:105  %flag_d_max4_13 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_213_2) nounwind
+
+ST_19: tmp_192_4 [1/1] 2.52ns
+.preheader26.i.i.preheader:106  %tmp_192_4 = icmp slt i32 %flag_d_min2_15, %flag_d_min2_1
+
+ST_19: tmp_200_4 [1/1] 1.37ns
+.preheader26.i.i.preheader:107  %tmp_200_4 = select i1 %tmp_192_4, i32 %flag_d_min2_15, i32 %flag_d_min2_1
+
+ST_19: flag_d_min4_15 [2/2] 2.22ns
+.preheader26.i.i.preheader:108  %flag_d_min4_15 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_200_4) nounwind
+
+ST_19: tmp_202_4 [1/1] 2.52ns
+.preheader26.i.i.preheader:109  %tmp_202_4 = icmp sgt i32 %flag_d_max2_15, %flag_d_max2_1
+
+ST_19: tmp_213_4 [1/1] 1.37ns
+.preheader26.i.i.preheader:110  %tmp_213_4 = select i1 %tmp_202_4, i32 %flag_d_max2_15, i32 %flag_d_max2_1
+
+ST_19: flag_d_max4_15 [2/2] 2.22ns
+.preheader26.i.i.preheader:111  %flag_d_max4_15 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_213_4) nounwind
+
+ST_19: tmp_199_3 [1/1] 2.52ns
+.preheader26.i.i.preheader:118  %tmp_199_3 = icmp slt i32 %flag_d_min4_3, %flag_d_min4_7
+
+ST_19: tmp_210_3 [1/1] 1.37ns
+.preheader26.i.i.preheader:119  %tmp_210_3 = select i1 %tmp_199_3, i32 %flag_d_min4_3, i32 %flag_d_min4_7
+
+ST_19: flag_d_min8_3 [2/2] 2.22ns
+.preheader26.i.i.preheader:120  %flag_d_min8_3 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_210_3) nounwind
+
+ST_19: tmp_212_3 [1/1] 2.52ns
+.preheader26.i.i.preheader:121  %tmp_212_3 = icmp sgt i32 %flag_d_max4_3, %flag_d_max4_7
+
+ST_19: tmp_225_3 [1/1] 1.37ns
+.preheader26.i.i.preheader:122  %tmp_225_3 = select i1 %tmp_212_3, i32 %flag_d_max4_3, i32 %flag_d_max4_7
+
+ST_19: flag_d_max8_3 [2/2] 2.22ns
+.preheader26.i.i.preheader:123  %flag_d_max8_3 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_225_3) nounwind
+
+ST_19: a_0_flag_d_assign_load_5 [1/1] 1.37ns
+.preheader26.i.i.preheader:161  %a_0_flag_d_assign_load_5 = select i1 %tmp_43, i32 %flag_d_min8_1, i32 %flag_d_assign
+
+ST_19: tmp_44 [1/1] 0.00ns
+.preheader26.i.i.preheader:162  %tmp_44 = trunc i32 %a_0_flag_d_assign_load_5 to i8
+
+ST_19: tmp_45 [1/1] 2.52ns
+.preheader26.i.i.preheader:163  %tmp_45 = icmp slt i32 %a_0_flag_d_assign_load_5, 20
+
+ST_19: p_a_0_flag_d_assign_load_5 [1/1] 1.37ns
+.preheader26.i.i.preheader:164  %p_a_0_flag_d_assign_load_5 = select i1 %tmp_45, i8 20, i8 %tmp_44
+
+ST_19: tmp_46 [1/1] 2.52ns
+.preheader26.i.i.preheader:166  %tmp_46 = icmp slt i32 %flag_d_min8_1, %flag_d_assign_9
+
+ST_19: tmp_47 [1/1] 1.37ns
+.preheader26.i.i.preheader:167  %tmp_47 = select i1 %tmp_46, i32 %flag_d_min8_1, i32 %flag_d_assign_9
+
+ST_19: tmp_48 [1/1] 0.00ns
+.preheader26.i.i.preheader:168  %tmp_48 = trunc i32 %tmp_47 to i8
+
+ST_19: tmp_68 [1/1] 1.37ns
+.preheader26.i.i.preheader:256  %tmp_68 = select i1 %tmp_67, i32 %flag_d_max8_1, i32 %flag_d_assign
+
+ST_19: tmp_80 [1/1] 0.00ns
+.preheader26.i.i.preheader:257  %tmp_80 = trunc i32 %tmp_68 to i9
+
+ST_19: tmp_69 [1/1] 2.52ns
+.preheader26.i.i.preheader:258  %tmp_69 = icmp sgt i32 %tmp_68, -20
+
+ST_19: b0 [1/1] 1.37ns
+.preheader26.i.i.preheader:259  %b0 = select i1 %tmp_69, i9 -20, i9 %tmp_80
+
+ST_19: tmp_70 [1/1] 2.52ns
+.preheader26.i.i.preheader:261  %tmp_70 = icmp sgt i32 %flag_d_max8_1, %flag_d_assign_9
+
+ST_19: tmp_71 [1/1] 1.37ns
+.preheader26.i.i.preheader:262  %tmp_71 = select i1 %tmp_70, i32 %flag_d_max8_1, i32 %flag_d_assign_9
+
+ST_19: tmp_81 [1/1] 0.00ns
+.preheader26.i.i.preheader:263  %tmp_81 = trunc i32 %tmp_71 to i9
+
+
+ <State 20>: 3.89ns
+ST_20: flag_d_assign_2 [1/1] 0.00ns
+_ifconv:52  %flag_d_assign_2 = sext i9 %r_V_2 to i32
+
+ST_20: flag_d_min4_9 [1/2] 0.00ns
+.preheader26.i.i.preheader:90  %flag_d_min4_9 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_200_9) nounwind
+
+ST_20: flag_d_max4_9 [1/2] 0.00ns
+.preheader26.i.i.preheader:93  %flag_d_max4_9 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_213_9) nounwind
+
+ST_20: flag_d_min4_11 [1/2] 0.00ns
+.preheader26.i.i.preheader:96  %flag_d_min4_11 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_200_s) nounwind
+
+ST_20: flag_d_max4_11 [1/2] 0.00ns
+.preheader26.i.i.preheader:99  %flag_d_max4_11 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_213_s) nounwind
+
+ST_20: flag_d_min4_13 [1/2] 0.00ns
+.preheader26.i.i.preheader:102  %flag_d_min4_13 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_200_2) nounwind
+
+ST_20: flag_d_max4_13 [1/2] 0.00ns
+.preheader26.i.i.preheader:105  %flag_d_max4_13 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_213_2) nounwind
+
+ST_20: flag_d_min4_15 [1/2] 0.00ns
+.preheader26.i.i.preheader:108  %flag_d_min4_15 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_200_4) nounwind
+
+ST_20: flag_d_max4_15 [1/2] 0.00ns
+.preheader26.i.i.preheader:111  %flag_d_max4_15 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_213_4) nounwind
+
+ST_20: flag_d_min8_3 [1/2] 0.00ns
+.preheader26.i.i.preheader:120  %flag_d_min8_3 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_210_3) nounwind
+
+ST_20: flag_d_max8_3 [1/2] 0.00ns
+.preheader26.i.i.preheader:123  %flag_d_max8_3 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_225_3) nounwind
+
+ST_20: tmp_199_5 [1/1] 2.52ns
+.preheader26.i.i.preheader:124  %tmp_199_5 = icmp slt i32 %flag_d_min4_5, %flag_d_min4_9
+
+ST_20: tmp_210_5 [1/1] 1.37ns
+.preheader26.i.i.preheader:125  %tmp_210_5 = select i1 %tmp_199_5, i32 %flag_d_min4_5, i32 %flag_d_min4_9
+
+ST_20: tmp_212_5 [1/1] 2.52ns
+.preheader26.i.i.preheader:127  %tmp_212_5 = icmp sgt i32 %flag_d_max4_5, %flag_d_max4_9
+
+ST_20: tmp_225_5 [1/1] 1.37ns
+.preheader26.i.i.preheader:128  %tmp_225_5 = select i1 %tmp_212_5, i32 %flag_d_max4_5, i32 %flag_d_max4_9
+
+ST_20: tmp_199_7 [1/1] 2.52ns
+.preheader26.i.i.preheader:130  %tmp_199_7 = icmp slt i32 %flag_d_min4_7, %flag_d_min4_11
+
+ST_20: tmp_210_7 [1/1] 1.37ns
+.preheader26.i.i.preheader:131  %tmp_210_7 = select i1 %tmp_199_7, i32 %flag_d_min4_7, i32 %flag_d_min4_11
+
+ST_20: tmp_212_7 [1/1] 2.52ns
+.preheader26.i.i.preheader:133  %tmp_212_7 = icmp sgt i32 %flag_d_max4_7, %flag_d_max4_11
+
+ST_20: tmp_225_7 [1/1] 1.37ns
+.preheader26.i.i.preheader:134  %tmp_225_7 = select i1 %tmp_212_7, i32 %flag_d_max4_7, i32 %flag_d_max4_11
+
+ST_20: tmp_199_9 [1/1] 2.52ns
+.preheader26.i.i.preheader:136  %tmp_199_9 = icmp slt i32 %flag_d_min4_9, %flag_d_min4_13
+
+ST_20: tmp_210_9 [1/1] 1.37ns
+.preheader26.i.i.preheader:137  %tmp_210_9 = select i1 %tmp_199_9, i32 %flag_d_min4_9, i32 %flag_d_min4_13
+
+ST_20: tmp_212_9 [1/1] 2.52ns
+.preheader26.i.i.preheader:139  %tmp_212_9 = icmp sgt i32 %flag_d_max4_9, %flag_d_max4_13
+
+ST_20: tmp_225_9 [1/1] 1.37ns
+.preheader26.i.i.preheader:140  %tmp_225_9 = select i1 %tmp_212_9, i32 %flag_d_max4_9, i32 %flag_d_max4_13
+
+ST_20: tmp_199_s [1/1] 2.52ns
+.preheader26.i.i.preheader:142  %tmp_199_s = icmp slt i32 %flag_d_min4_11, %flag_d_min4_15
+
+ST_20: tmp_210_s [1/1] 1.37ns
+.preheader26.i.i.preheader:143  %tmp_210_s = select i1 %tmp_199_s, i32 %flag_d_min4_11, i32 %flag_d_min4_15
+
+ST_20: tmp_212_s [1/1] 2.52ns
+.preheader26.i.i.preheader:145  %tmp_212_s = icmp sgt i32 %flag_d_max4_11, %flag_d_max4_15
+
+ST_20: tmp_225_s [1/1] 1.37ns
+.preheader26.i.i.preheader:146  %tmp_225_s = select i1 %tmp_212_s, i32 %flag_d_max4_11, i32 %flag_d_max4_15
+
+ST_20: tmp_199_2 [1/1] 2.52ns
+.preheader26.i.i.preheader:148  %tmp_199_2 = icmp slt i32 %flag_d_min4_13, %flag_d_min4_1
+
+ST_20: tmp_210_2 [1/1] 1.37ns
+.preheader26.i.i.preheader:149  %tmp_210_2 = select i1 %tmp_199_2, i32 %flag_d_min4_13, i32 %flag_d_min4_1
+
+ST_20: tmp_212_2 [1/1] 2.52ns
+.preheader26.i.i.preheader:151  %tmp_212_2 = icmp sgt i32 %flag_d_max4_13, %flag_d_max4_1
+
+ST_20: tmp_225_2 [1/1] 1.37ns
+.preheader26.i.i.preheader:152  %tmp_225_2 = select i1 %tmp_212_2, i32 %flag_d_max4_13, i32 %flag_d_max4_1
+
+ST_20: tmp_199_4 [1/1] 2.52ns
+.preheader26.i.i.preheader:154  %tmp_199_4 = icmp slt i32 %flag_d_min4_15, %flag_d_min4_3
+
+ST_20: tmp_210_4 [1/1] 1.37ns
+.preheader26.i.i.preheader:155  %tmp_210_4 = select i1 %tmp_199_4, i32 %flag_d_min4_15, i32 %flag_d_min4_3
+
+ST_20: tmp_212_4 [1/1] 2.52ns
+.preheader26.i.i.preheader:157  %tmp_212_4 = icmp sgt i32 %flag_d_max4_15, %flag_d_max4_3
+
+ST_20: tmp_225_4 [1/1] 1.37ns
+.preheader26.i.i.preheader:158  %tmp_225_4 = select i1 %tmp_212_4, i32 %flag_d_max4_15, i32 %flag_d_max4_3
+
+ST_20: p_a_0_flag_d_assign_load_5_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:165  %p_a_0_flag_d_assign_load_5_cast = zext i8 %p_a_0_flag_d_assign_load_5 to i32
+
+ST_20: tmp_49 [1/1] 2.52ns
+.preheader26.i.i.preheader:169  %tmp_49 = icmp sgt i32 %p_a_0_flag_d_assign_load_5_cast, %tmp_47
+
+ST_20: p_a_0_flag_d_assign_load_5_tmp_s [1/1] 1.37ns
+.preheader26.i.i.preheader:170  %p_a_0_flag_d_assign_load_5_tmp_s = select i1 %tmp_49, i8 %p_a_0_flag_d_assign_load_5, i8 %tmp_48
+
+ST_20: tmp_209_1 [1/1] 2.52ns
+.preheader26.i.i.preheader:172  %tmp_209_1 = icmp slt i32 %flag_d_min8_3, %flag_d_assign_2
+
+ST_20: b0_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:260  %b0_cast = sext i9 %b0 to i32
+
+ST_20: tmp_72 [1/1] 2.52ns
+.preheader26.i.i.preheader:264  %tmp_72 = icmp slt i32 %b0_cast, %tmp_71
+
+ST_20: b0_tmp_s [1/1] 1.37ns
+.preheader26.i.i.preheader:265  %b0_tmp_s = select i1 %tmp_72, i9 %b0, i9 %tmp_81
+
+ST_20: tmp_221_1 [1/1] 2.52ns
+.preheader26.i.i.preheader:267  %tmp_221_1 = icmp sgt i32 %flag_d_max8_3, %flag_d_assign_2
+
+
+ <State 21>: 5.26ns
+ST_21: flag_d_assign_10 [1/1] 0.00ns
+_ifconv:71  %flag_d_assign_10 = sext i9 %r_V_1_3 to i32
+
+ST_21: flag_d_min8_5 [2/2] 2.22ns
+.preheader26.i.i.preheader:126  %flag_d_min8_5 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_210_5) nounwind
+
+ST_21: flag_d_max8_5 [2/2] 2.22ns
+.preheader26.i.i.preheader:129  %flag_d_max8_5 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_225_5) nounwind
+
+ST_21: p_a_0_flag_d_assign_load_5_tmp_1 [1/1] 0.00ns
+.preheader26.i.i.preheader:171  %p_a_0_flag_d_assign_load_5_tmp_1 = zext i8 %p_a_0_flag_d_assign_load_5_tmp_s to i32
+
+ST_21: tmp_216_1 [1/1] 1.37ns
+.preheader26.i.i.preheader:173  %tmp_216_1 = select i1 %tmp_209_1, i32 %flag_d_min8_3, i32 %flag_d_assign_2
+
+ST_21: tmp_56 [1/1] 0.00ns
+.preheader26.i.i.preheader:174  %tmp_56 = trunc i32 %tmp_216_1 to i8
+
+ST_21: tmp_217_1 [1/1] 2.52ns
+.preheader26.i.i.preheader:175  %tmp_217_1 = icmp sgt i32 %p_a_0_flag_d_assign_load_5_tmp_1, %tmp_216_1
+
+ST_21: a0_s [1/1] 1.37ns
+.preheader26.i.i.preheader:176  %a0_s = select i1 %tmp_217_1, i8 %p_a_0_flag_d_assign_load_5_tmp_s, i8 %tmp_56
+
+ST_21: tmp_231_1 [1/1] 2.52ns
+.preheader26.i.i.preheader:178  %tmp_231_1 = icmp slt i32 %flag_d_min8_3, %flag_d_assign_10
+
+ST_21: tmp_232_1 [1/1] 1.37ns
+.preheader26.i.i.preheader:179  %tmp_232_1 = select i1 %tmp_231_1, i32 %flag_d_min8_3, i32 %flag_d_assign_10
+
+ST_21: tmp_57 [1/1] 0.00ns
+.preheader26.i.i.preheader:180  %tmp_57 = trunc i32 %tmp_232_1 to i8
+
+ST_21: b0_tmp_239_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:266  %b0_tmp_239_cast = sext i9 %b0_tmp_s to i32
+
+ST_21: tmp_227_1 [1/1] 1.37ns
+.preheader26.i.i.preheader:268  %tmp_227_1 = select i1 %tmp_221_1, i32 %flag_d_max8_3, i32 %flag_d_assign_2
+
+ST_21: tmp_82 [1/1] 0.00ns
+.preheader26.i.i.preheader:269  %tmp_82 = trunc i32 %tmp_227_1 to i9
+
+ST_21: tmp_228_1 [1/1] 2.52ns
+.preheader26.i.i.preheader:270  %tmp_228_1 = icmp slt i32 %b0_tmp_239_cast, %tmp_227_1
+
+ST_21: b0_s [1/1] 1.37ns
+.preheader26.i.i.preheader:271  %b0_s = select i1 %tmp_228_1, i9 %b0_tmp_s, i9 %tmp_82
+
+ST_21: tmp_236_1 [1/1] 2.52ns
+.preheader26.i.i.preheader:273  %tmp_236_1 = icmp sgt i32 %flag_d_max8_3, %flag_d_assign_10
+
+ST_21: tmp_239_1 [1/1] 1.37ns
+.preheader26.i.i.preheader:274  %tmp_239_1 = select i1 %tmp_236_1, i32 %flag_d_max8_3, i32 %flag_d_assign_10
+
+ST_21: tmp_83 [1/1] 0.00ns
+.preheader26.i.i.preheader:275  %tmp_83 = trunc i32 %tmp_239_1 to i9
+
+
+ <State 22>: 3.89ns
+ST_22: flag_d_assign_4 [1/1] 0.00ns
+_ifconv:84  %flag_d_assign_4 = sext i9 %r_V_4 to i32
+
+ST_22: flag_d_min8_5 [1/2] 0.00ns
+.preheader26.i.i.preheader:126  %flag_d_min8_5 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_210_5) nounwind
+
+ST_22: flag_d_max8_5 [1/2] 0.00ns
+.preheader26.i.i.preheader:129  %flag_d_max8_5 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_225_5) nounwind
+
+ST_22: a0_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:177  %a0_cast = zext i8 %a0_s to i32
+
+ST_22: tmp_233_1 [1/1] 2.52ns
+.preheader26.i.i.preheader:181  %tmp_233_1 = icmp sgt i32 %a0_cast, %tmp_232_1
+
+ST_22: a0_tmp_232_1 [1/1] 1.37ns
+.preheader26.i.i.preheader:182  %a0_tmp_232_1 = select i1 %tmp_233_1, i8 %a0_s, i8 %tmp_57
+
+ST_22: tmp_209_2 [1/1] 2.52ns
+.preheader26.i.i.preheader:184  %tmp_209_2 = icmp slt i32 %flag_d_min8_5, %flag_d_assign_4
+
+ST_22: b0_cast_50 [1/1] 0.00ns
+.preheader26.i.i.preheader:272  %b0_cast_50 = sext i9 %b0_s to i32
+
+ST_22: tmp_240_1 [1/1] 2.52ns
+.preheader26.i.i.preheader:276  %tmp_240_1 = icmp slt i32 %b0_cast_50, %tmp_239_1
+
+ST_22: b0_tmp_239_1 [1/1] 1.37ns
+.preheader26.i.i.preheader:277  %b0_tmp_239_1 = select i1 %tmp_240_1, i9 %b0_s, i9 %tmp_83
+
+ST_22: tmp_221_2 [1/1] 2.52ns
+.preheader26.i.i.preheader:279  %tmp_221_2 = icmp sgt i32 %flag_d_max8_5, %flag_d_assign_4
+
+
+ <State 23>: 5.26ns
+ST_23: flag_d_assign_12 [1/1] 0.00ns
+_ifconv:103  %flag_d_assign_12 = sext i9 %r_V_1_5 to i32
+
+ST_23: flag_d_min8_7 [2/2] 2.22ns
+.preheader26.i.i.preheader:132  %flag_d_min8_7 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_210_7) nounwind
+
+ST_23: flag_d_max8_7 [2/2] 2.22ns
+.preheader26.i.i.preheader:135  %flag_d_max8_7 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_225_7) nounwind
+
+ST_23: a0_tmp_232_1_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:183  %a0_tmp_232_1_cast = zext i8 %a0_tmp_232_1 to i32
+
+ST_23: tmp_216_2 [1/1] 1.37ns
+.preheader26.i.i.preheader:185  %tmp_216_2 = select i1 %tmp_209_2, i32 %flag_d_min8_5, i32 %flag_d_assign_4
+
+ST_23: tmp_58 [1/1] 0.00ns
+.preheader26.i.i.preheader:186  %tmp_58 = trunc i32 %tmp_216_2 to i8
+
+ST_23: tmp_217_2 [1/1] 2.52ns
+.preheader26.i.i.preheader:187  %tmp_217_2 = icmp sgt i32 %a0_tmp_232_1_cast, %tmp_216_2
+
+ST_23: a0_2 [1/1] 1.37ns
+.preheader26.i.i.preheader:188  %a0_2 = select i1 %tmp_217_2, i8 %a0_tmp_232_1, i8 %tmp_58
+
+ST_23: tmp_231_2 [1/1] 2.52ns
+.preheader26.i.i.preheader:190  %tmp_231_2 = icmp slt i32 %flag_d_min8_5, %flag_d_assign_12
+
+ST_23: tmp_232_2 [1/1] 1.37ns
+.preheader26.i.i.preheader:191  %tmp_232_2 = select i1 %tmp_231_2, i32 %flag_d_min8_5, i32 %flag_d_assign_12
+
+ST_23: tmp_59 [1/1] 0.00ns
+.preheader26.i.i.preheader:192  %tmp_59 = trunc i32 %tmp_232_2 to i8
+
+ST_23: b0_tmp_239_1_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:278  %b0_tmp_239_1_cast = sext i9 %b0_tmp_239_1 to i32
+
+ST_23: tmp_227_2 [1/1] 1.37ns
+.preheader26.i.i.preheader:280  %tmp_227_2 = select i1 %tmp_221_2, i32 %flag_d_max8_5, i32 %flag_d_assign_4
+
+ST_23: tmp_84 [1/1] 0.00ns
+.preheader26.i.i.preheader:281  %tmp_84 = trunc i32 %tmp_227_2 to i9
+
+ST_23: tmp_228_2 [1/1] 2.52ns
+.preheader26.i.i.preheader:282  %tmp_228_2 = icmp slt i32 %b0_tmp_239_1_cast, %tmp_227_2
+
+ST_23: b0_2 [1/1] 1.37ns
+.preheader26.i.i.preheader:283  %b0_2 = select i1 %tmp_228_2, i9 %b0_tmp_239_1, i9 %tmp_84
+
+ST_23: tmp_236_2 [1/1] 2.52ns
+.preheader26.i.i.preheader:285  %tmp_236_2 = icmp sgt i32 %flag_d_max8_5, %flag_d_assign_12
+
+ST_23: tmp_239_2 [1/1] 1.37ns
+.preheader26.i.i.preheader:286  %tmp_239_2 = select i1 %tmp_236_2, i32 %flag_d_max8_5, i32 %flag_d_assign_12
+
+ST_23: tmp_85 [1/1] 0.00ns
+.preheader26.i.i.preheader:287  %tmp_85 = trunc i32 %tmp_239_2 to i9
+
+
+ <State 24>: 3.89ns
+ST_24: flag_d_assign_6 [1/1] 0.00ns
+_ifconv:116  %flag_d_assign_6 = sext i9 %r_V_6 to i32
+
+ST_24: flag_d_min8_7 [1/2] 0.00ns
+.preheader26.i.i.preheader:132  %flag_d_min8_7 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_210_7) nounwind
+
+ST_24: flag_d_max8_7 [1/2] 0.00ns
+.preheader26.i.i.preheader:135  %flag_d_max8_7 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_225_7) nounwind
+
+ST_24: a0_2_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:189  %a0_2_cast = zext i8 %a0_2 to i32
+
+ST_24: tmp_233_2 [1/1] 2.52ns
+.preheader26.i.i.preheader:193  %tmp_233_2 = icmp sgt i32 %a0_2_cast, %tmp_232_2
+
+ST_24: a0_2_tmp_232_2 [1/1] 1.37ns
+.preheader26.i.i.preheader:194  %a0_2_tmp_232_2 = select i1 %tmp_233_2, i8 %a0_2, i8 %tmp_59
+
+ST_24: tmp_209_3 [1/1] 2.52ns
+.preheader26.i.i.preheader:196  %tmp_209_3 = icmp slt i32 %flag_d_min8_7, %flag_d_assign_6
+
+ST_24: b0_2_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:284  %b0_2_cast = sext i9 %b0_2 to i32
+
+ST_24: tmp_240_2 [1/1] 2.52ns
+.preheader26.i.i.preheader:288  %tmp_240_2 = icmp slt i32 %b0_2_cast, %tmp_239_2
+
+ST_24: b0_2_tmp_239_2 [1/1] 1.37ns
+.preheader26.i.i.preheader:289  %b0_2_tmp_239_2 = select i1 %tmp_240_2, i9 %b0_2, i9 %tmp_85
+
+ST_24: tmp_221_3 [1/1] 2.52ns
+.preheader26.i.i.preheader:291  %tmp_221_3 = icmp sgt i32 %flag_d_max8_7, %flag_d_assign_6
+
+
+ <State 25>: 5.26ns
+ST_25: flag_d_assign_14 [1/1] 0.00ns
+_ifconv:135  %flag_d_assign_14 = sext i9 %r_V_1_7 to i32
+
+ST_25: flag_d_min8_9 [2/2] 2.22ns
+.preheader26.i.i.preheader:138  %flag_d_min8_9 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_210_9) nounwind
+
+ST_25: flag_d_max8_9 [2/2] 2.22ns
+.preheader26.i.i.preheader:141  %flag_d_max8_9 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_225_9) nounwind
+
+ST_25: a0_2_tmp_232_2_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:195  %a0_2_tmp_232_2_cast = zext i8 %a0_2_tmp_232_2 to i32
+
+ST_25: tmp_216_3 [1/1] 1.37ns
+.preheader26.i.i.preheader:197  %tmp_216_3 = select i1 %tmp_209_3, i32 %flag_d_min8_7, i32 %flag_d_assign_6
+
+ST_25: tmp_60 [1/1] 0.00ns
+.preheader26.i.i.preheader:198  %tmp_60 = trunc i32 %tmp_216_3 to i8
+
+ST_25: tmp_217_3 [1/1] 2.52ns
+.preheader26.i.i.preheader:199  %tmp_217_3 = icmp sgt i32 %a0_2_tmp_232_2_cast, %tmp_216_3
+
+ST_25: a0_3 [1/1] 1.37ns
+.preheader26.i.i.preheader:200  %a0_3 = select i1 %tmp_217_3, i8 %a0_2_tmp_232_2, i8 %tmp_60
+
+ST_25: tmp_231_3 [1/1] 2.52ns
+.preheader26.i.i.preheader:202  %tmp_231_3 = icmp slt i32 %flag_d_min8_7, %flag_d_assign_14
+
+ST_25: tmp_232_3 [1/1] 1.37ns
+.preheader26.i.i.preheader:203  %tmp_232_3 = select i1 %tmp_231_3, i32 %flag_d_min8_7, i32 %flag_d_assign_14
+
+ST_25: tmp_61 [1/1] 0.00ns
+.preheader26.i.i.preheader:204  %tmp_61 = trunc i32 %tmp_232_3 to i8
+
+ST_25: b0_2_tmp_239_2_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:290  %b0_2_tmp_239_2_cast = sext i9 %b0_2_tmp_239_2 to i32
+
+ST_25: tmp_227_3 [1/1] 1.37ns
+.preheader26.i.i.preheader:292  %tmp_227_3 = select i1 %tmp_221_3, i32 %flag_d_max8_7, i32 %flag_d_assign_6
+
+ST_25: tmp_86 [1/1] 0.00ns
+.preheader26.i.i.preheader:293  %tmp_86 = trunc i32 %tmp_227_3 to i9
+
+ST_25: tmp_228_3 [1/1] 2.52ns
+.preheader26.i.i.preheader:294  %tmp_228_3 = icmp slt i32 %b0_2_tmp_239_2_cast, %tmp_227_3
+
+ST_25: b0_3 [1/1] 1.37ns
+.preheader26.i.i.preheader:295  %b0_3 = select i1 %tmp_228_3, i9 %b0_2_tmp_239_2, i9 %tmp_86
+
+ST_25: tmp_236_3 [1/1] 2.52ns
+.preheader26.i.i.preheader:297  %tmp_236_3 = icmp sgt i32 %flag_d_max8_7, %flag_d_assign_14
+
+ST_25: tmp_239_3 [1/1] 1.37ns
+.preheader26.i.i.preheader:298  %tmp_239_3 = select i1 %tmp_236_3, i32 %flag_d_max8_7, i32 %flag_d_assign_14
+
+ST_25: tmp_87 [1/1] 0.00ns
+.preheader26.i.i.preheader:299  %tmp_87 = trunc i32 %tmp_239_3 to i9
+
+
+ <State 26>: 3.89ns
+ST_26: flag_d_assign_8 [1/1] 0.00ns
+_ifconv:23  %flag_d_assign_8 = sext i9 %r_V_1 to i32
+
+ST_26: flag_d_min8_9 [1/2] 0.00ns
+.preheader26.i.i.preheader:138  %flag_d_min8_9 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_210_9) nounwind
+
+ST_26: flag_d_max8_9 [1/2] 0.00ns
+.preheader26.i.i.preheader:141  %flag_d_max8_9 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_225_9) nounwind
+
+ST_26: a0_3_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:201  %a0_3_cast = zext i8 %a0_3 to i32
+
+ST_26: tmp_233_3 [1/1] 2.52ns
+.preheader26.i.i.preheader:205  %tmp_233_3 = icmp sgt i32 %a0_3_cast, %tmp_232_3
+
+ST_26: a0_3_tmp_232_3 [1/1] 1.37ns
+.preheader26.i.i.preheader:206  %a0_3_tmp_232_3 = select i1 %tmp_233_3, i8 %a0_3, i8 %tmp_61
+
+ST_26: tmp_209_4 [1/1] 2.52ns
+.preheader26.i.i.preheader:208  %tmp_209_4 = icmp slt i32 %flag_d_min8_9, %flag_d_assign_8
+
+ST_26: b0_3_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:296  %b0_3_cast = sext i9 %b0_3 to i32
+
+ST_26: tmp_240_3 [1/1] 2.52ns
+.preheader26.i.i.preheader:300  %tmp_240_3 = icmp slt i32 %b0_3_cast, %tmp_239_3
+
+ST_26: b0_3_tmp_239_3 [1/1] 1.37ns
+.preheader26.i.i.preheader:301  %b0_3_tmp_239_3 = select i1 %tmp_240_3, i9 %b0_3, i9 %tmp_87
+
+ST_26: tmp_221_4 [1/1] 2.52ns
+.preheader26.i.i.preheader:303  %tmp_221_4 = icmp sgt i32 %flag_d_max8_9, %flag_d_assign_8
+
+
+ <State 27>: 5.26ns
+ST_27: flag_d_assign_1 [1/1] 0.00ns
+_ifconv:36  %flag_d_assign_1 = sext i9 %r_V_s to i32
+
+ST_27: tmp_211_s [2/2] 2.22ns
+.preheader26.i.i.preheader:144  %tmp_211_s = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_210_s) nounwind
+
+ST_27: tmp_226_s [2/2] 2.22ns
+.preheader26.i.i.preheader:147  %tmp_226_s = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_225_s) nounwind
+
+ST_27: a0_3_tmp_232_3_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:207  %a0_3_tmp_232_3_cast = zext i8 %a0_3_tmp_232_3 to i32
+
+ST_27: tmp_216_4 [1/1] 1.37ns
+.preheader26.i.i.preheader:209  %tmp_216_4 = select i1 %tmp_209_4, i32 %flag_d_min8_9, i32 %flag_d_assign_8
+
+ST_27: tmp_62 [1/1] 0.00ns
+.preheader26.i.i.preheader:210  %tmp_62 = trunc i32 %tmp_216_4 to i8
+
+ST_27: tmp_217_4 [1/1] 2.52ns
+.preheader26.i.i.preheader:211  %tmp_217_4 = icmp sgt i32 %a0_3_tmp_232_3_cast, %tmp_216_4
+
+ST_27: a0_4 [1/1] 1.37ns
+.preheader26.i.i.preheader:212  %a0_4 = select i1 %tmp_217_4, i8 %a0_3_tmp_232_3, i8 %tmp_62
+
+ST_27: tmp_231_4 [1/1] 2.52ns
+.preheader26.i.i.preheader:214  %tmp_231_4 = icmp slt i32 %flag_d_min8_9, %flag_d_assign_1
+
+ST_27: tmp_232_4 [1/1] 1.37ns
+.preheader26.i.i.preheader:215  %tmp_232_4 = select i1 %tmp_231_4, i32 %flag_d_min8_9, i32 %flag_d_assign_1
+
+ST_27: tmp_63 [1/1] 0.00ns
+.preheader26.i.i.preheader:216  %tmp_63 = trunc i32 %tmp_232_4 to i8
+
+ST_27: b0_3_tmp_239_3_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:302  %b0_3_tmp_239_3_cast = sext i9 %b0_3_tmp_239_3 to i32
+
+ST_27: tmp_227_4 [1/1] 1.37ns
+.preheader26.i.i.preheader:304  %tmp_227_4 = select i1 %tmp_221_4, i32 %flag_d_max8_9, i32 %flag_d_assign_8
+
+ST_27: tmp_88 [1/1] 0.00ns
+.preheader26.i.i.preheader:305  %tmp_88 = trunc i32 %tmp_227_4 to i9
+
+ST_27: tmp_228_4 [1/1] 2.52ns
+.preheader26.i.i.preheader:306  %tmp_228_4 = icmp slt i32 %b0_3_tmp_239_3_cast, %tmp_227_4
+
+ST_27: b0_4 [1/1] 1.37ns
+.preheader26.i.i.preheader:307  %b0_4 = select i1 %tmp_228_4, i9 %b0_3_tmp_239_3, i9 %tmp_88
+
+ST_27: tmp_236_4 [1/1] 2.52ns
+.preheader26.i.i.preheader:309  %tmp_236_4 = icmp sgt i32 %flag_d_max8_9, %flag_d_assign_1
+
+ST_27: tmp_239_4 [1/1] 1.37ns
+.preheader26.i.i.preheader:310  %tmp_239_4 = select i1 %tmp_236_4, i32 %flag_d_max8_9, i32 %flag_d_assign_1
+
+ST_27: tmp_89 [1/1] 0.00ns
+.preheader26.i.i.preheader:311  %tmp_89 = trunc i32 %tmp_239_4 to i9
+
+
+ <State 28>: 3.89ns
+ST_28: flag_d_assign_s [1/1] 0.00ns
+_ifconv:55  %flag_d_assign_s = sext i9 %r_V_1_2 to i32
+
+ST_28: tmp_211_s [1/2] 0.00ns
+.preheader26.i.i.preheader:144  %tmp_211_s = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_210_s) nounwind
+
+ST_28: tmp_226_s [1/2] 0.00ns
+.preheader26.i.i.preheader:147  %tmp_226_s = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_225_s) nounwind
+
+ST_28: a0_4_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:213  %a0_4_cast = zext i8 %a0_4 to i32
+
+ST_28: tmp_233_4 [1/1] 2.52ns
+.preheader26.i.i.preheader:217  %tmp_233_4 = icmp sgt i32 %a0_4_cast, %tmp_232_4
+
+ST_28: a0_4_tmp_232_4 [1/1] 1.37ns
+.preheader26.i.i.preheader:218  %a0_4_tmp_232_4 = select i1 %tmp_233_4, i8 %a0_4, i8 %tmp_63
+
+ST_28: tmp_209_5 [1/1] 2.52ns
+.preheader26.i.i.preheader:220  %tmp_209_5 = icmp slt i32 %tmp_211_s, %flag_d_assign_s
+
+ST_28: b0_4_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:308  %b0_4_cast = sext i9 %b0_4 to i32
+
+ST_28: tmp_240_4 [1/1] 2.52ns
+.preheader26.i.i.preheader:312  %tmp_240_4 = icmp slt i32 %b0_4_cast, %tmp_239_4
+
+ST_28: b0_4_tmp_239_4 [1/1] 1.37ns
+.preheader26.i.i.preheader:313  %b0_4_tmp_239_4 = select i1 %tmp_240_4, i9 %b0_4, i9 %tmp_89
+
+ST_28: tmp_221_5 [1/1] 2.52ns
+.preheader26.i.i.preheader:315  %tmp_221_5 = icmp sgt i32 %tmp_226_s, %flag_d_assign_s
+
+
+ <State 29>: 5.26ns
+ST_29: flag_d_assign_3 [1/1] 0.00ns
+_ifconv:68  %flag_d_assign_3 = sext i9 %r_V_3 to i32
+
+ST_29: tmp_211_1 [2/2] 2.22ns
+.preheader26.i.i.preheader:150  %tmp_211_1 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_210_2) nounwind
+
+ST_29: tmp_226_1 [2/2] 2.22ns
+.preheader26.i.i.preheader:153  %tmp_226_1 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_225_2) nounwind
+
+ST_29: a0_4_tmp_232_4_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:219  %a0_4_tmp_232_4_cast = zext i8 %a0_4_tmp_232_4 to i32
+
+ST_29: tmp_216_5 [1/1] 1.37ns
+.preheader26.i.i.preheader:221  %tmp_216_5 = select i1 %tmp_209_5, i32 %tmp_211_s, i32 %flag_d_assign_s
+
+ST_29: tmp_64 [1/1] 0.00ns
+.preheader26.i.i.preheader:222  %tmp_64 = trunc i32 %tmp_216_5 to i8
+
+ST_29: tmp_217_5 [1/1] 2.52ns
+.preheader26.i.i.preheader:223  %tmp_217_5 = icmp sgt i32 %a0_4_tmp_232_4_cast, %tmp_216_5
+
+ST_29: a0_5 [1/1] 1.37ns
+.preheader26.i.i.preheader:224  %a0_5 = select i1 %tmp_217_5, i8 %a0_4_tmp_232_4, i8 %tmp_64
+
+ST_29: tmp_231_5 [1/1] 2.52ns
+.preheader26.i.i.preheader:226  %tmp_231_5 = icmp slt i32 %tmp_211_s, %flag_d_assign_3
+
+ST_29: tmp_232_5 [1/1] 1.37ns
+.preheader26.i.i.preheader:227  %tmp_232_5 = select i1 %tmp_231_5, i32 %tmp_211_s, i32 %flag_d_assign_3
+
+ST_29: tmp_65 [1/1] 0.00ns
+.preheader26.i.i.preheader:228  %tmp_65 = trunc i32 %tmp_232_5 to i8
+
+ST_29: b0_4_tmp_239_4_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:314  %b0_4_tmp_239_4_cast = sext i9 %b0_4_tmp_239_4 to i32
+
+ST_29: tmp_227_5 [1/1] 1.37ns
+.preheader26.i.i.preheader:316  %tmp_227_5 = select i1 %tmp_221_5, i32 %tmp_226_s, i32 %flag_d_assign_s
+
+ST_29: tmp_90 [1/1] 0.00ns
+.preheader26.i.i.preheader:317  %tmp_90 = trunc i32 %tmp_227_5 to i9
+
+ST_29: tmp_228_5 [1/1] 2.52ns
+.preheader26.i.i.preheader:318  %tmp_228_5 = icmp slt i32 %b0_4_tmp_239_4_cast, %tmp_227_5
+
+ST_29: b0_5 [1/1] 1.37ns
+.preheader26.i.i.preheader:319  %b0_5 = select i1 %tmp_228_5, i9 %b0_4_tmp_239_4, i9 %tmp_90
+
+ST_29: tmp_236_5 [1/1] 2.52ns
+.preheader26.i.i.preheader:321  %tmp_236_5 = icmp sgt i32 %tmp_226_s, %flag_d_assign_3
+
+ST_29: tmp_239_5 [1/1] 1.37ns
+.preheader26.i.i.preheader:322  %tmp_239_5 = select i1 %tmp_236_5, i32 %tmp_226_s, i32 %flag_d_assign_3
+
+ST_29: tmp_91 [1/1] 0.00ns
+.preheader26.i.i.preheader:323  %tmp_91 = trunc i32 %tmp_239_5 to i9
+
+
+ <State 30>: 3.89ns
+ST_30: flag_d_assign_11 [1/1] 0.00ns
+_ifconv:87  %flag_d_assign_11 = sext i9 %r_V_1_4 to i32
+
+ST_30: tmp_211_1 [1/2] 0.00ns
+.preheader26.i.i.preheader:150  %tmp_211_1 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_210_2) nounwind
+
+ST_30: tmp_226_1 [1/2] 0.00ns
+.preheader26.i.i.preheader:153  %tmp_226_1 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_225_2) nounwind
+
+ST_30: a0_5_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:225  %a0_5_cast = zext i8 %a0_5 to i32
+
+ST_30: tmp_233_5 [1/1] 2.52ns
+.preheader26.i.i.preheader:229  %tmp_233_5 = icmp sgt i32 %a0_5_cast, %tmp_232_5
+
+ST_30: a0_5_tmp_232_5 [1/1] 1.37ns
+.preheader26.i.i.preheader:230  %a0_5_tmp_232_5 = select i1 %tmp_233_5, i8 %a0_5, i8 %tmp_65
+
+ST_30: tmp_209_6 [1/1] 2.52ns
+.preheader26.i.i.preheader:232  %tmp_209_6 = icmp slt i32 %tmp_211_1, %flag_d_assign_11
+
+ST_30: b0_5_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:320  %b0_5_cast = sext i9 %b0_5 to i32
+
+ST_30: tmp_240_5 [1/1] 2.52ns
+.preheader26.i.i.preheader:324  %tmp_240_5 = icmp slt i32 %b0_5_cast, %tmp_239_5
+
+ST_30: b0_5_tmp_239_5 [1/1] 1.37ns
+.preheader26.i.i.preheader:325  %b0_5_tmp_239_5 = select i1 %tmp_240_5, i9 %b0_5, i9 %tmp_91
+
+ST_30: tmp_221_6 [1/1] 2.52ns
+.preheader26.i.i.preheader:327  %tmp_221_6 = icmp sgt i32 %tmp_226_1, %flag_d_assign_11
+
+
+ <State 31>: 5.26ns
+ST_31: flag_d_assign_5 [1/1] 0.00ns
+_ifconv:100  %flag_d_assign_5 = sext i9 %r_V_5 to i32
+
+ST_31: tmp_211_2 [2/2] 2.22ns
+.preheader26.i.i.preheader:156  %tmp_211_2 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_210_4) nounwind
+
+ST_31: tmp_226_2 [2/2] 2.22ns
+.preheader26.i.i.preheader:159  %tmp_226_2 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_225_4) nounwind
+
+ST_31: a0_5_tmp_232_5_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:231  %a0_5_tmp_232_5_cast = zext i8 %a0_5_tmp_232_5 to i32
+
+ST_31: tmp_216_6 [1/1] 1.37ns
+.preheader26.i.i.preheader:233  %tmp_216_6 = select i1 %tmp_209_6, i32 %tmp_211_1, i32 %flag_d_assign_11
+
+ST_31: tmp_66 [1/1] 0.00ns
+.preheader26.i.i.preheader:234  %tmp_66 = trunc i32 %tmp_216_6 to i8
+
+ST_31: tmp_217_6 [1/1] 2.52ns
+.preheader26.i.i.preheader:235  %tmp_217_6 = icmp sgt i32 %a0_5_tmp_232_5_cast, %tmp_216_6
+
+ST_31: a0_6 [1/1] 1.37ns
+.preheader26.i.i.preheader:236  %a0_6 = select i1 %tmp_217_6, i8 %a0_5_tmp_232_5, i8 %tmp_66
+
+ST_31: tmp_231_6 [1/1] 2.52ns
+.preheader26.i.i.preheader:238  %tmp_231_6 = icmp slt i32 %tmp_211_1, %flag_d_assign_5
+
+ST_31: tmp_232_6 [1/1] 1.37ns
+.preheader26.i.i.preheader:239  %tmp_232_6 = select i1 %tmp_231_6, i32 %tmp_211_1, i32 %flag_d_assign_5
+
+ST_31: tmp_75 [1/1] 0.00ns
+.preheader26.i.i.preheader:240  %tmp_75 = trunc i32 %tmp_232_6 to i8
+
+ST_31: b0_5_tmp_239_5_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:326  %b0_5_tmp_239_5_cast = sext i9 %b0_5_tmp_239_5 to i32
+
+ST_31: tmp_227_6 [1/1] 1.37ns
+.preheader26.i.i.preheader:328  %tmp_227_6 = select i1 %tmp_221_6, i32 %tmp_226_1, i32 %flag_d_assign_11
+
+ST_31: tmp_92 [1/1] 0.00ns
+.preheader26.i.i.preheader:329  %tmp_92 = trunc i32 %tmp_227_6 to i9
+
+ST_31: tmp_228_6 [1/1] 2.52ns
+.preheader26.i.i.preheader:330  %tmp_228_6 = icmp slt i32 %b0_5_tmp_239_5_cast, %tmp_227_6
+
+ST_31: b0_6 [1/1] 1.37ns
+.preheader26.i.i.preheader:331  %b0_6 = select i1 %tmp_228_6, i9 %b0_5_tmp_239_5, i9 %tmp_92
+
+ST_31: tmp_236_6 [1/1] 2.52ns
+.preheader26.i.i.preheader:333  %tmp_236_6 = icmp sgt i32 %tmp_226_1, %flag_d_assign_5
+
+ST_31: tmp_239_6 [1/1] 1.37ns
+.preheader26.i.i.preheader:334  %tmp_239_6 = select i1 %tmp_236_6, i32 %tmp_226_1, i32 %flag_d_assign_5
+
+ST_31: tmp_93 [1/1] 0.00ns
+.preheader26.i.i.preheader:335  %tmp_93 = trunc i32 %tmp_239_6 to i9
+
+
+ <State 32>: 3.89ns
+ST_32: flag_d_assign_13 [1/1] 0.00ns
+_ifconv:119  %flag_d_assign_13 = sext i9 %r_V_1_6 to i32
+
+ST_32: tmp_211_2 [1/2] 0.00ns
+.preheader26.i.i.preheader:156  %tmp_211_2 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_210_4) nounwind
+
+ST_32: tmp_226_2 [1/2] 0.00ns
+.preheader26.i.i.preheader:159  %tmp_226_2 = call fastcc i32 @"image_filter_reg<int>"(i32 %tmp_225_4) nounwind
+
+ST_32: a0_6_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:237  %a0_6_cast = zext i8 %a0_6 to i32
+
+ST_32: tmp_233_6 [1/1] 2.52ns
+.preheader26.i.i.preheader:241  %tmp_233_6 = icmp sgt i32 %a0_6_cast, %tmp_232_6
+
+ST_32: a0_6_tmp_232_6 [1/1] 1.37ns
+.preheader26.i.i.preheader:242  %a0_6_tmp_232_6 = select i1 %tmp_233_6, i8 %a0_6, i8 %tmp_75
+
+ST_32: tmp_209_7 [1/1] 2.52ns
+.preheader26.i.i.preheader:244  %tmp_209_7 = icmp slt i32 %tmp_211_2, %flag_d_assign_13
+
+ST_32: b0_6_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:332  %b0_6_cast = sext i9 %b0_6 to i32
+
+ST_32: tmp_240_6 [1/1] 2.52ns
+.preheader26.i.i.preheader:336  %tmp_240_6 = icmp slt i32 %b0_6_cast, %tmp_239_6
+
+ST_32: b0_6_tmp_239_6 [1/1] 1.37ns
+.preheader26.i.i.preheader:337  %b0_6_tmp_239_6 = select i1 %tmp_240_6, i9 %b0_6, i9 %tmp_93
+
+ST_32: tmp_221_7 [1/1] 2.52ns
+.preheader26.i.i.preheader:339  %tmp_221_7 = icmp sgt i32 %tmp_226_2, %flag_d_assign_13
+
+
+ <State 33>: 5.26ns
+ST_33: flag_d_assign_7 [1/1] 0.00ns
+_ifconv:132  %flag_d_assign_7 = sext i9 %r_V_7 to i32
+
+ST_33: a0_6_tmp_232_6_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:243  %a0_6_tmp_232_6_cast = zext i8 %a0_6_tmp_232_6 to i32
+
+ST_33: tmp_216_7 [1/1] 1.37ns
+.preheader26.i.i.preheader:245  %tmp_216_7 = select i1 %tmp_209_7, i32 %tmp_211_2, i32 %flag_d_assign_13
+
+ST_33: tmp_77 [1/1] 0.00ns
+.preheader26.i.i.preheader:246  %tmp_77 = trunc i32 %tmp_216_7 to i8
+
+ST_33: tmp_217_7 [1/1] 2.52ns
+.preheader26.i.i.preheader:247  %tmp_217_7 = icmp sgt i32 %a0_6_tmp_232_6_cast, %tmp_216_7
+
+ST_33: a0_7 [1/1] 1.37ns
+.preheader26.i.i.preheader:248  %a0_7 = select i1 %tmp_217_7, i8 %a0_6_tmp_232_6, i8 %tmp_77
+
+ST_33: tmp_231_7 [1/1] 2.52ns
+.preheader26.i.i.preheader:250  %tmp_231_7 = icmp slt i32 %tmp_211_2, %flag_d_assign_7
+
+ST_33: tmp_232_7 [1/1] 1.37ns
+.preheader26.i.i.preheader:251  %tmp_232_7 = select i1 %tmp_231_7, i32 %tmp_211_2, i32 %flag_d_assign_7
+
+ST_33: tmp_78 [1/1] 0.00ns
+.preheader26.i.i.preheader:252  %tmp_78 = trunc i32 %tmp_232_7 to i8
+
+ST_33: b0_6_tmp_239_6_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:338  %b0_6_tmp_239_6_cast = sext i9 %b0_6_tmp_239_6 to i32
+
+ST_33: tmp_227_7 [1/1] 1.37ns
+.preheader26.i.i.preheader:340  %tmp_227_7 = select i1 %tmp_221_7, i32 %tmp_226_2, i32 %flag_d_assign_13
+
+ST_33: tmp_94 [1/1] 0.00ns
+.preheader26.i.i.preheader:341  %tmp_94 = trunc i32 %tmp_227_7 to i9
+
+ST_33: tmp_228_7 [1/1] 2.52ns
+.preheader26.i.i.preheader:342  %tmp_228_7 = icmp slt i32 %b0_6_tmp_239_6_cast, %tmp_227_7
+
+ST_33: b0_7 [1/1] 1.37ns
+.preheader26.i.i.preheader:343  %b0_7 = select i1 %tmp_228_7, i9 %b0_6_tmp_239_6, i9 %tmp_94
+
+ST_33: tmp_236_7 [1/1] 2.52ns
+.preheader26.i.i.preheader:345  %tmp_236_7 = icmp sgt i32 %tmp_226_2, %flag_d_assign_7
+
+ST_33: tmp_239_7 [1/1] 1.37ns
+.preheader26.i.i.preheader:346  %tmp_239_7 = select i1 %tmp_236_7, i32 %tmp_226_2, i32 %flag_d_assign_7
+
+ST_33: tmp_95 [1/1] 0.00ns
+.preheader26.i.i.preheader:348  %tmp_95 = trunc i9 %b0_7 to i8
+
+ST_33: tmp_96 [1/1] 0.00ns
+.preheader26.i.i.preheader:349  %tmp_96 = trunc i32 %tmp_239_7 to i8
+
+
+ <State 34>: 3.89ns
+ST_34: a0_7_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:249  %a0_7_cast = zext i8 %a0_7 to i32
+
+ST_34: tmp_233_7 [1/1] 2.52ns
+.preheader26.i.i.preheader:253  %tmp_233_7 = icmp sgt i32 %a0_7_cast, %tmp_232_7
+
+ST_34: a0_7_tmp_232_7 [1/1] 1.37ns
+.preheader26.i.i.preheader:254  %a0_7_tmp_232_7 = select i1 %tmp_233_7, i8 %a0_7, i8 %tmp_78
+
+ST_34: b0_7_cast [1/1] 0.00ns
+.preheader26.i.i.preheader:344  %b0_7_cast = sext i9 %b0_7 to i32
+
+ST_34: tmp_240_7 [1/1] 2.52ns
+.preheader26.i.i.preheader:347  %tmp_240_7 = icmp slt i32 %b0_7_cast, %tmp_239_7
+
+ST_34: tmp_79 [1/1] 1.37ns
+.preheader26.i.i.preheader:350  %tmp_79 = select i1 %tmp_240_7, i8 %tmp_95, i8 %tmp_96
+
+
+ <State 35>: 5.09ns
+ST_35: stg_962 [1/1] 0.00ns
+:40  br i1 %exitcond, label %5, label %3
+
+ST_35: tmp_14 [1/1] 0.00ns
+.preheader.preheader.0:0  %tmp_14 = zext i11 %p_2 to i64
+
+ST_35: core_buf_val_0_V_addr [1/1] 0.00ns
+.preheader.preheader.0:1  %core_buf_val_0_V_addr = getelementptr [1927 x i8]* %core_buf_val_0_V, i64 0, i64 %tmp_14
+
+ST_35: core_buf_val_0_V_load [2/2] 2.39ns
+.preheader.preheader.0:2  %core_buf_val_0_V_load = load i8* %core_buf_val_0_V_addr, align 1
+
+ST_35: core_buf_val_1_V_addr [1/1] 0.00ns
+.preheader.preheader.0:4  %core_buf_val_1_V_addr = getelementptr [1927 x i8]* %core_buf_val_1_V, i64 0, i64 %tmp_14
+
+ST_35: core_buf_val_1_V_load [2/2] 2.39ns
+.preheader.preheader.0:5  %core_buf_val_1_V_load = load i8* %core_buf_val_1_V_addr, align 1
+
+ST_35: tmp_50 [1/1] 1.72ns
+.preheader26.i.i.preheader:351  %tmp_50 = sub i8 0, %tmp_79
+
+ST_35: tmp_51 [1/1] 2.00ns
+.preheader26.i.i.preheader:352  %tmp_51 = icmp ugt i8 %a0_7_tmp_232_7, %tmp_50
+
+ST_35: tmp_100_v [1/1] 1.37ns
+.preheader26.i.i.preheader:353  %tmp_100_v = select i1 %tmp_51, i8 %a0_7_tmp_232_7, i8 %tmp_50
+
+ST_35: tmp_53 [1/1] 2.11ns
+._crit_edge321_ifconv:8  %tmp_53 = icmp ugt i11 %p_2, 6
+
+
+ <State 36>: 4.78ns
+ST_36: core_buf_val_0_V_load [1/2] 2.39ns
+.preheader.preheader.0:2  %core_buf_val_0_V_load = load i8* %core_buf_val_0_V_addr, align 1
+
+ST_36: core_buf_val_1_V_load [1/2] 2.39ns
+.preheader.preheader.0:5  %core_buf_val_1_V_load = load i8* %core_buf_val_1_V_addr, align 1
+
+ST_36: stg_974 [1/1] 2.39ns
+.preheader.preheader.0:7  store i8 %core_buf_val_1_V_load, i8* %core_buf_val_0_V_addr, align 1
+
+ST_36: phitmp2 [1/1] 1.72ns
+.preheader26.i.i.preheader:354  %phitmp2 = add i8 %tmp_100_v, -1
+
+ST_36: stg_976 [1/1] 1.57ns
+.preheader26.i.i.preheader:355  br label %._crit_edge321_ifconv
+
+
+ <State 37>: 5.02ns
+ST_37: core_win_val_0_V_1_3 [1/1] 0.00ns
+:1  %core_win_val_0_V_1_3 = load i16* %core_win_val_0_V_1, align 2
+
+ST_37: core_win_val_1_V_1_3 [1/1] 0.00ns
+:2  %core_win_val_1_V_1_3 = load i16* %core_win_val_1_V_1, align 2
+
+ST_37: core_win_val_2_V_1_3 [1/1] 0.00ns
+:3  %core_win_val_2_V_1_3 = load i16* %core_win_val_2_V_1, align 2
+
+ST_37: stg_980 [1/1] 0.00ns
+:37  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 1924, i64 0)
+
+ST_37: core_win_val_0_V_2 [1/1] 0.00ns
+.preheader.preheader.0:3  %core_win_val_0_V_2 = zext i8 %core_buf_val_0_V_load to i16
+
+ST_37: core_win_val_1_V_2 [1/1] 0.00ns
+.preheader.preheader.0:6  %core_win_val_1_V_2 = zext i8 %core_buf_val_1_V_load to i16
+
+ST_37: core_1 [1/1] 0.00ns
+._crit_edge321_ifconv:0  %core_1 = phi i8 [ 0, %.preheader.preheader.0 ], [ %phitmp2, %.preheader26.i.i.preheader ], [ 0, %_ifconv ]
+
+ST_37: core_win_val_0_V_0_load [1/1] 0.00ns
+._crit_edge321_ifconv:1  %core_win_val_0_V_0_load = load i16* %core_win_val_0_V_0, align 2
+
+ST_37: core_win_val_1_V_0_load [1/1] 0.00ns
+._crit_edge321_ifconv:2  %core_win_val_1_V_0_load = load i16* %core_win_val_1_V_0, align 2
+
+ST_37: core_win_val_2_V_0_load [1/1] 0.00ns
+._crit_edge321_ifconv:3  %core_win_val_2_V_0_load = load i16* %core_win_val_2_V_0, align 2
+
+ST_37: core_win_val_2_V_2 [1/1] 1.37ns
+._crit_edge321_ifconv:4  %core_win_val_2_V_2 = select i1 %or_cond, i8 %core_1, i8 0
+
+ST_37: core_win_val_2_V_1_2 [1/1] 0.00ns
+._crit_edge321_ifconv:5  %core_win_val_2_V_1_2 = zext i8 %core_win_val_2_V_2 to i16
+
+ST_37: stg_989 [1/1] 2.39ns
+._crit_edge321_ifconv:6  store i8 %core_win_val_2_V_2, i8* %core_buf_val_1_V_addr, align 1
+
+ST_37: tmp_52 [1/1] 2.28ns
+._crit_edge321_ifconv:7  %tmp_52 = icmp ne i16 %core_win_val_1_V_1_3, 0
+
+ST_37: tmp_73 [1/1] 2.28ns
+._crit_edge321_ifconv:9  %tmp_73 = icmp sgt i16 %core_win_val_1_V_1_3, %core_win_val_0_V_0_load
+
+ST_37: tmp_242_1 [1/1] 2.28ns
+._crit_edge321_ifconv:10  %tmp_242_1 = icmp sgt i16 %core_win_val_1_V_1_3, %core_win_val_0_V_1_3
+
+ST_37: tmp_242_2 [1/1] 2.28ns
+._crit_edge321_ifconv:11  %tmp_242_2 = icmp sgt i16 %core_win_val_1_V_1_3, %core_win_val_0_V_2
+
+ST_37: tmp_74 [1/1] 2.28ns
+._crit_edge321_ifconv:12  %tmp_74 = icmp sgt i16 %core_win_val_1_V_1_3, %core_win_val_2_V_0_load
+
+ST_37: tmp_245_1 [1/1] 2.28ns
+._crit_edge321_ifconv:13  %tmp_245_1 = icmp sgt i16 %core_win_val_1_V_1_3, %core_win_val_2_V_1_3
+
+ST_37: tmp_245_2 [1/1] 2.28ns
+._crit_edge321_ifconv:14  %tmp_245_2 = icmp sgt i16 %core_win_val_1_V_1_3, %core_win_val_2_V_1_2
+
+ST_37: tmp_54 [1/1] 2.28ns
+._crit_edge321_ifconv:15  %tmp_54 = icmp sgt i16 %core_win_val_1_V_1_3, %core_win_val_1_V_0_load
+
+ST_37: tmp_55 [1/1] 2.28ns
+._crit_edge321_ifconv:16  %tmp_55 = icmp sgt i16 %core_win_val_1_V_1_3, %core_win_val_1_V_2
+
+ST_37: tmp19 [1/1] 1.37ns
+._crit_edge321_ifconv:17  %tmp19 = and i1 %tmp_52, %tmp_9
+
+ST_37: tmp21 [1/1] 1.37ns
+._crit_edge321_ifconv:18  %tmp21 = and i1 %tmp_73, %tmp_242_1
+
+ST_37: tmp20 [1/1] 1.37ns
+._crit_edge321_ifconv:19  %tmp20 = and i1 %tmp21, %tmp_53
+
+ST_37: tmp24 [1/1] 1.37ns
+._crit_edge321_ifconv:21  %tmp24 = and i1 %tmp_74, %tmp_245_1
+
+ST_37: tmp23 [1/1] 1.37ns
+._crit_edge321_ifconv:22  %tmp23 = and i1 %tmp24, %tmp_242_2
+
+ST_37: tmp26 [1/1] 1.37ns
+._crit_edge321_ifconv:23  %tmp26 = and i1 %tmp_55, %tmp_54
+
+ST_37: tmp25 [1/1] 1.37ns
+._crit_edge321_ifconv:24  %tmp25 = and i1 %tmp26, %tmp_245_2
+
+ST_37: empty_52 [1/1] 0.00ns
+._crit_edge327:0  %empty_52 = call i32 (...)* @_ssdm_op_SpecRegionEnd([11 x i8]* @p_str1814, i32 %tmp_10)
+
+ST_37: stg_1007 [1/1] 0.00ns
+._crit_edge327:1  store i16 %core_win_val_2_V_1_2, i16* %core_win_val_2_V_1, align 2
+
+ST_37: stg_1008 [1/1] 0.00ns
+._crit_edge327:2  store i16 %core_win_val_2_V_1_3, i16* %core_win_val_2_V_0, align 2
+
+ST_37: stg_1009 [1/1] 0.00ns
+._crit_edge327:3  store i16 %core_win_val_1_V_2, i16* %core_win_val_1_V_1, align 2
+
+ST_37: stg_1010 [1/1] 0.00ns
+._crit_edge327:4  store i16 %core_win_val_1_V_1_3, i16* %core_win_val_1_V_0, align 2
+
+ST_37: stg_1011 [1/1] 0.00ns
+._crit_edge327:5  store i16 %core_win_val_0_V_2, i16* %core_win_val_0_V_1, align 2
+
+ST_37: stg_1012 [1/1] 0.00ns
+._crit_edge327:6  store i16 %core_win_val_0_V_1_3, i16* %core_win_val_0_V_0, align 2
+
+ST_37: stg_1013 [1/1] 0.00ns
+._crit_edge327:7  br label %2
+
+
+ <State 38>: 5.81ns
+ST_38: tmp18 [1/1] 1.37ns
+._crit_edge321_ifconv:20  %tmp18 = and i1 %tmp20, %tmp19
+
+ST_38: tmp22 [1/1] 1.37ns
+._crit_edge321_ifconv:25  %tmp22 = and i1 %tmp25, %tmp23
+
+ST_38: tmp_26 [1/1] 1.37ns
+._crit_edge321_ifconv:26  %tmp_26 = and i1 %tmp22, %tmp18
+
+ST_38: tmp_98 [1/1] 1.37ns
+._crit_edge321_ifconv:27  %tmp_98 = select i1 %tmp_26, i8 -1, i8 0
+
+ST_38: tmp_76 [1/1] 0.00ns
+:0  %tmp_76 = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str1828)
+
+ST_38: stg_1019 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecProtocol(i32 0, [1 x i8]* @p_str1806) nounwind
+
+ST_38: stg_1020 [1/1] 1.70ns
+:2  call void @_ssdm_op_Write.ap_fifo.volatile.i8P(i8* %p_mask_data_stream_V, i8 %tmp_98)
+
+ST_38: empty_51 [1/1] 0.00ns
+:3  %empty_51 = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str1828, i32 %tmp_76)
+
+ST_38: stg_1022 [1/1] 0.00ns
+:4  br label %._crit_edge327
+
+
+ <State 39>: 0.00ns
+ST_39: empty_53 [1/1] 0.00ns
+:0  %empty_53 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str1813, i32 %tmp_6)
+
+ST_39: stg_1024 [1/1] 0.00ns
+:1  br label %0
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

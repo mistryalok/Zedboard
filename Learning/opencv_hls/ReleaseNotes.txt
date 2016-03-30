@@ -1,0 +1,35 @@
+﻿*************************************************************************
+   ____  ____ 
+  /   /\/   / 
+ /___/  \  /   
+ \   \   \/    © Copyright 2015 Xilinx, Inc. All rights reserved.
+  \   \        This file contains confidential and proprietary 
+  /   /        information of Xilinx, Inc. and is protected under U.S. 
+ /___/   /\    and international copyright and other intellectual 
+ \   \  /  \   property laws. 
+  \___\/\___\ 
+ 
+*************************************************************************
+
+xapp1167_vivado:  XAPP1167 in Vivado flow
+
+                  Features included:
+                  - PetaLinux image with OpenCV/FFmpeg libraries
+                  - AXI bandwidth performance monitoring
+                  - Options for using decoded video file as input (support
+                    replacing input_video SD card with your own video file 
+                    in common format)
+
+                  Notice: in windows, please uncompress the zip file in a 
+                  short path (e.g. root dir will be safe) to avoid exceeding 
+                  path length limit (256) for some files.
+                  Please refer to xapp1167_vivado/README.txt for more 
+                  information.
+
+xapp1167_ise:     XAPP1167 in ISE flow
+
+                  Notice: the fast-corner design has some violation of 
+                  timing constraints, to meet timing, please use Vivado flow.
+                  Please refer to xapp1167_ise/README.txt for more information.
+
+Date Last Modified:  30APR2015

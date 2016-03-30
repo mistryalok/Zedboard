@@ -1,0 +1,158 @@
+
+
+================================================================
+== Vivado HLS Report for 'image_filter_Block_Mat_exit1222_proc1'
+================================================================
+* Date:           Wed Mar 30 11:12:49 2016
+
+* Version:        2014.4 (Build 1071461 on Tue Nov 18 16:42:57 PM 2014)
+* Project:        prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |   6.67|      5.81|        0.83|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+---------+-----+---------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    | min |   max   | min |   max   |   Type  |
+    +-----+---------+-----+---------+---------+
+    |    2|  2082242|    2|  2082242|   none  |
+    +-----+---------+-----+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------------+-----------------------+-----+---------+-----+---------+---------+
+        |                                 |                       |    Latency    |    Interval   | Pipeline|
+        |             Instance            |         Module        | min |   max   | min |   max   |   Type  |
+        +---------------------------------+-----------------------+-----+---------+-----+---------+---------+
+        |grp_image_filter_CvtColor_fu_67  |image_filter_CvtColor  |    1|  2082241|    1|  2082241|   none  |
+        +---------------------------------+-----------------------+-----+---------+-----+---------+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|Expression       |        -|      -|       0|      1|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      3|     141|     96|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|     29|
+|Register         |        -|      -|      28|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      3|     169|    126|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      1|   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +---------------------------------+-----------------------+---------+-------+-----+----+
+    |             Instance            |         Module        | BRAM_18K| DSP48E|  FF | LUT|
+    +---------------------------------+-----------------------+---------+-------+-----+----+
+    |grp_image_filter_CvtColor_fu_67  |image_filter_CvtColor  |        0|      3|  141|  96|
+    +---------------------------------+-----------------------+---------+-------+-----+----+
+    |Total                            |                       |        0|      3|  141|  96|
+    +---------------------------------+-----------------------+---------+-------+-----+----+
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------+----------+-------+---+----+------------+------------+
+    | Variable Name | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------+----------+-------+---+----+------------+------------+
+    |ap_sig_bdd_56  |    or    |      0|  0|   1|           1|           1|
+    +---------------+----------+-------+---+----+------------+------------+
+    |Total          |          |      0|  0|   1|           1|           1|
+    +---------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------+----+-----------+-----+-----------+
+    |            Name            | LUT| Input Size| Bits| Total Bits|
+    +----------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                   |   1|          3|    1|          3|
+    |ap_return_0                 |  12|          2|   12|         24|
+    |ap_return_1                 |  12|          2|   12|         24|
+    |gray_data_stream_0_V_write  |   1|          2|    1|          2|
+    |src0_data_stream_0_V_read   |   1|          2|    1|          2|
+    |src0_data_stream_1_V_read   |   1|          2|    1|          2|
+    |src0_data_stream_2_V_read   |   1|          2|    1|          2|
+    +----------------------------+----+-----------+-----+-----------+
+    |Total                       |  29|         15|   29|         59|
+    +----------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------------------------------+----+----+-----+-----------+
+    |                          Name                         | FF | LUT| Bits| Const Bits|
+    +-------------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                              |   2|   0|    2|          0|
+    |ap_done_reg                                            |   1|   0|    1|          0|
+    |ap_return_0_preg                                       |  12|   0|   12|          0|
+    |ap_return_1_preg                                       |  12|   0|   12|          0|
+    |grp_image_filter_CvtColor_fu_67_ap_start_ap_start_reg  |   1|   0|    1|          0|
+    +-------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                  |  28|   0|   28|          0|
+    +-------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------------+-----+-----+------------+---------------------------------------+--------------+
+|           RTL Ports          | Dir | Bits|  Protocol  |             Source Object             |    C Type    |
++------------------------------+-----+-----+------------+---------------------------------------+--------------+
+|ap_clk                        |  in |    1| ap_ctrl_hs | image_filter_Block_Mat.exit1222_proc1 | return value |
+|ap_rst                        |  in |    1| ap_ctrl_hs | image_filter_Block_Mat.exit1222_proc1 | return value |
+|ap_start                      |  in |    1| ap_ctrl_hs | image_filter_Block_Mat.exit1222_proc1 | return value |
+|ap_done                       | out |    1| ap_ctrl_hs | image_filter_Block_Mat.exit1222_proc1 | return value |
+|ap_continue                   |  in |    1| ap_ctrl_hs | image_filter_Block_Mat.exit1222_proc1 | return value |
+|ap_idle                       | out |    1| ap_ctrl_hs | image_filter_Block_Mat.exit1222_proc1 | return value |
+|ap_ready                      | out |    1| ap_ctrl_hs | image_filter_Block_Mat.exit1222_proc1 | return value |
+|ap_return_0                   | out |   12| ap_ctrl_hs | image_filter_Block_Mat.exit1222_proc1 | return value |
+|ap_return_1                   | out |   12| ap_ctrl_hs | image_filter_Block_Mat.exit1222_proc1 | return value |
+|p_read                        |  in |   12|   ap_none  |                 p_read                |    scalar    |
+|p_read2                       |  in |   12|   ap_none  |                p_read2                |    scalar    |
+|p_read6                       |  in |   12|   ap_none  |                p_read6                |    scalar    |
+|p_read7                       |  in |   12|   ap_none  |                p_read7                |    scalar    |
+|src0_data_stream_0_V_dout     |  in |    8|   ap_fifo  |          src0_data_stream_0_V         |    pointer   |
+|src0_data_stream_0_V_empty_n  |  in |    1|   ap_fifo  |          src0_data_stream_0_V         |    pointer   |
+|src0_data_stream_0_V_read     | out |    1|   ap_fifo  |          src0_data_stream_0_V         |    pointer   |
+|src0_data_stream_1_V_dout     |  in |    8|   ap_fifo  |          src0_data_stream_1_V         |    pointer   |
+|src0_data_stream_1_V_empty_n  |  in |    1|   ap_fifo  |          src0_data_stream_1_V         |    pointer   |
+|src0_data_stream_1_V_read     | out |    1|   ap_fifo  |          src0_data_stream_1_V         |    pointer   |
+|src0_data_stream_2_V_dout     |  in |    8|   ap_fifo  |          src0_data_stream_2_V         |    pointer   |
+|src0_data_stream_2_V_empty_n  |  in |    1|   ap_fifo  |          src0_data_stream_2_V         |    pointer   |
+|src0_data_stream_2_V_read     | out |    1|   ap_fifo  |          src0_data_stream_2_V         |    pointer   |
+|gray_data_stream_0_V_din      | out |    8|   ap_fifo  |          gray_data_stream_0_V         |    pointer   |
+|gray_data_stream_0_V_full_n   |  in |    1|   ap_fifo  |          gray_data_stream_0_V         |    pointer   |
+|gray_data_stream_0_V_write    | out |    1|   ap_fifo  |          gray_data_stream_0_V         |    pointer   |
++------------------------------+-----+-----+------------+---------------------------------------+--------------+
+

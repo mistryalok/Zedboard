@@ -1,0 +1,171 @@
+#***************************************************************************
+#
+#   © Copyright 2013 Xilinx, Inc. All rights reserved. 
+#
+#   This file contains confidential and proprietary information of Xilinx,
+#   Inc. and is protected under U.S. and international copyright and other
+#   intellectual property laws. 
+#
+#   DISCLAIMER
+#   This disclaimer is not a license and does not grant any rights to the
+#   materials distributed herewith. Except as otherwise provided in a valid
+#   license issued to you by Xilinx, and to the maximum extent permitted by
+#   applicable law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND WITH
+#   ALL FAULTS, AND XILINX HEREBY DISCLAIMS ALL WARRANTIES AND CONDITIONS, 
+#   EXPRESS, IMPLIED, OR STATUTORY, INCLUDING BUT NOT LIMITED TO WARRANTIES
+#   OF MERCHANTABILITY, NON-INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR 
+#   PURPOSE; and (2) Xilinx shall not be liable (whether in contract or 
+#   tort, including negligence, or under any other theory of liability)
+#   for any loss or damage of any kind or nature related to, arising under
+#   or in connection with these materials, including for any direct, or any
+#   indirect, special, incidental, or consequential loss or damage (including
+#   loss of data, profits, goodwill, or any type of loss or damage suffered 
+#   as a result of any action brought by a third party) even if such damage
+#   or loss was reasonably foreseeable or Xilinx had been advised of the 
+#   possibility of the same. 
+#  
+#   CRITICAL APPLICATIONS 
+#   Xilinx products are not designed or intended to be fail-safe, or for use
+#   in any application requiring fail-safe performance, such as life-support
+#   or safety devices or systems, Class III medical devices, nuclear facilities,
+#   applications related to the deployment of airbags, or any other applications
+#   that could lead to death, personal injury, or severe property or environmental
+#   damage (individually and collectively, "Critical Applications"). Customer
+#   assumes the sole risk and liability of any use of Xilinx products in Critical
+#   Applications, subject only to applicable laws and regulations governing 
+#   limitations on product liability. 
+#   
+#   THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS PART OF THIS FILE AT 
+#   ALL TIMES.
+#
+#***************************************************************************/
+
+# All Target
+all: $(BOOT_DIR)/BOOT.bin $(APP_NAME)
+	@cp -r $(TOP_DIR)/$(SD_DIR) .; \
+        chmod -R a+w $(SD_DIR); \
+        cp -f $(APP_NAME) $(SD_DIR)/$(APP_NAME); \
+        cp -f $(BOOT_DIR)/BOOT.bin $(SD_DIR)/BOOT.bin; \
+        echo "New sd_image is ready."
+
+sw_all: $(APP_NAME)
+	@cp -r $(TOP_DIR)/$(SD_DIR) .; \
+        chmod -R a+w $(SD_DIR); \
+        cp -f $(APP_NAME) $(SD_DIR)/$(APP_NAME); \
+        cp -f $(BOOT_DIR)/BOOT.bin $(SD_DIR)/BOOT.bin; \
+        echo "New sd_image is ready."
+
+$(APP_NAME): $(OBJS) $(USER_OBJS)
+	@echo 'Building target: $@'
+	@echo 'Invoking: ARM Linux gcc linker'
+	arm-xilinx-linux-gnueabi-g++ -DHLS_NO_XIL_FPO_LIB $(DESIGN_CFLAGS) -L$(ARM_OPENCV_LIB) -o"$(APP_NAME)" $(OBJS) $(USER_OBJS) $(ARM_LIBS)
+	@echo 'Finished building target: $@'
+	@echo ' '
+
+$(APP_NAME).size: $(APP_NAME)
+	@echo 'Invoking: ARM Linux Print Size'
+	arm-xilinx-linux-gnueabi-size $(APP_NAME) |tee "$(APP_NAME).size"
+	@echo 'Finished building: $@'
+	@echo ' '
+
+elf: $(APP_NAME) $(APP_NAME).size
+
+csim: $(DESIGN_FILES)
+	@csim_flag=1 csynth_flag=0 cosim_flag=0 export_flag=0 vivado_hls run.tcl
+
+cosim: $(DESIGN_FILES)
+	@csim_flag=0 csynth_flag=1 cosim_flag=1 export_flag=0 vivado_hls run.tcl
+
+core: $(HLS_PRJ)/solution1/impl/pcores/$(PCORE_NAME)
+
+$(HLS_PRJ)/solution1/impl/pcores/$(PCORE_NAME): $(DESIGN_FILES)
+	@csim_flag=0 csynth_flag=1 cosim_flag=0 export_flag=1 vivado_hls run.tcl
+
+bitstream: $(THIS_DIR)/$(EDK_PRJ)/implementation/system.bit
+
+$(THIS_DIR)/$(EDK_PRJ)/implementation/system.bit: $(HLS_PRJ)/solution1/impl/pcores/$(PCORE_NAME)
+	@cp -r $(TOP_DIR)/hw/$(EDK_PRJ) .; \
+        chmod -R a+w $(EDK_PRJ); \
+        cp -rf $(HLS_PRJ)/solution1/impl/pcores/$(PCORE_NAME) $(EDK_PRJ)/pcores/; \
+			rm -rf $(EDK_PRJ)/implementation/filter_engine*; \
+			rm -rf $(EDK_PRJ)/implementation/cache/*filter_engine*; \
+        cd $(EDK_PRJ); \
+        echo 'run bits' | xps -nw system.xmp
+	
+boot: $(BOOT_DIR)/BOOT.bin
+
+$(BOOT_DIR)/BOOT.bin: $(THIS_DIR)/$(EDK_PRJ)/implementation/system.bit
+	@cp -r $(TOP_DIR)/$(BOOT_DIR) .; \
+        chmod -R a+w $(BOOT_DIR); \
+        cp -f $(THIS_DIR)/$(EDK_PRJ)/implementation/system.bit $(BOOT_DIR)/system.bit; \
+        cd $(BOOT_DIR); \
+        ./bootgen.sh
+
+%.cpp: $(CPP_HEADERS)
+
+../share/%.c: $(C_HEADERS)
+
+../share/src/%.o: ../share/src/%.c $(C_HEADERS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Linux g++ compiler'
+	arm-xilinx-linux-gnueabi-g++ -O3 -DHLS_NO_XIL_FPO_LIB $(DESIGN_CFLAGS) -I$(THIS_DIR) -I$(THIS_DIR)/$(HLS_PRJ)/solution1/impl/drivers/$(PCORE_NAME)/src -I$(THIS_DIR)/../share/include -I$(ARM_OPENCV_INC)/opencv -I$(ARM_OPENCV_INC) -I$(AUTOESL_PATH) -I$(AUTOESL_TECH) -c -fmessage-length=0 -fpermissive -o"$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+$(HLS_PRJ)/solution1/impl/drivers/$(PCORE_NAME)/src/x$(CORE_NAME).c: core
+
+$(HLS_PRJ)/solution1/impl/drivers/$(PCORE_NAME)/src/x$(CORE_NAME)_linux.c: core
+
+../share/x$(CORE_NAME).o: $(HLS_PRJ)/solution1/impl/drivers/$(PCORE_NAME)/src/x$(CORE_NAME).c
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Linux g++ compiler'
+	arm-xilinx-linux-gnueabi-g++ -O3 -DHLS_NO_XIL_FPO_LIB $(DESIGN_CFLAGS) -I$(THIS_DIR)/$(HLS_PRJ)/solution1/impl/drivers/$(PCORE_NAME)/src -I$(ARM_OPENCV_INC)/opencv -I$(ARM_OPENCV_INC) -I$(AUTOESL_PATH) -I$(AUTOESL_TECH) -c -fmessage-length=0 -fpermissive -o"$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+../share/x$(CORE_NAME)_linux.o: $(HLS_PRJ)/solution1/impl/drivers/$(PCORE_NAME)/src/x$(CORE_NAME)_linux.c
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Linux g++ compiler'
+	arm-xilinx-linux-gnueabi-g++ -O3 -DHLS_NO_XIL_FPO_LIB $(DESIGN_CFLAGS) -I$(THIS_DIR)/$(HLS_PRJ)/solution1/impl/drivers/$(PCORE_NAME)/src -I$(ARM_OPENCV_INC)/opencv -I$(ARM_OPENCV_INC) -I$(AUTOESL_PATH) -I$(AUTOESL_TECH) -c -fmessage-length=0 -fpermissive -o"$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+%.o: ./%.cpp $(CPP_HEADERS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Linux g++ compiler'
+	arm-xilinx-linux-gnueabi-g++ -O3 -DHLS_NO_XIL_FPO_LIB $(DESIGN_CFLAGS) -I$(THIS_DIR)/$(HLS_PRJ)/solution1/impl/drivers/$(PCORE_NAME)/src -I$(THIS_DIR)/../share/include -I$(ARM_OPENCV_INC)/opencv -I$(ARM_OPENCV_INC) -I$(AUTOESL_PATH) -I$(AUTOESL_TECH) -c -fmessage-length=0 -fpermissive -o"$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+%.o: ./%.c $(CPP_HEADERS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Linux g++ compiler'
+	arm-xilinx-linux-gnueabi-g++ -O3 -DHLS_NO_XIL_FPO_LIB $(DESIGN_CFLAGS) -I$(THIS_DIR)/$(HLS_PRJ)/solution1/impl/drivers/$(PCORE_NAME)/src -I$(THIS_DIR)/../share/include -I$(ARM_OPENCV_INC)/opencv -I$(ARM_OPENCV_INC) -I$(AUTOESL_PATH) -I$(AUTOESL_TECH) -c -fmessage-length=0 -fpermissive -o"$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+help:
+	@echo 'Makefile targets of Video Library Reference Design:'; \
+	echo '  make elf        -- build sw (video_library_cmd)'; \
+	echo '  make csim       -- run C simulation'; \
+	echo '  make cosim      -- run RTL simulation'; \
+	echo '  make core       -- synthesis and export pcore'; \
+	echo '  make bitstream  -- generate bitstream'; \
+	echo '  make boot       -- generate boot image (BOOT.bin)'; \
+	echo '  make all        -- build sw and hw, generate sd_image'; \
+	echo '  make clean      -- clean generated files of sw and test'; \
+	echo '  make allclean   -- clean all generated files'; \
+	echo '  make help       -- give this help'; \
+	echo ' '
+
+clean:
+	-$(RM) $(OBJS) $(BMPS) *.log $(DESIGN) $(APP_NAME)*
+	-@echo ' '
+
+allclean:
+	-$(RM) $(OBJS) $(BMPS) *.log $(DESIGN) $(APP_NAME)* $(BITS_NAME) $(HLS_PRJ) $(EDK_PRJ) $(BOOT_DIR) $(SD_DIR) 
+	-@echo ' '
+
+.PHONY: all clean dependents allclean help
+.SECONDARY:
+

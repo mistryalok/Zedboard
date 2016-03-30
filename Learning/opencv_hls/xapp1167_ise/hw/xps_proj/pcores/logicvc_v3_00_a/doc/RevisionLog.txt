@@ -1,0 +1,90 @@
+*********************************************************************************
+
+logiCVC-ML revision log
+
+*********************************************************************************
+
+
+VERSION  |  DATE         |  DESCRIPTION
+*********************************************************************************
+1.06.c   |  21.04.2010.  |  Initial LVIP release edition
+---------------------------------------------------------------------------------
+2.00.a   |  16.09.2010.  |  New features:
+         |               |     - Added AXI4 master interface
+         |               |     - Added AXI4-Lite slave interface
+         |               |     - Added C_REGS_LITTLE_ENDIAN generic
+         |               |       parameter
+---------------------------------------------------------------------------------
+2.01.a   |  14.03.2011.  |  New features:
+         |               |     - Added DVI output interface
+         |               |     - Removed camera link 3-bit interface
+         |               |     - Parallel interface always available
+         |               |     - Added support for Xilinx Kintex7
+         |               |       FPGA family
+         |               |  Bug fix:
+         |               |     - Blank signal now synchronous to data
+         |               |       on 12-bit parallel output interface
+---------------------------------------------------------------------------------
+2.04.a   |  08.02.2012.  |  New features:
+         |               |     - Added XCOLOR dithering module
+         |               |     - Added support for Xilinx 7-seriers
+         |               |       FPGA families (Artix7, Kintex7,
+         |               |       Virtex7)
+         |               |     - Removed serialized blender
+         |               |     - New version generic parameters added:
+         |               |       C_IP_LICENSE_CHECK, C_IP_TIME_BEFORE_BREAK
+         |               |     - IP_VERSION register updated accordingly
+---------------------------------------------------------------------------------
+2.05.a   |  21.03.2012.  |  New features:
+         |               |     - Added support for YCbCr 4:4:4 and YCbCr 4:2:2
+         |               |       display output
+         |               |     - Removed C_LITTLE_ENDIAN generic parameter
+         |               |     - Removed C_REGS_LITTLE_ENDIAN generic parameter
+         |               |     - Added C_MEM_LITTLE_ENDIAN generic parameter
+         |               |     - Added C_MEM_BYTE_SWAP and C_REG_BYTE_SWAP
+         |               |       generic parameters
+         |               |     - Added C_USE_VCLK2 generic parameter added
+         |               |     - Powre control register(PWRCTRL) readable when
+         |               |       generic parameter C_READABLE_REGS = 0
+----------------------------------------------------------------------------------
+2.05.b   |  16.04.2012.  |  New features:
+         |               |     - Generic parameter C_IP_TIME_BEFORE_BREAK modified
+         |               |       to support release edition (0 = infinite, 1 = 1h,
+         |               |       2 = 12h)
+         |               |  Bug fix:
+         |               |     - YCbCr 4:2:2 output generator modified
+         |               |       to support average CbCr value for neighboring
+         |               |       pixels
+----------------------------------------------------------------------------------
+2.05.c   |  03.05.2012.  |  Bug fix:
+         |               |     - YCbCr 4:2:2 output generator bugfix
+----------------------------------------------------------------------------------
+3.00.a   |  17.09.2012.  |  New features:
+         |               |     - Added C_DISPLAY_COLOR_SPACE generic that determines
+         |               |       the output interface color space.
+         |               |     - Added support for YCbCr 444 and 422 layers
+         |               |       (C_LAYER_0_TYPE).
+         |               |     - Added support for two alpha layers (alpha plane)
+         |               |       so now layers 1 and 3 can be configured as alpha
+         |               |       layers (C_LAYER_0_TYPE).
+         |               |     - Added support for different byte ordering inside
+         |               |       pixels (RGB, BGR, YCbCr, CrCbY, ...).
+         |               |     - Added global rst input
+         |               |     - Added C_INCREASE_FIFO generic that allows FIFO to be
+         |               |       increased in size up to 8 times.
+         |               |     - ITU656 444 to 422 conversion now uses average
+         |               |       value of neighboring pixels.
+         |               |     - ITU656 output now supports active edge setup in the
+         |               |       same way as parallel output (control register).
+         |               |     - Increased maximal layer vertical offset from 2048
+         |               |       to 4096.
+         |               |     - Removed functionality of enabling/disabling pixclk
+         |               |       during hsync (ctrl reg(9)).
+         |               |     - External "RGB input" name changed to "parallel input"
+         |               |       as it can now also be in YCbCr format.
+         |               |     - Added university evaluation version (watermark).
+         |               |  Bug fix:
+         |               |     - Better reset behavior when reseting the FPGA system
+         |               |     - Fixed synchronization delay when external parallel
+         |               |       input is used.
+**********************************************************************************

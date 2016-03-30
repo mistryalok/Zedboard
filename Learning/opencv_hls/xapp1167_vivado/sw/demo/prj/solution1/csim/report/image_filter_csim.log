@@ -1,0 +1,41 @@
+   Compiling ../../../../opencv_top.cpp in release mode
+   Compiling ../../../../test.cpp in release mode
+   Compiling ../../../../top.cpp in release mode
+   Generating csim.exe
+/usr/bin/ld: warning: libjpeg.so.62, needed by /opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so, not found (try using -rpath or -rpath-link)
+/usr/bin/ld: warning: libtiff.so.3, needed by /opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so, not found (try using -rpath or -rpath-link)
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `jpeg_resync_to_restart'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `TIFFReadRGBATile'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `TIFFSetWarningHandler'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `jpeg_std_error'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `jpeg_CreateDecompress'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `jpeg_start_compress'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `TIFFSetField'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `jpeg_set_quality'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `jpeg_read_header'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `TIFFClose'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `TIFFReadRGBAStrip'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `TIFFGetField'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `jpeg_alloc_huff_table'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `jpeg_destroy_decompress'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `jpeg_stdio_dest'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `TIFFReadEncodedTile'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `TIFFWriteScanline'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `jpeg_finish_compress'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `TIFFReadEncodedStrip'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `jpeg_destroy_compress'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `TIFFIsTiled'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `jpeg_finish_decompress'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `jpeg_set_defaults'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `TIFFOpen'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `TIFFSetErrorHandler'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `jpeg_start_decompress'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `jpeg_write_scanlines'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `TIFFRGBAImageOK'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `TIFFScanlineSize'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `jpeg_CreateCompress'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `jpeg_read_scanlines'
+/opt/Xilinx/Vivado_HLS/2014.4/lnx64/tools/opencv/libopencv_highgui.so: undefined reference to `jpeg_stdio_src'
+collect2: ld returned 1 exit status
+make: *** [csim.exe] Error 1
+@E [SIM-1] 'csim_design' failed: compilation error(s).

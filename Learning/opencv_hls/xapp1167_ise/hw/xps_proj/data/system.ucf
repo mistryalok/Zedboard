@@ -1,0 +1,87 @@
+# clocks
+NET "VIDEO_CLK_P" LOC = "Y9" | IOSTANDARD = LVDS_25;
+NET "VIDEO_CLK_N" LOC = "Y8" | IOSTANDARD = LVDS_25;
+
+NET "VIDEO_CLK" TNM_NET = VIDEO_CLK_PIN;
+TIMESPEC TS_VIDEO_CLK_IN = PERIOD VIDEO_CLK_PIN 148500 kHz;
+
+NET fmc_imageon_hdmi_in_0_clk_pin TNM_NET = fmc_imageon_hdmi_in_0_clk_pin;
+TIMESPEC TS_fmc_hpc_dvidp_dvii_clk_pin = PERIOD fmc_imageon_hdmi_in_0_clk_pin 148500 kHz;
+
+# Constraint to override the clock rule
+NET "fmc_imageon_hdmi_in_0_clk_pin" CLOCK_DEDICATED_ROUTE = FALSE;
+
+# offset for HDMI IN signals w.r.t HDMI IN clock
+INST "fmc_imageon_hdmi_in_0_*" TNM = HDMI_IN_GRP;
+TIMEGRP "HDMI_IN_GRP" offset = IN 1 ns VALID 6.5 ns BEFORE "fmc_imageon_hdmi_in_0_clk_pin" rising;
+
+#--------------------------- IIC Interface to FMC2 --------------------------------------
+
+NET fmc_imageon_iic_Scl_pin   LOC = "AB14" | IOSTANDARD="LVCMOS25";  # I2C_MUX_SCL  - FMC2-G18 (LA16_p)
+NET fmc_imageon_iic_Sda_pin   LOC = "AB15" | IOSTANDARD="LVCMOS25";  # I2C_MUX_SDA  - FMC2-G19 (LA16_n)
+NET fmc_imageon_iic_Rst_b_pin LOC = "Y16"  | IOSTANDARD="LVCMOS25";  # I2C_MUX_RST# - FMC2-D9  (LA01_n_CC)
+
+#--------------------------- HDMI IN interface (AVNET IMAGEON on FMC2) -------------------------------------------
+
+# ADV7611 video input mode YCbCr 4:2:2, embedded syncs, 16 bpp
+# control signals
+NET fmc_imageon_hdmi_in_0_clk_pin                LOC = "Y6"   | IOSTANDARD = LVCMOS25;  # HDMII_LLC   - FMC-G2  (CLK1_M2C_p)
+# multiplexed chroma pins (Cr/Cb)
+NET fmc_imageon_hdmi_in_0_io_hdmii_video_pin[0]  LOC = "AA4"  | IOSTANDARD = LVCMOS25;  # HDMII_CBCR0 - FMC-H38 (LA32_n)
+NET fmc_imageon_hdmi_in_0_io_hdmii_video_pin[1]  LOC = "Y4"   | IOSTANDARD = LVCMOS25;  # HDMII_CBCR1 - FMC-H37 (LA32_p)
+NET fmc_imageon_hdmi_in_0_io_hdmii_video_pin[2]  LOC = "Y10"  | IOSTANDARD = LVCMOS25;  # HDMII_CBCR2 - FMC-G37 (LA33_n)
+NET fmc_imageon_hdmi_in_0_io_hdmii_video_pin[3]  LOC = "Y11"  | IOSTANDARD = LVCMOS25;  # HDMII_CBCR3 - FMC-G36 (LA33_p)
+NET fmc_imageon_hdmi_in_0_io_hdmii_video_pin[4]  LOC = "AB6"  | IOSTANDARD = LVCMOS25;  # HDMII_CBCR4 - FMC-H35 (LA30_n)
+NET fmc_imageon_hdmi_in_0_io_hdmii_video_pin[5]  LOC = "AB7"  | IOSTANDARD = LVCMOS25;  # HDMII_CBCR5 - FMC-H34 (LA30_p)
+NET fmc_imageon_hdmi_in_0_io_hdmii_video_pin[6]  LOC = "AB9"  | IOSTANDARD = LVCMOS25;  # HDMII_CBCR6 - FMC-G34 (LA31_n)
+NET fmc_imageon_hdmi_in_0_io_hdmii_video_pin[7]  LOC = "AB10" | IOSTANDARD = LVCMOS25;  # HDMII_CBCR7 - FMC-G33 (LA31_p)
+# luma pins (Y)
+NET fmc_imageon_hdmi_in_0_io_hdmii_video_pin[8]  LOC = "AB4"  | IOSTANDARD = LVCMOS25;  # HDMII_Y0    - FMC-H32 (LA28_n)
+NET fmc_imageon_hdmi_in_0_io_hdmii_video_pin[9]  LOC = "AB5"  | IOSTANDARD = LVCMOS25;  # HDMII_Y1    - FMC-H31 (LA28_p)
+NET fmc_imageon_hdmi_in_0_io_hdmii_video_pin[10] LOC = "AB11" | IOSTANDARD = LVCMOS25;  # HDMII_Y2    - FMC-G31 (LA29_n)
+NET fmc_imageon_hdmi_in_0_io_hdmii_video_pin[11] LOC = "AB1"  | IOSTANDARD = LVCMOS25;  # HDMII_Y3    - FMC-C27 (LA27_n)
+NET fmc_imageon_hdmi_in_0_io_hdmii_video_pin[12] LOC = "U11"  | IOSTANDARD = LVCMOS25;  # HDMII_Y4    - FMC-D27 (LA26_n)
+NET fmc_imageon_hdmi_in_0_io_hdmii_video_pin[13] LOC = "AA11" | IOSTANDARD = LVCMOS25;  # HDMII_Y5    - FMC-G30 (LA29_p)
+NET fmc_imageon_hdmi_in_0_io_hdmii_video_pin[14] LOC = "AB2"  | IOSTANDARD = LVCMOS25;  # HDMII_Y6    - FMC-C26 (LA27_p)
+NET fmc_imageon_hdmi_in_0_io_hdmii_video_pin[15] LOC = "U12"  | IOSTANDARD = LVCMOS25;  # HDMII_Y7    - FMC-D26 (LA26_p)
+# audio
+NET fmc_imageon_hdmi_in_0_io_hdmii_spdif_pin     LOC = "U5"   | IOSTANDARD = LVCMOS25;  # HDMII_SPDIF - FMC-H29 (LA24_n)
+
+#--------------------------- HDMI OUT interface (ZC702) -------------------------------------------
+
+# ADV7511 video input mode YCbCr 4:2:2, separate syncs, 16 bpp (ID = 1 / style 3)
+# control signals
+NET HDMI_O_clk_pin        LOC = L16  | IOSTANDARD = LVCMOS25;
+NET HDMI_O_de_pin         LOC = T18  | IOSTANDARD = LVCMOS25;
+NET HDMI_O_hsync_pin      LOC = R18  | IOSTANDARD = LVCMOS25;
+NET HDMI_O_vsync_pin      LOC = H15  | IOSTANDARD = LVCMOS25;
+#NET HDMI_O_int_pin        LOC = U14  | IOSTANDARD = LVCMOS25;
+# luma pins (Y)
+NET HDMI_O_data_pin<0>    LOC = AB21 | IOSTANDARD = LVCMOS25;
+NET HDMI_O_data_pin<1>    LOC = AA21 | IOSTANDARD = LVCMOS25;
+NET HDMI_O_data_pin<2>    LOC = AB22 | IOSTANDARD = LVCMOS25;
+NET HDMI_O_data_pin<3>    LOC = AA22 | IOSTANDARD = LVCMOS25;
+NET HDMI_O_data_pin<4>    LOC = V19  | IOSTANDARD = LVCMOS25;
+NET HDMI_O_data_pin<5>    LOC = V18  | IOSTANDARD = LVCMOS25;
+NET HDMI_O_data_pin<6>    LOC = V20  | IOSTANDARD = LVCMOS25;
+NET HDMI_O_data_pin<7>    LOC = U20  | IOSTANDARD = LVCMOS25;
+# multiplexed chroma pins (Cr/Cb)
+NET HDMI_O_data_pin<8>    LOC = W21  | IOSTANDARD = LVCMOS25;
+NET HDMI_O_data_pin<9>    LOC = W20  | IOSTANDARD = LVCMOS25;
+NET HDMI_O_data_pin<10>   LOC = W18  | IOSTANDARD = LVCMOS25;
+NET HDMI_O_data_pin<11>   LOC = T19  | IOSTANDARD = LVCMOS25;
+NET HDMI_O_data_pin<12>   LOC = U19  | IOSTANDARD = LVCMOS25;
+NET HDMI_O_data_pin<13>   LOC = R19  | IOSTANDARD = LVCMOS25;
+NET HDMI_O_data_pin<14>   LOC = T17  | IOSTANDARD = LVCMOS25;
+NET HDMI_O_data_pin<15>   LOC = T16  | IOSTANDARD = LVCMOS25;
+
+# TGRPs
+NET "clk_75mhz" TNM_NET = AXI_LITE_CLOCK;
+NET "clk_150mhz" TNM_NET = AXI_MM_CLOCK;
+
+# TIGs
+TIMESPEC TS_75_148 = FROM "AXI_LITE_CLOCK" TO "VIDEO_CLK_PIN" TIG;
+TIMESPEC TS_148_75 = FROM "VIDEO_CLK_PIN" TO "AXI_LITE_CLOCK" TIG;
+TIMESPEC TS_150_148 = FROM "AXI_MM_CLOCK" TO "VIDEO_CLK_PIN" TIG;
+TIMESPEC TS_148_150 = FROM "VIDEO_CLK_PIN" TO "AXI_MM_CLOCK" TIG;
+
