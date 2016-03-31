@@ -2,79 +2,629 @@
 # Vivado v2014.4 (64-bit)
 # SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
 # IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
-# Start of session at: Wed Mar 30 22:22:07 2016
-# Process ID: 2351
-# Log file: /media/alok/Extra/work/Github/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/vivado.log
-# Journal file: /media/alok/Extra/work/Github/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/vivado.jou
+# Start of session at: Thu Mar 31 11:25:42 2016
+# Process ID: 17714
+# Log file: /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/vivado.log
+# Journal file: /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project /media/alok/Extra/work/Github/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_1/project_1.xpr
-INFO: [Project 1-313] Project file moved from '/media/alok/Extra/work/Github/Zedboard/Learning/Training/MSD/zynq_s07_v1.2/vivado/project_1' since last save.
-Scanning sources...
-Finished scanning sources
+create_project project_2 /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2 -part xc7z020clg484-1
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository '/media/alok/Extra/work/Github/Zedboard/learning/training/MSD/zynq_s07_v1.2/mycores'.
+INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2014.4/data/ip'.
-open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 5727.934 ; gain = 125.484 ; free physical = 1779 ; free virtual = 3836
-open_bd_design {/media/alok/Extra/work/Github/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd}
-Adding component instance block -- Alok:user:sample_generator:1.0 - sample_generator_0
-Adding component instance block -- xilinx.com:ip:xfft:9.0 - xfft_0
-Adding component instance block -- xilinx.com:ip:axis_data_fifo:1.1 - axis_data_fifo_0
-Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
-Adding component instance block -- xilinx.com:ip:axi_dma:7.1 - axi_dma_0
-Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_processing_system7_0_100M
-Successfully read diagram <design_1> from BD file </media/alok/Extra/work/Github/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd>
-regenerate_bd_layout
-regenerate_bd_layout
-regenerate_bd_layout
-regenerate_bd_layout
-WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+create_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:07 . Memory (MB): peak = 5714.074 ; gain = 66.383 ; free physical = 154 ; free virtual = 3848
+set_property board_part em.avnet.com:zed:part0:1.2 [current_project]
+set_property ip_repo_paths  /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/mycores [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/mycores'.
+create_bd_design "design_1"
+Wrote  : </home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd> 
 startgroup
-set_property -dict [list CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {200.000000} CONFIG.PCW_EN_CLK1_PORT {1}] [get_bd_cells processing_system7_0]
+create_bd_cell -type ip -vlnv Alok:user:sample_generator:1.0 sample_generator_0
 endgroup
-delete_bd_objs [get_bd_nets processing_system7_0_FCLK_CLK0]
+save_bd_design
+Wrote  : </home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd> 
 startgroup
-set_property -dict [list CONFIG.HAS_TLAST.VALUE_SRC USER] [get_bd_cells axis_data_fifo_0]
-set_property -dict [list CONFIG.IS_ACLK_ASYNC {1} CONFIG.HAS_TLAST {1}] [get_bd_cells axis_data_fifo_0]
+create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:axis_rtl:1.0 S_AXIS
+set_property -dict [list CONFIG.TDATA_NUM_BYTES [get_property CONFIG.TDATA_NUM_BYTES [get_bd_intf_pins sample_generator_0/S_AXIS]] CONFIG.HAS_TSTRB [get_property CONFIG.HAS_TSTRB [get_bd_intf_pins sample_generator_0/S_AXIS]] CONFIG.HAS_TLAST [get_property CONFIG.HAS_TLAST [get_bd_intf_pins sample_generator_0/S_AXIS]]] [get_bd_intf_ports S_AXIS]
+connect_bd_intf_net [get_bd_intf_pins sample_generator_0/S_AXIS] [get_bd_intf_ports S_AXIS]
 endgroup
-regenerate_bd_layout
 startgroup
+create_bd_intf_port -mode Master -vlnv xilinx.com:interface:axis_rtl:1.0 M_AXIS
+connect_bd_intf_net [get_bd_intf_pins sample_generator_0/M_AXIS] [get_bd_intf_ports M_AXIS]
 endgroup
-regenerate_bd_layout
-startgroup
-set_property -dict [list CONFIG.FIFO_DEPTH {512}] [get_bd_cells axis_data_fifo_0]
-endgroup
-regenerate_bd_layout
-connect_bd_net [get_bd_pins axis_data_fifo_0/m_axis_aclk] [get_bd_pins processing_system7_0/FCLK_CLK1]
-connect_bd_net [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins axis_data_fifo_0/s_axis_aclk]
-connect_bd_net -net [get_bd_nets processing_system7_0_FCLK_CLK0] [get_bd_pins sample_generator_0/s_axis_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0]
-connect_bd_net -net [get_bd_nets rst_processing_system7_0_100M_peripheral_aresetn] [get_bd_pins sample_generator_0/m_axis_aresetn] [get_bd_pins rst_processing_system7_0_100M/peripheral_aresetn]
-connect_bd_net -net [get_bd_nets rst_processing_system7_0_100M_peripheral_aresetn] [get_bd_pins axis_data_fifo_0/m_axis_aresetn] [get_bd_pins rst_processing_system7_0_100M/peripheral_aresetn]
-connect_bd_net -net [get_bd_nets rst_processing_system7_0_100M_peripheral_aresetn] [get_bd_pins axis_data_fifo_0/s_axis_aresetn] [get_bd_pins rst_processing_system7_0_100M/peripheral_aresetn]
-regenerate_bd_layout
-regenerate_bd_layout
-startgroup
-set_property -dict [list CONFIG.transform_length {256}] [get_bd_cells xfft_0]
-endgroup
-regenerate_bd_layout
-regenerate_bd_layout
-connect_bd_net -net [get_bd_nets processing_system7_0_FCLK_CLK1] [get_bd_pins xfft_0/aclk] [get_bd_pins processing_system7_0/FCLK_CLK1]
-regenerate_bd_layout
-regenerate_bd_layout
-regenerate_bd_layout
-regenerate_bd_layout
-startgroup
-set_property -dict [list CONFIG.c_include_sg {0} CONFIG.c_include_mm2s {0} CONFIG.c_sg_include_stscntrl_strm {0}] [get_bd_cells axi_dma_0]
-endgroup
-regenerate_bd_layout
-apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins axi_dma_0/S_AXI_LITE]
-</axi_dma_0/S_AXI_LITE/Reg> is being mapped into </processing_system7_0/Data> at <0x40400000[ 64K ]>
-apply_bd_automation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 5970.301 ; gain = 1.902 ; free physical = 345 ; free virtual = 3373
-regenerate_bd_layout
-regenerate_bd_layout
-regenerate_bd_layout
 regenerate_bd_layout
 save_bd_design
-Wrote  : </media/alok/Extra/work/Github/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd> 
+regenerate_bd_layout
+startgroup
+create_bd_port -dir I -from 7 -to 0 FrameSize
+connect_bd_net [get_bd_pins /sample_generator_0/FrameSize] [get_bd_ports FrameSize]
+endgroup
+regenerate_bd_layout
+startgroup
+create_bd_port -dir I En
+connect_bd_net [get_bd_pins /sample_generator_0/En] [get_bd_ports En]
+endgroup
+regenerate_bd_layout
+create_bd_intf_port -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 AXI_En
+delete_bd_objs [get_bd_intf_ports AXI_En]
+startgroup
+create_bd_port -dir I AXI_En
+connect_bd_net [get_bd_pins /sample_generator_0/AXI_En] [get_bd_ports AXI_En]
+endgroup
+save_bd_design
+Wrote  : </home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd> 
+startgroup
+create_bd_port -dir I -type clk m_axis_aclk
+connect_bd_net [get_bd_pins /sample_generator_0/m_axis_aclk] [get_bd_ports m_axis_aclk]
+set_property CONFIG.FREQ_HZ 100000000 [get_bd_ports m_axis_aclk]
+endgroup
+delete_bd_objs [get_bd_nets m_axis_aclk_1] [get_bd_ports m_axis_aclk]
+startgroup
+create_bd_port -dir I -type clk m_axis_aclk
+connect_bd_net [get_bd_pins /sample_generator_0/m_axis_aclk] [get_bd_ports m_axis_aclk]
+set_property CONFIG.FREQ_HZ 100000000 [get_bd_ports m_axis_aclk]
+endgroup
+regenerate_bd_layout
+connect_bd_net -net [get_bd_nets m_axis_aclk_1] [get_bd_ports m_axis_aclk] [get_bd_pins sample_generator_0/s_axis_aclk]
+startgroup
+create_bd_port -dir I -type rst m_axis_aresetn
+connect_bd_net [get_bd_pins /sample_generator_0/m_axis_aresetn] [get_bd_ports m_axis_aresetn]
+endgroup
+connect_bd_net -net [get_bd_nets m_axis_aresetn_1] [get_bd_ports m_axis_aresetn] [get_bd_pins sample_generator_0/s_axis_aresetn]
+regenerate_bd_layout
+save_bd_design
+Wrote  : </home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd> 
+make_wrapper -files [get_files /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd] -top
+CRITICAL WARNING: [BD 41-1348] Reset pin /sample_generator_0/m_axis_aresetn (associated clock /sample_generator_0/m_axis_aclk) is connected to asynchronous reset source /m_axis_aresetn.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /m_axis_aclk.
+CRITICAL WARNING: [BD 41-1348] Reset pin /sample_generator_0/s_axis_aresetn (associated clock /sample_generator_0/s_axis_aclk) is connected to asynchronous reset source /m_axis_aresetn.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /m_axis_aclk.
+INFO: [BD 41-1379] This design does not contain any processor.
+Generated Block Design Tcl file /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Exporting to file /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Verilog Output written to : design_1.v
+Verilog Output written to : design_1_wrapper.v
+Wrote  : </home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd> 
+add_files -norecurse /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+generate_target all [get_files  /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd]
+CRITICAL WARNING: [BD 41-1348] Reset pin /sample_generator_0/m_axis_aresetn (associated clock /sample_generator_0/m_axis_aclk) is connected to asynchronous reset source /m_axis_aresetn.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /m_axis_aclk.
+CRITICAL WARNING: [BD 41-1348] Reset pin /sample_generator_0/s_axis_aresetn (associated clock /sample_generator_0/s_axis_aclk) is connected to asynchronous reset source /m_axis_aresetn.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /m_axis_aclk.
+INFO: [BD 41-1379] This design does not contain any processor.
+Generated Block Design Tcl file /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Exporting to file /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Verilog Output written to : design_1.v
+Verilog Output written to : design_1_wrapper.v
+Wrote  : </home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd> 
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_sample_generator_0_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_sample_generator_0_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_sample_generator_0_0'...
+INFO: [BD 41-1029] Generation completed for the IP Integrator block sample_generator_0 .
+regenerate_bd_layout
+save_bd_design
+Wrote  : </home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd> 
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library work [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1.v" into library work [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1.v:1]
+[Thu Mar 31 11:35:49 2016] Launched synth_1...
+Run output will be captured here: /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library work [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1.v" into library work [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1.v:1]
+[Thu Mar 31 12:00:05 2016] Launched synth_1...
+Run output will be captured here: /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.runs/synth_1/runme.log
+regenerate_bd_layout
+open_bd_design {/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd}
+make_wrapper -files [get_files /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd] -top
+save_bd_design
+Wrote  : </home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd> 
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library work [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1.v" into library work [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1.v:1]
+[Thu Mar 31 12:08:40 2016] Launched synth_1...
+Run output will be captured here: /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.runs/synth_1/runme.log
+open_bd_design {/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd}
+delete_bd_objs [get_bd_nets FrameSize_1] [get_bd_nets En_1] [get_bd_intf_nets sample_generator_0_M_AXIS] [get_bd_nets AXI_En_1] [get_bd_intf_nets S_AXIS_1] [get_bd_nets m_axis_aclk_1] [get_bd_nets m_axis_aresetn_1] [get_bd_cells sample_generator_0]
+update_ip_catalog -rebuild
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/mycores'.
+startgroup
+create_bd_cell -type ip -vlnv Alok:user:sample_generator:1.0 sample_generator_0
+endgroup
+connect_bd_intf_net [get_bd_intf_ports S_AXIS] [get_bd_intf_pins sample_generator_0/S_AXIS]
+connect_bd_net [get_bd_ports FrameSize] [get_bd_pins sample_generator_0/FrameSize]
+connect_bd_net [get_bd_ports En] [get_bd_pins sample_generator_0/En]
+connect_bd_net [get_bd_ports AXI_En] [get_bd_pins sample_generator_0/AXI_En]
+connect_bd_net [get_bd_ports m_axis_aclk] [get_bd_pins sample_generator_0/m_axis_aclk]
+connect_bd_net -net [get_bd_nets m_axis_aclk_1] [get_bd_ports m_axis_aclk] [get_bd_pins sample_generator_0/s_axis_aclk]
+connect_bd_net [get_bd_ports m_axis_aresetn] [get_bd_pins sample_generator_0/m_axis_aresetn]
+connect_bd_net -net [get_bd_nets m_axis_aresetn_1] [get_bd_ports m_axis_aresetn] [get_bd_pins sample_generator_0/s_axis_aresetn]
+connect_bd_intf_net [get_bd_intf_ports M_AXIS] [get_bd_intf_pins sample_generator_0/M_AXIS]
+save_bd_design
+Wrote  : </home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd> 
+regenerate_bd_layout
+make_wrapper -files [get_files /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd] -top
+CRITICAL WARNING: [BD 41-1348] Reset pin /sample_generator_0/m_axis_aresetn (associated clock /sample_generator_0/m_axis_aclk) is connected to asynchronous reset source /m_axis_aresetn.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /m_axis_aclk.
+CRITICAL WARNING: [BD 41-1348] Reset pin /sample_generator_0/s_axis_aresetn (associated clock /sample_generator_0/s_axis_aclk) is connected to asynchronous reset source /m_axis_aresetn.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /m_axis_aclk.
+INFO: [BD 41-1379] This design does not contain any processor.
+Generated Block Design Tcl file /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Exporting to file /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Verilog Output written to : design_1.v
+Verilog Output written to : design_1_wrapper.v
+Wrote  : </home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd> 
+generate_target all [get_files  /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd]
+CRITICAL WARNING: [BD 41-1348] Reset pin /sample_generator_0/m_axis_aresetn (associated clock /sample_generator_0/m_axis_aclk) is connected to asynchronous reset source /m_axis_aresetn.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /m_axis_aclk.
+CRITICAL WARNING: [BD 41-1348] Reset pin /sample_generator_0/s_axis_aresetn (associated clock /sample_generator_0/s_axis_aclk) is connected to asynchronous reset source /m_axis_aresetn.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /m_axis_aclk.
+INFO: [BD 41-1379] This design does not contain any processor.
+Generated Block Design Tcl file /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Exporting to file /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Verilog Output written to : design_1.v
+Verilog Output written to : design_1_wrapper.v
+Wrote  : </home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd> 
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_sample_generator_0_1'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_sample_generator_0_1'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_sample_generator_0_1'...
+INFO: [BD 41-1029] Generation completed for the IP Integrator block sample_generator_0 .
+save_bd_design
+Wrote  : </home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd> 
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library work [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1.v" into library work [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1.v:1]
+[Thu Mar 31 12:10:05 2016] Launched synth_1...
+Run output will be captured here: /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.runs/synth_1/runme.log
+remove_files /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+open_bd_design {/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd}
+open_bd_design {/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd}
+remove_files /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd
+create_bd_design "design_1"
+Wrote  : </home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd> 
+update_ip_catalog -rebuild
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/mycores'.
+update_ip_catalog -rebuild
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/mycores'.
+startgroup
+create_bd_cell -type ip -vlnv Alok:user:sample_generator:1.0 sample_generator_0
+endgroup
+startgroup
+create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:axis_rtl:1.0 S_AXIS
+set_property -dict [list CONFIG.TDATA_NUM_BYTES [get_property CONFIG.TDATA_NUM_BYTES [get_bd_intf_pins sample_generator_0/S_AXIS]] CONFIG.HAS_TSTRB [get_property CONFIG.HAS_TSTRB [get_bd_intf_pins sample_generator_0/S_AXIS]] CONFIG.HAS_TLAST [get_property CONFIG.HAS_TLAST [get_bd_intf_pins sample_generator_0/S_AXIS]]] [get_bd_intf_ports S_AXIS]
+connect_bd_intf_net [get_bd_intf_pins sample_generator_0/S_AXIS] [get_bd_intf_ports S_AXIS]
+endgroup
+startgroup
+create_bd_port -dir I -from 7 -to 0 FrameSize
+connect_bd_net [get_bd_pins /sample_generator_0/FrameSize] [get_bd_ports FrameSize]
+endgroup
+startgroup
+create_bd_port -dir I En
+connect_bd_net [get_bd_pins /sample_generator_0/En] [get_bd_ports En]
+endgroup
+startgroup
+create_bd_port -dir I AXI_En
+connect_bd_net [get_bd_pins /sample_generator_0/AXI_En] [get_bd_ports AXI_En]
+endgroup
+startgroup
+create_bd_port -dir I -type clk m_axis_aclk
+connect_bd_net [get_bd_pins /sample_generator_0/m_axis_aclk] [get_bd_ports m_axis_aclk]
+set_property CONFIG.FREQ_HZ 100000000 [get_bd_ports m_axis_aclk]
+endgroup
+startgroup
+create_bd_port -dir I -type rst m_axis_aresetn
+connect_bd_net [get_bd_pins /sample_generator_0/m_axis_aresetn] [get_bd_ports m_axis_aresetn]
+endgroup
+startgroup
+create_bd_port -dir I -type clk s_axis_aclk
+connect_bd_net [get_bd_pins /sample_generator_0/s_axis_aclk] [get_bd_ports s_axis_aclk]
+set_property CONFIG.FREQ_HZ 100000000 [get_bd_ports s_axis_aclk]
+endgroup
+startgroup
+create_bd_port -dir I -type rst s_axis_aresetn
+connect_bd_net [get_bd_pins /sample_generator_0/s_axis_aresetn] [get_bd_ports s_axis_aresetn]
+endgroup
+startgroup
+create_bd_intf_port -mode Master -vlnv xilinx.com:interface:axis_rtl:1.0 M_AXIS
+connect_bd_intf_net [get_bd_intf_pins sample_generator_0/M_AXIS] [get_bd_intf_ports M_AXIS]
+endgroup
+save_bd_design
+Wrote  : </home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd> 
+delete_bd_objs [get_bd_nets s_axis_aresetn_1] [get_bd_ports s_axis_aresetn]
+delete_bd_objs [get_bd_nets s_axis_aclk_1] [get_bd_ports s_axis_aclk]
+connect_bd_net -net [get_bd_nets m_axis_aclk_1] [get_bd_ports m_axis_aclk] [get_bd_pins sample_generator_0/s_axis_aclk]
+connect_bd_net -net [get_bd_nets m_axis_aresetn_1] [get_bd_ports m_axis_aresetn] [get_bd_pins sample_generator_0/s_axis_aresetn]
+save_bd_design
+Wrote  : </home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd> 
+make_wrapper -files [get_files /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd] -top
+CRITICAL WARNING: [BD 41-1348] Reset pin /sample_generator_0/m_axis_aresetn (associated clock /sample_generator_0/m_axis_aclk) is connected to asynchronous reset source /m_axis_aresetn.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /m_axis_aclk.
+CRITICAL WARNING: [BD 41-1348] Reset pin /sample_generator_0/s_axis_aresetn (associated clock /sample_generator_0/s_axis_aclk) is connected to asynchronous reset source /m_axis_aresetn.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /m_axis_aclk.
+INFO: [BD 41-1379] This design does not contain any processor.
+Generated Block Design Tcl file /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Exporting to file /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Verilog Output written to : design_1.v
+Verilog Output written to : design_1_wrapper.v
+Wrote  : </home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd> 
+add_files -norecurse /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+generate_target all [get_files  /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd]
+CRITICAL WARNING: [BD 41-1348] Reset pin /sample_generator_0/m_axis_aresetn (associated clock /sample_generator_0/m_axis_aclk) is connected to asynchronous reset source /m_axis_aresetn.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /m_axis_aclk.
+CRITICAL WARNING: [BD 41-1348] Reset pin /sample_generator_0/s_axis_aresetn (associated clock /sample_generator_0/s_axis_aclk) is connected to asynchronous reset source /m_axis_aresetn.
+This may prevent design from meeting timing. Please add Processor System Reset module to create a reset that is synchronous to the associated clock source /m_axis_aclk.
+INFO: [BD 41-1379] This design does not contain any processor.
+Generated Block Design Tcl file /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Exporting to file /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Verilog Output written to : design_1.v
+Verilog Output written to : design_1_wrapper.v
+Wrote  : </home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd> 
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_sample_generator_0_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_sample_generator_0_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_sample_generator_0_0'...
+INFO: [BD 41-1029] Generation completed for the IP Integrator block sample_generator_0 .
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library work [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1.v" into library work [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1.v:1]
+[Thu Mar 31 12:12:41 2016] Launched synth_1...
+Run output will be captured here: /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z020clg484-1
+INFO: [Netlist 29-17] Analyzing 62 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2014.4
+Loading clock regions from /opt/Xilinx/Vivado/2014.4/data/parts/xilinx/zynq/zynq/xc7z020/ClockRegion.xml
+Loading clock buffers from /opt/Xilinx/Vivado/2014.4/data/parts/xilinx/zynq/zynq/xc7z020/ClockBuffers.xml
+Loading clock placement rules from /opt/Xilinx/Vivado/2014.4/data/parts/xilinx/zynq/ClockPlacerRules.xml
+Loading package pin functions from /opt/Xilinx/Vivado/2014.4/data/parts/xilinx/zynq/PinFunctions.xml...
+Loading package from /opt/Xilinx/Vivado/2014.4/data/parts/xilinx/zynq/zynq/xc7z020/clg484/Package.xml
+Loading io standards from /opt/Xilinx/Vivado/2014.4/data/./parts/xilinx/zynq/IOStandards.xml
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 0 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-141] Inserted 0 OBUFs to IO ports without IO buffers.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:26 ; elapsed = 00:00:15 . Memory (MB): peak = 6179.012 ; gain = 303.727 ; free physical = 363 ; free virtual = 3356
+file mkdir /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v w ]
+add_files -fileset sim_1 /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v
+update_compile_order -fileset sim_1
+remove_files -fileset sim_1 /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v
+file delete -force /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v w ]
+add_files -fileset sim_1 /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'design_1_wrapper' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav'
+xvlog -m64 -prj design_1_wrapper_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0_S_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_generator_v1_0_S_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0_M_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_generator_v1_0_M_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_generator_v1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_sample_generator_0_0/sim/design_1_sample_generator_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_sample_generator_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav'
+Vivado Simulator 2014.4
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2014.4/bin/unwrapped/lnx64.o/xelab -wto ce0e51414d5b4381b01c2d25f6473b41 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot design_1_wrapper_behav xil_defaultlib.design_1_wrapper xil_defaultlib.glbl -log elaborate.log 
+Multi-threading is on. Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.sample_generator_v1_0_M_AXIS(C_M...
+Compiling module xil_defaultlib.sample_generator_v1_0
+Compiling module xil_defaultlib.design_1_sample_generator_0_0
+Compiling module xil_defaultlib.design_1
+Compiling module xil_defaultlib.design_1_wrapper
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot design_1_wrapper_behav
+
+****** Webtalk v2014.4 (64-bit)
+  **** SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+  **** IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav/xsim.dir/design_1_wrapper_behav/webtalk/xsim_webtalk.tcl -notrace
+webtalk_transmit: Time (s): cpu = 00:00:00.60 ; elapsed = 00:00:07 . Memory (MB): peak = 257.988 ; gain = 0.004 ; free physical = 163 ; free virtual = 2915
+
+    while executing
+"webtalk_transmit -clientid 3741406503 -regid "211154620_0_0_506" -xml /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/..."
+    (file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav/xsim.dir/design_1_wrapper_behav/webtalk/xsim..." line 41)
+INFO: [Common 17-206] Exiting Webtalk at Thu Mar 31 12:48:19 2016...
+run_program: Time (s): cpu = 00:00:03 ; elapsed = 00:00:13 . Memory (MB): peak = 6479.234 ; gain = 0.000 ; free physical = 205 ; free virtual = 2958
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "design_1_wrapper_behav -key {Behavioral:sim_1:Functional:design_1_wrapper} -tclbatch {design_1_wrapper.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2014.4
+Time resolution is 1 ps
+source design_1_wrapper.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'design_1_wrapper_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:19 . Memory (MB): peak = 6509.781 ; gain = 30.547 ; free physical = 179 ; free virtual = 2943
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'sample_generator_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav'
+xvlog -m64 -prj sample_generator_testbench_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0_S_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_generator_v1_0_S_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0_M_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_generator_v1_0_M_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_generator_v1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_sample_generator_0_0/sim/design_1_sample_generator_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_sample_generator_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_generator_testbench
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav'
+Vivado Simulator 2014.4
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2014.4/bin/unwrapped/lnx64.o/xelab -wto ce0e51414d5b4381b01c2d25f6473b41 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sample_generator_testbench_behav xil_defaultlib.sample_generator_testbench xil_defaultlib.glbl -log elaborate.log 
+Multi-threading is on. Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.sample_generator_v1_0_M_AXIS(C_M...
+Compiling module xil_defaultlib.sample_generator_v1_0
+Compiling module xil_defaultlib.design_1_sample_generator_0_0
+Compiling module xil_defaultlib.design_1
+Compiling module xil_defaultlib.design_1_wrapper
+Compiling module xil_defaultlib.sample_generator_testbench
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot sample_generator_testbench_behav
+
+****** Webtalk v2014.4 (64-bit)
+  **** SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+  **** IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav/xsim.dir/sample_generator_testbench_behav/webtalk/xsim_webtalk.tcl -notrace
+
+    while executing
+"webtalk_transmit -clientid 703928876 -regid "211154620_0_0_506" -xml /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/p..."
+    (file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav/xsim.dir/sample_generator_testbench_behav/we..." line 41)
+INFO: [Common 17-206] Exiting Webtalk at Thu Mar 31 12:55:47 2016...
+run_program: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 6517.129 ; gain = 0.000 ; free physical = 200 ; free virtual = 2968
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sample_generator_testbench_behav -key {Behavioral:sim_1:Functional:sample_generator_testbench} -tclbatch {sample_generator_testbench.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2014.4
+Time resolution is 1 ps
+source sample_generator_testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sample_generator_testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 6561.773 ; gain = 44.645 ; free physical = 199 ; free virtual = 2969
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 6576.137 ; gain = 13.406 ; free physical = 205 ; free virtual = 2972
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 6576.137 ; gain = 0.000 ; free physical = 208 ; free virtual = 2974
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'sample_generator_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav'
+xvlog -m64 -prj sample_generator_testbench_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0_S_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_generator_v1_0_S_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0_M_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_generator_v1_0_M_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_generator_v1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_sample_generator_0_0/sim/design_1_sample_generator_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_sample_generator_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_generator_testbench
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:69]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:69]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:70]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:70]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:71]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:71]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:72]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:72]
+ERROR: [VRFC 10-1040] module sample_generator_testbench ignored due to previous errors [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:23]
+INFO: [USF-XSim-99] Step results log file:'/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav/xvlog.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'sample_generator_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav'
+xvlog -m64 -prj sample_generator_testbench_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0_S_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_generator_v1_0_S_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0_M_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_generator_v1_0_M_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_generator_v1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_sample_generator_0_0/sim/design_1_sample_generator_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_sample_generator_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_generator_testbench
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:69]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:69]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:70]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:70]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:71]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:71]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:72]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:72]
+ERROR: [VRFC 10-1040] module sample_generator_testbench ignored due to previous errors [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:23]
+INFO: [USF-XSim-99] Step results log file:'/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav/xvlog.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'sample_generator_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav'
+xvlog -m64 -prj sample_generator_testbench_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0_S_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_generator_v1_0_S_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0_M_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_generator_v1_0_M_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_generator_v1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_sample_generator_0_0/sim/design_1_sample_generator_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_sample_generator_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_generator_testbench
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:69]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:69]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:70]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:70]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:71]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:71]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:72]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:72]
+ERROR: [VRFC 10-1040] module sample_generator_testbench ignored due to previous errors [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:23]
+INFO: [USF-XSim-99] Step results log file:'/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav/xvlog.log' file for more information.
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library work [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1.v" into library work [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1.v:1]
+[Thu Mar 31 13:03:05 2016] Launched synth_1...
+Run output will be captured here: /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.runs/synth_1/runme.log
+close_design
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'sample_generator_testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav'
+xvlog -m64 -prj sample_generator_testbench_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0_S_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_generator_v1_0_S_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0_M_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_generator_v1_0_M_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_generator_v1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_sample_generator_0_0/sim/design_1_sample_generator_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_sample_generator_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sample_generator_testbench
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:69]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:69]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:70]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:70]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:71]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:71]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:72]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:72]
+ERROR: [VRFC 10-1040] module sample_generator_testbench ignored due to previous errors [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:23]
+INFO: [USF-XSim-99] Step results log file:'/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav/xvlog.log' file for more information.
 exit
-INFO: [Common 17-206] Exiting Vivado at Wed Mar 30 23:03:32 2016...
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 31 13:05:08 2016...

@@ -1,0 +1,355 @@
+
+*** Running vivado
+    with args -log design_1_wrapper.vds -m64 -mode batch -messageDb vivado.pb -source design_1_wrapper.tcl
+
+
+****** Vivado v2014.4 (64-bit)
+  **** SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+  **** IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source design_1_wrapper.tcl
+# set_param gui.test TreeTableDev
+# debug::add_scope template.lib 1
+# set_msg_config -id {HDL 9-1061} -limit 100000
+# set_msg_config -id {HDL 9-1654} -limit 100000
+# create_project -in_memory -part xc7z020clg484-1
+# set_param project.compositeFile.enableAutoGeneration 0
+# set_param synth.vivado.isSynthRun true
+# set_msg_config -id {IP_Flow 19-2162} -severity warning -new_severity info
+# set_property webtalk.parent_dir /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.cache/wt [current_project]
+# set_property parent.project_path /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.xpr [current_project]
+# set_property default_lib xil_defaultlib [current_project]
+# set_property target_language Verilog [current_project]
+# set_property board_part em.avnet.com:zed:part0:1.2 [current_project]
+# set_property ip_repo_paths /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/mycores [current_project]
+# add_files /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/mycores'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2014.4/data/ip'.
+# set_property used_in_implementation false [get_files -all /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1_ooc.xdc]
+# set_property is_locked true [get_files /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/design_1.bd]
+# read_verilog -library xil_defaultlib /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+# read_xdc dont_touch.xdc
+# set_property used_in_implementation false [get_files dont_touch.xdc]
+# catch { write_hwdef -file design_1_wrapper.hwdef }
+# synth_design -top design_1_wrapper -part xc7z020clg484-1
+Command: synth_design -top design_1_wrapper -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+WARNING: [Synth 8-2507] parameter declaration becomes local in sample_generator_v1_0_S_AXIS with formal parameter declaration list [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0_S_AXIS.v:53]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 913.148 ; gain = 158.730 ; free physical = 127 ; free virtual = 2787
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
+INFO: [Synth 8-638] synthesizing module 'design_1' [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1.v:12]
+INFO: [Synth 8-638] synthesizing module 'design_1_sample_generator_0_0' [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_sample_generator_0_0/synth/design_1_sample_generator_0_0.v:56]
+INFO: [Synth 8-638] synthesizing module 'sample_generator_v1_0' [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0.v:4]
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_START_COUNT bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'sample_generator_v1_0_M_AXIS' [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0_M_AXIS.v:4]
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_START_COUNT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'sample_generator_v1_0_M_AXIS' (1#1) [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0_M_AXIS.v:4]
+INFO: [Synth 8-256] done synthesizing module 'sample_generator_v1_0' (2#1) [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0.v:4]
+INFO: [Synth 8-256] done synthesizing module 'design_1_sample_generator_0_0' (3#1) [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_sample_generator_0_0/synth/design_1_sample_generator_0_0.v:56]
+INFO: [Synth 8-256] done synthesizing module 'design_1' (4#1) [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1.v:12]
+INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (5#1) [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 934.406 ; gain = 179.988 ; free physical = 125 ; free virtual = 2775
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 934.406 ; gain = 179.988 ; free physical = 125 ; free virtual = 2775
+---------------------------------------------------------------------------------
+Loading clock regions from /opt/Xilinx/Vivado/2014.4/data/parts/xilinx/zynq/zynq/xc7z020/ClockRegion.xml
+Loading clock buffers from /opt/Xilinx/Vivado/2014.4/data/parts/xilinx/zynq/zynq/xc7z020/ClockBuffers.xml
+Loading clock placement rules from /opt/Xilinx/Vivado/2014.4/data/parts/xilinx/zynq/ClockPlacerRules.xml
+Loading package pin functions from /opt/Xilinx/Vivado/2014.4/data/parts/xilinx/zynq/PinFunctions.xml...
+Loading package from /opt/Xilinx/Vivado/2014.4/data/parts/xilinx/zynq/zynq/xc7z020/clg484/Package.xml
+Loading io standards from /opt/Xilinx/Vivado/2014.4/data/./parts/xilinx/zynq/IOStandards.xml
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1261.871 ; gain = 0.000 ; free physical = 147 ; free virtual = 2563
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:25 . Memory (MB): peak = 1261.871 ; gain = 507.453 ; free physical = 172 ; free virtual = 2584
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:25 . Memory (MB): peak = 1261.871 ; gain = 507.453 ; free physical = 172 ; free virtual = 2584
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for design_1_i. (constraint file  /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.runs/synth_1/dont_touch.xdc, line 5).
+Applied set_property DONT_TOUCH = true for design_1_i/sample_generator_0. (constraint file  /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.runs/synth_1/dont_touch.xdc, line 8).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:25 . Memory (MB): peak = 1261.871 ; gain = 507.453 ; free physical = 172 ; free virtual = 2584
+---------------------------------------------------------------------------------
+ROM "sampleGeneratorEnR" won't be mapped to RAM because it is too sparse.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 1261.871 ; gain = 507.453 ; free physical = 164 ; free virtual = 2577
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module design_1_wrapper 
+Detailed RTL Component Info : 
+Module sample_generator_v1_0_M_AXIS 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module sample_generator_v1_0 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module design_1_sample_generator_0_0 
+Detailed RTL Component Info : 
+Module design_1 
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 1261.871 ; gain = 507.453 ; free physical = 163 ; free virtual = 2577
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+ROM "inst/sample_generator_v1_0_M_AXIS_inst/sampleGeneratorEnR" won't be mapped to RAM because it is too sparse.
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 1261.871 ; gain = 507.453 ; free physical = 163 ; free virtual = 2577
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 1261.871 ; gain = 507.453 ; free physical = 163 ; free virtual = 2577
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:26 . Memory (MB): peak = 1261.875 ; gain = 507.457 ; free physical = 135 ; free virtual = 2552
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:26 . Memory (MB): peak = 1261.875 ; gain = 507.457 ; free physical = 135 ; free virtual = 2552
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:21 ; elapsed = 00:00:26 . Memory (MB): peak = 1261.875 ; gain = 507.457 ; free physical = 135 ; free virtual = 2552
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:21 ; elapsed = 00:00:26 . Memory (MB): peak = 1261.875 ; gain = 507.457 ; free physical = 135 ; free virtual = 2552
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:40 . Memory (MB): peak = 1261.875 ; gain = 507.457 ; free physical = 138 ; free virtual = 2498
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:40 . Memory (MB): peak = 1261.875 ; gain = 507.457 ; free physical = 138 ; free virtual = 2498
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:00:40 . Memory (MB): peak = 1261.875 ; gain = 507.457 ; free physical = 129 ; free virtual = 2489
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:40 . Memory (MB): peak = 1261.875 ; gain = 507.457 ; free physical = 128 ; free virtual = 2489
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:40 . Memory (MB): peak = 1261.875 ; gain = 507.457 ; free physical = 128 ; free virtual = 2489
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:40 . Memory (MB): peak = 1261.875 ; gain = 507.457 ; free physical = 128 ; free virtual = 2489
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |     3|
+|3     |LUT1    |     4|
+|4     |LUT2    |    13|
+|5     |LUT3    |    39|
+|6     |LUT4    |     6|
+|7     |LUT5    |    11|
+|8     |LUT6    |     9|
+|9     |MUXCY_L |    31|
+|10    |XORCY   |    32|
+|11    |FDRE    |    42|
+|12    |FDSE    |     8|
+|13    |IBUF    |    51|
+|14    |OBUF    |    39|
++------+--------+------+
+
+Report Instance Areas: 
++------+------------------------------------------+------------------------------+------+
+|      |Instance                                  |Module                        |Cells |
++------+------------------------------------------+------------------------------+------+
+|1     |top                                       |                              |   289|
+|2     |  design_1_i                              |design_1                      |   198|
+|3     |    sample_generator_0                    |design_1_sample_generator_0_0 |   198|
+|4     |      inst                                |sample_generator_v1_0         |   180|
+|5     |        sample_generator_v1_0_M_AXIS_inst |sample_generator_v1_0_M_AXIS  |   180|
++------+------------------------------------------+------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:40 . Memory (MB): peak = 1261.875 ; gain = 507.457 ; free physical = 128 ; free virtual = 2489
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1261.875 ; gain = 75.242 ; free physical = 128 ; free virtual = 2489
+Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:40 . Memory (MB): peak = 1261.875 ; gain = 507.457 ; free physical = 128 ; free virtual = 2489
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 117 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 0 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-141] Inserted 0 OBUFs to IO ports without IO buffers.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 8 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+22 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1261.875 ; gain = 402.707 ; free physical = 118 ; free virtual = 2480
+# write_checkpoint -noxdef design_1_wrapper.dcp
+# catch { report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb }
+report_utilization: Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.43 . Memory (MB): peak = 1261.875 ; gain = 0.000 ; free physical = 124 ; free virtual = 2483
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 31 13:03:58 2016...

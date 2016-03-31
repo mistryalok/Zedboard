@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Mar 31 12:12:30 2016" VIVADOVERSION="2014.4">
+
+  <SYSTEMINFO ARCH="zynq" BOARD="em.avnet.com:zed:part0:1.2" DEVICE="7z020" NAME="design_1_imp" PACKAGE="clg484" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="I" LEFT="31" NAME="S_AXIS_tdata" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="I" LEFT="3" NAME="S_AXIS_tstrb" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="I" NAME="S_AXIS_tlast" SIGIS="undef"/>
+    <PORT DIR="I" NAME="S_AXIS_tvalid" SIGIS="undef"/>
+    <PORT DIR="O" NAME="S_AXIS_tready" SIGIS="undef"/>
+    <PORT DIR="I" LEFT="7" NAME="FrameSize" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_FrameSize">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="sample_generator_0" PORT="FrameSize"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="En" SIGIS="undef" SIGNAME="External_Ports_En">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="sample_generator_0" PORT="En"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="AXI_En" SIGIS="undef" SIGNAME="External_Ports_AXI_En">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="sample_generator_0" PORT="AXI_En"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="m_axis_aclk" SIGIS="clk" SIGNAME="External_Ports_m_axis_aclk">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="sample_generator_0" PORT="m_axis_aclk"/>
+        <CONNECTION INSTANCE="sample_generator_0" PORT="s_axis_aclk"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="m_axis_aresetn" SIGIS="rst" SIGNAME="External_Ports_m_axis_aresetn">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="sample_generator_0" PORT="m_axis_aresetn"/>
+        <CONNECTION INSTANCE="sample_generator_0" PORT="s_axis_aresetn"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="31" NAME="M_AXIS_tdata" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="O" LEFT="3" NAME="M_AXIS_tstrb" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="O" NAME="M_AXIS_tlast" SIGIS="undef"/>
+    <PORT DIR="O" NAME="M_AXIS_tvalid" SIGIS="undef"/>
+    <PORT DIR="I" NAME="M_AXIS_tready" SIGIS="undef"/>
+  </EXTERNALPORTS>
+
+  <MODULES>
+    <MODULE FULLNAME="/sample_generator_0" HWVERSION="1.0" INSTANCE="sample_generator_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="sample_generator" VLNV="Alok:user:sample_generator:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="C_M_AXIS_TDATA_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="C_M_AXIS_START_COUNT" VALUE="32"/>
+        <PARAMETER NAME="C_S_AXIS_TDATA_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_sample_generator_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="FrameSize" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_FrameSize">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="FrameSize"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="En" SIGIS="undef" SIGNAME="External_Ports_En">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="En"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="AXI_En" SIGIS="undef" SIGNAME="External_Ports_AXI_En">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="AXI_En"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="m_axis_tdata" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="3" NAME="m_axis_tstrb" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m_axis_tlast" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m_axis_tvalid" SIGIS="undef"/>
+        <PORT DIR="I" NAME="m_axis_tready" SIGIS="undef"/>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="m_axis_aclk" SIGIS="clk" SIGNAME="External_Ports_m_axis_aclk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="m_axis_aclk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="m_axis_aresetn" SIGIS="rst" SIGNAME="External_Ports_m_axis_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="m_axis_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="3" NAME="s_axis_tstrb" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" NAME="s_axis_tlast" SIGIS="undef"/>
+        <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef"/>
+        <PORT DIR="O" NAME="s_axis_tready" SIGIS="undef"/>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="s_axis_aclk" SIGIS="clk" SIGNAME="External_Ports_m_axis_aclk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="m_axis_aclk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_aresetn" SIGIS="rst" SIGNAME="External_Ports_m_axis_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="m_axis_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="External_Interface_S_AXIS" NAME="S_AXIS" TYPE="TARGET">
+          <PORTMAPS>
+            <PORTMAP PHYSICAL="s_axis_tdata"/>
+            <PORTMAP PHYSICAL="s_axis_tstrb"/>
+            <PORTMAP PHYSICAL="s_axis_tlast"/>
+            <PORTMAP PHYSICAL="s_axis_tvalid"/>
+            <PORTMAP PHYSICAL="s_axis_tready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="sample_generator_0_M_AXIS" NAME="M_AXIS" TYPE="INITIATOR">
+          <PORTMAPS>
+            <PORTMAP PHYSICAL="m_axis_tdata"/>
+            <PORTMAP PHYSICAL="m_axis_tstrb"/>
+            <PORTMAP PHYSICAL="m_axis_tlast"/>
+            <PORTMAP PHYSICAL="m_axis_tvalid"/>
+            <PORTMAP PHYSICAL="m_axis_tready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+  </MODULES>
+
+  <REPOSITORIES/>
+
+</EDKSYSTEM>
