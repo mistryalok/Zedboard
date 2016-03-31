@@ -1,0 +1,16 @@
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.4 (lin64) Build 1071353 Tue Nov 18 16:47:07 MST 2014
+| Date         : Thu Mar 31 18:00:39 2016
+| Host         : lubuntu running 64-bit Ubuntu 15.04
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_sample_generator_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_sample_generator_0_0 (Alok:user:sample_generator:1.0) from (Rev. 1) to (Rev. 2)
+

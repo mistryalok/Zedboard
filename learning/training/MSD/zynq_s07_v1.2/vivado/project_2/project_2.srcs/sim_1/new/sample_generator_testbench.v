@@ -26,7 +26,7 @@ reg             En;
 reg  [7:0]      FrameSize;
 wire [31:0]     M_AXIS_tdata;
 wire            M_AXIS_tlast;
-wire            M_AXIS_tready;
+reg            M_AXIS_tready;
 wire [3:0]      M_AXIS_tstrb;
 wire            M_AXIS_tvalid;
 reg [31:0]      S_AXIS_tdata;

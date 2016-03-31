@@ -1,0 +1,57 @@
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.4 (lin64) Build 1071353 Tue Nov 18 16:47:07 MST 2014
+| Date         : Thu Mar 31 18:05:40 2016
+| Host         : lubuntu running 64-bit Ubuntu 15.04
+| Command      : report_control_sets -verbose -file design_1_wrapper_control_sets_placed.rpt
+| Design       : design_1_wrapper
+| Device       : xc7z020
+---------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++-------------------------------------------------------------------+-------+
+|                               Status                              | Count |
++-------------------------------------------------------------------+-------+
+| Number of unique control sets                                     |     4 |
+| Minimum Number of register sites lost to control set restrictions |    14 |
++-------------------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               1 |            1 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |               9 |            3 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              40 |           10 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------------------+----------------+
+|      Clock Signal      |                                         Enable Signal                                         |                                        Set/Reset Signal                                       | Slice Load Count | Bel Load Count |
++------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------------------+----------------+
+|  m_axis_aclk_IBUF_BUFG |                                                                                               |                                                                                               |                1 |              1 |
+|  m_axis_aclk_IBUF_BUFG | design_1_i/sample_generator_0/inst/sample_generator_v1_0_M_AXIS_inst/n_0_packetCounter[7]_i_2 | design_1_i/sample_generator_0/inst/sample_generator_v1_0_M_AXIS_inst/n_0_packetCounter[7]_i_1 |                2 |              8 |
+|  m_axis_aclk_IBUF_BUFG |                                                                                               | design_1_i/sample_generator_0/inst/sample_generator_v1_0_M_AXIS_inst/clear                    |                3 |              9 |
+|  m_axis_aclk_IBUF_BUFG | design_1_i/sample_generator_0/inst/sample_generator_v1_0_M_AXIS_inst/n_0_packetCounter[7]_i_2 | design_1_i/sample_generator_0/inst/sample_generator_v1_0_M_AXIS_inst/clear                    |                8 |             32 |
++------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+------------------+----------------+
+
+

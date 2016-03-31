@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Mar 31 12:12:30 2016" VIVADOVERSION="2014.4">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Mar 31 18:01:07 2016" VIVADOVERSION="2014.4">
 
   <SYSTEMINFO ARCH="zynq" BOARD="em.avnet.com:zed:part0:1.2" DEVICE="7z020" NAME="design_1_imp" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
@@ -9,6 +9,11 @@
     <PORT DIR="I" NAME="S_AXIS_tlast" SIGIS="undef"/>
     <PORT DIR="I" NAME="S_AXIS_tvalid" SIGIS="undef"/>
     <PORT DIR="O" NAME="S_AXIS_tready" SIGIS="undef"/>
+    <PORT DIR="O" LEFT="31" NAME="M_AXIS_tdata" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="O" LEFT="3" NAME="M_AXIS_tstrb" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="O" NAME="M_AXIS_tlast" SIGIS="undef"/>
+    <PORT DIR="O" NAME="M_AXIS_tvalid" SIGIS="undef"/>
+    <PORT DIR="I" NAME="M_AXIS_tready" SIGIS="undef"/>
     <PORT DIR="I" LEFT="7" NAME="FrameSize" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_FrameSize">
       <CONNECTIONS>
         <CONNECTION INSTANCE="sample_generator_0" PORT="FrameSize"/>
@@ -36,11 +41,6 @@
         <CONNECTION INSTANCE="sample_generator_0" PORT="s_axis_aresetn"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="31" NAME="M_AXIS_tdata" RIGHT="0" SIGIS="undef"/>
-    <PORT DIR="O" LEFT="3" NAME="M_AXIS_tstrb" RIGHT="0" SIGIS="undef"/>
-    <PORT DIR="O" NAME="M_AXIS_tlast" SIGIS="undef"/>
-    <PORT DIR="O" NAME="M_AXIS_tvalid" SIGIS="undef"/>
-    <PORT DIR="I" NAME="M_AXIS_tready" SIGIS="undef"/>
   </EXTERNALPORTS>
 
   <MODULES>

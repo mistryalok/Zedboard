@@ -1,24 +1,15 @@
 Determining compilation order of HDL files.
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0_S_AXIS.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module sample_generator_v1_0_S_AXIS
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0_M_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/alok/Extra/work/Github/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/085ecca4/hdl/sample_generator_v1_0_M_AXIS.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module sample_generator_v1_0_M_AXIS
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/3db932ea/hdl/sample_generator_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/alok/Extra/work/Github/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/ipshared/Alok/sample_generator_v1_0/085ecca4/hdl/sample_generator_v1_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module sample_generator_v1_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_sample_generator_0_0/sim/design_1_sample_generator_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/alok/Extra/work/Github/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/ip/design_1_sample_generator_0_0/sim/design_1_sample_generator_0_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module design_1_sample_generator_0_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/alok/Extra/work/Github/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module design_1
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/alok/Extra/work/Github/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module design_1_wrapper
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/alok/Extra/work/Github/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module sample_generator_testbench
-ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:69]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:69]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:70]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:70]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:71]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:71]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:72]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register M_AXIS_tready is not permitted, left-hand side should be reg/integer/time/genvar [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:72]
-ERROR: [VRFC 10-1040] module sample_generator_testbench ignored due to previous errors [/home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.srcs/sim_1/new/sample_generator_testbench.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/alok/Extra/work/Github/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

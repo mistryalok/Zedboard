@@ -48,7 +48,7 @@
 
 
 // IP VLNV: Alok:user:sample_generator:1.0
-// IP Revision: 1
+// IP Revision: 2
 
 `timescale 1ns/1ps
 

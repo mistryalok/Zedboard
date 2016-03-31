@@ -48,7 +48,7 @@
 
 
 // IP VLNV: Alok:user:sample_generator:1.0
-// IP Revision: 1
+// IP Revision: 2
 
 (* X_CORE_INFO = "sample_generator_v1_0,Vivado 2014.4" *)
 (* CHECK_LICENSE_TYPE = "design_1_sample_generator_0_0,sample_generator_v1_0,{}" *)

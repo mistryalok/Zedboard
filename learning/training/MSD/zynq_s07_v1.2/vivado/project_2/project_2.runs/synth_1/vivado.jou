@@ -2,9 +2,9 @@
 # Vivado v2014.4 (64-bit)
 # SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
 # IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
-# Start of session at: Thu Mar 31 13:03:07 2016
-# Process ID: 20010
-# Log file: /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.runs/synth_1/design_1_wrapper.vds
-# Journal file: /home/alok/githum/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.runs/synth_1/vivado.jou
+# Start of session at: Thu Mar 31 18:03:52 2016
+# Process ID: 6535
+# Log file: /media/alok/Extra/work/Github/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.runs/synth_1/design_1_wrapper.vds
+# Journal file: /media/alok/Extra/work/Github/Zedboard/learning/training/MSD/zynq_s07_v1.2/vivado/project_2/project_2.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source design_1_wrapper.tcl
