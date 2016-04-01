@@ -4,7 +4,7 @@
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<spirit:vendor>xilinx.com</spirit:vendor>
 	<spirit:library>customized_ip</spirit:library>
-	<spirit:name>design_1_axi_gpio_0_0</spirit:name>
+	<spirit:name>design_1_axi_gpio_1_0</spirit:name>
 	<spirit:version>1.0</spirit:version>
 	<spirit:busInterfaces>
 		<spirit:busInterface>
@@ -833,7 +833,7 @@
 					<spirit:direction>in</spirit:direction>
 					<spirit:vector>
 						<spirit:left spirit:resolve="dependent"
-								spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_GPIO_WIDTH&apos;)) - 1)">7</spirit:left>
+								spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_GPIO_WIDTH&apos;)) - 1)">0</spirit:left>
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
 					<spirit:wireTypeDefs>
@@ -862,7 +862,7 @@
 					<spirit:direction>out</spirit:direction>
 					<spirit:vector>
 						<spirit:left spirit:resolve="dependent"
-								spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_GPIO_WIDTH&apos;)) - 1)">7</spirit:left>
+								spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_GPIO_WIDTH&apos;)) - 1)">0</spirit:left>
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
 					<spirit:wireTypeDefs>
@@ -888,7 +888,7 @@
 					<spirit:direction>out</spirit:direction>
 					<spirit:vector>
 						<spirit:left spirit:resolve="dependent"
-								spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_GPIO_WIDTH&apos;)) - 1)">7</spirit:left>
+								spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_GPIO_WIDTH&apos;)) - 1)">0</spirit:left>
 						<spirit:right>0</spirit:right>
 					</spirit:vector>
 					<spirit:wireTypeDefs>
@@ -1021,7 +1021,7 @@
 						spirit:resolve="generated"
 						spirit:id="MODELPARAM_VALUE.C_GPIO_WIDTH"
 						spirit:minimum="1"
-						spirit:maximum="32">8</spirit:value>
+						spirit:maximum="32">1</spirit:value>
 			</spirit:modelParameter>
 			<spirit:modelParameter spirit:dataType="integer">
 				<spirit:name>C_GPIO2_WIDTH</spirit:name>
@@ -1193,7 +1193,7 @@
 					spirit:id="PARAM_VALUE.C_GPIO_WIDTH"
 					spirit:order="1900"
 					spirit:minimum="1"
-					spirit:maximum="32">8</spirit:value>
+					spirit:maximum="32">1</spirit:value>
 			<spirit:vendorExtensions>
 				<xilinx:parameterInfo>
 					<xilinx:enablement>
@@ -1344,7 +1344,7 @@
 			<spirit:name>Component_Name</spirit:name>
 			<spirit:value spirit:resolve="user"
 					spirit:id="PARAM_VALUE.Component_Name"
-					spirit:order="1">design_1_axi_gpio_0_0</spirit:value>
+					spirit:order="1">design_1_axi_gpio_1_0</spirit:value>
 			<spirit:vendorExtensions>
 				<xilinx:parameterInfo>
 					<xilinx:enablement>
