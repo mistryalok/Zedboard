@@ -1,0 +1,27 @@
+16:25:33 INFO  : Processing command line option -hwspec /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.sdk/design_1_wrapper.hdf.
+16:25:46 INFO  : Launching XSDB server: xsdb -s /opt/Xilinx/SDK/2014.4/scripts/xsdb/xsdb/xsdb-server.tcl 2450
+19:04:13 INFO  : Processing command line option -hwspec /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.sdk/design_1_wrapper.hdf.
+19:04:14 INFO  : Launching XSDB server: xsdb -s /opt/Xilinx/SDK/2014.4/scripts/xsdb/xsdb/xsdb-server.tcl 2450
+19:04:14 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+20:13:31 INFO  : Processing command line option -hwspec /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.sdk/design_1_wrapper.hdf.
+20:13:33 INFO  : Launching XSDB server: xsdb -s /opt/Xilinx/SDK/2014.4/scripts/xsdb/xsdb/xsdb-server.tcl 2450
+20:13:33 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+22:16:15 INFO  : Processing command line option -hwspec /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.sdk/design_1_wrapper.hdf.
+22:16:17 INFO  : Launching XSDB server: xsdb -s /opt/Xilinx/SDK/2014.4/scripts/xsdb/xsdb/xsdb-server.tcl 2450
+22:16:17 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+22:36:56 INFO  : Processing command line option -hwspec /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.sdk/design_1_wrapper.hdf.
+22:36:57 INFO  : Launching XSDB server: xsdb -s /opt/Xilinx/SDK/2014.4/scripts/xsdb/xsdb/xsdb-server.tcl 2450
+22:36:57 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+22:37:01 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1459529628000,  Project:1459508042000
+22:37:01 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.sdk/design_1_wrapper.hdf.
+22:37:01 INFO  : Copied contents of /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+22:37:12 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+22:37:18 INFO  : 
+22:37:19 INFO  : 
+22:37:20 INFO  : Updating hardware inferred compiler options for fsbl.
+22:37:21 INFO  : Updating hardware inferred compiler options for hello_world.
+22:37:21 INFO  : Clearing existing target manager status.
+23:19:59 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+11:54:59 INFO  : Processing command line option -hwspec /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.sdk/design_1_wrapper.hdf.
+11:55:00 INFO  : Launching XSDB server: xsdb -s /opt/Xilinx/SDK/2014.4/scripts/xsdb/xsdb/xsdb-server.tcl 2450
+11:55:01 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.

@@ -1,0 +1,18 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Fri Apr  1 15:53:28 2016
+# Process ID: 6542
+# Log file: /media/alok/Extra/work/Github/Zedboard/learning/training/MSD/s09/axi_dma_sg/vivado/vivado.log
+# Journal file: /media/alok/Extra/work/Github/Zedboard/learning/training/MSD/s09/axi_dma_sg/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /media/alok/Extra/work/Github/Zedboard/learning/training/MSD/s09/axi_dma_sg/vivado/project_1/project_1.xpr
+open_bd_design {/media/alok/Extra/work/Github/Zedboard/learning/training/MSD/s09/axi_dma_sg/vivado/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd}
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 runtime.sh
+reset_run synth_1
