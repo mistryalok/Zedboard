@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="AR_AXI_BRAM_CTRL_0_BASEADDR" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="0x400"/>
+			<item value="AR_AXI_BRAM_CTRL_0_BASEADDR"/>
+			<item value="XPAR_AXI_BRAM_CTRL_"/>
+			<item value="XPAR_AXI_BRAM_CTRL_CTRL"/>
+			<item value="XPAR_AXI_BRAM_CTRL_CTRL_BASEADDR"/>
+			<item value="BRAM_0_S_AXI"/>
+			<item value="BRAM_"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="291" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="437" key="DIALOG_HEIGHT"/>
+		<item value="87" key="DIALOG_X_ORIGIN"/>
+		<item value="307" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>
