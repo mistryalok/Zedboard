@@ -1,0 +1,31 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Fri Apr  1 16:01:55 2016
+# Process ID: 7276
+# Log file: /home/alok/s09/axi_dma_sg/vivado/vivado.log
+# Journal file: /home/alok/s09/axi_dma_sg/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.xpr
+open_bd_design {/home/alok/s09/axi_dma_sg/vivado/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd}
+regenerate_bd_layout
+validate_bd_design
+save_bd_design
+launch_runs synth_1
+wait_on_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+open_run impl_1
+file mkdir /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.sdk
+file copy -force /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.runs/impl_1/design_1_wrapper.sysdef /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.sdk/design_1_wrapper.hdf
+
+launch_sdk -workspace /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.sdk -hwspec /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.sdk/design_1_wrapper.hdf
+open_bd_design {/home/alok/s09/axi_dma_sg/vivado/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd}
+regenerate_bd_layout
+regenerate_bd_layout
+regenerate_bd_layout
+save_bd_design

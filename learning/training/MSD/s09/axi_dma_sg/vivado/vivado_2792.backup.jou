@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Fri Apr  1 20:12:20 2016
+# Process ID: 2352
+# Log file: /home/alok/s09/axi_dma_sg/vivado/vivado.log
+# Journal file: /home/alok/s09/axi_dma_sg/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.xpr
+launch_sdk -workspace /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.sdk -hwspec /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.sdk/design_1_wrapper.hdf

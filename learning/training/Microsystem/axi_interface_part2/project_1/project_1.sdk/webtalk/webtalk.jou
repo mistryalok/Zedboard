@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Webtalk v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:48:31 MST 2014
+# 
+# Start of session at: Sun Apr  3 14:48:54 2016
+# Process ID: 11482
+# Log file: /home/alok/Vivado_Projects/Microsystem/axi_interface_part2/project_1/project_1.sdk/webtalk/webtalk.log
+# Journal file: /home/alok/Vivado_Projects/Microsystem/axi_interface_part2/project_1/project_1.sdk/webtalk/webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

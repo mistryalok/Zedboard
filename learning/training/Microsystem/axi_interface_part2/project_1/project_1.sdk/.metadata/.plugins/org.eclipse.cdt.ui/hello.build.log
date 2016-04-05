@@ -1,0 +1,23 @@
+13:16:14 **** Auto Build of configuration Debug for project hello ****
+make all 
+Building file: ../src/helloworld.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../hello_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:59:5: warning: implicit declaration of function 'xil_printf' [-Wimplicit-function-declaration]
+     xil_printf("Hello World\n\r");
+     ^
+../src/helloworld.c:61:5: error: unknown type name 'Xil_Out32'
+     Xil_Out32
+     ^
+../src/helloworld.c:62:5: error: conflicting types for 'cleanup_platform'
+     cleanup_platform();
+     ^
+In file included from ../src/helloworld.c:49:0:
+../src/platform.h:39:6: note: previous declaration of 'cleanup_platform' was here
+ void cleanup_platform();
+      ^
+make: *** [src/helloworld.o] Error 1
+
+13:16:15 Build Finished (took 121ms)
+

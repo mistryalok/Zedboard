@@ -3,10 +3,14 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
+<<<<<<< HEAD
 <application name="pa" timeStamp="Fri Apr  1 12:52:48 2016">
+=======
+<application name="pa" timeStamp="Sat Apr  2 14:09:47 2016">
+>>>>>>> aaf23c2a79e74293408ef3c5cbccae3134ca656c
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="495ff3146e5642d784d9555ab3125add" type="ProjectID"/>
-<property name="ProjectIteration" value="1" type="ProjectIteration"/>
+<property name="ProjectIteration" value="5" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
 <item name="Project Data">
@@ -17,10 +21,20 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
 </item>
 <item name="Java Command Handlers">
+<<<<<<< HEAD
 <property name="FileExit" value="3" type="JavaHandler"/>
 </item>
 <item name="Other">
 <property name="GuiMode" value="28" type="GuiMode"/>
+=======
+<property name="FileExit" value="8" type="JavaHandler"/>
+<property name="NewProject" value="1" type="JavaHandler"/>
+<property name="RunImplementation" value="0" type="JavaHandler"/>
+<property name="RunSynthesis" value="0" type="JavaHandler"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="27" type="GuiMode"/>
+>>>>>>> aaf23c2a79e74293408ef3c5cbccae3134ca656c
 <property name="BatchMode" value="0" type="BatchMode"/>
 <property name="TclMode" value="25" type="TclMode"/>
 </item>

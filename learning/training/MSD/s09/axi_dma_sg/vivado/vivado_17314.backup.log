@@ -1,0 +1,192 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Fri Apr  1 16:01:55 2016
+# Process ID: 7276
+# Log file: /home/alok/s09/axi_dma_sg/vivado/vivado.log
+# Journal file: /home/alok/s09/axi_dma_sg/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.xpr
+INFO: [Project 1-313] Project file moved from '/media/alok/Extra/work/Github/Zedboard/learning/training/MSD/s09/axi_dma_sg/vivado/project_1' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [filemgmt 56-1] IP Repository Path: Directory not found as '/home/alok/s07v2/mycores/ip_repo'; using path '/media/alok/Extra/work/Github/Zedboard/learning/training/MSD/s07v2/mycores/ip_repo' instead.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/media/alok/Extra/work/Github/Zedboard/learning/training/MSD/s07v2/mycores/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2014.4/data/ip'.
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:05 . Memory (MB): peak = 5769.867 ; gain = 160.809 ; free physical = 277 ; free virtual = 2735
+open_bd_design {/home/alok/s09/axi_dma_sg/vivado/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd}
+Adding component instance block -- Alok:user:sample_generator:1.0 - sample_generator_0
+Adding component instance block -- xilinx.com:ip:axi_dma:7.1 - axi_dma_0
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - xlconstant_1
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_0
+Adding component instance block -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_1
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_processing_system7_0_100M
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Successfully read diagram <design_1> from BD file </home/alok/s09/axi_dma_sg/vivado/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd>
+regenerate_bd_layout
+validate_bd_design
+INFO: [Ipptcl 7-578] No Compatible Board Interface found.Board Tab not created
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. 
+Please check your design and connect them if needed: 
+/sample_generator_0/s_axis_tdata
+/sample_generator_0/s_axis_tstrb
+/sample_generator_0/s_axis_tlast
+/sample_generator_0/s_axis_tvalid
+
+validate_bd_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 5865.148 ; gain = 40.613 ; free physical = 170 ; free virtual = 2636
+save_bd_design
+Wrote  : </home/alok/s09/axi_dma_sg/vivado/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/alok/s09/axi_dma_sg/vivado/project_1/project_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library work [/home/alok/s09/axi_dma_sg/vivado/project_1/project_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/alok/s09/axi_dma_sg/vivado/project_1/project_1.srcs/sources_1/bd/design_1/hdl/design_1.v" into library work [/home/alok/s09/axi_dma_sg/vivado/project_1/project_1.srcs/sources_1/bd/design_1/hdl/design_1.v:1]
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. 
+Please check your design and connect them if needed: 
+/sample_generator_0/s_axis_tdata
+/sample_generator_0/s_axis_tstrb
+/sample_generator_0/s_axis_tlast
+/sample_generator_0/s_axis_tvalid
+
+INFO: [BD 41-1378] This design does not contain any "MEMORY" mapped segment for processor processing_system7_0
+INFO: [BD 41-1378] This design does not contain any "MEMORY" mapped segment for processor processing_system7_0
+INFO: [BD 41-1378] This design does not contain any "MEMORY" mapped segment for processor processing_system7_0
+Generated Block Design Tcl file /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Exporting to file /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Verilog Output written to : design_1.v
+Verilog Output written to : design_1_wrapper.v
+Wrote  : </home/alok/s09/axi_dma_sg/vivado/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_sample_generator_0_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block sample_generator_0 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_axi_dma_0_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_processing_system7_0_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_xlconstant_0_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_xlconstant_1_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_1 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_axi_gpio_0_0'. Target already exists and is up to date.
+INFO: [IP_Flow 19-1706] Not generating 'Implementation' target for IP 'design_1_axi_gpio_0_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_0 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_axi_gpio_1_0'. Target already exists and is up to date.
+INFO: [IP_Flow 19-1706] Not generating 'Implementation' target for IP 'design_1_axi_gpio_1_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_1 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_rst_processing_system7_0_100M_0'. Target already exists and is up to date.
+INFO: [IP_Flow 19-1706] Not generating 'Implementation' target for IP 'design_1_rst_processing_system7_0_100M_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_processing_system7_0_100M .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_xbar_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/xbar .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_pc_0'...
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/s00_couplers/auto_pc .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_pc_1'...
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_pc .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_us_0'...
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. 
+Please check your design and connect them if needed: 
+/sample_generator_0/s_axis_tdata
+/sample_generator_0/s_axis_tstrb
+/sample_generator_0/s_axis_tlast
+/sample_generator_0/s_axis_tvalid
+
+INFO: [BD 41-1378] This design does not contain any "MEMORY" mapped segment for processor processing_system7_0
+INFO: [BD 41-1378] This design does not contain any "MEMORY" mapped segment for processor processing_system7_0
+INFO: [BD 41-1378] This design does not contain any "MEMORY" mapped segment for processor processing_system7_0
+Generated Block Design Tcl file /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Exporting to file /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Verilog Output written to : design_1.v
+Verilog Output written to : design_1_wrapper.v
+Wrote  : </home/alok/s09/axi_dma_sg/vivado/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_sample_generator_0_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block sample_generator_0 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_axi_dma_0_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_processing_system7_0_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_xlconstant_0_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_xlconstant_1_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_1 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_axi_gpio_0_0'. Target already exists and is up to date.
+INFO: [IP_Flow 19-1706] Not generating 'Implementation' target for IP 'design_1_axi_gpio_0_0'. Target already exists and is up to date.
+INFO: [IP_Flow 19-1706] Not generating 'Implementation' target for IP 'design_1_axi_gpio_0_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_0 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_axi_gpio_1_0'. Target already exists and is up to date.
+INFO: [IP_Flow 19-1706] Not generating 'Implementation' target for IP 'design_1_axi_gpio_1_0'. Target already exists and is up to date.
+INFO: [IP_Flow 19-1706] Not generating 'Implementation' target for IP 'design_1_axi_gpio_1_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_1 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_rst_processing_system7_0_100M_0'. Target already exists and is up to date.
+INFO: [IP_Flow 19-1706] Not generating 'Implementation' target for IP 'design_1_rst_processing_system7_0_100M_0'. Target already exists and is up to date.
+INFO: [IP_Flow 19-1706] Not generating 'Implementation' target for IP 'design_1_rst_processing_system7_0_100M_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_processing_system7_0_100M .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_xbar_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/xbar .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_pc_0'...
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/s00_couplers/auto_pc .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_pc_1'...
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_pc .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_us_0'...
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+[Fri Apr  1 16:03:14 2016] Launched synth_1...
+Run output will be captured here: /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:15 ; elapsed = 00:00:13 . Memory (MB): peak = 5940.297 ; gain = 67.828 ; free physical = 173 ; free virtual = 2551
+launch_runs impl_1
+[Fri Apr  1 16:21:46 2016] Launched impl_1...
+Run output will be captured here: /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream
+[Fri Apr  1 16:23:29 2016] Launched impl_1...
+Run output will be captured here: /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 74 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2014.4
+Loading clock regions from /opt/Xilinx/Vivado/2014.4/data/parts/xilinx/zynq/zynq/xc7z020/ClockRegion.xml
+Loading clock buffers from /opt/Xilinx/Vivado/2014.4/data/parts/xilinx/zynq/zynq/xc7z020/ClockBuffers.xml
+Loading clock placement rules from /opt/Xilinx/Vivado/2014.4/data/parts/xilinx/zynq/ClockPlacerRules.xml
+Loading package pin functions from /opt/Xilinx/Vivado/2014.4/data/parts/xilinx/zynq/PinFunctions.xml...
+Loading package from /opt/Xilinx/Vivado/2014.4/data/parts/xilinx/zynq/zynq/xc7z020/clg484/Package.xml
+Loading io standards from /opt/Xilinx/Vivado/2014.4/data/./parts/xilinx/zynq/IOStandards.xml
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-1079] Register design_1_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_reg and design_1_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register design_1_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_reg and design_1_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register design_1_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_reg and design_1_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+WARNING: [Constraints 18-1079] Register design_1_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_reg and design_1_i/axi_mem_intercon/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_d1_reg are from the same synchronizer and have the ASYNC_REG property set, but could not be placed into the same slice due to constraints or mismatched control signals on the registers.
+Parsing XDC File [/home/alok/s09/axi_dma_sg/vivado/.Xil/Vivado-7276-ubuntu-desktop/dcp/design_1_wrapper_early.xdc]
+Finished Parsing XDC File [/home/alok/s09/axi_dma_sg/vivado/.Xil/Vivado-7276-ubuntu-desktop/dcp/design_1_wrapper_early.xdc]
+Parsing XDC File [/home/alok/s09/axi_dma_sg/vivado/.Xil/Vivado-7276-ubuntu-desktop/dcp/design_1_wrapper_late.xdc]
+Finished Parsing XDC File [/home/alok/s09/axi_dma_sg/vivado/.Xil/Vivado-7276-ubuntu-desktop/dcp/design_1_wrapper_late.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.75 ; elapsed = 00:00:00.75 . Memory (MB): peak = 6160.621 ; gain = 6.000 ; free physical = 883 ; free virtual = 2325
+Restored from archive | CPU: 0.750000 secs | Memory: 4.531441 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.75 ; elapsed = 00:00:00.75 . Memory (MB): peak = 6160.621 ; gain = 6.000 ; free physical = 883 ; free virtual = 2325
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4 instances were transformed.
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 4 instances
+
+open_run: Time (s): cpu = 00:00:18 ; elapsed = 00:00:13 . Memory (MB): peak = 6289.289 ; gain = 332.109 ; free physical = 754 ; free virtual = 2200
+file mkdir /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.sdk
+file copy -force /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.runs/impl_1/design_1_wrapper.sysdef /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.sdk/design_1_wrapper.hdf
+
+launch_sdk -workspace /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.sdk -hwspec /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.sdk -hwspec /home/alok/s09/axi_dma_sg/vivado/project_1/project_1.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+open_bd_design {/home/alok/s09/axi_dma_sg/vivado/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd}
+regenerate_bd_layout
+WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+regenerate_bd_layout
+regenerate_bd_layout
+save_bd_design
+Wrote  : </home/alok/s09/axi_dma_sg/vivado/project_1/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Apr  1 17:37:17 2016...

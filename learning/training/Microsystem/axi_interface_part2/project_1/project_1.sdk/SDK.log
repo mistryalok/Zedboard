@@ -1,0 +1,2 @@
+12:50:27 INFO  : Processing command line option -hwspec /home/alok/Vivado_Projects/Microsystem/axi_interface_part2/project_1/project_1.sdk/design_1_wrapper.hdf.
+12:50:39 INFO  : Launching XSDB server: xsdb -s /opt/Xilinx/SDK/2014.4/scripts/xsdb/xsdb/xsdb-server.tcl 2450

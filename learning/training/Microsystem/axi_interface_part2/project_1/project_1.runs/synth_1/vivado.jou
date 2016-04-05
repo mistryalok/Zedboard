@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Sun Apr  3 12:42:53 2016
+# Process ID: 7930
+# Log file: /home/alok/Vivado_Projects/Microsystem/axi_interface_part2/project_1/project_1.runs/synth_1/design_1_wrapper.vds
+# Journal file: /home/alok/Vivado_Projects/Microsystem/axi_interface_part2/project_1/project_1.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_wrapper.tcl

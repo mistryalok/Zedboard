@@ -1,0 +1,82 @@
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.4 (lin64) Build 1071353 Tue Nov 18 16:47:07 MST 2014
+| Date         : Sun Apr  3 12:45:11 2016
+| Host         : ubuntu-desktop running 64-bit Ubuntu 14.04.4 LTS
+| Command      : report_control_sets -verbose -file design_1_wrapper_control_sets_placed.rpt
+| Design       : design_1_wrapper
+| Device       : xc7z020
+---------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++-------------------------------------------------------------------+-------+
+|                               Status                              | Count |
++-------------------------------------------------------------------+-------+
+| Number of unique control sets                                     |    29 |
+| Minimum Number of register sites lost to control set restrictions |    82 |
++-------------------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              50 |           25 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             106 |           62 |
+| Yes          | No                    | No                     |              64 |           24 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             282 |          101 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+
+|                   Clock Signal                  |                                                            Enable Signal                                                           |                                                                 Set/Reset Signal                                                                | Slice Load Count | Bel Load Count |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/wrdata_reg_ld                               | design_1_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/n_0_GEN_WR_NO_ECC.bram_we_int[3]_i_1                     |                2 |              4 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/bid_fifo_not_empty                 | design_1_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/I_WRAP_BRST/O3                                           |                1 |              4 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/n_0_rd_data_sm_cs[3]_i_1                    | design_1_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/I_WRAP_BRST/O3                                           |                2 |              4 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/n_0_rd_data_sm_cs[3]_i_1                    | design_1_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/I_WRAP_BRST/O3                                           |                3 |              4 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/wrdata_reg_ld                               | design_1_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/n_0_GEN_WR_NO_ECC.bram_we_int[3]_i_1                     |                3 |              4 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/bid_fifo_not_empty                 | design_1_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/I_WRAP_BRST/O3                                           |                1 |              4 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 |                                                                                                                                    | design_1_i/rst_processing_system7_0_100M/U0/EXT_LPF/lpf_int                                                                                     |                1 |              4 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/rst_processing_system7_0_100M/U0/SEQ/seq_cnt_en                                                                         | design_1_i/rst_processing_system7_0_100M/U0/SEQ/SEQ_COUNTER/clear                                                                               |                2 |              6 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 |                                                                                                                                    | design_1_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/I_WRAP_BRST/O5                                           |                8 |             11 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 |                                                                                                                                    | design_1_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/I_WRAP_BRST/O5                                           |                6 |             11 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/n_0_GEN_RID_SNG.axi_rid_int[11]_i_2         | design_1_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/n_0_GEN_RID_SNG.axi_rid_int[11]_i_1                      |                5 |             12 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/E[0]                               | design_1_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/I_WRAP_BRST/O3                                           |                3 |             12 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/n_0_Addr_Counters[0].MUXCY_L_I_i_2 |                                                                                                                                                 |                2 |             12 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/n_0_Addr_Counters[0].MUXCY_L_I_i_2 |                                                                                                                                                 |                2 |             12 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/n_0_GEN_RID_SNG.axi_rid_int[11]_i_2         | design_1_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/n_0_GEN_RID_SNG.axi_rid_int[11]_i_1                      |                6 |             12 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/BID_FIFO/E[0]                               | design_1_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/I_WRAP_BRST/O3                                           |                4 |             12 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/E[0]                               | design_1_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/I_WRAP_BRST/O3                                           |                6 |             13 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/E[0]                               | design_1_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/I_WRAP_BRST/O3                                           |                6 |             13 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/ar_active_re                       | design_1_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/I_WRAP_BRST/O3                                           |               11 |             25 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/GEN_ARB.I_SNG_PORT/ar_active_re                       | design_1_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/I_WRAP_BRST/O3                                           |               12 |             25 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_skid_buf_ld                              | design_1_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/I_WRAP_BRST/O3                                           |                9 |             32 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/wrdata_reg_ld                               |                                                                                                                                                 |               15 |             32 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/axi_rdata_en                                | design_1_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/n_0_GEN_RDATA_NO_ECC.GEN_RDATA[31].axi_rdata_int[31]_i_1 |                8 |             32 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/rd_skid_buf_ld                              | design_1_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/I_WRAP_BRST/O3                                           |                8 |             32 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_WR_CHNL/wrdata_reg_ld                               |                                                                                                                                                 |                9 |             32 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/axi_rdata_en                                | design_1_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/n_0_GEN_RDATA_NO_ECC.GEN_RDATA[31].axi_rdata_int[31]_i_1 |                9 |             32 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 |                                                                                                                                    | design_1_i/axi_bram_ctrl_1/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/I_WRAP_BRST/O3                                           |               22 |             40 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 |                                                                                                                                    | design_1_i/axi_bram_ctrl_0/U0/gext_inst.abcv4_0_ext_inst/GEN_AXI4.I_FULL_AXI/I_RD_CHNL/I_WRAP_BRST/O3                                           |               25 |             40 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 |                                                                                                                                    |                                                                                                                                                 |               26 |             51 |
++-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+
+
+
