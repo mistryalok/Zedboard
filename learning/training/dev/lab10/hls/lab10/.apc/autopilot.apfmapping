@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="core.cpp" path="/media/alok/Extra/Videos/dev/Source Codes/Vivado_HLS_Labs-2016-02-21/Vivado HLS Labs/Lab_10_Conv2d/Lab_10_Conv2d/core.cpp"/>
+    <originFiles name="core.h" path="/media/alok/Extra/Videos/dev/Source Codes/Vivado_HLS_Labs-2016-02-21/Vivado HLS Labs/Lab_10_Conv2d/Lab_10_Conv2d/core.h"/>
+  </source>
+  <testbench>
+    <originFiles name="TestUtils.cpp" path="/media/alok/Extra/Videos/dev/Source Codes/Vivado_HLS_Labs-2016-02-21/Vivado HLS Labs/Lab_10_Conv2d/Lab_10_Conv2d/TestUtils.cpp"/>
+    <originFiles name="TestUtils.h" path="/media/alok/Extra/Videos/dev/Source Codes/Vivado_HLS_Labs-2016-02-21/Vivado HLS Labs/Lab_10_Conv2d/Lab_10_Conv2d/TestUtils.h"/>
+    <originFiles name="test_core.cpp" path="/media/alok/Extra/Videos/dev/Source Codes/Vivado_HLS_Labs-2016-02-21/Vivado HLS Labs/Lab_10_Conv2d/Lab_10_Conv2d/test_core.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
