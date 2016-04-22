@@ -1,0 +1,5 @@
+verilog xil_defaultlib "adder.v"
+verilog xil_defaultlib "AESL_axi_slave_AXI_CTRL.v"
+verilog xil_defaultlib "adder.autotb.v"
+verilog xil_defaultlib "adder_AXI_CTRL_s_axi.v"
+

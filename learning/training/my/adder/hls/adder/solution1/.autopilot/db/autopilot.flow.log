@@ -1,0 +1,305 @@
+@I [HLS-0] Workspace /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1 opened at Fri Apr 08 10:46:44 IST 2016
+@I [HLS-100] Command "config_clock -quiet -name default -period 10 -default=false "
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+@I [HLS-100] Command 'config_clock' returned 0; elapsed 0.000161Total elapsed time: 0.271 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0.000363Total elapsed time: 0.273 sec.
+@I [HLS-100] Command "import_lib /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.lib "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/xilinx_interface.lib "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000462Total elapsed time: 0.274 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00022Total elapsed time: 0.274 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000288Total elapsed time: 0.274 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000438Total elapsed time: 0.275 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000579Total elapsed time: 0.276 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002659Total elapsed time: 0.276 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000138Total elapsed time: 0.276 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000169Total elapsed time: 0.276 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 9.7e-05Total elapsed time: 0.276 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005919Total elapsed time: 0.279 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_old.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000824Total elapsed time: 0.282 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_vivado.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000562Total elapsed time: 0.282 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.hlp "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/target_info.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000142Total elapsed time: 0.285 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/xilinx_interface.hlp "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000105Total elapsed time: 0.285 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 9.8e-05Total elapsed time: 0.285 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000356Total elapsed time: 0.285 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000395Total elapsed time: 0.286 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002004Total elapsed time: 0.287 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/dsp48e1.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000103Total elapsed time: 0.287 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 3.8e-05Total elapsed time: 0.287 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 2.4e-05Total elapsed time: 0.287 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed medium "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 5e-06Total elapsed time: 0.287 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.016136Total elapsed time: 0.289 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00127Total elapsed time: 0.291 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000505Total elapsed time: 0.291 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002495Total elapsed time: 0.294 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00363Total elapsed time: 0.298 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.007848Total elapsed time: 0.305 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01169Total elapsed time: 0.306 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009393Total elapsed time: 0.315 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009959Total elapsed time: 0.325 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/struct/list.tcl "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000783Total elapsed time: 0.344 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001816Total elapsed time: 0.345 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/math/bignum.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000779Total elapsed time: 0.351 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.034449Total elapsed time: 0.360 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.138719Total elapsed time: 0.498 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000203Total elapsed time: 0.499 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.209481Total elapsed time: 0.499 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000106Total elapsed time: 0.500 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.211564Total elapsed time: 0.501 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.211715Total elapsed time: 0.501 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 3.2e-05Total elapsed time: 0.501 sec.
+@I [HLS-100] Command "import_lib /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv7.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003222Total elapsed time: 0.504 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv.hlp "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.hlp "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/target_info.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000182Total elapsed time: 0.511 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/xilinx_interface.hlp "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00011Total elapsed time: 0.511 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 9.8e-05Total elapsed time: 0.512 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000364Total elapsed time: 0.512 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000368Total elapsed time: 0.512 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002014Total elapsed time: 0.513 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002663Total elapsed time: 0.513 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.018164Total elapsed time: 0.519 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00182Total elapsed time: 0.521 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002161Total elapsed time: 0.521 sec.
+@I [HLS-100] Command "set_part xc7z020clg484-1 "
+@I [HLS-100] Command "add_library xilinx/zynq/zynq:xc7z020:clg484:-1 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 7e-06Total elapsed time: 0.526 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.003711Total elapsed time: 0.530 sec.
+@I [HLS-100] Command "license_exists ap_opencl "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.003372Total elapsed time: 0.534 sec.
+@I [HLS-100] Command "license_exists AUTOESL_NI "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.003315Total elapsed time: 0.537 sec.
+@I [HLS-100] Command "license_exists HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 9e-06Total elapsed time: 0.537 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 7e-06Total elapsed time: 0.538 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 1.8e-05Total elapsed time: 0.538 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 5e-06Total elapsed time: 0.538 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.013802Total elapsed time: 0.539 sec.
+@I [HLS-100] Command "add_library xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 5e-06Total elapsed time: 0.540 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.00353Total elapsed time: 0.544 sec.
+@I [HLS-100] Command "license_exists ap_opencl "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.0033Total elapsed time: 0.547 sec.
+@I [HLS-100] Command "license_exists AUTOESL_NI "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.003284Total elapsed time: 0.551 sec.
+@I [HLS-100] Command "license_exists HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 9e-06Total elapsed time: 0.551 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.012153Total elapsed time: 0.551 sec.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0.029478Total elapsed time: 0.552 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 6e-06Total elapsed time: 0.552 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 1.8e-05Total elapsed time: 0.552 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 4e-06Total elapsed time: 0.552 sec.
+@I [HLS-100] Command 'open_solution' returned 0; elapsed 0.286965Total elapsed time: 0.553 sec.
+@I [HLS-100] Command "cosim_design -trace_level all -tool xsim "
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.0002Total elapsed time: 0.554 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000243Total elapsed time: 0.566 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000229Total elapsed time: 0.574 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000195Total elapsed time: 0.575 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000651Total elapsed time: 0.576 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001814Total elapsed time: 0.577 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000375Total elapsed time: 0.578 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001001Total elapsed time: 0.579 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 9.7e-05Total elapsed time: 0.579 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000188Total elapsed time: 0.579 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001398Total elapsed time: 0.581 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000572Total elapsed time: 0.582 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002632Total elapsed time: 0.585 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003647Total elapsed time: 0.589 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.007912Total elapsed time: 0.596 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.011769Total elapsed time: 0.597 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009573Total elapsed time: 0.606 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.010207Total elapsed time: 0.616 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.033367Total elapsed time: 0.650 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.131422Total elapsed time: 0.781 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000206Total elapsed time: 0.782 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.201979Total elapsed time: 0.782 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000103Total elapsed time: 0.783 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.204064Total elapsed time: 0.784 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.204193Total elapsed time: 0.784 sec.
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001813Total elapsed time: 0.786 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001948Total elapsed time: 0.786 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000193Total elapsed time: 0.786 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000227Total elapsed time: 0.787 sec.
+@I [SIM-47] Using XSIM for RTL simulation.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000194Total elapsed time: 0.793 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000162Total elapsed time: 0.793 sec.
+@I [HLS-100] Command "source sim/.autosim.status "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000114Total elapsed time: 0.795 sec.
+@I [SIM-14] Instrumenting C test bench ...
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000386Total elapsed time: 0.799 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000225Total elapsed time: 0.800 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000226Total elapsed time: 0.801 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000165Total elapsed time: 0.801 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000172Total elapsed time: 0.802 sec.
+@I [HLS-0] Marker-Pragma convertor: /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/./sim/autowrap/testbench/test.cpp_pre.cpp /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/./sim/autowrap/testbench/test.cpp_pre.cpp.line.cpp ./sim/autowrap/testbench/line.tmp 1
+@I [HLS-0] Marker-Pragma convertor: ./sim/autowrap/testbench/test.cpp_pre.cpp.tb.cpp.line ./sim/autowrap/testbench/test.cpp_pre.cpp.tb.cpp ./sim/autowrap/testbench/line.tmp 0
+@I [HLS-0] Marker-Pragma convertor: /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/./sim/autowrap/testbench/adder.cpp_pre.cpp /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/./sim/autowrap/testbench/adder.cpp_pre.cpp.line.cpp ./sim/autowrap/testbench/line.tmp 1
+@I [HLS-0] Marker-Pragma convertor: ./sim/autowrap/testbench/adder.cpp_pre.cpp.tb.cpp.line ./sim/autowrap/testbench/adder.cpp_pre.cpp.tb.cpp ./sim/autowrap/testbench/line.tmp 0
+@I [HLS-100] Command "source .run_sim.tcl "
+@I [SIM-302] Starting C TB testing ... 
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.008061Total elapsed time: 4.238 sec.
+@I [SIM-333] Generating C post check test bench ...
+@I [SIM-12] Generating RTL test bench ...
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000223Total elapsed time: 4.250 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000184Total elapsed time: 4.251 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00017Total elapsed time: 4.251 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000153Total elapsed time: 4.251 sec.
+@I [HLS-100] Command "source ../tv/cdatafile/ref.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 9.5e-05Total elapsed time: 4.252 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000172Total elapsed time: 4.252 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00015Total elapsed time: 4.252 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000182Total elapsed time: 4.253 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000164Total elapsed time: 4.253 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00019Total elapsed time: 4.260 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000195Total elapsed time: 4.266 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000171Total elapsed time: 4.267 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000209Total elapsed time: 4.278 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000197Total elapsed time: 4.287 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000178Total elapsed time: 4.288 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000166Total elapsed time: 4.288 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000156Total elapsed time: 4.288 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000154Total elapsed time: 4.288 sec.
+@I [HLS-100] Command "source ../tv/cdatafile/ref.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 8.4e-05Total elapsed time: 4.289 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000155Total elapsed time: 4.289 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000148Total elapsed time: 4.289 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000151Total elapsed time: 4.289 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000152Total elapsed time: 4.290 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000182Total elapsed time: 4.295 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000177Total elapsed time: 4.301 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00015Total elapsed time: 4.302 sec.
+@I [HLS-100] Command "source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/adder.tbgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000207Total elapsed time: 4.308 sec.
+@I [HLS-100] Command "source .run_sim.tcl "
+@I [HLS-100] Command "source check_sim.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000141Total elapsed time: 4.337 sec.
+@I [HLS-100] Command "source .sim.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000168Total elapsed time: 4.338 sec.
+@I [SIM-323] Starting verilog simulation. 
+@I [SIM-15] Starting XSIM ...
+@I [SIM-316] Starting C post checking ...
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.036212Total elapsed time: 18.252 sec.
+@I [SIM-1000] *** C/RTL co-simulation finished: PASS ***
+@I [HLS-100] Command 'cosim_design' returned 0; elapsed 0.509667Total elapsed time: 18.338 sec.
+@I [HLS-100] Command "cleanup_all "
+@I [HLS-100] Command 'cleanup_all' returned 0; elapsed 0.000796Total elapsed time: 18.340 sec.

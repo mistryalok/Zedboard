@@ -1,0 +1,4 @@
+#!/bin/sh
+lli=${LLVMINTERP-lli}
+exec $lli \
+    /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.autopilot/db/a.g.0.bc ${1+"$@"}

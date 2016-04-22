@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Fri Apr  8 10:46:54 2016
+# Process ID: 8060
+# Log file: /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/sim/verilog/vivado.log
+# Journal file: /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/sim/verilog/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/alok/Vivado_Projects/Linux/ALU/VIVADO/project_1/project_1.xpr
+load_feature simulator
+open_wave_database {/home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/sim/verilog/adder.wdb}
+add_wave {{/apatb_adder_top/AESL_clock}} {{/apatb_adder_top/rst}} {{/apatb_adder_top/start}} {{/apatb_adder_top/ce}} {{/apatb_adder_top/continue}} {{/apatb_adder_top/AESL_start}} {{/apatb_adder_top/AESL_reset}} {{/apatb_adder_top/AESL_ce}} {{/apatb_adder_top/AESL_ready}} {{/apatb_adder_top/AESL_idle}} {{/apatb_adder_top/AESL_continue}} {{/apatb_adder_top/AESL_done}} {{/apatb_adder_top/AESL_done_delay}} {{/apatb_adder_top/AESL_done_delay2}} {{/apatb_adder_top/AESL_ready_delay}} {{/apatb_adder_top/ready}} {{/apatb_adder_top/ready_wire}} {{/apatb_adder_top/AESL_mLatCnterIn}} {{/apatb_adder_top/AESL_mLatCnterIn_addr}} {{/apatb_adder_top/AESL_mLatCnterOut}} {{/apatb_adder_top/AESL_mLatCnterOut_addr}} {{/apatb_adder_top/AESL_clk_counter}} {{/apatb_adder_top/s_axi_AXI_CTRL_AWVALID}} {{/apatb_adder_top/s_axi_AXI_CTRL_AWREADY}} {{/apatb_adder_top/s_axi_AXI_CTRL_AWADDR}} {{/apatb_adder_top/s_axi_AXI_CTRL_WVALID}} {{/apatb_adder_top/s_axi_AXI_CTRL_WREADY}} {{/apatb_adder_top/s_axi_AXI_CTRL_WDATA}} {{/apatb_adder_top/s_axi_AXI_CTRL_WSTRB}} {{/apatb_adder_top/s_axi_AXI_CTRL_ARVALID}} {{/apatb_adder_top/s_axi_AXI_CTRL_ARREADY}} {{/apatb_adder_top/s_axi_AXI_CTRL_ARADDR}} {{/apatb_adder_top/s_axi_AXI_CTRL_RVALID}} {{/apatb_adder_top/s_axi_AXI_CTRL_RREADY}} {{/apatb_adder_top/s_axi_AXI_CTRL_RDATA}} {{/apatb_adder_top/s_axi_AXI_CTRL_RRESP}} {{/apatb_adder_top/s_axi_AXI_CTRL_BVALID}} {{/apatb_adder_top/s_axi_AXI_CTRL_BREADY}} {{/apatb_adder_top/s_axi_AXI_CTRL_BRESP}} {{/apatb_adder_top/ap_clk}} {{/apatb_adder_top/ap_rst_n}} {{/apatb_adder_top/interrupt}} {{/apatb_adder_top/done_cnt}} {{/apatb_adder_top/AESL_ready_cnt}} {{/apatb_adder_top/ready_cnt}} {{/apatb_adder_top/ready_initial}} {{/apatb_adder_top/ready_initial_n}} {{/apatb_adder_top/ready_last_n}} {{/apatb_adder_top/ready_delay_last_n}} {{/apatb_adder_top/done_delay_last_n}} {{/apatb_adder_top/interface_done}} {{/apatb_adder_top/AXI_CTRL_read_data_finish}} {{/apatb_adder_top/AXI_CTRL_write_data_finish}} {{/apatb_adder_top/AESL_slave_start}} {{/apatb_adder_top/AESL_slave_write_start_in}} {{/apatb_adder_top/AESL_slave_write_start_finish}} {{/apatb_adder_top/AESL_slave_ready}} {{/apatb_adder_top/AESL_slave_output_done}} {{/apatb_adder_top/ready_rise}} {{/apatb_adder_top/start_rise}} {{/apatb_adder_top/slave_start_status}} {{/apatb_adder_top/slave_done_status}} {{/apatb_adder_top/ap_rst_n_n}} 
+close_sim

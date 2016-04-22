@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="adder.cpp" path="/home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/adder.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="test.cpp" path="/home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/.tcls/test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

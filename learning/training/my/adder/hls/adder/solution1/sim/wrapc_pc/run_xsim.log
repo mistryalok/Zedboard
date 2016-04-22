@@ -1,0 +1,54 @@
+z is 5
+Vivado Simulator 2014.4
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2014.4/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_adder_top -prj adder.prj --lib ieee_proposed=./ieee_proposed -s adder -debug wave 
+Multi-threading is on. Using 2 slave threads.
+Determining compilation order of HDL files.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running fuse with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/sim/verilog/adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/sim/verilog/AESL_axi_slave_AXI_CTRL.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_slave_AXI_CTRL
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/sim/verilog/adder.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_adder_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/sim/verilog/adder_AXI_CTRL_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder_AXI_CTRL_s_axi
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.adder_AXI_CTRL_s_axi(C_ADDR_WIDT...
+Compiling module xil_defaultlib.adder_default
+Compiling module xil_defaultlib.AESL_axi_slave_AXI_CTRL
+Compiling module xil_defaultlib.apatb_adder_top
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot adder
+
+****** Webtalk v2014.4 (64-bit)
+  **** SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+  **** IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source /home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/sim/verilog/xsim.dir/adder/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/sim/verilog/xsim.dir/adder/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Apr  8 10:46:55 2016. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2014.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Apr  8 10:46:55 2016...
+
+****** xsim v2014.4 (64-bit)
+  **** SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+  **** IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/adder/xsim_script.tcl
+# xsim {adder} -maxdeltaid 10000 -tclbatch {adder.tcl}
+Vivado Simulator 2014.4
+Time resolution is 1 ps
+source adder.tcl
+## add_wave -r /
+## save_wave_config adder.wcfg
+## run all
+$finish called at time : 625400 ps : File "/home/alok/githum/Zedboard/learning/training/my/adder/hls/adder/solution1/sim/verilog/adder.autotb.v" Line 292
+## quit
+INFO: [Common 17-206] Exiting xsim at Fri Apr  8 10:47:02 2016...
+z is 5
